@@ -20,10 +20,11 @@ No se han copiado políticas SELinux compiladas como sustituto de su fuente.
 
 ## Siguiente trabajo obligatorio
 
-1. Elegir kernel y módulos de la misma revisión. El kernel observado es 6.6.92;
-   el archivo OEM local es 6.6.30. No se presume compatibilidad entre ambos.
-2. Extraer boot/vendor_boot/dtbo y comprobar DTB, bootconfig, cargas tempranas
-   y cadenas AVB antes de definir BoardConfigBringup.mk.
+1. Verificar KMI y símbolos del conjunto kernel/módulos. Se observó kernel 6.6.92
+   y 306 módulos de ramdisk con vermagic 6.6.30-android15-8; los números de parche
+   distintos no bastan para declarar compatibilidad ni incompatibilidad.
+2. Ya se auditaron imágenes de arranque por lectura; ver docs/BOOT-AUDIT.md.
+   Resolver init_boot limpio, KMI y política AVB/OTA antes de BoardConfigBringup.mk.
 3. Completar proprietary-files.txt y extraer un dump stock organizado por
    particiones. Desde device/nubia/nx733j, ejecutar ./extract-files.py /ruta/dump
    con tools/extract-utils y sus dependencias disponibles.
@@ -40,3 +41,17 @@ no se hereda: DTB, firmware y configuraciones OEM no son intercambiables.
 Referencias:
 - https://github.com/LineageOS/android_device_oneplus_sm8750-common/tree/lineage-23.2
 - https://lineageos.github.io/lineage_wiki/proprietary_blobs.html
+
+## Auditoría de arranque (2026-09-15)
+
+Ver [informe y decisiones pendientes](docs/BOOT-AUDIT.md) y
+[hechos verificables](stock/boot-audit.json). Incluye listas de carga de arranque y
+recovery, fstab de primera etapa y bootconfig extraídos como referencia; no se
+instalan automáticamente en una ROM. Las imágenes quedan fuera de este repositorio.
+
+Para comprobar que una captura corresponde a esta auditoría:
+```sh
+python3 tools/verify_boot_capture.py /ruta/a/la/captura
+```
+Esto comprueba tamaño, SHA-256 y encabezados; no valida firmas ni declara la ROM
+compilable. El árbol tiene historial Git local en lineage-23.2 y todavía no tiene remoto.

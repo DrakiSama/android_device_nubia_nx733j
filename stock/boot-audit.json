@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-09-15T22:22:13.462933+00:00",
+  "provenance": "Read-only capture of installed rooted Android; not independently authenticated factory firmware.",
+  "reference_vendor_fingerprint": "nubia/PQ84A01-UN/PQ84A01:15/AQ3A.240812.002/20260210.011420:user/release-keys",
+  "kernel_release": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "capture_slot": "_b",
+  "images": {
+    "boot": {
+      "bytes": 100663296,
+      "sha256": "c9c10018929b43774699c617a48b74fb315ff90ebcbd1702c2bf61912295971d"
+    },
+    "init_boot": {
+      "bytes": 8388608,
+      "sha256": "f8f7524afda749bb4dc6c1fc64dcd55abd9c499bea074f54430dcb6f03d8ce7a"
+    },
+    "vendor_boot": {
+      "bytes": 100663296,
+      "sha256": "ffb2b05d3242040a60b667bd5111edc72bfb0bcf406411060a284db8b0286677"
+    },
+    "dtbo": {
+      "bytes": 25165824,
+      "sha256": "16e294f299ffd12310489f40fd2c5653949031cf99464f33097999104d6b9957"
+    },
+    "vbmeta": {
+      "bytes": 65536,
+      "sha256": "f402706b7b657aa0e6eaef869a9a7fd1a6b444916c5384585210321a66aae655"
+    },
+    "vbmeta_system": {
+      "bytes": 65536,
+      "sha256": "0c4a586cedafc91758c2552b8ba44b84c28de4763071ca1061df710a693db0d7"
+    }
+  },
+  "boot": {
+    "header_version": 4,
+    "kernel_size": 36596224,
+    "ramdisk_size": 0,
+    "kernel_format": "uncompressed ARM64 Image with EFI PE header",
+    "os_version_field": 0,
+    "signature_size": 0
+  },
+  "init_boot": {
+    "header_version": 4,
+    "kernel_size": 0,
+    "ramdisk_size": 2236037,
+    "compression": "lz4_legacy",
+    "matches_active_vbmeta": false,
+    "eligible_as_pristine_prebuilt": false
+  },
+  "vendor_boot": {
+    "header_version": 4,
+    "page_size": 4096,
+    "header_size": 2128,
+    "ramdisk_size": 8551361,
+    "ramdisk_fragments": 1,
+    "fragment_type": 1,
+    "fragment_name": "",
+    "ramdisk_compression": "lz4_legacy",
+    "dtb_size": 4487979,
+    "dtb_load_address": "0x1f00000",
+    "kernel_load_address": "0x8000",
+    "ramdisk_load_address": "0x1000000",
+    "tags_load_address": "0x100",
+    "bootconfig_size": 232,
+    "cmdline": "video=vfb:640x400,bpp=32,memsize=3072000 nosoftlockup console=ttynull qcom_geni_serial.con_enabled=0 bootconfig"
+  },
+  "dtbo": {
+    "entries": 37,
+    "used_bytes": 14124069,
+    "page_size": 4096,
+    "version": 0,
+    "standalone_avb_footer": false,
+    "protection": "external hash descriptor in vbmeta"
+  },
+  "vendor_ramdisk": {
+    "modules": 306,
+    "module_vermagic": [
+      "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+    ],
+    "normal_load_entries": 106,
+    "recovery_load_entries": 303
+  },
+  "avb": {
+    "root_algorithm": "SHA256_RSA4096",
+    "root_flags": 0,
+    "chain_rollback_locations": {
+      "boot": 3,
+      "recovery": 1,
+      "vbmeta_system": 2
+    },
+    "root_hash_partitions": [
+      "dtbo",
+      "init_boot",
+      "vendor_boot"
+    ],
+    "root_hashtree_partitions": [
+      "odm",
+      "system_dlkm",
+      "vendor",
+      "vendor_dlkm"
+    ],
+    "vbmeta_system_hash_partitions": [
+      "pvmfw"
+    ],
+    "vbmeta_system_hashtree_partitions": [
+      "product",
+      "system",
+      "system_ext"
+    ],
+    "descriptor_checks": [
+      {
+        "vbmeta": "vbmeta",
+        "partition": "dtbo",
+        "hashed_bytes": 14124069,
+        "matches_descriptor": true
+      },
+      {
+        "vbmeta": "vbmeta",
+        "partition": "init_boot",
+        "hashed_bytes": 2486272,
+        "matches_descriptor": false
+      },
+      {
+        "vbmeta": "vbmeta",
+        "partition": "vendor_boot",
+        "hashed_bytes": 13053952,
+        "matches_descriptor": true
+      },
+      {
+        "vbmeta": "boot",
+        "partition": "boot",
+        "hashed_bytes": 36618240,
+        "matches_descriptor": true
+      }
+    ],
+    "authentication_scope": "Only descriptor digests checked; signatures/trust anchor/rollback acceptance not verified"
+  },
+  "inactive_init_boot_matches_active_descriptor": false,
+  "unresolved": [
+    "source-built clean LineageOS init_boot integration; pristine stock reference optional",
+    "bootloader state independent of rooted Android properties",
+    "kernel/KMI and module symbol compatibility for the selected build",
+    "pvmfw handling in custom AVB/OTA",
+    "full blob dependency closure and source SELinux/VINTF integration"
+  ]
+}

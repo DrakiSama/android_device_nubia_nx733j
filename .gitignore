@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+# Local capture/prebuilt binaries are not source configuration.
+*.img
+*.ko
+/prebuilts/
+/dumps/

@@ -8,11 +8,14 @@ TARGET_BOARD_PLATFORM := sun
 TARGET_BOOTLOADER_BOARD_NAME := sun
 TARGET_NO_BOOTLOADER := true
 
+# Header sizes/format verified from installed images; see stock/boot-audit.json.
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 AB_OTA_UPDATER := true
+# Provisional OTA scope. Resolve pvmfw (referenced by stock vbmeta_system)
+# and which vendor partitions will be built before enabling a release.
 AB_OTA_PARTITIONS := boot init_boot vendor_boot recovery dtbo vbmeta vbmeta_system system system_ext product vendor odm vendor_dlkm system_dlkm
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
