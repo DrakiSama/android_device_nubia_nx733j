@@ -1,0 +1,15 @@
+{
+  "model": "NX733J",
+  "stock_device": "PQ84A01",
+  "platform": "sun",
+  "product_first_api_level": 35,
+  "board_first_api_level": 202404,
+  "vendor_android": "15",
+  "vendor_security_patch": "2025-12-01",
+  "vendor_fingerprint": "nubia/PQ84A01-UN/PQ84A01:15/AQ3A.240812.002/20260210.011420:user/release-keys",
+  "observed_kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "local_oem_kernel_archive_version": "6.6.30",
+  "target_reference_branch": "lineage-23.2",
+  "candidate_blob_count": 3718,
+  "vendor_hal_declarations": 127
+}
