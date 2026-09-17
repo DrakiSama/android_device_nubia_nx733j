@@ -27,7 +27,8 @@ No se han copiado políticas SELinux compiladas como sustituto de su fuente.
    Resolver init_boot limpio, KMI y política AVB/OTA antes de BoardConfigBringup.mk.
 3. Completar proprietary-files.txt y extraer un dump stock organizado por
    particiones. Desde device/nubia/nx733j, ejecutar ./extract-files.py /ruta/dump
-   con tools/extract-utils y sus dependencias disponibles.
+   con tools/extract-utils y sus dependencias disponibles. La clasificación
+   reproducible de candidatos y sus pendientes están en docs/BLOBS-AUDIT.md.
 4. Portar init, fstab Android, overlays, audio, cámara, radio, sensores, Wi-Fi,
    Bluetooth, biometría, GNSS, NFC, power y health, usando stock como evidencia.
 5. Preparar SEPolicy fuente, compatibilidad VINTF y dependencias Qualcomm sun.
