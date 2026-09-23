@@ -6,3 +6,9 @@ __pycache__/
 *.ko
 /prebuilts/
 /dumps/
+
+# Audit captures and reports with local paths stay outside this source tree.
+/diagnostics/
+*.so
+*.apk
+*.apex

@@ -1,9 +1,9 @@
 # Auditoría de blobs NX733J — 2026-09-15
 
-Estado: clasificación reproducible de la lista candidata completa.
-**Dump de vendor/odm capturado el 2026-09-17 (evidencia fuera del repo:
-`diagnostics/vendor-odm-dump/`, hashes verificados); extracción EROFS y
-dependencias ELF aún sin resolver, árbol no compilable.**
+Estado actualizado al 2026-09-23: las cuatro particiones vendor/odm/system_ext/product
+ya están capturadas y extraídas. Ver [auditoría ELF](ELF-AUDIT.md) para los
+resultados actuales. El árbol sigue sin ser compilable. La clasificación de
+3718 candidatos que sigue corresponde al inventario original vendor/odm.
 
 ## Método y verificación
 
@@ -11,10 +11,10 @@ dependencias ELF aún sin resolver, árbol no compilable.**
   absolutas, 0 anomalías de espacios en 3718 entradas), clasifica por
   partición/categoría y asigna veredicto. Es determinista: dos ejecuciones
   consecutivas producen salidas byte-idénticas (verificado con SHA-256).
-- `tools/elf_deps.py` es un parser ELF64 puro (DT_NEEDED/DT_SONAME) sin
-  dependencias externas. `--selftest` construye un ELF sintético y valida el
-  parseo; un escaneo real de `diagnostics/` encontró 1 ELF (objeto BPF) y lo
-  procesó sin errores. Omite placeholders de nube y archivos ilegibles.
+- `tools/elf_deps.py` analiza ELF64 sin dependencias externas. La versión actual
+  informa errores y formatos no soportados; ya no da por satisfechas librerías
+  solo por una allowlist AOSP. Se contrastaron 2393 archivos con readelf y se
+  ejecutaron ocho pruebas de regresión; ver ELF-AUDIT.md.
 - Salidas: `stock/candidates-report.json` (máquina) y
   `stock/proprietary-files.draft.txt` (borrador con marcas `# review`).
 
@@ -47,15 +47,11 @@ dependencias ELF aún sin resolver, árbol no compilable.**
 
 ## Pendientes que bloquean extracción y compilación
 
-1. ~~Dump reproducible de vendor/odm~~ **hecho el 2026-09-17** (slot B, misma
-   versión auditada; tamaños coinciden con lpdump y SHA-256 verificado en
-   ambos extremos; ver `diagnostics/vendor-odm-dump/manifest.json`). Queda:
-   extraer el EROFS (WSL), ejecutar `tools/elf_deps.py` sobre el árbol
-   extraído y resolver cada dependencia faltante como proveída por
-   AOSP/LineageOS o como blob adicional. El dump de system_ext/product sigue
-   pendiente de autorización expresa.
-2. Inventario de system_ext/product: la lista candidata no tiene entradas de
-   esas particiones todavía.
+1. Captura/extracción de vendor/odm/system_ext/product completada. El análisis
+   por nombres está hecho; faltan namespaces, símbolos/versiones, APEX/APK y
+   decisiones de proveedores de plataforma. Ver ELF-AUDIT.md.
+2. Inventario system_ext/product completado (2621 archivos regulares) en
+   `stock/system-ext-product-inventory.txt`; falta seleccionar qué portar.
 3. Decidir APK (6), APEX (2), overlays (219) y media (242): prebuilt vs fuente
    y licencias. Los overlays ZTE podrían no ser necesarios en LineageOS.
 4. Revisar los 176 `other` (`.fs`, `.dat`, `.eai`, datos sin extensión, etc.).

@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Parse DT_NEEDED/DT_SONAME of ELF64 files and check dependency coverage.
+"""Inventory ELF64 dependencies without claiming runtime linker compatibility.
 
 Pure Python, no third-party packages. Works on any directory of extracted
-files (a future vendor/odm dump) and reports needed libraries that are not
-provided by the blob list nor by the AOSP/LineageOS core allowlist.
+files and reports missing same-architecture library candidates. A matching
+name is not proof of namespace visibility, symbol compatibility or ROM support.
+APEX/APK contents and dlopen dependencies require separate analysis.
 
 Usage:
   python3 tools/elf_deps.py --selftest
   python3 tools/elf_deps.py /path/to/dump/root [--report out.json]
 """
 import json
+import os
+import stat
 import struct
 import sys
 from pathlib import Path
@@ -21,9 +24,9 @@ DT_STRSZ = 10
 DT_SONAME = 14
 DT_NULL = 0
 
-# Libraries that AOSP/LineageOS builds from source and are never vendor blobs.
-# Extend deliberately when a missing-dependency report proves one is core.
-AOSP_CORE_LIBS = {
+# Names to investigate in platform sources; NOT a provider allowlist.
+# Their presence, ABI and namespace visibility must still be verified.
+PLATFORM_REVIEW_NAMES = {
     'ld-android.so', 'libandroid.so', 'libbase.so', 'libbinder.so',
     'libbinder_ndk.so', 'libc.so', 'libcap.so', 'libcutils.so', 'libdl.so',
     'libdl_android.so', 'libexpat.so', 'libhardware.so', 'libhidlbase.so',
@@ -47,6 +50,11 @@ def parse_elf64(data):
     e_phoff = struct.unpack_from('<Q', data, 32)[0]
     e_phentsize = struct.unpack_from('<H', data, 54)[0]
     e_phnum = struct.unpack_from('<H', data, 56)[0]
+    if e_phnum == 0xffff:
+        raise ElfError('extended program header count is unsupported')
+    if e_phnum and (e_phentsize < 56 or e_phoff < 64 or
+                    e_phoff + e_phnum * e_phentsize > len(data)):
+        raise ElfError('invalid program header table')
     dyn_off = None
     dyn_size = 0
     for i in range(e_phnum):
@@ -60,16 +68,20 @@ def parse_elf64(data):
             break
     if dyn_off is None:
         return None, []
+    if dyn_size % 16 or dyn_off + dyn_size > len(data):
+        raise ElfError('invalid dynamic section bounds')
     strtab_addr = strsz = None
     soname = None
     needed_raw = []
     entries = dyn_size // 16
+    terminated = False
     for i in range(entries):
         off = dyn_off + i * 16
         if off + 16 > len(data):
             raise ElfError('truncated dynamic section')
         tag, val = struct.unpack_from('<qQ', data, off)
         if tag == DT_NULL:
+            terminated = True
             break
         if tag == DT_STRTAB:
             strtab_addr = val
@@ -79,51 +91,107 @@ def parse_elf64(data):
             needed_raw.append(val)
         elif tag == DT_SONAME:
             soname = val
+    if not terminated:
+        raise ElfError('unterminated dynamic section')
+    if not needed_raw and soname is None:
+        return None, []
     if strtab_addr is None or strsz is None:
         raise ElfError('dynamic section without string table')
     # In files, the string table virtual address usually equals its file offset
     # for the first LOAD segment; find the mapping via program headers instead.
-    strtab_off = vaddr_to_offset(data, strtab_addr, e_phoff, e_phentsize, e_phnum)
+    strtab_off = vaddr_to_offset(data, strtab_addr, e_phoff, e_phentsize, e_phnum, strsz)
     if strtab_off is None or strtab_off + strsz > len(data):
         raise ElfError('string table out of range')
 
     def read_str(at):
-        end = data.index(b'\x00', strtab_off + at)
+        if not 0 <= at < strsz:
+            raise ElfError('string offset outside DT_STRSZ')
+        end = data.find(b'\x00', strtab_off + at, strtab_off + strsz)
+        if end < 0:
+            raise ElfError('unterminated dynamic string')
         return data[strtab_off + at:end].decode('utf-8', 'replace')
 
     needed = [read_str(n) for n in needed_raw]
     return (read_str(soname) if soname is not None else None), needed
 
 
-def vaddr_to_offset(data, vaddr, e_phoff, e_phentsize, e_phnum):
+def vaddr_to_offset(data, vaddr, e_phoff, e_phentsize, e_phnum, size=1):
     for i in range(e_phnum):
         off = e_phoff + i * e_phentsize
         p_type = struct.unpack_from('<I', data, off)[0]
         if p_type != 1:  # PT_LOAD
             continue
         p_offset, p_vaddr, _, p_filesz = struct.unpack_from('<QQQQ', data, off + 8)
-        if p_vaddr <= vaddr < p_vaddr + p_filesz:
+        if p_vaddr <= vaddr and vaddr + size <= p_vaddr + p_filesz:
             return p_offset + (vaddr - p_vaddr)
     return None
 
 
 def scan_root(root):
-    """Return {relpath: {'soname':..., 'needed':[...]}} for all ELF64 files."""
-    found = {}
-    for path in sorted(root.rglob('*')):
-        try:
-            if not path.is_file():
-                continue
-            data = path.read_bytes()
-        except OSError:
-            # Cloud placeholders, reparse points and unreadable files are skipped.
+    """Do not follow symlinks or hide unsupported/unreadable inputs."""
+    found, errors, unsupported, symlinks = {}, {}, {}, {}
+    def walk_error(error):
+        errors[str(error.filename)] = str(error)
+    for directory, dirs, files in os.walk(root, followlinks=False, onerror=walk_error):
+        dirs.sort()
+        for name in sorted(dirs + files):
+            path = Path(directory) / name
+            rel = path.relative_to(root).as_posix()
+            try:
+                mode = path.lstat().st_mode
+                if stat.S_ISLNK(mode):
+                    symlinks[rel] = os.readlink(path)
+                    continue
+                if not stat.S_ISREG(mode):
+                    continue
+                with path.open('rb') as stream:
+                    header = stream.read(20)
+                    if header[:4] != b'\x7fELF':
+                        continue
+                    if len(header) < 20:
+                        raise ElfError('truncated ELF header')
+                    if header[4:6] != b'\x02\x01':
+                        unsupported[rel] = {'class':header[4], 'encoding':header[5]}
+                        continue
+                    data = header + stream.read()
+                soname, needed = parse_elf64(data)
+                found[rel] = {'machine':struct.unpack_from('<H',data,18)[0],
+                              'type':struct.unpack_from('<H',data,16)[0],
+                              'soname':soname,'needed':needed}
+            except (OSError, ElfError, struct.error, ValueError) as error:
+                errors[rel] = str(error)
+    return dict(sorted(found.items())), errors, unsupported, symlinks
+
+
+def dependency_report(root):
+    scanned, errors, unsupported, symlinks = scan_root(root)
+    providers = {}
+    for rel, info in scanned.items():
+        # ET_REL kernel/BPF objects and PIE executables are not .so providers.
+        if info['type'] != 3 or not (info['soname'] or rel.endswith('.so')):
             continue
-        try:
-            soname, needed = parse_elf64(data)
-        except ElfError:
-            continue
-        found[str(path.relative_to(root))] = {'soname': soname, 'needed': needed}
-    return found
+        for name in {Path(rel).name, info['soname']} - {None}:
+            providers.setdefault((info['machine'], name), set()).add(rel)
+    missing, candidates = {}, {}
+    for rel, info in scanned.items():
+        for needed in info['needed']:
+            paths = sorted(providers.get((info['machine'], needed), ()))
+            if paths:
+                candidates.setdefault(rel, {})[needed] = paths
+            else:
+                missing.setdefault(rel, []).append(needed)
+    return {
+        'schema_version':2, 'root':str(root), 'elf_files':len(scanned),
+        'files_with_unresolved_deps':len(missing), 'unresolved':missing,
+        'platform_names_requiring_verification':sorted({name for names in missing.values()
+            for name in names if name in PLATFORM_REVIEW_NAMES}),
+        'candidate_providers':candidates, 'elf_inventory':scanned,
+        'parse_or_read_errors':errors, 'unsupported_elf':unsupported,
+        'symlinks_not_followed':symlinks,
+        'limits':['Name/architecture candidates only; namespaces and symbol versions unchecked.',
+                  'ELF32 and big-endian ELF are reported but not parsed.',
+                  'Symlink targets, APK/APEX contents and dlopen dependencies need separate review.',
+                  'Platform name hints never satisfy a missing dependency.']}
 
 
 def build_synthetic_elf():
@@ -148,9 +216,9 @@ def build_synthetic_elf():
     struct.pack_into('<QQQQ', ph, 8, 0, 0, 0, 0x400)  # offset,vaddr,paddr,filesz
     struct.pack_into('<Q', ph, 32, 0x400)  # memsz
     struct.pack_into('<I', ph, 56, PT_DYNAMIC)
-    struct.pack_into('<QQQQ', ph, 64, dyn_off, dyn_off, dyn_off, 4 * 16)
-    struct.pack_into('<Q', ph, 88, 4 * 16)
-    dyn = bytearray(64)
+    struct.pack_into('<QQQQ', ph, 64, dyn_off, dyn_off, dyn_off, 5 * 16)
+    struct.pack_into('<Q', ph, 88, 5 * 16)
+    dyn = bytearray(80)
     struct.pack_into('<qQ', dyn, 0, DT_STRTAB, strtab_off)
     struct.pack_into('<qQ', dyn, 16, DT_STRSZ, len(strtab))
     struct.pack_into('<qQ', dyn, 32, DT_NEEDED, 12)  # 'libfoo.so'
@@ -158,7 +226,7 @@ def build_synthetic_elf():
     blob = bytearray(0x400)
     blob[:64] = header
     blob[phoff:phoff + 112] = ph
-    blob[dyn_off:dyn_off + 64] = dyn
+    blob[dyn_off:dyn_off + 80] = dyn
     blob[strtab_off:strtab_off + len(strtab)] = strtab
     return bytes(blob)
 
@@ -191,33 +259,15 @@ def main():
         print(f'not a directory: {root}', file=sys.stderr)
         return 2
 
-    scanned = scan_root(root)
-    providers = set(AOSP_CORE_LIBS)
-    for info in scanned.values():
-        if info['soname']:
-            providers.add(info['soname'])
-    for rel in scanned:
-        providers.add(Path(rel).name)
-
-    unresolved = {}
-    for rel, info in scanned.items():
-        missing = [n for n in info['needed'] if n not in providers]
-        if missing:
-            unresolved[rel] = missing
-
-    summary = {
-        'root': str(root),
-        'elf_files': len(scanned),
-        'files_with_unresolved_deps': len(unresolved),
-        'unresolved': unresolved,
-    }
+    summary = dependency_report(root)
+    unresolved = summary['unresolved']
     text = json.dumps(summary, indent=2, ensure_ascii=False) + '\n'
     if report_path:
         report_path.write_bytes(text.encode('utf-8'))
-    print(f'elf_files={len(scanned)} files_with_unresolved_deps={len(unresolved)}')
+    print(f"elf_files={summary['elf_files']} files_with_unresolved_deps={len(unresolved)}")
     for rel in sorted(unresolved):
         print(f'  {rel}: {", ".join(unresolved[rel])}')
-    return 0
+    return 1 if summary['parse_or_read_errors'] else 0
 
 
 if __name__ == '__main__':

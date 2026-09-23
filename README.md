@@ -55,4 +55,17 @@ Para comprobar que una captura corresponde a esta auditoría:
 python3 tools/verify_boot_capture.py /ruta/a/la/captura
 ```
 Esto comprueba tamaño, SHA-256 y encabezados; no valida firmas ni declara la ROM
-compilable. El árbol tiene historial Git local en lineage-23.2 y todavía no tiene remoto.
+compilable. La rama de desarrollo es `lineage-23.2`.
+
+## Repositorio independiente y auditoría actual
+
+Repositorio ROM: [DrakiSama/android_device_nubia_nx733j](https://github.com/DrakiSama/android_device_nubia_nx733j).
+Su producto es LineageOS `lineage-23.2`; la adaptación a crDroid queda pendiente.
+Los árboles de [TWRP](https://github.com/DrakiSama/twrp_device_nubia_nx733j) y
+[OrangeFox](https://github.com/DrakiSama/orangeFox_device_nubia_nx733j) son proyectos separados.
+
+La [auditoría ELF del 23 de septiembre](docs/ELF-AUDIT.md) cubre vendor, odm,
+system_ext y product: 2393 ELF64 contrastados con readelf e inventario adicional
+de 2621 archivos. Se registran dependencias pendientes, no soporte validado.
+Solo se versionan fuentes, herramientas y metadatos; los dumps y binarios quedan
+fuera del repositorio. Todavía no hay una ROM compilada ni instrucciones de flasheo.
