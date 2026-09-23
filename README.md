@@ -69,3 +69,5 @@ system_ext y product: 2393 ELF64 contrastados con readelf e inventario adicional
 de 2621 archivos. Se registran dependencias pendientes, no soporte validado.
 Solo se versionan fuentes, herramientas y metadatos; los dumps y binarios quedan
 fuera del repositorio. Todavía no hay una ROM compilada ni instrucciones de flasheo.
+
+La [auditoría de kernel y servicios OEM](docs/KERNEL-AND-OEM-AUDIT.md) registra la consistencia de CRC de los módulos y las decisiones pendientes de init.

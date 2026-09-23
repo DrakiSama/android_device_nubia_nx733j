@@ -1,0 +1,56 @@
+# Kernel y servicios OEM: auditoría 2026-09-23
+
+## Kernel y módulos
+
+Se compararon los 306 módulos del ramdisk capturado con sus hashes previos:
+coinciden todos. De sus nombres, 305 aparecen entre los 471 módulos cargados
+observados. Una coincidencia de nombre no identifica los bytes cargados.
+
+Las tablas __versions contienen 3220 nombres de símbolos importados. No se
+observan CRC contradictorios entre módulos para un mismo símbolo. Esto mide
+consistencia interna del conjunto; NO demuestra coincidencia con las exportaciones
+del kernel ni compatibilidad con un kernel recompilado. El parser se contrasta
+con `modprobe --show-modversions` sin cargar los módulos; los resultados quedan en
+`stock/kernel-module-audit.json`.
+
+Configuración leída del kernel vivo: MODVERSIONS=y, MODULE_FORCE_LOAD desactivado,
+MODULE_SIG=y, MODULE_SIG_PROTECT=y, MODULE_SIG_FORCE desactivado y
+TRIM_UNUSED_KSYMS=y. No asumir que estas opciones permiten cualquier firma.
+El taint observado es 4608 (warning y módulo externo), sin el bit de carga forzada.
+El filtro de errores de símbolos/versiones no encontró coincidencias en el dmesg
+actual; el buffer puede haber perdido mensajes anteriores.
+
+Decisión: mantener el conjunto observado como referencia; no sustituirlo por las
+fuentes OEM 6.6.30 solo por compartir modelo. Pendiente comparar exportaciones/CRC,
+configuración, firmas y ABI del kernel que realmente usará la ROM.
+
+Reproducir desde Linux con lz4 instalado:
+
+```sh
+python3 tools/audit_kernel_modules.py vendor_ramdisk00 stock/vendor-ramdisk-modules.json /ruta/proc-modules.txt /ruta/informe.json
+```
+
+La herramienta lee el CPIO en memoria, valida hashes y no extrae rutas ni carga
+módulos. Las imágenes y módulos permanecen fuera de Git.
+
+Referencias: [ABI/KMI de Android](https://source.android.com/docs/core/architecture/kernel/abi-monitor)
+y [taint del kernel](https://docs.kernel.org/admin-guide/tainted-kernels.html).
+
+## Servicios OEM: decisiones previas al port
+
+Se inspeccionaron los init de las particiones extraídas:
+
+| Componente | Evidencia | Decisión pendiente |
+| --- | --- | --- |
+| bootservice | boot-su consulta flag de actualización; boot-at consulta antirrobo; ambos root/oneshot/late_start | No incluir por defecto; comprobar si hace falta para hardware o solo funciones OEM |
+| ssdaemon | late_start, root, socket sub-system-d y grupos radio/audio/log/nfc | Investigar dependencias con diagnóstico OEM antes de conservar o eliminar |
+| vendorcfgd | Ejecuta vendorcfgdeamon, no vendorcfg; root, clase main, socket vendorcfgd | No confundir el ejecutable daemon con el cliente ELF previamente auditado |
+| ssdaemon_vendor | Variantes QTI/MTK/SPRD y script selector; servicios deshabilitados de inicio | No copiar servicios de otras plataformas; revisar selector y clientes QTI |
+
+bootservice, ssdaemon y el cliente vendorcfg dependen de libvendorcfg.oem.so.
+La declaración init de vendorcfgd usa otro ejecutable; su necesidad no se deduce
+de la dependencia ELF del cliente. No se modificó ningún servicio del teléfono.
+
+Las evidencias completas de init/config/dmesg quedan localmente en
+`diagnostics/rom-audit-2026-09-23/`. Este informe no habilita BoardConfigBringup.mk,
+ni declara servicios portados, ni genera una imagen flasheable.

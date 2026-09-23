@@ -1,0 +1,4326 @@
+{
+  "schema_version": 1,
+  "captured_modules": 306,
+  "hashes_match_reference": true,
+  "loaded_module_names": 471,
+  "captured_names_observed_loaded": 305,
+  "unique_versioned_imports": 3220,
+  "import_crc_conflicts": {},
+  "modules_without_versioned_imports": [],
+  "modules": [
+    {
+      "path": "lib/modules/adsp_sleepmon.ko",
+      "name": "adsp_sleepmon",
+      "sha256": "3a03733e921f41f41167839418ea62ebc2cb64f2e6a7d0a146b4438a8d29a2d2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_q6v5_pas,smem"
+      ],
+      "versioned_imports": 70,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/altmode-glink.ko",
+      "name": "altmode_glink",
+      "sha256": "70b8ffce234b72b11385a347ec0be24f995617e218236b3bd8168a9bf11b3ebc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink,qcom_ipc_logging"
+      ],
+      "versioned_imports": 41,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/arm_smmu.ko",
+      "name": "arm_smmu",
+      "sha256": "6fadf46c8c086241e776b2f3eeca671aa3872e9b0652115dda87df11c7be1e45",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_iommu_util,iommu-logger,qcom-scm"
+      ],
+      "versioned_imports": 156,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/aw9620x.ko",
+      "name": "aw9620x",
+      "sha256": "efa03fa8bdf5c27c29ef467b05a725528e8ccd08260e5806063f761b0ecbd38c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 62,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/bam_dma.ko",
+      "name": "bam_dma",
+      "sha256": "e71e9d8ce3f75ac202481142a37b7b67c926b6b4ad0ba62b72caaad852cd52db",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 83,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/bcl_pmic5.ko",
+      "name": "bcl_pmic5",
+      "sha256": "dc3a047326fdd2f1dd5f85fde82420748e076b9769ca4c64901286557d265ed4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 36,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/bcl_soc.ko",
+      "name": "bcl_soc",
+      "sha256": "5d9956a66d612810382c095e2625d265aae9918881f4419408010936afb987ad",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/boot_stats.ko",
+      "name": "boot_stats",
+      "sha256": "7ba817ea6b6a38c8de13974987aff73bd4701e9c6e21f4ec46cb403c19fafc5a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/bwmon.ko",
+      "name": "bwmon",
+      "sha256": "b58cd349df43bc7124c4b82bf9916a07dad90fb9659ec60414e431195bcc91ff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-dcvs,sched-walt"
+      ],
+      "versioned_imports": 65,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cambistmclkcc-sun.ko",
+      "name": "cambistmclkcc_sun",
+      "sha256": "a291338740a35f43fb3f884d45f3b44b02dfc635cb07a525edfac4faa9dd7e5e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cambistmclkcc-tuna.ko",
+      "name": "cambistmclkcc_tuna",
+      "sha256": "1655e768a67050a3e8ba2c29ca372d9cb63d7129baeaccc688838d130f9b5053",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/camcc-sun.ko",
+      "name": "camcc_sun",
+      "sha256": "4f51d9d08f93c8a65855201ba82188368bf268200b45e4432ac625bc54475b71",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/camcc-tuna.ko",
+      "name": "camcc_tuna",
+      "sha256": "b596d5778e4ed7f0a8d7eca5223212a0ff89dafc0a21e63e080bb2302c3179d7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cdsprm.ko",
+      "name": "cdsprm",
+      "sha256": "8cadb7666520063500ff759312f3ab3c399454dae0c74abdf50b69b3fdb4d3b6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 66,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cfg80211.ko",
+      "name": "cfg80211",
+      "sha256": "89557ef1419ffc04ea8b0b436458dad63db7d1c22a54a9e9f45879aa1d58491b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "rfkill"
+      ],
+      "versioned_imports": 195,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/charger-ulog-glink.ko",
+      "name": "charger_ulog_glink",
+      "sha256": "e53e35bd00318b9ac683f4d01011bbf011462f798cf3e8051de74ca1fe9a372b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink,qcom_ipc_logging"
+      ],
+      "versioned_imports": 34,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/charger_policy_service.ko",
+      "name": "charger_policy_service",
+      "sha256": "6cc16ae0853c6f0c11efe4926632ce4f48981fb600bfd363b6a4fc02ad7a013c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "zte_power_supply,zte_misc"
+      ],
+      "versioned_imports": 40,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/clk-dummy.ko",
+      "name": "clk_dummy",
+      "sha256": "3efcebeb2c9a822dccd12f2c44ba18d938c151319991425e6a1d43058b1a626a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 14,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/clk-qcom.ko",
+      "name": "clk_qcom",
+      "sha256": "dd82eaca0ad041da974511cf68c51112b29095239aec579640400e9c6ebdf016",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "crm-v2,gdsc-regulator"
+      ],
+      "versioned_imports": 154,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/clk-rpmh.ko",
+      "name": "clk_rpmh",
+      "sha256": "2eb123fd2db1a94683b0553252e9529ba15f546b494afb7be43f710c1bf09dd8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_rpmh,cmd-db"
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/clk-scmi.ko",
+      "name": "clk_scmi",
+      "sha256": "25345eb2fc7c493f10ada32edbae4989c81ecf939130fd071038ffce954f83f9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cmd-db.ko",
+      "name": "cmd_db",
+      "sha256": "838fea884bf90fb91a4683d6f83e41cf62782075f08afe12990e143c0434ebd2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-csr.ko",
+      "name": "coresight_csr",
+      "sha256": "c012dfeb98b3991de595e8ac3a5c0ce5c2481f3af235e915e279fb13f833c75e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 35,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-cti.ko",
+      "name": "coresight_cti",
+      "sha256": "aa44b03917fcfb676cddd0cef09b9a30938077f88c6ba0614ea676e92613dba7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 85,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-dummy.ko",
+      "name": "coresight_dummy",
+      "sha256": "9a90b3d7cbccafb61e7235a1441f592daa03e5b0eae8ef7ba1b973a80134d018",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight,coresight-csr,coresight-qmi"
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-funnel.ko",
+      "name": "coresight_funnel",
+      "sha256": "849ce74cf03c929832115420e3f35c38c26fdb20c45b6730a8692ca5bb17c750",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 56,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-qmi.ko",
+      "name": "coresight_qmi",
+      "sha256": "a954dfa5a8ac962300f66385c877f3c902e2fd5548276bf7f07d7f0f762b5c4f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers,coresight"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-remote-etm.ko",
+      "name": "coresight_remote_etm",
+      "sha256": "0ebe35a40fab2b2361083aca0854c9531e10a26e6620838281e5f8ed16ff9cb7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight,coresight-qmi,coresight-csr"
+      ],
+      "versioned_imports": 31,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-replicator.ko",
+      "name": "coresight_replicator",
+      "sha256": "fd0aed408a24d1d067439b9fab359899978a00ccb774838d0949d45dca0d75d3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 50,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-stm.ko",
+      "name": "coresight_stm",
+      "sha256": "968ad42e787ba878d2ffb48b8bdca11c58a576209231db6f6a1114a4d382301d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight,stm_core,coresight-csr"
+      ],
+      "versioned_imports": 47,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-tgu.ko",
+      "name": "coresight_tgu",
+      "sha256": "b0f9bc72b53f3b4206828764b5817457420bf973b677f6332dd2614b6262af55",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-tmc-sec.ko",
+      "name": "coresight_tmc_sec",
+      "sha256": "55e4f4fc49393428723c1475725f5b4946afb5a8066a6d30b5157423cec1da1f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm,coresight-qmi,coresight,coresight-csr"
+      ],
+      "versioned_imports": 57,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-tmc.ko",
+      "name": "coresight_tmc",
+      "sha256": "da14d2125841241f5861b46e99e38079fbea30c9e406a845d608d29d46859819",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight,coresight-csr,qcom_iommu_util,usb_f_qdss"
+      ],
+      "versioned_imports": 127,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-tpda.ko",
+      "name": "coresight_tpda",
+      "sha256": "1e6669a3f9015b36c2148c4ff85b5a5246373117f1b9b204fd16323dff6c21b0",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-tpdm.ko",
+      "name": "coresight_tpdm",
+      "sha256": "f199035378fc63b76fd0a625b9fd0773d4df2023a1575c0a36fa283b2c8102b1",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight,coresight-csr,qcom-scm"
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-trace-noc.ko",
+      "name": "coresight_trace_noc",
+      "sha256": "77fc1797f57b502ae86205d10672cd738582fd176014f99bda1f3648704401ad",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "coresight"
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight-uetm.ko",
+      "name": "coresight_uetm",
+      "sha256": "afda80831e7031a2ee56cab21f76311d4551fa408215ab76205ac313e0156a3e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_scmi_client,coresight,coresight-csr"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/coresight.ko",
+      "name": "coresight",
+      "sha256": "2a7e224116920928d42e3cae5d423dfc125890962f284df92391ea7a9248b428",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 111,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpu_hotplug.ko",
+      "name": "cpu_hotplug",
+      "sha256": "c9bc6576703887661f341187b0bea9c9d275880be54221aed9a182cc8190e2e6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 28,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpu_mpam.ko",
+      "name": "cpu_mpam",
+      "sha256": "3edab13a6c1e6a969546732388e3e70337242c606b8ee09e99673828a4d7e382",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mpam"
+      ],
+      "versioned_imports": 42,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpu_phys_log_map.ko",
+      "name": "cpu_phys_log_map",
+      "sha256": "d84cda305082001afe8e370325af069623105d8a19e2f9d6bf110e32dd587ea4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpucp_fast.ko",
+      "name": "cpucp_fast",
+      "sha256": "4cc6a3d543c4b46e13d97e149ea659ea8296a9846c7809fb534daf9f3596f5bf",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "sched-walt"
+      ],
+      "versioned_imports": 15,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpucp_log.ko",
+      "name": "cpucp_log",
+      "sha256": "755879b60635bceaf25c7413bb16c719ef32a96e595373fe395913f70465fa24",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_scmi_client"
+      ],
+      "versioned_imports": 61,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cpufreq_stats_scmi_v3.ko",
+      "name": "cpufreq_stats_scmi_v3",
+      "sha256": "cbd3c100d1823c2a407b983a49e7a72bfdef9381c36b8a57908e07a43fed985c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/cqhci.ko",
+      "name": "cqhci",
+      "sha256": "cc24e3ef772f7a71e8e6e19e374efe8ec69995b1ca0fa46c88baa1c5f4a97a57",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 37,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/crm-v2.ko",
+      "name": "crm_v2",
+      "sha256": "a619a06c2967b6cd31f0062868f5c0fe7ca880f6a5f0f5d3f69d4e9f36a8df90",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 63,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/dcc_v2.ko",
+      "name": "dcc_v2",
+      "sha256": "931044410bff9a33e33d2e9cd03d1eb56b80d919b749be7e21435e57ecce0ea8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump"
+      ],
+      "versioned_imports": 51,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/dcvs_fp.ko",
+      "name": "dcvs_fp",
+      "sha256": "fda7242aef036e753b5a70743e53291c1527e5193969510b90c8aa3ccea7c87f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_rpmh,cmd-db"
+      ],
+      "versioned_imports": 14,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ddr_cdev.ko",
+      "name": "ddr_cdev",
+      "sha256": "58c07371a13973d4d88ce0d727c7e94ddef614e41d7fac915ef9371ae92c2570",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/debug-regulator.ko",
+      "name": "debug_regulator",
+      "sha256": "2419556aee47fb791126a8f5311bd3a9039902f25a531904be28332a5fe2f8ce",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 56,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/debug_symbol.ko",
+      "name": "debug_symbol",
+      "sha256": "bdec6d062320a074965ed9bb7b06a3df7c2f89c68f6dd4e5ace1f592ca471a55",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 10,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/debugcc-sun.ko",
+      "name": "debugcc_sun",
+      "sha256": "acd0d61bb531657bef574c8642b14f17eb5ce9d1efcae89687a03a594e4d5042",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom,clk-dummy"
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/dispcc-sun.ko",
+      "name": "dispcc_sun",
+      "sha256": "561cbd17b8d00ec0e871a2d6e6823e447586b05b8822bd376be7f49b30523b94",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 31,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/dmesg_dumper.ko",
+      "name": "dmesg_dumper",
+      "sha256": "19cd6ac70f6a1e2dc4297ab6505f3f297645ff5069bea8854b28be112992f48b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gunyah_loader,gh_dbl,gh_panic_notifier,gh_rm_drv,minidump,qcom-scm"
+      ],
+      "versioned_imports": 56,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/drm_display_helper.ko",
+      "name": "drm_display_helper",
+      "sha256": "b75c9b507f3262e29fc0729baa51c53e8b9e47dce8d0eff2eae1937c65af6dc3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 91,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/drm_dp_aux_bus.ko",
+      "name": "drm_dp_aux_bus",
+      "sha256": "c74e1004aa026931fcd6a17795a79abc274e3d6f341682b36dc68fdc48f061f3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/dwc3-msm.ko",
+      "name": "dwc3_msm",
+      "sha256": "f4696d2964a7a11bc99048cb90139d35e7eeedbf5c8aa1cbb0bc7ec2687b5931",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,redriver,clk-qcom,repeater,wcd_usbss_i2c"
+      ],
+      "versioned_imports": 201,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/eud.ko",
+      "name": "eud",
+      "sha256": "b70a9745997132122cb4baf2c74990b27b0d1d17802c97bddff6e2d4bb3eb4bc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 54,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/evacc-sun.ko",
+      "name": "evacc_sun",
+      "sha256": "a548615fb71803363fb2c512c5da81961257dbb3a26f97c7b2172ef4deb6efdd",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/evacc-tuna.ko",
+      "name": "evacc_tuna",
+      "sha256": "ba321721681f523b09863d91cd5ea9fb4f448f44f4f3c7027825d29b2adfd33f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/f_fs_ipc_log.ko",
+      "name": "f_fs_ipc_log",
+      "sha256": "02ab305819297eee1f6c2b7e80420c78dc12cb71a1eadb049c6474ad1a1ced4d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/fmtag.ko",
+      "name": "fmtag",
+      "sha256": "cbfc6dbf7510719193ec408b404acac57ce8ed8663fb446e4203a8b146a286b9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [
+        "AFCB0FBD3C032E962AF9713"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 45,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/fp_silead.ko",
+      "name": "fp_silead",
+      "sha256": "f85659e9feee335e7cb59f8b5b3bba30b92ac0bbced340846753294877f0c165",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "kmparam"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gcc-kera.ko",
+      "name": "gcc_kera",
+      "sha256": "9346a52d1fd797a3f90d0fd523278c73d00ee7f8946cda08c928a903875b0fce",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gcc-sun.ko",
+      "name": "gcc_sun",
+      "sha256": "714f6420db36fe96ae720a684a131484b54b8fe2062b87faba00bbc519d4cf7d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gcc-tuna.ko",
+      "name": "gcc_tuna",
+      "sha256": "d26590c87eb41ef2eccc13012dbb39834d3f54c9c8b60ac63fa63d700f5be02a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gdsc-regulator.ko",
+      "name": "gdsc_regulator",
+      "sha256": "935df2b178d0bc4a78c313313ca7bdc166f3097b3eb19cd70ee18b0c0bf0f667",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "proxy-consumer,debug-regulator"
+      ],
+      "versioned_imports": 70,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_arm_drv.ko",
+      "name": "gh_arm_drv",
+      "sha256": "a8975ae0ce7993728abbfce7a9e9e4e695e6b04ab6a5e917d4675e1bb0525e7e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_ctrl.ko",
+      "name": "gh_ctrl",
+      "sha256": "3008c7cef17864c14a8682f6880573eba4c11fec0f558586511b46f4fe925feb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_dbl.ko",
+      "name": "gh_dbl",
+      "sha256": "1edd3510cabf8a79dcaa6a1b6670986aa45b38b7bffd3c2ece5122f2cc9a8653",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_irq_lend.ko",
+      "name": "gh_irq_lend",
+      "sha256": "84c72250269caf29c8531fe2f1e5aaf0d121b9ffeb148e52cafcb72773b57ba9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv,gunyah_loader"
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_mem_notifier.ko",
+      "name": "gh_mem_notifier",
+      "sha256": "8aada9aea7f57e6750c79e1d790c25d332fe51fe02ad5d7a033c5f236461eaed",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv"
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_msgq.ko",
+      "name": "gh_msgq",
+      "sha256": "50b72d6f99719b3c48da89944b8c1326624149f38402cb89bc520c87caaa1d66",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_panic_notifier.ko",
+      "name": "gh_panic_notifier",
+      "sha256": "16e4606e90bc4998bc55ad5636d9d370e96dc97fa5d6e8f9d632f95e1d4c43cc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_dbl,gunyah_loader,gh_rm_drv,qcom-scm"
+      ],
+      "versioned_imports": 55,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_rm_booster.ko",
+      "name": "gh_rm_booster",
+      "sha256": "dea741ec3bf84ae3c0d5f792b29dd6e5ad82d8fa40a35793901eb8002ee5f080",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv"
+      ],
+      "versioned_imports": 29,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_rm_drv.ko",
+      "name": "gh_rm_drv",
+      "sha256": "f5df630b658ef9530e66172f13b3626ef0afeab095685616b3d621bb68e86b2c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_arm_drv,gh_dbl,gh_msgq"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_tlmm_vm_mem_access.ko",
+      "name": "gh_tlmm_vm_mem_access",
+      "sha256": "ac619febc03c12358de7302c5198c99826db343be566576caed9972ee386f447",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv,gh_mem_notifier,pinctrl-msm"
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gh_virt_wdt.ko",
+      "name": "gh_virt_wdt",
+      "sha256": "2bd78793bff6c00964c2ecc25ed2d81ebfd0d7d92251e41fbe5b249f3945ef73",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_wdt_core"
+      ],
+      "versioned_imports": 10,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gic_intr_routing.ko",
+      "name": "gic_intr_routing",
+      "sha256": "a832839b6aadcf18e9c031a8aa9ceaec1cc83dbbc27e55e9f20e22742d3563a5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 43,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/glink_pkt.ko",
+      "name": "glink_pkt",
+      "sha256": "7a3b1a15b299fc0ab86a804a08f4823a58af813e7cc20b68e90984b2679ef1c1",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,qcom_glink"
+      ],
+      "versioned_imports": 99,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/governor_gpubw_mon.ko",
+      "name": "governor_gpubw_mon",
+      "sha256": "4c25574e5ebdcad6b82c15554dc5d9e6ef2699944c9f2928db71551dd5167198",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 14,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/governor_msm_adreno_tz.ko",
+      "name": "governor_msm_adreno_tz",
+      "sha256": "fea074a21dbd0b3494677519f86a83f6aeed1f790a0a500d286baf9a09ada85e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 33,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gpu_dump_skip_cdev.ko",
+      "name": "gpu_dump_skip_cdev",
+      "sha256": "f94aa5ed1ad6dbbcf89d4f4037818cd7fb1ccca46f75829b332ca8f5a1936915",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 15,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gpucc-sun.ko",
+      "name": "gpucc_sun",
+      "sha256": "691b289e5730abdcc4524349fc3a99f809d372a0875ae2d98189bf31005ff491",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 22,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gpucc-tuna.ko",
+      "name": "gpucc_tuna",
+      "sha256": "263e14f8fc06a0d86a1b171c471c4088cdf0bb10e532e005bf66e6af8863a46a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/gunyah_loader.ko",
+      "name": "gunyah_loader",
+      "sha256": "45fa025734c94e95123bed0829af93c29e74d4c8b98a30d38bb92d2c6d851bd2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv,qcom-scm,secure_buffer,mdt_loader"
+      ],
+      "versioned_imports": 173,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/haptic.ko",
+      "name": "haptic",
+      "sha256": "065931f2ae60c5b30479fa63bb93f5c919a00fcd39d02dca9a7b05166f064190",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 80,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/hdcp_qseecom_dlkm.ko",
+      "name": "hdcp_qseecom_dlkm",
+      "sha256": "d48727b3cdf3dc2e142aaaedb119083dfab187e0c8c37d2b7b25ee2032d77903",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qseecom_proxy,smcinvoke_dlkm,qcom-scm"
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/heap_mem_ext_v01.ko",
+      "name": "heap_mem_ext_v01",
+      "sha256": "27e3d0e9fbc5e0224529d470d2b11e5731bcac317ac7b629c8b60a4cb9b96237",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers"
+      ],
+      "versioned_imports": 2,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/hung_task_enh.ko",
+      "name": "hung_task_enh",
+      "sha256": "60aa13a4af031c2f0f04390536a2007aba7949c8e4826514ec48fbd5eecb9e5c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/hvc_gunyah.ko",
+      "name": "hvc_gunyah",
+      "sha256": "f8788f5efe42cc789858ee6d6c3806d4ec3e6e72a6b2c21775a56f1859e22a24",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv,gunyah_loader"
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/hwmon.ko",
+      "name": "hwmon",
+      "sha256": "5d718ddd511eec664241107cb6e7d73991bdfc4952b65eaf32a4e81c69e912ed",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 58,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/i2c-msm-geni.ko",
+      "name": "i2c_msm_geni",
+      "sha256": "18e84bb05684fa129a7fa87d204b2e8ab0546cb8d006ad0413a6466c2f7c59c5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,msm_gpi"
+      ],
+      "versioned_imports": 99,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/i3c-master-msm-geni.ko",
+      "name": "i3c_master_msm_geni",
+      "sha256": "f69fd983b7dc39614ec0f5772dac59816085b290070ad09db92448d7eabedbc1",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,pinctrl-msm,msm_gpi"
+      ],
+      "versioned_imports": 132,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/icc-bcm-voter.ko",
+      "name": "icc_bcm_voter",
+      "sha256": "34fac87a4c4aea1a7ba8595a2658e4028b4c3376a7056872e0683d527ddc67be",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "crm-v2,qcom_rpmh"
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/icc-debug.ko",
+      "name": "icc_debug",
+      "sha256": "e1258e26e6e0d5a7fb2f0714d87effa8285859194453303fa09d0d69d6a3c4f5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/icc-rpmh.ko",
+      "name": "icc_rpmh",
+      "sha256": "2ccfe58b89f0a9fe053dc85833dbe94754325744106cdc4fa3d7370a2d05e3c2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "icc-bcm-voter,cmd-db,icc-debug,socinfo"
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ifas_inner.ko",
+      "name": "ifas_inner",
+      "sha256": "3eb16aae3c38e77a95883f3acf8131420f1012cf88545935df98adee42b639a7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 1,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/iommu-logger.ko",
+      "name": "iommu_logger",
+      "sha256": "391f41494998e0809fea70a470bdec232f7f3f723cab84e7b8f1f4001800835f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ipclite.ko",
+      "name": "ipclite",
+      "sha256": "66f96c73485b1c005c97d14e54c49662a53d70d645577efda6bc83069162ff2f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/kmparam.ko",
+      "name": "kmparam",
+      "sha256": "ee6df11574fe37b2b0c5410a5583ceb031fa72fd2f3643e64144bfbd2aadbc22",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/leds-qcom-flash.ko",
+      "name": "leds_qcom_flash",
+      "sha256": "0ef22c37eb70da6ab3e2a739adaa8f7aff3671bee2d107963fe88501de500b8c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/leds-qcom-lpg.ko",
+      "name": "leds_qcom_lpg",
+      "sha256": "4cb14bbcff1b30d1d28eda11c2164115165852a987d0c5a8f5cfb9fd6e9ee278",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/leds-qti-flash.ko",
+      "name": "leds_qti_flash",
+      "sha256": "005ad1a1b077c062064e5d6a4513d791d30e44b594cfc9a4df054c4e6645986e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_battery_charger"
+      ],
+      "versioned_imports": 40,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/llcc-qcom.ko",
+      "name": "llcc_qcom",
+      "sha256": "5f972355152c9082b612ff23580be0724e566f35393bc85f19f6701b04b1dd00",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/llcc_perfmon.ko",
+      "name": "llcc_perfmon",
+      "sha256": "1a93d2ed18662642ae3f810c62f0d979129fe1828516ef16b06dd1e173a4e5db",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": false
+    },
+    {
+      "path": "lib/modules/lt9611uxc.ko",
+      "name": "lt9611uxc",
+      "sha256": "6fec06ae34b090b9ad827a5271e9c0caa7c7ed8e65de9ea5eab7deb67700d3ec",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 93,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mac80211.ko",
+      "name": "mac80211",
+      "sha256": "307affcdef634396a5de23e835d9c09dae2c4c576bbb8730ddb17bd516014fcb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "cfg80211,libarc4"
+      ],
+      "versioned_imports": 317,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/max31760_fan.ko",
+      "name": "max31760_fan",
+      "sha256": "6c07002138d29f95753d5bfabe4bf164e6bb959f72727ca69e37b8ef7c6a30c3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 29,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mdt_loader.ko",
+      "name": "mdt_loader",
+      "sha256": "0eb0f99d969fcdb427e794d2358f4a81f8b03540c4d8cd4e969f27dd9fdb20cd",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem-hooks.ko",
+      "name": "mem_hooks",
+      "sha256": "bb904e72c5d04086c1e4d3a69a399d4cc6657d7bd033b325e8ea3232bb7780fc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 4,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem-offline.ko",
+      "name": "mem_offline",
+      "sha256": "572be76415492cdb3811bdff2c76716aee1c80ad57f3a4ca8b96c394b9cd3245",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss"
+      ],
+      "versioned_imports": 45,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem_buf.ko",
+      "name": "mem_buf",
+      "sha256": "a4bf79b72bccaa78282c212c380f2c5420998f0a05f757da3f5885c12716c478",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mem_buf_dev,mem_buf_msgq"
+      ],
+      "versioned_imports": 116,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem_buf_dev.ko",
+      "name": "mem_buf_dev",
+      "sha256": "e88057fad328b164870d9f7998d954c60f1490904b23baf99ef034424c0d525c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "secure_buffer,gh_rm_drv"
+      ],
+      "versioned_imports": 85,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem_buf_msgq.ko",
+      "name": "mem_buf_msgq",
+      "sha256": "a7f1f5cda67138616ca48065d4b6fce2b0f9249d8bb832265c037134d66efb7b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mem_buf_dev,gh_msgq"
+      ],
+      "versioned_imports": 42,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mem_object.ko",
+      "name": "mem_object",
+      "sha256": "ff1cec6ae366ede46d37fcd76ac3eb8ec1330763ec73e4353a5338730f82c61d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "si_core_module,qcom-scm,mem_buf_dev"
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/memlat.ko",
+      "name": "memlat",
+      "sha256": "24beaeca0519dc740f5a4063a53e04919c79d93faff2bbd432d5e5763f0e0802",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_scmi_client,cpu_phys_log_map,qcom-dcvs,qcom-pmu-lib"
+      ],
+      "versioned_imports": 61,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/memory_dump_v2.ko",
+      "name": "memory_dump_v2",
+      "sha256": "52707bdfd2670305a9f8e3397d148c9044c149580ecc8f402ac3775b58ae946e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump,qcom-scm"
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mhi.ko",
+      "name": "mhi",
+      "sha256": "9c388431482912fff2f0648e601f2c6f2a6b03ec601fdf3162492cf6452be18a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,pci-msm-drv"
+      ],
+      "versioned_imports": 113,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mhi_dev_satellite.ko",
+      "name": "mhi_dev_satellite",
+      "sha256": "cef375b6ccea75a7ccfc0db0e11b4b643ce8384d236fe64cd13976bca62a28c8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,mhi"
+      ],
+      "versioned_imports": 50,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mhi_dev_uci.ko",
+      "name": "mhi_dev_uci",
+      "sha256": "7471847706e75a5239588bc0d46b934f6883cdd14b2d9acdf698fdb4f44f4851",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mhi,qcom_ipc_logging"
+      ],
+      "versioned_imports": 52,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/minidump.ko",
+      "name": "minidump",
+      "sha256": "7507d70e45cda230b8879f5bbdc26ee1084f6dbb681f1bbf09eb93d66bd24185",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv,debug_symbol,smem,qcom_dma_heaps"
+      ],
+      "versioned_imports": 130,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/mpam.ko",
+      "name": "mpam",
+      "sha256": "62f91dc7b11a1d43f56385f6760a2caad005ccd9cc39b4a08f37c9e129651dde",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_scmi_client"
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm-mmrm.ko",
+      "name": "msm_mmrm",
+      "sha256": "ffd6805d76905aa8d772257ed44695767aa905dd7b236ecf93b98a7007cdb77b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 43,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_dma_iommu_mapping.ko",
+      "name": "msm_dma_iommu_mapping",
+      "sha256": "cbf04262fe34d0468c5f9f772514053cf160f6c1fec6755a11ef4e3da024c23c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_drm.ko",
+      "name": "msm_drm",
+      "sha256": "136d555503b57e139066a5e20d91173bb5f65f5203d610546f57900fc54318eb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,drm_display_helper,hdcp_qseecom_dlkm,gh_rm_drv,gh_irq_lend,gh_mem_notifier,gh_msgq,altmode-glink,dwc3-msm,wcd_usbss_i2c,msm_ext_display,sync_fence,msm_hw_fence,llcc-qcom,panel_event_notifier,qcom-scm,qcom_va_minidump,pinctrl-msm,spmi-pmic-arb,msm-mmrm,synx-driver,clk-qcom,crm-v2,kmparam,mem_buf_dev,qcom_iommu_util,msm_dma_iommu_mapping"
+      ],
+      "versioned_imports": 756,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_ext_display.ko",
+      "name": "msm_ext_display",
+      "sha256": "7f2d892c3e06221545767c330af20f6b5341f41dc78be00d2ddfafd951b0898d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_geni_serial.ko",
+      "name": "msm_geni_serial",
+      "sha256": "5747664d5d839a6c53f07414de05cdcb6c7027adf7533245b5a9f5090406263c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 131,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_gpi.ko",
+      "name": "msm_gpi",
+      "sha256": "309b3100276f3ff8d59f16b52a19cce3d24d235f70eef85dac93e66e25734b05",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 75,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_hw_fence.ko",
+      "name": "msm_hw_fence",
+      "sha256": "529c4bef79abad848f428efa3bcec2f0fe10cb4e51c93ecc5ec7b17fec4d6c1e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_dbl,qcom_q6v5_pas,rproc_qcom_common,gh_rm_drv,qcom-scm"
+      ],
+      "versioned_imports": 102,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_memshare.ko",
+      "name": "msm_memshare",
+      "sha256": "3807ba3a9d35fac835547419d852dfdb837bbef4b1df6834a65328a79004d5b5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "rproc_qcom_common,qmi_helpers,qcom-scm,heap_mem_ext_v01,qcom_glink"
+      ],
+      "versioned_imports": 46,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_performance.ko",
+      "name": "msm_performance",
+      "sha256": "b9e99dc66cf3c970f1493c65822c6ddcd58866b07f0b58b0102f2ce18e9bd741",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-pmu-lib,sched-walt"
+      ],
+      "versioned_imports": 52,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_qmp.ko",
+      "name": "msm_qmp",
+      "sha256": "331b9aff20fa1e96f251659469ebfe03f4bec44da82fb21ad8b59c739d776d09",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss,smem,qcom_ipc_logging"
+      ],
+      "versioned_imports": 53,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_sharedmem.ko",
+      "name": "msm_sharedmem",
+      "sha256": "ed20d16e1c3f915c0dd322d70f909c69f6f11f717908bda4b3badffb935b0ac9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_show_epoch.ko",
+      "name": "msm_show_epoch",
+      "sha256": "677173cc5fcac4c45839672e693279bba231c9a0e95fb619bcc89bf8ea2a6eff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 5,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_show_resume_irq.ko",
+      "name": "msm_show_resume_irq",
+      "sha256": "ab903799406ee1c411d246926dc6bffedbe9afa8cb4d090d50716a5573bc7fca",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 41,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/msm_sysstats.ko",
+      "name": "msm_sysstats",
+      "sha256": "3abfa3a11689d2b35a2c1673ab8911c0a16579ce031ff318a5fda4505e7c29e4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_dma_heaps"
+      ],
+      "versioned_imports": 47,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/nb7vpq904m.ko",
+      "name": "nb7vpq904m",
+      "sha256": "e62ed0e3fb6beec37a2d7a87eca0038f27d56651d31d50ef8874141b3c3d200e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "redriver"
+      ],
+      "versioned_imports": 40,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/nvmem_qcom-spmi-sdam.ko",
+      "name": "nvmem_qcom_spmi_sdam",
+      "sha256": "5b63124778fc14d04a9ecfa65fb9a75b4bc2846853eaa9976b3edfb3eaee5790",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/nvmem_qfprom.ko",
+      "name": "nvmem_qfprom",
+      "sha256": "5bb11180761cc329241dac846ddbe5a4fb280c4d1a271608a3bf79802870cf13",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/panel_event_notifier.ko",
+      "name": "panel_event_notifier",
+      "sha256": "4683e942f7bc3baee021c97f120954bb8da33eeef4d451626aef71e41b7558e9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 4,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pci-msm-drv.ko",
+      "name": "pci_msm_drv",
+      "sha256": "4c4bd4cb2147362593802789fe6380da0100921ab2a0474f51f25edf249718bb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,clk-qcom,crm-v2,pinctrl-msm,pcie-pdc,rproc_qcom_common"
+      ],
+      "versioned_imports": 196,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pcie-pdc.ko",
+      "name": "pcie_pdc",
+      "sha256": "4c9ec7897aef2c49f2c0043c9fdbbe8168f0a2e2ec10e35e32e2827f9da0bd35",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pdr_interface.ko",
+      "name": "pdr_interface",
+      "sha256": "8f8316c993d020966371a709835a85b05ab1bb9bda8121df7024fffa88e3fe4d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers,rproc_qcom_common"
+      ],
+      "versioned_imports": 37,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-generic.ko",
+      "name": "phy_generic",
+      "sha256": "eddd3efca65e1c44d1b2c0b1d5f12f9aec7820f483dcc9ecc5758da730ca111c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 33,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-msm-m31-eusb2.ko",
+      "name": "phy_msm_m31_eusb2",
+      "sha256": "90eff86a749a7f237b6f393902998d0fc3b5dda5ba3db2a5499037eb3881a34d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "repeater,qcom-scm"
+      ],
+      "versioned_imports": 45,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-msm-ssusb-qmp.ko",
+      "name": "phy_msm_ssusb_qmp",
+      "sha256": "13e76b5a5710c49baaf7e99243a7f32475d2c3fa733a9b6df5c6fbf48bc89ef6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-qcom-emu.ko",
+      "name": "phy_qcom_emu",
+      "sha256": "272e204d43ddad2b355ae5ee6ddecb0b58ba925aa12550a6c4dfed2addd6d33f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs-qmp-v4-sun.ko",
+      "name": "phy_qcom_ufs_qmp_v4_sun",
+      "sha256": "ee7a30dd485a92b45dab198dd86deef5140bf1156420736aadf75867c3d4b7de",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "phy-qcom-ufs"
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs-qrbtc-sdm845.ko",
+      "name": "phy_qcom_ufs_qrbtc_sdm845",
+      "sha256": "9a58ccb01c9067bbe5bad42bdda1e92d36cfd38a1e3f2a932daafc65b66e2d40",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "phy-qcom-ufs"
+      ],
+      "versioned_imports": 20,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs.ko",
+      "name": "phy_qcom_ufs",
+      "sha256": "75e3806935b4368401585a62a2dc3c8e4e0a4520eba7593acf4e2df37c9a9add",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-kera.ko",
+      "name": "pinctrl_kera",
+      "sha256": "0f9d898b7e7ad2713d2c8e0c3838515c21866f95029ed5e50e662006131485de",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "pinctrl-msm"
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-msm.ko",
+      "name": "pinctrl_msm",
+      "sha256": "aa4bdf6655148f45f9e6eeb545e3f8b968d05ae70223c8bd55d7132aa79ca526",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 99,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-spmi-gpio.ko",
+      "name": "pinctrl_spmi_gpio",
+      "sha256": "883655b2ed4d317eed12ff9ee8e010f0a809324a585ea112715179428bba1706",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 39,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-spmi-mpp.ko",
+      "name": "pinctrl_spmi_mpp",
+      "sha256": "a7efbe88b616c85de44280da12ba986c01e9b482a943335a9a5255f5007f8e3f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-sun.ko",
+      "name": "pinctrl_sun",
+      "sha256": "c43abdaad4fa98bbbeaef9fe4d16efc16316e14a1f64cdfe9f58c90dc071b2e8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "pinctrl-msm"
+      ],
+      "versioned_imports": 7,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pinctrl-tuna.ko",
+      "name": "pinctrl_tuna",
+      "sha256": "4080e707cabc4c7c78f40c05271b7c7a16b9ab4e87f38468fe8ceb4b4f4d5c2a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "pinctrl-msm"
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/platform_mpam.ko",
+      "name": "platform_mpam",
+      "sha256": "fd012d550771f4f3e3597387bb5ec0e0c7558989766cd4e54f12461f792e5746",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mpam"
+      ],
+      "versioned_imports": 29,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pm8941-pwrkey.ko",
+      "name": "pm8941_pwrkey",
+      "sha256": "debf5b4d31ff66cbc2e9e343eb0adb64806281d764a67051b9a1b34b978fc78c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "kmparam"
+      ],
+      "versioned_imports": 45,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pm_debug.ko",
+      "name": "pm_debug",
+      "sha256": "171bef2b9d9db4c4db8450cbc90062bf3dda24ffe72c08bf912bf67004e74faf",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pmic-glink-debug.ko",
+      "name": "pmic_glink_debug",
+      "sha256": "1b06c8c71717ad5459ad3cf3f10d2af9cf249a39a5cad35d136b3508aadc7c91",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink"
+      ],
+      "versioned_imports": 29,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/pmic-pon-log.ko",
+      "name": "pmic_pon_log",
+      "sha256": "aa26a165da6d11850261e81c2c56c86ffb9ddb1e038b6ed81c85b275fd4e50f7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/proxy-consumer.ko",
+      "name": "proxy_consumer",
+      "sha256": "b6b967ed844aaf35f5b6ed6489092e1db77ca5f3c37f4938bc2d0c460fdf71f2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/q2spi-geni.ko",
+      "name": "q2spi_geni",
+      "sha256": "89666198cf3809d00b3aba926de05fc7babc34fb0c3a8a3a276e776d41dea3e4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,msm_gpi"
+      ],
+      "versioned_imports": 144,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-amoled-regulator.ko",
+      "name": "qcom_amoled_regulator",
+      "sha256": "9cb66ebd6e703074b6245a6ea5bc6e9cefb5cf66dce12a4304e7ca616668a8aa",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "debug-regulator"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-cpufreq-thermal.ko",
+      "name": "qcom_cpufreq_thermal",
+      "sha256": "266764131feeb817d3d246af375c3544338f373ba725ba86a24460a6546c5f27",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-dcvs.ko",
+      "name": "qcom_dcvs",
+      "sha256": "3f432bf46c32b64f4b49fe925ec40e275f6aabaee80d3cbd9c1a3d55f87e0bce",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "dcvs_fp"
+      ],
+      "versioned_imports": 68,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-dload-mode.ko",
+      "name": "qcom_dload_mode",
+      "sha256": "90d34299752012f5f85e48a34a2cda72d15a45fe870bd2292207908835f3e922",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump,qcom-scm,qcom_wdt_core,kmparam"
+      ],
+      "versioned_imports": 36,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-i2c-pmic.ko",
+      "name": "qcom_i2c_pmic",
+      "sha256": "db899968347acccf69b777747d29f3071caa44d4111a3f006333740692a04a8c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti-regmap-debugfs"
+      ],
+      "versioned_imports": 39,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-ipcc.ko",
+      "name": "qcom_ipcc",
+      "sha256": "92548485586eefcc83b49ccf01a8cd0e2f943d674fd6cd97cb23fc254a5e7e54",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 28,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-pdc.ko",
+      "name": "qcom_pdc",
+      "sha256": "63d79837632349fc8ed4c42708b4afc9a64d128b6fab0669ca02f64c0d06c9a8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,qcom-scm"
+      ],
+      "versioned_imports": 45,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-pmu-lib.ko",
+      "name": "qcom_pmu_lib",
+      "sha256": "47dae526c5da28f3835048eed49b4ed2bcf56e74170abd2e8b5140ec3858e255",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "cpu_phys_log_map,qcom_scmi_client,qcom_llcc_pmu"
+      ],
+      "versioned_imports": 58,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-pon.ko",
+      "name": "qcom_pon",
+      "sha256": "f084da833cb12fd1d26ba5955c0887793e747182ece30ba2c0c225ac29a05a37",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "reboot-mode"
+      ],
+      "versioned_imports": 11,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-reboot-reason.ko",
+      "name": "qcom_reboot_reason",
+      "sha256": "4442ac1b50f53e36dd32000287d034021627c8cc4c8dd67fe7ea46dcc4344a42",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-rng.ko",
+      "name": "qcom_rng",
+      "sha256": "3eead57c9a91434061e999daca28bd6229d03453724e046601c257d43ee97355",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-scm.ko",
+      "name": "qcom_scm",
+      "sha256": "df48b9701b5744facc9852acba1ae32471a84a8cd2b5e197d91033ee6b33c20e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gh_rm_drv"
+      ],
+      "versioned_imports": 82,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-spmi-adc5-gen3.ko",
+      "name": "qcom_spmi_adc5_gen3",
+      "sha256": "ee118e192dcd11f88aa48270f23b8da8dcaca11a6ff70f211b6029ea25e19315",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-vadc-common,qcom_ipc_logging"
+      ],
+      "versioned_imports": 55,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-spmi-pmic.ko",
+      "name": "qcom_spmi_pmic",
+      "sha256": "ffc769d4fb074553bd83d1d3f22adf673477c11ef5db4f1443aaa23b73db82bb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti-regmap-debugfs"
+      ],
+      "versioned_imports": 19,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-spmi-temp-alarm.ko",
+      "name": "qcom_spmi_temp_alarm",
+      "sha256": "6f35b12e29e9ed01d8cebc575fd02cb5c00631a5ac9e44ee5f8972491a533c72",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom-vadc-common.ko",
+      "name": "qcom_vadc_common",
+      "sha256": "bd33928d61b7998067d288f90e056053a1708def0d3c9ef21228468732f704b6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 2,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_aoss.ko",
+      "name": "qcom_aoss",
+      "sha256": "9097181c8d3f1a22762dc556d6225d07f2458476dcadbdb9c9f20e8a7d71baa2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 54,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_cpu_vendor_hooks.ko",
+      "name": "qcom_cpu_vendor_hooks",
+      "sha256": "2e85ce61e25f4a015f1489ee8ff8a36ee9c47a28a379a96fa348d339ca486e21",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_cpucp.ko",
+      "name": "qcom_cpucp",
+      "sha256": "3318b116f0b2a318db057cfd079dc2eb5fa76ab72e1ec1b26c11ae8fc6955f7a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_cpuss_sleep_stats_v4.ko",
+      "name": "qcom_cpuss_sleep_stats_v4",
+      "sha256": "77c824ba42f4d2b35747d78c7a4a4336de3e9b296bbd35206ba50070254571aa",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_dma_heaps.ko",
+      "name": "qcom_dma_heaps",
+      "sha256": "b47692443bf22b31ac0d491d08995fbe7be4a644a3df4f6435016a136b7daac4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mem_buf_dev,msm_dma_iommu_mapping,secure_buffer,qcom-scm"
+      ],
+      "versioned_imports": 110,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_dynamic_ramoops.ko",
+      "name": "qcom_dynamic_ramoops",
+      "sha256": "72e4445a73237d72770bdb6a495dddef99a793429c5096068d422c47bc3a3c15",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 11,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_edac.ko",
+      "name": "qcom_edac",
+      "sha256": "0ef3f6b253f206c2e27d369c93276a6e2303fc5af152d934c6ce23e9b28dab22",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_glink.ko",
+      "name": "qcom_glink",
+      "sha256": "51767423479205ef1d01574438d4679af547e50ca78d1bdf4c3e1f20adaca9b9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 79,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_glink_smem.ko",
+      "name": "qcom_glink_smem",
+      "sha256": "741d8ea66340f11b4de23a5416704e9338338924c04bd3cc8cd34e6f4646fac1",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem,qcom_glink,qcom_ipc_logging"
+      ],
+      "versioned_imports": 33,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_glink_spss.ko",
+      "name": "qcom_glink_spss",
+      "sha256": "ddac87102ef1198a5e564af0873a77eba04c584c33dd6cec1cc2dad75d943a64",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem,qcom_glink"
+      ],
+      "versioned_imports": 39,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_hwspinlock.ko",
+      "name": "qcom_hwspinlock",
+      "sha256": "ae3a8bcf02338b0059ddb11af13aece36574406f2e6346b969a3648b095c1ddc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_ice.ko",
+      "name": "qcom_ice",
+      "sha256": "b92c6ce27e0752740e49a94b9687dba233ba4a1c2781965881573413f6aec89e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 42,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_iommu_debug.ko",
+      "name": "qcom_iommu_debug",
+      "sha256": "53fab8f41da9a5b7e4e2f8c531200e8a99d52d9d15c8ef1e1ff2fa77f3429ab6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_iommu_util"
+      ],
+      "versioned_imports": 84,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_iommu_util.ko",
+      "name": "qcom_iommu_util",
+      "sha256": "2760c2263bcc326eafc3b6fb59c025079c404cdad081b1f02d7a9f4a7f0c0269",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 122,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_ipc_logging.ko",
+      "name": "qcom_ipc_logging",
+      "sha256": "30b34354e151aec699e878236a302844488d6dc5afd98b5a28860d3003ccedff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump"
+      ],
+      "versioned_imports": 49,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_llcc_pmu.ko",
+      "name": "qcom_llcc_pmu",
+      "sha256": "862db4e9a5b015a356b80f185fec0266408d458fb779fb95aaf2498631af331a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "cpu_phys_log_map"
+      ],
+      "versioned_imports": 28,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_logbuf_boot_log.ko",
+      "name": "qcom_logbuf_boot_log",
+      "sha256": "7d5747bac58357e5de043ca72a47ae6a15debc7cf1e3727d01a2042af9478e12",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump"
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "name": "qcom_logbuf_vendor_hooks",
+      "sha256": "510bb4e5d310ab37552f3a0fe7a73137b0453891ec734bc8643e8a57abdc3e9c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump,debug_symbol"
+      ],
+      "versioned_imports": 8,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_lpm.ko",
+      "name": "qcom_lpm",
+      "sha256": "97aa448d959212821535ccf945658f056acd0b94f9b3dd3a4e9e0a40ebff0a48",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "sched-walt"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_pil_info.ko",
+      "name": "qcom_pil_info",
+      "sha256": "87818a4480dc7b1a329ed8448691f4edc0cbfef9f5833fc18dcdafbf850fa00b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 17,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_q6v5.ko",
+      "name": "qcom_q6v5",
+      "sha256": "9dc56f778754f37bf36beb2ed9096297a4929fd0f2b2694070613e530ac1c9f9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss,qcom_sysmon,smem,rproc_qcom_common"
+      ],
+      "versioned_imports": 37,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_q6v5_pas.ko",
+      "name": "qcom_q6v5_pas",
+      "sha256": "c6a7f57d04da5d0eda00f566c45a8897db16cac060b61025d82dbbd09516e142",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm,qcom_q6v5,rproc_qcom_common,qcom_sysmon,qcom_ramdump,mdt_loader,qcom_pil_info"
+      ],
+      "versioned_imports": 121,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_ramdump.ko",
+      "name": "qcom_ramdump",
+      "sha256": "f9041eeb593fb4a3eab20b547ac7dbfaaad1a1f154ba0e9d8a362e3bf2f0c19d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 34,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_rpmh.ko",
+      "name": "qcom_rpmh",
+      "sha256": "846a3355b3d5f6450b0575cdcd52fa3013dcde3159fc213255d59f7f4a089f98",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,crm-v2,cmd-db"
+      ],
+      "versioned_imports": 93,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_scmi_client.ko",
+      "name": "qcom_scmi_client",
+      "sha256": "7d646f1e6c787544c7b080f7dd70efb1a8661463b271751d690b3aca0bace985",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 3,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_scmi_vendor.ko",
+      "name": "qcom_scmi_vendor",
+      "sha256": "0c6fff5039dfb032ad1cb24cf75041f0280da7887eca08e26326ecbfae8caad6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_smd.ko",
+      "name": "qcom_smd",
+      "sha256": "023358ac100904168d9c5250e3af4b27ae102897f4d2863c61c4839a0da07679",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem"
+      ],
+      "versioned_imports": 62,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_spss.ko",
+      "name": "qcom_spss",
+      "sha256": "111952bec0c742acfd1119a8bdc91e2ab70f559134da6cdcb7451acafadc2592",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss,qcom-scm,rproc_qcom_common,qcom_sysmon,mdt_loader,qcom_glink_spss,qcom_glink"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_stats.ko",
+      "name": "qcom_stats",
+      "sha256": "98f2e8db6c8ef7330f854ceb4fe2cc9491e80cb19d7908e02d40f54ac779548a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss,smem,clk-qcom"
+      ],
+      "versioned_imports": 53,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_sysmon.ko",
+      "name": "qcom_sysmon",
+      "sha256": "04450ac6d376145bc9cce3eb11f0291a0410bc4b4e2a522e4d95ff5d4ffbca45",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers,rproc_qcom_common"
+      ],
+      "versioned_imports": 53,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_tsens.ko",
+      "name": "qcom_tsens",
+      "sha256": "56ae131a27b5e65f6a8e1196fcb41c928979798e5fb2a9dda753edd08258ed93",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 52,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_va_minidump.ko",
+      "name": "qcom_va_minidump",
+      "sha256": "0ee5296a195d73aacd878703429dcddf3bd101eb9e0c8fc31011b1962a54dbff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump"
+      ],
+      "versioned_imports": 47,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qcom_wdt_core.ko",
+      "name": "qcom_wdt_core",
+      "sha256": "76851fa5c5ece3079602acaf889d2b9bdf6761badcd80a26c0c5ecd305328002",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "minidump,qcom-scm,zte_ramdisk_reboot"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qmi_helpers.ko",
+      "name": "qmi_helpers",
+      "sha256": "071f79001a31e4508d498e8b54ee2c668d903fd613646276feca199d0f089f86",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qnoc-qos.ko",
+      "name": "qnoc_qos",
+      "sha256": "b7e171ccf6fe97b950e0f51143860d1b5094b9fd59b873193a00dad4afced69b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 2,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qnoc-sun.ko",
+      "name": "qnoc_sun",
+      "sha256": "b25900d69d4a35cb0d51952c9247944003400bbb9c939b63e1c55d484f4cb4bb",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "icc-rpmh,qnoc-qos"
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qnoc-tuna.ko",
+      "name": "qnoc_tuna",
+      "sha256": "40199be1ee78d39296f40e92c71c87edfb22105720d7051e40eed0d074245af7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "icc-rpmh,qnoc-qos"
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qrtr-gunyah.ko",
+      "name": "qrtr_gunyah",
+      "sha256": "c607c2e756d59294b69dc7e0832f25300f5b3685791d3882da492ebe75727fac",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "gunyah_loader,gh_dbl,qrtr,gh_rm_drv,qcom-scm"
+      ],
+      "versioned_imports": 57,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qrtr-mhi.ko",
+      "name": "qrtr_mhi",
+      "sha256": "b0992476b48ebb02a9ddc88625a651be6ae854d066b8e31443d2478177d06a10",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "mhi,qrtr"
+      ],
+      "versioned_imports": 25,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qrtr-smd.ko",
+      "name": "qrtr_smd",
+      "sha256": "8a81f437b006a22d6067311490d20082ca414b8df962906e77ee80c6f6e13b74",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qrtr,qcom_glink"
+      ],
+      "versioned_imports": 22,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qrtr-tun.ko",
+      "name": "qrtr_tun",
+      "sha256": "a3a5f9ff1376b9f4b241106caaf7f8d967c00db26a7b2ac83447cb40e4ff5565",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qrtr"
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qrtr.ko",
+      "name": "qrtr",
+      "sha256": "dd0a69eb342d72c5764b5a53fe3cb00ccef38202f7d8f380ac83b838469aa1f7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 143,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qsee_ipc_irq_bridge.ko",
+      "name": "qsee_ipc_irq_bridge",
+      "sha256": "e8b672c63ac231ce10fb4b4fbeaa80ecd58583aec8d37959d26902460d475dff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,rproc_qcom_common"
+      ],
+      "versioned_imports": 36,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qseecom_proxy.ko",
+      "name": "qseecom_proxy",
+      "sha256": "d02ead25333ade78309f014f2e9dac07a1929cacbcc85ff9aae4a301aab6095e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 3,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti-fixed-regulator.ko",
+      "name": "qti_fixed_regulator",
+      "sha256": "cc2b7cb84936d228ebb4b7418709b55fd7d16f5336d58ed9c2d850887a3e070e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "proxy-consumer,debug-regulator"
+      ],
+      "versioned_imports": 25,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti-glink-adc.ko",
+      "name": "qti_glink_adc",
+      "sha256": "727797db36d9c1691f0039cc05c9ea07d71ee9111649c29b697300e05abad8e2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti-ocp-notifier.ko",
+      "name": "qti_ocp_notifier",
+      "sha256": "220990c1cb6b77d972135e1e94aec37af361d754db347d384eaca1103332010e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti-regmap-debugfs.ko",
+      "name": "qti_regmap_debugfs",
+      "sha256": "6100e382868bdeb1e863504dfd673c0889386e37fdc3d3e1ead6e66d305e0c9f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_amoled_ecm.ko",
+      "name": "qti_amoled_ecm",
+      "sha256": "474baa1411a4aab584134b54db8cae08b8a3cd375df02236b0f2ecb2b55f7816",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "hwmon,panel_event_notifier"
+      ],
+      "versioned_imports": 39,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_battery_charger.ko",
+      "name": "qti_battery_charger",
+      "sha256": "46f499bd9898defefba228819a2974d7b01d5134ed0a9bccbcdf20a76e911394",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink,panel_event_notifier,zte_power_supply,zte_misc"
+      ],
+      "versioned_imports": 79,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_battery_debug.ko",
+      "name": "qti_battery_debug",
+      "sha256": "36b4272a7738b3b4d5d937968cfd4a002bcd9bb9fda3ddff467bf878c01dc5d2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink"
+      ],
+      "versioned_imports": 32,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_cpufreq_cdev.ko",
+      "name": "qti_cpufreq_cdev",
+      "sha256": "70ed3187054119474213e5360bff635679d16bd8ab18e5a35fb262c11e179683",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 28,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_devfreq_cdev.ko",
+      "name": "qti_devfreq_cdev",
+      "sha256": "17a962012d3d0565d97e33d3729aef2f0ce6f328c1420dd375a78a16da5ad7d7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 22,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_pmic_glink.ko",
+      "name": "qti_pmic_glink",
+      "sha256": "635c93c5a50ff1a0d3b6c983e2551079293a64f44e0600837fb56fa17e94ca1c",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,rproc_qcom_common,pdr_interface"
+      ],
+      "versioned_imports": 60,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_qmi_cdev.ko",
+      "name": "qti_qmi_cdev",
+      "sha256": "23573f7ce4386390e70d48da03c595594b2e6728d57751587dd327a69dad0cb3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers"
+      ],
+      "versioned_imports": 36,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_qmi_sensor_v2.ko",
+      "name": "qti_qmi_sensor_v2",
+      "sha256": "0b393ded42e381aed73ca7cb7f3fdb34901b6a9b7ad2ea1aa4d95978fa2ee00a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers"
+      ],
+      "versioned_imports": 40,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_thermal_vendor_hooks.ko",
+      "name": "qti_thermal_vendor_hooks",
+      "sha256": "5f2c5fd66787886542f1fe7dca188d8f5e28694eb3b3443b419c4de70a550805",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/qti_userspace_cdev.ko",
+      "name": "qti_userspace_cdev",
+      "sha256": "999a7457e5458396b52ba86f86ec4754632420d889c1424dc9cfb0f41485f9e7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/rdbg.ko",
+      "name": "rdbg",
+      "sha256": "060c51ff719d7b0dc2f65cb176a66b439a75c73e6304e461cc689ab0b25b1d05",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem"
+      ],
+      "versioned_imports": 37,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/reboot-mode.ko",
+      "name": "reboot_mode",
+      "sha256": "44e51ec1c9e8db487279d24aa75338785fd80e53d6b46fc71cc7b5c3555769bf",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/redriver.ko",
+      "name": "redriver",
+      "sha256": "f7e93a457ceb00ccce07b583c14877cb774d6ae093fbcf8936799975cec52095",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 8,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/repeater-qti-pmic-eusb2.ko",
+      "name": "repeater_qti_pmic_eusb2",
+      "sha256": "cce60bab454f6649481c2d1a40d5b0ec7f45a5dfc06dd4efc04869ce1d792a12",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "repeater"
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/repeater.ko",
+      "name": "repeater",
+      "sha256": "087aab1e2ad28f0a6e2dc0cee63012562ce2bd0fd4138aee456ae93450ccedb5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/rpmh-regulator.ko",
+      "name": "rpmh_regulator",
+      "sha256": "663eae787bd2a40efccf232902efbc51e19bc8f23ec816497b164d625ed07c1a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,cmd-db,proxy-consumer,debug-regulator,qcom_rpmh"
+      ],
+      "versioned_imports": 36,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/rproc_qcom_common.ko",
+      "name": "rproc_qcom_common",
+      "sha256": "de7adcb2cc16942fcac7e30142a77273e7a7c753699902d3dcd75f7edf9e8424",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem,qcom_glink_smem,qcom_glink,qcom_smd"
+      ],
+      "versioned_imports": 77,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/rtc-pm8xxx.ko",
+      "name": "rtc_pm8xxx",
+      "sha256": "a64a0b6c1026af081ab04195b2730c416dd38b656c8aa82d1a44463ba9d3bf36",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 29,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sched-walt.ko",
+      "name": "sched_walt",
+      "sha256": "d2a03e8cd1d7e6965e0bd4a37fd4d7de490aff555eebf762db8507bd68135056",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "socinfo"
+      ],
+      "versioned_imports": 299,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sdhci-msm.ko",
+      "name": "sdhci_msm",
+      "sha256": "6c9ab72eca5a4025df184a95b2d65dea6d03802fc3481c7f9aa5148734965f19",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,clk-qcom,cqhci,qcom_ice,pinctrl-msm"
+      ],
+      "versioned_imports": 154,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/secure_buffer.ko",
+      "name": "secure_buffer",
+      "sha256": "65d55ae67dacb1dc9edfa9b0517d7a0cc00675dff41e975f37020af8ef0ebdda",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 38,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sg.ko",
+      "name": "sg",
+      "sha256": "ce73c0aec7d1676dd2f0dc5dda675348f1a6d397123c780db9d457f8d09b6e2e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [
+        "70A60EA9325659BB2F883EB"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 96,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/si_core_module.ko",
+      "name": "si_core_module",
+      "sha256": "cb65dad0c0f7156ea9207b69a0d9f3e1ae7603855782004eeae6316c5c5da180",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom-scm"
+      ],
+      "versioned_imports": 53,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/slim-qcom-ngd-ctrl.ko",
+      "name": "slim_qcom_ngd_ctrl",
+      "sha256": "73033a0b06120adea93480f42d2c4c0a6808812277e3cd4a22897e55317fa3e9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,rproc_qcom_common,pdr_interface,slimbus,qmi_helpers"
+      ],
+      "versioned_imports": 119,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/slimbus.ko",
+      "name": "slimbus",
+      "sha256": "37e144f3d88dbea7ad4bb8c3031c886a1157fc8b458637dea01ea3f6dfae54a3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 50,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/smcinvoke_dlkm.ko",
+      "name": "smcinvoke_dlkm",
+      "sha256": "edd0c4e67ad59acd99abc691f6459f88ceabfe6a6386579e0333ad16e8986e46",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qseecom_proxy,qcom-scm,si_core_module,mem_object"
+      ],
+      "versioned_imports": 64,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/smem.ko",
+      "name": "smem",
+      "sha256": "1da6e50339cde2b5dfab285b25c7b1c8856922e5dab4497698b0b7029e177cc2",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 21,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/smp2p.ko",
+      "name": "smp2p",
+      "sha256": "825e99b6e88e6c840b159fe324bac04831b2c59d95ad5586887ae17d9788cfdd",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,smem"
+      ],
+      "versioned_imports": 54,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/smp2p_sleepstate.ko",
+      "name": "smp2p_sleepstate",
+      "sha256": "733b703186c7457d5a69f37a1718b4f54680a42f5f1126126d8da2730b0a80b9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 15,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/snd-soc-hdmi-codec.ko",
+      "name": "snd_soc_hdmi_codec",
+      "sha256": "2da2e097941d53f634878f99aec7bc2b0ab7872793f1063132a03cd9be73a99d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 23,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/snd-usb-audio-qmi.ko",
+      "name": "snd_usb_audio_qmi",
+      "sha256": "de1f76b9f1038f8d820ee497740e55d06a6002f61fb1747d8edb9fe818388702",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qmi_helpers,qcom_ipc_logging,xhci-sideband"
+      ],
+      "versioned_imports": 67,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/socinfo.ko",
+      "name": "socinfo",
+      "sha256": "fadcd36d70e9d613a7e9dc3861aa233b21f807e800d01448a58d56f936e48812",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem"
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/spi-msm-geni.ko",
+      "name": "spi_msm_geni",
+      "sha256": "35432044a48486e48ffe404e9e3ef0222b00360d8a6a946a900884977650b28d",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 103,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/spmi-pmic-arb-debug.ko",
+      "name": "spmi_pmic_arb_debug",
+      "sha256": "5cfd9253901fad60b9aef1cf0c4d767f358aa32bbb230180da48f328d2766059",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 30,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/spmi-pmic-arb.ko",
+      "name": "spmi_pmic_arb",
+      "sha256": "ea9fa991bb3de94864fc4c029cdad284c3998cdf6d672b3028036451efeda7a9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 51,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sps_drv.ko",
+      "name": "sps_drv",
+      "sha256": "7f3afc1f478cf4819afbe37582a53e236fb78581ac6a8936673dae731f3b86ff",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging"
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/st54jese.ko",
+      "name": "st54jese",
+      "sha256": "4a478668db634543c2851f02b96c2d3bf43bc231dfbedfd90276e4633a442bf0",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 51,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/st54jnfc.ko",
+      "name": "st54jnfc",
+      "sha256": "7649a057f8a73ff6eacea870aba83e5e4c5634de79430359fd3239cf42a3718e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [
+        "8C13DCCE50B5E51784F2943"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 56,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stm_console.ko",
+      "name": "stm_console",
+      "sha256": "816fd97e745037c2a6083e4e3741449869944942bb535d67ff605f34ad07c2c3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "stm_core"
+      ],
+      "versioned_imports": 6,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stm_core.ko",
+      "name": "stm_core",
+      "sha256": "15b053a31f5a971197f54a8d2a96614da0fb863f84a1fe1b7d4644343736959a",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 73,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stm_ftrace.ko",
+      "name": "stm_ftrace",
+      "sha256": "dcb26981834f8ce623abf601327ace922ebb6d1e523c5228718be7c0bd4649ab",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "stm_core"
+      ],
+      "versioned_imports": 10,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stm_heartbeat.ko",
+      "name": "stm_heartbeat",
+      "sha256": "e2cd260dd361822f43c077f83f0cfc174f63a143ca7cb00591a159c3c02841f8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "stm_core"
+      ],
+      "versioned_imports": 11,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stm_p_ost.ko",
+      "name": "stm_p_ost",
+      "sha256": "e839f92d769c8cb9f0ac249049aa8179334afa1f0fea76f47d8ff70bbafcaf5b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "stm_core"
+      ],
+      "versioned_imports": 15,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/stub-regulator.ko",
+      "name": "stub_regulator",
+      "sha256": "da02d91388e9ae72a72e31bc31dc748468bc0c69f133ab5de22bc80c730284dd",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "debug-regulator"
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sync_fence.ko",
+      "name": "sync_fence",
+      "sha256": "ed3ba6cd778f04574c7c5a11cd0975634991bc5b4a0d3eb88e2b90d06f25cc94",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 55,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/synx-driver.ko",
+      "name": "synx_driver",
+      "sha256": "c79945b4471b8006ffb50915117cbb0ae5f58bf4cba47203fffd420039a6ebfe",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "rproc_qcom_common,msm_hw_fence,ipclite"
+      ],
+      "versioned_imports": 97,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sys_pm_vx.ko",
+      "name": "sys_pm_vx",
+      "sha256": "6c5e5f9b681e73e311e7cc47205a265f31ffcb5b05301cef6bf3394bb64b83d7",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_aoss,qcom_stats"
+      ],
+      "versioned_imports": 40,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/sysmon_subsystem_stats.ko",
+      "name": "sysmon_subsystem_stats",
+      "sha256": "95ecf7d4946874bbfe016b542305be3f964f5bd8d136ecc05cfd1fd42190d5cc",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "smem"
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/tcsrcc-sun.ko",
+      "name": "tcsrcc_sun",
+      "sha256": "5a11fca8fda39c997a16100c7865f5eb59f96bbffc240c9e70cfe55b32f2da72",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 9,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/tcsrcc-tuna.ko",
+      "name": "tcsrcc_tuna",
+      "sha256": "c8309a751ffe67474615a0fcfe748c5f795928b4787d2a81afea0f1c811225a8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/thermal_config.ko",
+      "name": "thermal_config",
+      "sha256": "d27c5481c03dcdb0f10a013b0363b81706296b5d31d66fffcf8cdc3ebfe12694",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/thermal_pause.ko",
+      "name": "thermal_pause",
+      "sha256": "0a1082602ade6f90882279dada389b033d47716f2044117965bc68ff8f54faba",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "sched-walt"
+      ],
+      "versioned_imports": 34,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/tmecom-intf.ko",
+      "name": "tmecom_intf",
+      "sha256": "926d1c05cf6e6e3f6567c7adf00161619cd4d28a502131aef425b7d103a440ad",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 26,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/tz_log_dlkm.ko",
+      "name": "tz_log_dlkm",
+      "sha256": "8c1976888dc22784ef782709b424b434889d20e84f759a2dfdc7d48a8ae70ac8",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "tmecom-intf,qcom-scm"
+      ],
+      "versioned_imports": 35,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ucsi_qti_glink.ko",
+      "name": "ucsi_qti_glink",
+      "sha256": "09262d3e471985c636653f78be8dab0bafda37a22bd213819cdad26084ed03a4",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti_pmic_glink,qcom_ipc_logging"
+      ],
+      "versioned_imports": 46,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ufs-qcom.ko",
+      "name": "ufs_qcom",
+      "sha256": "7169fdca54656016e4311d61b8398f93791224dc4073668a098baece3e6aa43e",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "sched-walt,minidump,qcom_ipc_logging,phy-qcom-ufs,ufshcd-crypto-qti,clk-qcom,qcom_ice"
+      ],
+      "versioned_imports": 211,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/ufshcd-crypto-qti.ko",
+      "name": "ufshcd_crypto_qti",
+      "sha256": "73e852d37449e5d088d6d80f3a7995af7a292d6b3718e1230eb4ee7cc13b1c30",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ice"
+      ],
+      "versioned_imports": 15,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/usb_f_ccid.ko",
+      "name": "usb_f_ccid",
+      "sha256": "7d3c8ce7604a6a04985db64f25912271c1a68118084e245a5bfd95ae91f9eda5",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 51,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/usb_f_cdev.ko",
+      "name": "usb_f_cdev",
+      "sha256": "914373f83a2dcbb79e6c0847b81afa5e03f1269ee788f4418c1d1a8de4c5c889",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 75,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/usb_f_gsi.ko",
+      "name": "usb_f_gsi",
+      "sha256": "fff644ac0fec0ed2e7c4d3c13873e38aa33ca6b368c80c09927dc803e801d531",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,dwc3-msm"
+      ],
+      "versioned_imports": 109,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/usb_f_qdss.ko",
+      "name": "usb_f_qdss",
+      "sha256": "3439f41d9dc6a5e73a767b614ed4224b60521cef83a3902ee6a5884ad4c58f26",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_ipc_logging,dwc3-msm"
+      ],
+      "versioned_imports": 53,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/videocc-sun.ko",
+      "name": "videocc_sun",
+      "sha256": "5ce1be8e38c7b93e96b373139bfae4fd79ff6dc4f594153fde7a58b00b09aca1",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/videocc-tuna.ko",
+      "name": "videocc_tuna",
+      "sha256": "04f1c5b8622670874fa3970fd5cf29cc6307c4a0900fa62ea2c961a2d0d3fdd6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "clk-qcom"
+      ],
+      "versioned_imports": 22,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/wcd_usbss_i2c.ko",
+      "name": "wcd_usbss_i2c",
+      "sha256": "7e3d59504fed32ce467c1d1e4911c3b8cc46d67082352516d18d0185fe7ef8ad",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qti-regmap-debugfs,ucsi_qti_glink"
+      ],
+      "versioned_imports": 65,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/xhci-sideband.ko",
+      "name": "xhci_sideband",
+      "sha256": "9162f14f0e186fc4fa018f1531b020ea6b297b3b9aee5e47715758cb5b41f0a9",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zram.ko",
+      "name": "zram",
+      "sha256": "91d0ff3d86d99c310d0734cb6ed51d062036f83bf95f333c00c22241e5f8eb51",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "zsmalloc"
+      ],
+      "versioned_imports": 108,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zsmalloc.ko",
+      "name": "zsmalloc",
+      "sha256": "41e4f238c2ae060f0ceffa49882e76e4e59e60caa82e9d7bb26c38ecb1a48b3f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 43,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_fingerprint.ko",
+      "name": "zte_fingerprint",
+      "sha256": "66e71a86ead17d5cfa5e716baef7a8d805586a8ea2feaa85f37c7831c71d2e39",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 57,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_imem_info.ko",
+      "name": "zte_imem_info",
+      "sha256": "b1de3ea658b398e8ae570c4ed59b4d88e88a199fc1e35c05bbd24ae8b0059bdd",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 12,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_ir.ko",
+      "name": "zte_ir",
+      "sha256": "3cac0ba805c2f06e8b6172e071a7be919f79fe4984975f109af714e9897d701f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 27,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_misc.ko",
+      "name": "zte_misc",
+      "sha256": "cd28f31ec770e759b315f4d5383794ffb2a0a1bacc65d102462ad72e612df5b3",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 24,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_power_supply.ko",
+      "name": "zte_power_supply",
+      "sha256": "7e7d47d8b2407962a7f6a8352307a5ce3a7820f8ec477b71741cc62e59782e34",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 65,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_ramdisk_reboot.ko",
+      "name": "zte_ramdisk_reboot",
+      "sha256": "36918283e0e8464f14680f4e7d05ec5c14c4c92a983b8e8db83398f01c4a0bef",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 16,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_reboot_ext.ko",
+      "name": "zte_reboot_ext",
+      "sha256": "1b67959b58b5156faf5556c58f2f2e175c035461a28655ae9babd6293765f0b6",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "qcom_q6v5"
+      ],
+      "versioned_imports": 32,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_rpcom.ko",
+      "name": "zte_rpcom",
+      "sha256": "9e3eabb92dc513818980279fd7521b93bd20aabdf734f46ff8816e3a860a2b53",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 25,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_sensor.ko",
+      "name": "zte_sensor",
+      "sha256": "4218d61db7c614480f4ff4fdf4f6a8b6a0db226e487fe968918733c55a357256",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [
+        "9A165DEBB23187F36D3857C"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 18,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_stats_info.ko",
+      "name": "zte_stats_info",
+      "sha256": "8e9ca4edf3f6460edc428e984ddc989949b34bf305223bc1e28e0b2bc2e9aaac",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 44,
+      "name_observed_loaded": true
+    },
+    {
+      "path": "lib/modules/zte_tpd.ko",
+      "name": "zte_tpd",
+      "sha256": "6a628058a6fa93d88a3895cb8855251eaae4d3073d6484320da9f14de589eded",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "srcversion": [],
+      "depends": [
+        "panel_event_notifier"
+      ],
+      "versioned_imports": 124,
+      "name_observed_loaded": true
+    }
+  ],
+  "limits": [
+    "Loaded name matching is not proof of loaded bytes or runtime integrity.",
+    "Import CRC agreement between modules is not agreement with kernel export CRCs.",
+    "Kernel export ABI, signature acceptance and replacement kernel compatibility remain unverified."
+  ],
+  "validation": {
+    "kmod_crc_comparisons": 306,
+    "mismatches": 0
+  },
+  "kernel_config_observations": {
+    "CONFIG_MODVERSIONS": "y",
+    "CONFIG_MODULE_FORCE_LOAD": "not set",
+    "CONFIG_MODULE_SIG": "y",
+    "CONFIG_MODULE_SIG_FORCE": "not set",
+    "CONFIG_MODULE_SIG_PROTECT": "y",
+    "CONFIG_TRIM_UNUSED_KSYMS": "y"
+  },
+  "kernel_tainted": 4608,
+  "taint_interpretation": [
+    "bit 9: warning",
+    "bit 12: externally built module"
+  ]
+}
