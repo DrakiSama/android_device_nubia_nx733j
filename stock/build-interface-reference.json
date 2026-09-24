@@ -13,5 +13,12 @@
     "files": {
       "build/tasks/kernel.mk": "be3afa4040da869336e4a61512d43e951ae1254458c803369138d4d3feba0381"
     }
+  },
+  "external/avb": {
+    "commit": "6ee41dc37ea996a250f5c70d0ea16abb9f169975",
+    "relevant_files_clean": true,
+    "files": {
+      "avbtool.py": "2f8dfbf118e37566d8e3cf54fa252614955b7acc12c233a6b232068a3fae8f9f"
+    }
   }
 }

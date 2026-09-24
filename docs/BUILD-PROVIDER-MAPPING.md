@@ -53,3 +53,48 @@ entradas de trabajo por separado. La elección de claves, descriptores, alcance 
 y recuperación sigue abierta; no desactivar AVB para eludir esta decisión.
 
 No se activó el build, no se ejecutó stripping y no se escribió el dispositivo.
+
+## Preparación acotada y nuevo hallazgo (2026-09-24)
+
+- [CONFIRMED] Se preparó una copia privada `dtb/nx733j-stock.dtb` con los
+  4487979 bytes íntegros y el SHA-256 stock indicado arriba. Esto resuelve la
+  extensión de entrada del glob; no activa el adaptador ni demuestra un build.
+- [CONFIRMED] DTBO: límites de las 37 entradas y cabeceras FDT válidos. El total
+  de tabla, 14124069 bytes, coincide con el alcance del descriptor stock
+  previamente verificado para esta misma captura.
+- [CONFIRMED] Los 11041755 bytes posteriores contienen **234 bytes no nulos**.
+  Por ello, la descripción anterior como relleno no implica ceros ni autoriza
+  descartarlos. No se recortó DTBO.
+- [UNKNOWN] Función y vigencia de esos bytes posteriores; pertenencia a otro
+  contenedor o metadatos aún sin determinar. No se presupone corrupción.
+
+Se detiene aquí la preparación DTBO por la regla del proyecto de reportar
+ discrepancias antes de activar cambios. Siguiente: identificar las estructuras
+posteriores y comparar con DTBO del respaldo 9008, sin escribir particiones.
+El descriptor externo sólo cubre el prefijo indicado; no autentica toda esa zona.
+
+### Restricción del empaquetador local
+
+REFERENCE: `external/avb`, commit `6ee41dc37ea996a250f5c70d0ea16abb9f169975`.
+PURPOSE: determinar el límite real de entrada del empaquetador ROM.
+Archivo limpio; hash añadido a `stock/build-interface-reference.json`.
+
+[CONFIRMED por lectura de código] `avbtool.py:2224` reserva 65536 + 4096 bytes;
+`add_hash_footer`, líneas 3482–3512, sólo elimina datos usando un footer reconocido
+al final y rechaza entradas mayores que partición menos esa reserva. Para
+25165824 bytes de partición el máximo es **25096192 bytes**. La captura completa,
+sin footer al final, excede ese límite en **69632 bytes**. No se ejecutó la regla:
+es una incompatibilidad deducida del código y de las dimensiones verificadas,
+no un fallo de compilación observado. Añadir `--do_not_append_vbmeta_image` por sí
+solo no elimina esa comprobación. No se adoptó como solución.
+
+### Reproducción de la preparación
+
+```text
+python tools/prepare_stock_dtb_input.py stock/kernel-provider-reference.json <proveedor-privado> stock/boot-audit.json <directorio-nuevo>
+```
+
+Rechaza destinos existentes; comprueba hashes DTB/DTBO antes de escribir.
+Genera sólo una copia íntegra del DTB y un informe; conserva proveedor y respaldo.
+No interpreta semántica de overlays ni crea un DTBO firmable.
+[Resultado sin binarios](../stock/dtb-input-preparation.json).
