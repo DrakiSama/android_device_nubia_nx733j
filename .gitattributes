@@ -1,0 +1,2 @@
+# Preserve stock metadata bytes and their SHA-256 on Windows checkouts.
+stock/ramdisk-load-metadata/* text eol=lf
