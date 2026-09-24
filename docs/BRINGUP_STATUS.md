@@ -1,71 +1,52 @@
 # NX733J: estado del bring-up
 
-Actualizado: 2026-09-24 (Chile). Base inicial auditada: `0590ddd`; ampliada con la auditoría publicada en `3fbcb9c`.
-Objetivo: una base NX733J reutilizable para AOSP y derivados; adaptación específica
-a LineageOS después del cierre de particiones, arranque y kernel.
+Actualizado: 2026-09-24 (Chile). Objetivo: base reutilizable AOSP, kernel stock
+inicial sustituible; adaptación específica a una ROM después del cierre de la base.
 
-CONFIRMED significa evidencia directa dentro del alcance indicado; PARTIAL indica
-validación incompleta; INFERRED es una inferencia; UNKNOWN carece de evidencia
-suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
+CONFIRMED se limita a la evidencia indicada. PARTIAL implica trabajo pendiente;
+INFERRED es una deducción, UNKNOWN falta de evidencia y BLOCKED una dependencia
+que impide habilitar el siguiente paso.
 
 | Component | Status | Evidence | Source | Notes |
 | --- | --- | --- | --- | --- |
-| GPT y tamaños | CONFIRMED | CRC primario/backup; 115 entradas XML | Respaldo NX733J, seis LUN | Sectores físicos de 4096 bytes; sin offsets prestados |
-| Tipos de imagen ROM | CONFIRMED | EROFS en siete particiones; system/system_ext/product explícitos | Super, fstab, montajes y config del kernel | Pendientes tamaño real y empaquetado de imágenes ROM |
-| Super y particiones B | CONFIRMED | Geometría, seis metadatos y siete hashtrees | super del respaldo | Sectores liblp de 512 bytes; COW presentes |
-| Argumentos de empaquetado | PARTIAL | v4 explícito en ambas listas; direcciones stock representadas con base cero | Cabecera vendor_boot y mkbootimg local | Sin build; cmdline/bootconfig y ramdisk pendientes |
-| Boot chain | PARTIAL | Firmas internas y claves padre/hijo A/B | vbmeta, boot, recovery | Trust anchor OEM y aceptación de rollback pendientes |
-| init_boot limpio de referencia | CONFIRMED | init guardado por Magisk idéntico al stock | Respaldo B y captura instalada | La imagen instalada está parcheada |
-| Recovery separado | CONFIRMED | Header v4; kernel vacío; ramdisk propio | Respaldo A/B | No demuestra restauración disponible |
-| Kernel stock y módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden; 3404 CRC del kernel pendientes | vendor_boot, DLKM, vendor y kernel vivo | Faltan CRC del kernel base, namespaces, firmas y orden de carga |
-| Contrato del proveedor kernel | PARTIAL | Contrato y paquete preparados; consumidores del build identificados | Stock y build local | Adaptador detenido por diferencias DTB/DTBO y política AVB pendiente |
-| Entrada DTB y límite DTBO | PARTIAL | Copia DTB íntegra; contenedor DTBO de 18 MiB conservado | Paquete stock y descriptor ya verificado | Footer interno A/B identificado; falta política AVB ROM |
-| Paquete privado stock | CONFIRMED | 715 copias verificadas; 681 módulos y 5 artefactos coinciden con manifiesto | Capturas stock locales | Preparado, sin integrar al build ni publicar binarios |
-| zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
-| Contenido vendor ramdisk/fstab | PARTIAL | 316 entradas CPIO; propietarios/modos; 25 filas fstab, 14 tempranas | Ramdisk y montajes stock | Sin init OEM en ramdisk; política de formato/AVB pendiente |
-| Política de carga para la ROM | PARTIAL | Cierre duro+soft de 106 módulos, grafo sin ciclos, 106 build IDs coincidentes | Ramdisk y teléfono stock | Falta secuencia efectiva y vinculación de aliases al hardware; recovery separado |
-| Snapshots en la captura actual | CONFIRMED | Mapas linear/verity; 14 coinciden con backup; update_engine IDLE | Teléfono, 2026-09-24 | Sin snapshot activo observado; enum interno libsnapshot no consultado; conservar COW |
-| AVB/FEC/OTA del producto | UNKNOWN | Cadena stock documentada | Pendiente | No copiar rollback, firmas ni alcance OTA automáticamente |
-| Producto genérico | PARTIAL | Scaffold actualmente Lineage | Repositorio | Separación del producto pendiente; no se modifican makefiles en esta actualización |
-| Build mínimo | BLOCKED | BoardConfigBringup.mk sigue ausente | BoardConfig.mk | Resolver kernel, AVB, SEPolicy y HAL antes de habilitarlo |
-| Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Vía de restauración aún no validada |
+| GPT y tamaños | CONFIRMED | Seis LUN, CRC y 115 entradas XML | Respaldo 9008 | Sin offsets prestados |
+| Super / particiones B | CONFIRMED | Seis metadatos y siete hashtrees | Respaldo y capturas | FEC no comprobado; conservar COW |
+| Filesystems lógicos | CONFIRMED | Siete EROFS; metadata F2FS | Super, fstab, montajes vivos | Tipos system/product/system_ext completados; tamaños ROM aún desconocidos |
+| Cadena AVB stock | PARTIAL | Firmas internas, claves padre/hijo, payloads | Imágenes A/B | Falta aceptación OEM y rollback |
+| DTB / DTBO | CONFIRMED | DTB íntegro; contenedor DTBO interno A/B de 18 MiB | Respaldo y proveedor | Entradas privadas preparadas; partición DTBO sigue siendo 24 MiB |
+| pvmfw | PARTIAL | Header v3, 1 MiB; hashes A/B distintos y válidos | Respaldo, GPT, teléfono | Resolver descriptor y firmware por slot en política OTA |
+| init_boot limpio | CONFIRMED | Init original guardado por Magisk igual al stock | Respaldo B y captura | Init ROM se reconstruirá; no reutilizar el parcheado |
+| Recovery separado | CONFIRMED | Header v4, kernel vacío, ramdisk propio | Respaldo | No prueba disponibilidad de restauración |
+| Argumentos de boot | PARTIAL | v4 explícito en ambas listas; direcciones stock | Cabeceras y mkbootimg local | Corregidos en BoardConfig; no compilado |
+| Kernel / módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden | Stock y exports vivos | 3404 CRC del kernel base, namespaces y firmas pendientes |
+| zram / zsmalloc | CONFIRMED | Build IDs vivos corresponden a vendor_boot 6.6.30 | Kernel stock 6.6.92 | Conservar variantes por partición; no certifica otra ABI |
+| Carga temprana | PARTIAL | 106 build IDs; cierre duro/soft sin ciclos | Ramdisk y sysfs | Secuencia efectiva y aliases al hardware pendientes |
+| Contenido vendor ramdisk | CONFIRMED | 306 módulos, 7 archivos auxiliares, 3 directorios; modos/uid/gid | CPIO stock | No contiene init OEM; etiquetas SELinux aún no derivadas |
+| Fstab ROM | PARTIAL | 25 entradas, 14 tempranas; semántica emmc/formattable revisada | Stock y código init/fs_mgr | Sigue como referencia; no instalado en producto |
+| Proveedor kernel | PARTIAL | 715 payloads privados comprobados; contrato definido | Capturas stock | Falta adaptador consumido por el build |
+| Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
+| AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Definir productor por partición, claves, rollback y firmware por slot |
+| Producto genérico | PARTIAL | Scaffold aún con entrada Lineage | Repo | Separar adaptación del producto cuando se cierre la base |
+| Build mínimo | BLOCKED | BoardConfigBringup.mk ausente deliberadamente | BoardConfig | Kernel, ramdisk, AVB, vendor, VINTF y SELinux incompletos |
+| Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
 
 ## Siguiente objetivo concreto
 
-El [contrato del proveedor](KERNEL-PROVIDER.md) y su manifiesto de referencia
-identifican las entradas, hashes y responsabilidades. Siguiente: localizar evidencia
-de valores CRC/exportaciones del kernel exacto (por ejemplo, Module.symvers de esa
-compilación). Softdeps y grafo normal ya contrastados; la secuencia efectiva
-y los aliases frente al hardware siguen pendientes. La captura de snapshots
-y update_engine ya está documentada; el paquete privado stock quedó preparado.
-La revisión de variables detectó diferencias de DTB/DTBO; se detuvo la activación
-del adaptador. Siguiente decisión: empaquetado DTB/DTBO y política AVB antes de
-conectar el proveedor, manteniendo separados plataforma y producto ROM.
-La frontera estática del ramdisk normal ya está comprobada. La coincidencia de
-5089 nombres y 1685 CRC entre módulos no cierra ABI. Conservar ambas variantes stock de zram/zsmalloc por
-partición. AVB/OTA y recuperación siguen pendientes antes de generar imágenes.
+Definir el perfil de construcción y conservación por partición, empezando por
+AVB y pvmfw; después conectar proveedor kernel, fstab y ramdisk de primera etapa.
+La identidad diferente de pvmfw A/B impide tratar ambos slots como firmware
+intercambiable. Las claves y firmware OEM no se heredan como política de firma ROM.
 
-Evidencia y límites: [auditoría del respaldo](EDL-BACKUP-AUDIT.md).
-No se ha compilado ni flasheado una ROM durante esta auditoría.
+Antes de habilitar imágenes también faltan las dependencias mínimas vendor,
+VINTF y SELinux. La verificación de ABI completa del kernel sigue abierta; no
+se repiten intentos fallidos contra artefactos GKI públicos sin una fuente nueva.
+No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos.
 
-Detalle y procedimiento: [CRC entre módulos](MODULE-EXPORT-CRC.md).
+## Evidencia y procedimientos
 
-Última evidencia de carga: [ramdisk normal](RAMDISK-LOAD-AUDIT.md).
-
-Estado de particiones en vivo: [snapshots y mapas](SNAPSHOT-STATE.md).
-
-Entradas locales preparadas: [paquete del proveedor](KERNEL-PROVIDER-PACKAGE.md).
-
-Bloqueos de integración precisos: [mapeo al build](BUILD-PROVIDER-MAPPING.md).
-
-Los datos posteriores al payload DTBO quedaron identificados: contenedor AVB
-interno de 18 MiB con footer, dentro de la partición de 24 MiB. Véase
-[corrección y evidencia](DTBO-AVB-ENVELOPE.md). Entrada privada del contenedor preparada y
-verificada por hash. Siguiente: cerrar la composición boot/init_boot/vendor_boot
-y la política AVB ROM antes de activar el adaptador.
-
-Se completaron argumentos de header y direcciones en BoardConfig;
-[composición de imágenes](BOOT-BUILD-COMPOSITION.md). El bloqueo deliberado de
-compilación permanece. No se han ejecutado pruebas ni builds de la ROM.
-
-Inventario de contenido y semántica del fstab: [vendor ramdisk](VENDOR-RAMDISK-LAYOUT.md).
+- [Respaldo y particiones](EDL-BACKUP-AUDIT.md), [snapshots](SNAPSHOT-STATE.md).
+- [Corrección DTBO](DTBO-AVB-ENVELOPE.md), [pvmfw y AVB](PVMFW-AVB-SCOPE.md).
+- [Composición del build](BOOT-BUILD-COMPOSITION.md), [interfaces del proveedor](BUILD-PROVIDER-MAPPING.md).
+- [Contrato kernel](KERNEL-PROVIDER.md), [paquete privado](KERNEL-PROVIDER-PACKAGE.md).
+- [Contenido ramdisk / fstab](VENDOR-RAMDISK-LAYOUT.md), [carga normal](RAMDISK-LOAD-AUDIT.md).
+- [CRC entre módulos](MODULE-EXPORT-CRC.md), [auditoría boot histórica corregida](BOOT-AUDIT.md).

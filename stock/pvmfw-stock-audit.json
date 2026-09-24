@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-09-24T22:15:43.099855+00:00",
+  "device": "NX733J",
+  "source": "9008 backup images; GPT audit and vbmeta_system per slot",
+  "gpt_audit_sha256_lf": "37f31175d5a7a5f0e49ae63e59275eea216b2e6b8f2b9f86976cd26fe8ff03e1",
+  "avbtool_sha256": "2f8dfbf118e37566d8e3cf54fa252614955b7acc12c233a6b232068a3fae8f9f",
+  "slots": {
+    "a": {
+      "partition": "pvmfw_a",
+      "lun": 4,
+      "partition_bytes": 1048576,
+      "partition_sha256": "6f81bf0bbcf8917c09e0e7b79cce8ba97595aa396e861b9852929eb05df4c64c",
+      "parent_vbmeta_system_sha256": "c399956c4a19b4f79de8d0c0bbd70b62c9ea107abbfcf924aeac0104a8e9ed39",
+      "boot_header_version": 3,
+      "header_bytes": 1580,
+      "kernel_field_bytes": 625152,
+      "ramdisk_field_bytes": 0,
+      "os_version_field": 0,
+      "boot_signature_bytes": 0,
+      "payload_extent_bytes": 630784,
+      "descriptor": {
+        "partition_name": "pvmfw",
+        "image_size": 630784,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "salt": "0726ce69a9ac3523e1a3362f8568b830632fe0017020dd0cda1273aa96db9b63",
+        "digest": "4722b3c01f358e3d79193018f2c4d9fa069124c0939e40387a1e8700aec317a5"
+      },
+      "payload_matches_parent_descriptor": true,
+      "footer_at_partition_end": true,
+      "footer": {
+        "vbmeta_offset": 630784,
+        "vbmeta_bytes": 640,
+        "algorithm_type": 0,
+        "descriptor_equals_parent": true
+      }
+    },
+    "b": {
+      "partition": "pvmfw_b",
+      "lun": 4,
+      "partition_bytes": 1048576,
+      "partition_sha256": "b4d3651a1a3c06f3249d429e2276c51025c735553d6bdbd70bfb618dc1f908c2",
+      "parent_vbmeta_system_sha256": "0c4a586cedafc91758c2552b8ba44b84c28de4763071ca1061df710a693db0d7",
+      "boot_header_version": 3,
+      "header_bytes": 1580,
+      "kernel_field_bytes": 773888,
+      "ramdisk_field_bytes": 0,
+      "os_version_field": 536871330,
+      "boot_signature_bytes": 0,
+      "payload_extent_bytes": 778240,
+      "descriptor": {
+        "partition_name": "pvmfw",
+        "image_size": 778240,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "salt": "5885bbc0143a7016470e0646c772c3513f2b8a82d57590cba83f5c22fa350612",
+        "digest": "4c9f31c23215f7d04de03873ea582700c95a54b56906a312e5373bad739dc6ce"
+      },
+      "payload_matches_parent_descriptor": true,
+      "footer_at_partition_end": true,
+      "footer": {
+        "vbmeta_offset": 778240,
+        "vbmeta_bytes": 640,
+        "algorithm_type": 0,
+        "descriptor_equals_parent": true
+      }
+    }
+  },
+  "slot_images_identical": false,
+  "limits": [
+    "Boot-container kernel field is a format name, not the Android kernel provider",
+    "Hashes and containers checked; firmware execution and bootloader acceptance not tested",
+    "Parent signatures audited separately",
+    "No pvmfw image generation, OTA policy or flashing"
+  ]
+}

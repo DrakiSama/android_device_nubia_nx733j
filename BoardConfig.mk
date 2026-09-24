@@ -27,6 +27,7 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 AB_OTA_UPDATER := true
 # Provisional OTA scope. Resolve pvmfw (referenced by stock vbmeta_system)
 # and which vendor partitions will be built before enabling a release.
+# pvmfw A/B are different on this phone; see docs/PVMFW-AVB-SCOPE.md.
 AB_OTA_PARTITIONS := boot init_boot vendor_boot recovery dtbo vbmeta vbmeta_system system system_ext product vendor odm vendor_dlkm system_dlkm
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296

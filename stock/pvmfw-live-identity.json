@@ -1,0 +1,21 @@
+{
+  "captured_utc": "2026-09-24T22:16:41.202955+00:00",
+  "slot": "_b",
+  "same_boot_during_capture": true,
+  "source": "adb root blockdev --getsize64 and sha256sum on by-name pvmfw_a/b",
+  "slots": {
+    "a": {
+      "bytes": 1048576,
+      "sha256": "6f81bf0bbcf8917c09e0e7b79cce8ba97595aa396e861b9852929eb05df4c64c",
+      "matches_backup": true
+    },
+    "b": {
+      "bytes": 1048576,
+      "sha256": "b4d3651a1a3c06f3249d429e2276c51025c735553d6bdbd70bfb618dc1f908c2",
+      "matches_backup": true
+    }
+  },
+  "limits": [
+    "Read-only identity observation, not firmware execution or OTA compatibility"
+  ]
+}
