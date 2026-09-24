@@ -1,0 +1,37 @@
+{
+  "captured_utc": "2026-09-24T02:54:16.511504+00:00",
+  "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "slot": "_b",
+  "config": {
+    "CONFIG_MODVERSIONS": "CONFIG_MODVERSIONS=y",
+    "CONFIG_MODULE_REL_CRCS": "not present",
+    "CONFIG_MODULE_SIG": "CONFIG_MODULE_SIG=y",
+    "CONFIG_MODULE_SIG_FORCE": "# CONFIG_MODULE_SIG_FORCE is not set",
+    "CONFIG_MODULE_SIG_PROTECT": "CONFIG_MODULE_SIG_PROTECT=y",
+    "CONFIG_MODULE_FORCE_LOAD": "# CONFIG_MODULE_FORCE_LOAD is not set",
+    "CONFIG_TRIM_UNUSED_KSYMS": "CONFIG_TRIM_UNUSED_KSYMS=y",
+    "CONFIG_KALLSYMS": "CONFIG_KALLSYMS=y",
+    "CONFIG_KALLSYMS_ALL": "CONFIG_KALLSYMS_ALL=y",
+    "CONFIG_KALLSYMS_BASE_RELATIVE": "CONFIG_KALLSYMS_BASE_RELATIVE=y",
+    "CONFIG_ARM64_4K_PAGES": "CONFIG_ARM64_4K_PAGES=y",
+    "CONFIG_CFI_CLANG": "CONFIG_CFI_CLANG=y",
+    "CONFIG_LTO_CLANG": "not present",
+    "CONFIG_LTO_CLANG_THIN": "# CONFIG_LTO_CLANG_THIN is not set"
+  },
+  "config_sha256": "f21f8de739dc13dd5af6fda290ab62322968836af5133f4cb32c02c1a4f6ff18",
+  "module_files": 681,
+  "unique_versioned_import_names": 5089,
+  "runtime_export_names": 12125,
+  "imports_not_observed_exported": {},
+  "files_with_unobserved_imports": [],
+  "provider_counts": {
+    "kernel": 3404,
+    "loaded_module": 1685
+  },
+  "limits": [
+    "Checks names from module __versions against live __ksymtab names; it is not an undefined-symbol/linker audit.",
+    "Symbol names alone do not verify CRC values, namespaces, licensing, signatures or ABI compatibility.",
+    "Loaded module exports may be unavailable at an earlier stage; this does not prove load-order closure.",
+    "Runtime snapshot does not prove another boot state or kernel replacement."
+  ]
+}

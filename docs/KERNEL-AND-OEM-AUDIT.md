@@ -60,3 +60,33 @@ El [informe posterior](EDL-BACKUP-AUDIT.md) amplía el inventario a 681 archivos
 y documenta dos variantes de zram/zsmalloc. Los build IDs de sysfs identifican
 las variantes vendor_boot 6.6.30 en el arranque stock observado; se conservan
 ambas copias por partición. Los límites del análisis de CRC anterior siguen vigentes.
+
+## Exportaciones observadas del kernel y módulos cargados
+
+Captura 2026-09-24 02:54 UTC, slot B, kernel
+`6.6.92-android15-8-g3637f4904cf5-ab13944661-4k`.
+Resultado: [kernel-export-name-audit.json](../stock/kernel-export-name-audit.json).
+
+[CONFIRMED] Los 681 archivos auditados requieren 5089 nombres únicos registrados
+en __versions. Todos aparecen entre los 12125 nombres __ksymtab observados en
+/proc/kallsyms: 3404 con proveedor kernel y 1685 con proveedor módulo cargado.
+No se publican direcciones de memoria. Antes de analizar cada módulo se contrastó
+su SHA-256 con el inventario ampliado de la auditoría del respaldo.
+
+Procedimiento local: leer /proc/config.gz y /proc/kallsyms con root; descomprimir
+la configuración; recoger nombres __ksymtab_ y su propietario; extraer las tablas
+__versions con tools/audit_kernel_modules.py; comparar conjuntos de nombres.
+Las capturas y los scripts capture-kernel-interface.py/compare-export-names.py
+permanecen en diagnostics/edl-backup-20260504-audit fuera del repositorio.
+
+[CONFIRMED] Configuración observada: páginas ARM64 de 4 KiB, MODVERSIONS,
+CFI_CLANG, MODULE_SIG, MODULE_SIG_PROTECT y TRIM_UNUSED_KSYMS activos;
+MODULE_FORCE_LOAD y MODULE_SIG_FORCE desactivados. Las opciones ausentes del
+archivo no se convierten automáticamente en valores negativos.
+
+[UNKNOWN] Valores CRC de las exportaciones contrastados contra los imports,
+compatibilidad ABI completa, namespaces y aceptación de firmas para sustituciones.
+Las direcciones de símbolos __crc_ no se interpretan como valores CRC. Esta
+comparación de __versions no es una auditoría de todos los símbolos ELF indefinidos.
+Los módulos ya cargados pueden aportar símbolos que todavía no existen en una
+fase anterior: el resultado no demuestra el cierre temporal del orden de carga.
