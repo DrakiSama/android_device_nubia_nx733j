@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "device": "NX733J",
+  "provider_kind": "stock_prebuilt",
+  "status": "STAGED_NOT_BUILD_INTEGRATED",
+  "created_utc": "2026-09-24T16:44:28.060083+00:00",
+  "reference_sha256_lf": "a08717920b6b4c3bd8f39d961d36e27c659ecf963822386ca95cef501a881e1d",
+  "kernel_release": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "verified_module_files": 681,
+  "verified_output_files": 715,
+  "payload_bytes": 203699992,
+  "counts_by_kind": {
+    "artifact": 5,
+    "module": 681,
+    "load_metadata": 16,
+    "partition_reference": 8,
+    "load_list_reference": 4,
+    "reference_manifest": 1
+  },
+  "limits": [
+    "Private staging only; no build variables or product copies are enabled.",
+    "File hashes do not establish complete kernel ABI, signature policy or flash safety.",
+    "Original load metadata and partition properties are reference inputs, not ROM integration decisions.",
+    "This is not a complete filesystem image; ownership, labels and image signing still belong to ROM integration."
+  ],
+  "provider_manifest_sha256": "62390172c14c98170b652a3aaad4bd88c57d41e629064ef0dd76dce6e1cca95f",
+  "provider_manifest_bytes": 149086,
+  "private_binaries_published": false
+}

@@ -82,3 +82,6 @@ y resuelve por build ID la identidad observada de zram/zsmalloc.
 El [contrato del proveedor de kernel](docs/KERNEL-PROVIDER.md) separa artefactos,
 módulos por partición e integración ROM. Su manifiesto stock registra hashes;
 aún no activa un adaptador de build.
+
+El [paquete privado stock](docs/KERNEL-PROVIDER-PACKAGE.md) está preparado con
+verificación de hashes. GitHub contiene la herramienta y el informe, sin binarios.

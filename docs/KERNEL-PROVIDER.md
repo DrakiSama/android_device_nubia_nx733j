@@ -23,7 +23,7 @@ Esto es un requisito de diseño; aún no existe ese adaptador de build.
 
 [CONFIRMED] Los hashes y tamaños se registran en
 [kernel-provider-reference.json](../stock/kernel-provider-reference.json).
-Las rutas describen un futuro directorio privado del proveedor; no contienen
+Las rutas definen el directorio privado del proveedor; no contienen
 binarios en Git. Los hashes stock se exigen únicamente al proveedor stock de esta
 captura. Un proveedor custom/source tendrá su propio manifiesto y validación.
 
@@ -91,3 +91,6 @@ del conjunto normal. No implica validación temporal de la carga en paralelo.
 
 La [auditoría de carga normal](RAMDISK-LOAD-AUDIT.md) confirma el cierre con
 softdeps y los 106 build IDs observados; conserva pendiente la secuencia temporal.
+
+El [paquete stock privado](KERNEL-PROVIDER-PACKAGE.md) ya se preparó y verificó
+contra este contrato. Su integración con el build permanece pendiente.
