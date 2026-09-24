@@ -20,25 +20,24 @@ producción: hay que separar los componentes que compila LineageOS, eliminar
 duplicados, revisar dependencias ELF y añadir lo necesario de system_ext/product.
 No se han copiado políticas SELinux compiladas como sustituto de su fuente.
 
-## Siguiente trabajo obligatorio
+## Próximo trabajo: cerrar la base de arranque
 
-1. Verificar KMI y símbolos del conjunto kernel/módulos. Se observó kernel 6.6.92
-   y 306 módulos de ramdisk con vermagic 6.6.30-android15-8; los números de parche
-   distintos no bastan para declarar compatibilidad ni incompatibilidad.
-2. Ya se auditaron imágenes de arranque por lectura; ver docs/BOOT-AUDIT.md.
-   La referencia init_boot limpia quedó identificada en la
-   [auditoría 9008](docs/EDL-BACKUP-AUDIT.md). Resolver KMI y política AVB/OTA
-   antes de BoardConfigBringup.mk.
-3. Completar proprietary-files.txt y extraer un dump stock organizado por
-   particiones. Desde device/nubia/nx733j, ejecutar ./extract-files.py /ruta/dump
-   con tools/extract-utils y sus dependencias disponibles. La clasificación
-   reproducible de candidatos y sus pendientes están en docs/BLOBS-AUDIT.md.
-4. Portar init, fstab Android, overlays, audio, cámara, radio, sensores, Wi-Fi,
-   Bluetooth, biometría, GNSS, NFC, power y health, usando stock como evidencia.
-5. Preparar SEPolicy fuente, compatibilidad VINTF y dependencias Qualcomm sun.
-   No usar SELINUX_IGNORE_NEVERALLOWS ni fechas de parche ficticias de TWRP.
-6. Verificar configuración/ELF/VINTF; luego compilar y probar con recuperación
-   disponible. Una compilación exitosa no demuestra soporte de hardware.
+1. Definir el perfil de particiones reconstruidas/conservadas y su política AVB.
+   [pvmfw A/B](docs/PVMFW-AVB-SCOPE.md) tiene contenidos distintos también en el
+   teléfono: conservar firmware exige precisar el slot y el descriptor esperado.
+2. Conectar el proveedor kernel y las entradas privadas DTB/DTBO; integrar fstab,
+   cmdline y bootconfig con procedencia. Revisar la política ante errores de
+   metadata/data antes de instalar el fstab stock en la ROM.
+3. Cerrar las dependencias mínimas vendor, VINTF y SELinux para habilitar el build.
+   El inventario de blobs sigue siendo candidato; véase [BLOBS-AUDIT](docs/BLOBS-AUDIT.md).
+4. Completar la comprobación ABI: 1685 CRC entre módulos coinciden, pero faltan
+   3404 CRC del kernel base y otras condiciones. [Detalle](docs/MODULE-EXPORT-CRC.md).
+5. Tras resolver lo anterior, compilar y planificar un primer arranque con una
+   vía de recuperación comprobada. Hardware y adaptación específica a LineageOS
+   quedan para sus etapas posteriores.
+
+No usar SELINUX_IGNORE_NEVERALLOWS ni fechas de parche ficticias de recovery.
+La lista completa de evidencia y pendientes está en [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
 
 El árbol OnePlus sm8750-common sirve para estudiar la integración de la plataforma,
 no se hereda: DTB, firmware y configuraciones OEM no son intercambiables.
@@ -85,3 +84,20 @@ aún no activa un adaptador de build.
 
 El [paquete privado stock](docs/KERNEL-PROVIDER-PACKAGE.md) está preparado con
 verificación de hashes. GitHub contiene la herramienta y el informe, sin binarios.
+
+## Avances de la base (2026-09-24)
+
+- [DTBO](docs/DTBO-AVB-ENVELOPE.md): se corrigió la auditoría inicial; existe
+  footer AVB dentro de un contenedor de 18 MiB en la partición de 24 MiB.
+  Entrada privada preparada conservando el contenedor y la referencia original.
+- [Empaquetado](docs/BOOT-BUILD-COMPOSITION.md): argumentos header v4 explícitos
+  para boot/vendor_boot e init_boot, direcciones stock con base cero, y EROFS
+  declarado para system/system_ext/product.
+- [Vendor ramdisk](docs/VENDOR-RAMDISK-LAYOUT.md): contenido, propietarios, modos
+  y semántica de fstab auditados. No se copió el fstab automáticamente al producto.
+- [pvmfw](docs/PVMFW-AVB-SCOPE.md): tamaño, header v3, hashes y descriptores A/B
+  contrastados con respaldo y teléfono. Integración AVB/OTA aún pendiente.
+
+No se ejecutaron builds ni pruebas de la ROM durante esta tanda. Los cambios de
+BoardConfig conservan el bloqueo deliberado; no existe todavía una imagen ROM
+validada para instalar.
