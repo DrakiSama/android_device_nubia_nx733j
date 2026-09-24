@@ -109,3 +109,10 @@ obtuvo ni contrastó Image/Module.symvers oficial. Una URL candidata de symvers
 respondió 404; no se convierte ese fallo en prueba de que el artefacto no exista.
 El siguiente paso es obtener el artefacto exacto y comparar Image por SHA-256 antes
 de usar sus CRC como evidencia del kernel NX733J.
+
+## Ampliación: CRC de exportaciones de módulos
+
+La [auditoría posterior](MODULE-EXPORT-CRC.md) contrasta 1685 nombres importados
+con los CRC exportados por sus módulos proveedores: sin conflictos. Los 3404
+símbolos del kernel base siguen sin comprobación de su CRC. Esto amplía la
+consistencia entre imports descrita al principio; no cierra la ABI completa.

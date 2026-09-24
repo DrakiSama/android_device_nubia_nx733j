@@ -1,0 +1,24 @@
+{
+  "method": "modprobe --show-exports (read-only)",
+  "sample_path": "system_dlkm/lib/modules/zsmalloc.ko",
+  "sample_sha256": "a323e35db4dbb51d846d6df232dc866dab65d5e7e477f13359d55bdac82892dd",
+  "matched_exports": 11,
+  "values": {
+    "zs_lookup_class_index": "5957cddb",
+    "zs_get_total_pages": "cbe56bc2",
+    "zs_map_object": "c341ae6d",
+    "zs_unmap_object": "924c46f8",
+    "zs_huge_class_size": "3d8baf3b",
+    "zs_malloc": "b29533ee",
+    "zs_free": "958df3ac",
+    "zs_compact": "5da67adc",
+    "zs_pool_stats": "7cceaf92",
+    "zs_create_pool": "bcf1f0e6",
+    "zs_destroy_pool": "c69b7ee5"
+  },
+  "export_owner_recapture_equal": true,
+  "recapture_kernel_equal": true,
+  "limits": [
+    "Independent tool cross-check covers this sample only, not all 681 files."
+  ]
+}
