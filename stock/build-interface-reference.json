@@ -1,0 +1,17 @@
+{
+  "build/make": {
+    "commit": "ab5acb1281035ebc9b0f190baf22ef3ea896106e",
+    "relevant_files_clean": true,
+    "files": {
+      "core/Makefile": "d738fd89644b25a1a30719e73705a27427c8c8cc0cbf1b174ce91952b320efdf",
+      "core/board_config.mk": "1b66461997b2bdd42917a5f32092c4b3131b25f4d71cbba3f713f42c824c2bfb"
+    }
+  },
+  "vendor/lineage": {
+    "commit": "87f03bdeafbf22dc35130c61ae2ff97f2041b90f",
+    "relevant_files_clean": true,
+    "files": {
+      "build/tasks/kernel.mk": "be3afa4040da869336e4a61512d43e951ae1254458c803369138d4d3feba0381"
+    }
+  }
+}

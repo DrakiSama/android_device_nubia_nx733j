@@ -49,3 +49,7 @@ preservando la separación entre kernel, plataforma NX733J y producto ROM. No se
 ha añadido un adaptador de build ni se ha creado BoardConfigBringup.mk.
 Siguen pendientes CRC del kernel base, política AVB/OTA y recuperación controlada.
 La preparación de archivos no implica que haya una ROM compilable ni un boot probado.
+
+La [revisión del build](BUILD-PROVIDER-MAPPING.md) detectó diferencias de entrada
+DTB y de empaquetado AVB para DTBO. El paquete permanece intacto; no se activó
+un adaptador que lo consuma automáticamente.

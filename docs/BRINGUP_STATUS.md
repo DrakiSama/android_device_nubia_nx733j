@@ -16,7 +16,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | init_boot limpio de referencia | CONFIRMED | init guardado por Magisk idéntico al stock | Respaldo B y captura instalada | La imagen instalada está parcheada |
 | Recovery separado | CONFIRMED | Header v4; kernel vacío; ramdisk propio | Respaldo A/B | No demuestra restauración disponible |
 | Kernel stock y módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden; 3404 CRC del kernel pendientes | vendor_boot, DLKM, vendor y kernel vivo | Faltan CRC del kernel base, namespaces, firmas y orden de carga |
-| Contrato del proveedor kernel | PARTIAL | KERNEL-PROVIDER.md y manifiesto de hashes | Artefactos stock auditados | Diseño documentado; adaptador de build pendiente |
+| Contrato del proveedor kernel | PARTIAL | Contrato y paquete preparados; consumidores del build identificados | Stock y build local | Adaptador detenido por diferencias DTB/DTBO y política AVB pendiente |
 | Paquete privado stock | CONFIRMED | 715 copias verificadas; 681 módulos y 5 artefactos coinciden con manifiesto | Capturas stock locales | Preparado, sin integrar al build ni publicar binarios |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
 | Política de carga para la ROM | PARTIAL | Cierre duro+soft de 106 módulos, grafo sin ciclos, 106 build IDs coincidentes | Ramdisk y teléfono stock | Falta secuencia efectiva y vinculación de aliases al hardware; recovery separado |
@@ -34,8 +34,9 @@ de valores CRC/exportaciones del kernel exacto (por ejemplo, Module.symvers de e
 compilación). Softdeps y grafo normal ya contrastados; la secuencia efectiva
 y los aliases frente al hardware siguen pendientes. La captura de snapshots
 y update_engine ya está documentada; el paquete privado stock quedó preparado.
-Siguiente integración concreta: revisar las variables reales del build para
-boot/vendor_boot/DLKM y mapear el proveedor sin mezclarlo con el producto ROM.
+La revisión de variables detectó diferencias de DTB/DTBO; se detuvo la activación
+del adaptador. Siguiente decisión: empaquetado DTB/DTBO y política AVB antes de
+conectar el proveedor, manteniendo separados plataforma y producto ROM.
 La frontera estática del ramdisk normal ya está comprobada. La coincidencia de
 5089 nombres y 1685 CRC entre módulos no cierra ABI. Conservar ambas variantes stock de zram/zsmalloc por
 partición. AVB/OTA y recuperación siguen pendientes antes de generar imágenes.
@@ -50,3 +51,5 @@ Detalle y procedimiento: [CRC entre módulos](MODULE-EXPORT-CRC.md).
 Estado de particiones en vivo: [snapshots y mapas](SNAPSHOT-STATE.md).
 
 Entradas locales preparadas: [paquete del proveedor](KERNEL-PROVIDER-PACKAGE.md).
+
+Bloqueos de integración precisos: [mapeo al build](BUILD-PROVIDER-MAPPING.md).
