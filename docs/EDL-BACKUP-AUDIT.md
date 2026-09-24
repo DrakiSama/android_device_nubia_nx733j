@@ -77,3 +77,10 @@ cambió de slot. El respaldo con COW no es una receta de flasheo universal.
 Siguiente paso: documentar el contrato del proveedor de kernel/prebuilt y el mapa
 de carga por partición, contrastando ABI/exportaciones antes de habilitar builds.
 El [estado del bring-up](BRINGUP_STATUS.md) mantiene los bloqueos restantes.
+
+## Estado vivo posterior
+
+La [captura del 24 de septiembre](SNAPSHOT-STATE.md) compara los 14 mapas lineales
+B/COW y las siete raíces verity con el respaldo. No observa targets de snapshot
+activos; update_engine comunica IDLE. Esto actualiza el pendiente de observación
+en vivo, sin demostrar restauración segura ni autorizar cambios sobre COW.

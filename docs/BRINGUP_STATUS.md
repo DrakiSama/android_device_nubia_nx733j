@@ -19,7 +19,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Contrato del proveedor kernel | PARTIAL | KERNEL-PROVIDER.md y manifiesto de hashes | Artefactos stock auditados | Diseño documentado; adaptador de build pendiente |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
 | Política de carga para la ROM | PARTIAL | Cierre duro+soft de 106 módulos, grafo sin ciclos, 106 build IDs coincidentes | Ramdisk y teléfono stock | Falta secuencia efectiva y vinculación de aliases al hardware; recovery separado |
-| Merge de snapshots | UNKNOWN | Propiedades Virtual A/B; snapshotctl ausente | Teléfono | COW no acredita estado actual del merge |
+| Snapshots en la captura actual | CONFIRMED | Mapas linear/verity; 14 coinciden con backup; update_engine IDLE | Teléfono, 2026-09-24 | Sin snapshot activo observado; enum interno libsnapshot no consultado; conservar COW |
 | AVB/FEC/OTA del producto | UNKNOWN | Cadena stock documentada | Pendiente | No copiar rollback, firmas ni alcance OTA automáticamente |
 | Producto genérico | PARTIAL | Scaffold actualmente Lineage | Repositorio | Separación del producto pendiente; no se modifican makefiles en esta actualización |
 | Build mínimo | BLOCKED | BoardConfigBringup.mk sigue ausente | BoardConfig.mk | Resolver kernel, AVB, SEPolicy y HAL antes de habilitarlo |
@@ -31,8 +31,9 @@ El [contrato del proveedor](KERNEL-PROVIDER.md) y su manifiesto de referencia
 identifican las entradas, hashes y responsabilidades. Siguiente: localizar evidencia
 de valores CRC/exportaciones del kernel exacto (por ejemplo, Module.symvers de esa
 compilación). Softdeps y grafo normal ya contrastados; la secuencia efectiva
-y los aliases frente al hardware siguen pendientes. Revisar también el estado
-actual de snapshots con lecturas del teléfono.
+y los aliases frente al hardware siguen pendientes. La captura de snapshots
+y update_engine ya está documentada; preparar ahora el paquete privado del
+proveedor stock con verificación contra el manifiesto, sin activar un build.
 La frontera estática del ramdisk normal ya está comprobada. La coincidencia de
 5089 nombres y 1685 CRC entre módulos no cierra ABI. Conservar ambas variantes stock de zram/zsmalloc por
 partición. AVB/OTA y recuperación siguen pendientes antes de generar imágenes.
@@ -43,3 +44,5 @@ No se ha compilado ni flasheado una ROM durante esta auditoría.
 Detalle y procedimiento: [CRC entre módulos](MODULE-EXPORT-CRC.md).
 
 Última evidencia de carga: [ramdisk normal](RAMDISK-LOAD-AUDIT.md).
+
+Estado de particiones en vivo: [snapshots y mapas](SNAPSHOT-STATE.md).

@@ -1,0 +1,534 @@
+{
+  "captured_utc": "2026-09-24T16:35:00.146828+00:00",
+  "slot": "_b",
+  "system_fingerprint": "nubia/PQ84A01-UN/PQ84A01:16/BQ2A.250705.001-BP2A.250605.031.A3/20260210.135030:user/release-keys",
+  "same_boot_during_capture": true,
+  "super_device": {
+    "major_minor": "8:7",
+    "path": "/dev/block/sda7",
+    "partname": "super",
+    "source": "readlink /dev/block/by-name/super and /sys/dev/block/8:7/uevent"
+  },
+  "observed_target_types": [
+    "linear",
+    "verity"
+  ],
+  "active_snapshot_target_observed": false,
+  "snapshot_directory_entries": [],
+  "ota_state_bytes": 0,
+  "update_engine_dump_available": false,
+  "maps": [
+    {
+      "name": "odm-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for odm-verity:\n0-1552: verity, V",
+      "root_digest": "08a1f9c11dd65c801be6b75d68c8eb2df876c49f2ca2d2753c866212aed03e8f",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 794624,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_b-avb.txt"
+    },
+    {
+      "name": "odm_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for odm_b:\n0-1744: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 892928,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 1744,
+          "type": "linear",
+          "parameters": "8:7 2048"
+        }
+      ]
+    },
+    {
+      "name": "odm_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for odm_b-cow:\n0-9624: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 4927488,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 9624,
+          "type": "linear",
+          "parameters": "8:7 18309120"
+        }
+      ]
+    },
+    {
+      "name": "product-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for product-verity:\n0-3802392: verity, V",
+      "root_digest": "eb742c8fa7f54de37f251e911db070b1b88ee96db62526f71d7bfb09c1424a7b",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 1946824704,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_system_b-avb.txt"
+    },
+    {
+      "name": "product_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for product_b:\n0-3051520: linear\n3051520-3052544: linear\n3052544-3053568: linear\n3053568-3069952: linear\n3069952-3108864: linear\n3108864-3109888: linear\n3109888-3191808: linear\n3191808-3215360: linear\n3215360-3464192: linear\n3464192-3875112: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 1984057344,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 3051520,
+          "type": "linear",
+          "parameters": "8:7 4096"
+        },
+        {
+          "start_sector": 3051520,
+          "sectors": 1024,
+          "type": "linear",
+          "parameters": "8:7 9915392"
+        },
+        {
+          "start_sector": 3052544,
+          "sectors": 1024,
+          "type": "linear",
+          "parameters": "8:7 9931776"
+        },
+        {
+          "start_sector": 3053568,
+          "sectors": 16384,
+          "type": "linear",
+          "parameters": "8:7 14708736"
+        },
+        {
+          "start_sector": 3069952,
+          "sectors": 38912,
+          "type": "linear",
+          "parameters": "8:7 15060992"
+        },
+        {
+          "start_sector": 3108864,
+          "sectors": 1024,
+          "type": "linear",
+          "parameters": "8:7 15296512"
+        },
+        {
+          "start_sector": 3109888,
+          "sectors": 81920,
+          "type": "linear",
+          "parameters": "8:7 15129600"
+        },
+        {
+          "start_sector": 3191808,
+          "sectors": 23552,
+          "type": "linear",
+          "parameters": "8:7 15260672"
+        },
+        {
+          "start_sector": 3215360,
+          "sectors": 248832,
+          "type": "linear",
+          "parameters": "8:7 15888384"
+        },
+        {
+          "start_sector": 3464192,
+          "sectors": 410920,
+          "type": "linear",
+          "parameters": "8:7 16147456"
+        }
+      ]
+    },
+    {
+      "name": "product_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for product_b-cow:\n0-1495032: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 765456384,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 1495032,
+          "type": "linear",
+          "parameters": "8:7 18319360"
+        }
+      ]
+    },
+    {
+      "name": "system-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for system-verity:\n0-8664416: verity, V",
+      "root_digest": "09f2834d7a09f3c0be2a747274250426bff620646c26f16774dbbfa51dd415b7",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 4436180992,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_system_b-avb.txt"
+    },
+    {
+      "name": "system_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_b:\n0-6859776: linear\n6859776-7195648: linear\n7195648-7305216: linear\n7305216-7391232: linear\n7391232-7405568: linear\n7405568-7761920: linear\n7761920-7768064: linear\n7768064-8829904: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 4520910848,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 6859776,
+          "type": "linear",
+          "parameters": "8:7 3055616"
+        },
+        {
+          "start_sector": 6859776,
+          "sectors": 335872,
+          "type": "linear",
+          "parameters": "8:7 14725120"
+        },
+        {
+          "start_sector": 7195648,
+          "sectors": 109568,
+          "type": "linear",
+          "parameters": "8:7 15297536"
+        },
+        {
+          "start_sector": 7305216,
+          "sectors": 86016,
+          "type": "linear",
+          "parameters": "8:7 15432704"
+        },
+        {
+          "start_sector": 7391232,
+          "sectors": 14336,
+          "type": "linear",
+          "parameters": "8:7 15407104"
+        },
+        {
+          "start_sector": 7405568,
+          "sectors": 356352,
+          "type": "linear",
+          "parameters": "8:7 15518720"
+        },
+        {
+          "start_sector": 7761920,
+          "sectors": 6144,
+          "type": "linear",
+          "parameters": "8:7 16137216"
+        },
+        {
+          "start_sector": 7768064,
+          "sectors": 1061840,
+          "type": "linear",
+          "parameters": "8:7 16559104"
+        }
+      ]
+    },
+    {
+      "name": "system_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_b-cow:\n0-4437512: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 2272006144,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 4437512,
+          "type": "linear",
+          "parameters": "8:7 19814400"
+        }
+      ]
+    },
+    {
+      "name": "system_dlkm-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for system_dlkm-verity:\n0-14352: verity, V",
+      "root_digest": "f2343287c2a797e91e59cb4833d527f471a38cb2811be281839dc3180c9096db",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 7348224,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_b-avb.txt"
+    },
+    {
+      "name": "system_dlkm_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_dlkm_b:\n0-14800: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 7577600,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 14800,
+          "type": "linear",
+          "parameters": "8:7 9916416"
+        }
+      ]
+    },
+    {
+      "name": "system_dlkm_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_dlkm_b-cow:\n0-8560: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 4382720,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 8560,
+          "type": "linear",
+          "parameters": "8:7 24252416"
+        }
+      ]
+    },
+    {
+      "name": "system_ext-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for system_ext-verity:\n0-1694664: verity, V",
+      "root_digest": "12856f2ee9e81a75e44e7e3941dbb4a3b79d2f445126d36fa502266d9aadbf55",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 867667968,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_system_b-avb.txt"
+    },
+    {
+      "name": "system_ext_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_ext_b:\n0-1085440: linear\n1085440-1110016: linear\n1110016-1139712: linear\n1139712-1143808: linear\n1143808-1727176: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 884314112,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 1085440,
+          "type": "linear",
+          "parameters": "8:7 9932800"
+        },
+        {
+          "start_sector": 1085440,
+          "sectors": 24576,
+          "type": "linear",
+          "parameters": "8:7 15211520"
+        },
+        {
+          "start_sector": 1110016,
+          "sectors": 29696,
+          "type": "linear",
+          "parameters": "8:7 15099904"
+        },
+        {
+          "start_sector": 1139712,
+          "sectors": 4096,
+          "type": "linear",
+          "parameters": "8:7 16143360"
+        },
+        {
+          "start_sector": 1143808,
+          "sectors": 583368,
+          "type": "linear",
+          "parameters": "8:7 17620992"
+        }
+      ]
+    },
+    {
+      "name": "system_ext_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for system_ext_b-cow:\n0-1477296: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 756375552,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 1477296,
+          "type": "linear",
+          "parameters": "8:7 24261632"
+        }
+      ]
+    },
+    {
+      "name": "vendor-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for vendor-verity:\n0-3718064: verity, V",
+      "root_digest": "4fb80b5c67de751c089bfd1fc46e0e4284710c7f0ba94c659ad3a137c253b43b",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 1903648768,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_b-avb.txt"
+    },
+    {
+      "name": "vendor_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for vendor_b:\n0-3624960: linear\n3624960-3649536: linear\n3649536-3661824: linear\n3661824-3673088: linear\n3673088-3686400: linear\n3686400-3789184: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 1940062208,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 3624960,
+          "type": "linear",
+          "parameters": "8:7 11018240"
+        },
+        {
+          "start_sector": 3624960,
+          "sectors": 24576,
+          "type": "linear",
+          "parameters": "8:7 15236096"
+        },
+        {
+          "start_sector": 3649536,
+          "sectors": 12288,
+          "type": "linear",
+          "parameters": "8:7 15284224"
+        },
+        {
+          "start_sector": 3661824,
+          "sectors": 11264,
+          "type": "linear",
+          "parameters": "8:7 15421440"
+        },
+        {
+          "start_sector": 3673088,
+          "sectors": 13312,
+          "type": "linear",
+          "parameters": "8:7 15875072"
+        },
+        {
+          "start_sector": 3686400,
+          "sectors": 102784,
+          "type": "linear",
+          "parameters": "8:7 18204672"
+        }
+      ]
+    },
+    {
+      "name": "vendor_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for vendor_b-cow:\n0-780800: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 399769600,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 780800,
+          "type": "linear",
+          "parameters": "8:7 25739264"
+        }
+      ]
+    },
+    {
+      "name": "vendor_dlkm-verity",
+      "target_types": [
+        "verity"
+      ],
+      "status": "Targets in the device-mapper table for vendor_dlkm-verity:\n0-64176: verity, V",
+      "root_digest": "6ed0f0059449c52bd69b7d2a127a6d87650864b78fc3436a5abaef20b187c5b3",
+      "root_matches_stock_descriptor": true,
+      "salt_matches_stock_descriptor": true,
+      "algorithm_matches_stock_descriptor": true,
+      "data_bytes": 32858112,
+      "data_size_matches_stock_descriptor": true,
+      "descriptor_source": "vbmeta_b-avb.txt"
+    },
+    {
+      "name": "vendor_dlkm_b",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for vendor_dlkm_b:\n0-65536: linear\n65536-65576: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 33574912,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 65536,
+          "type": "linear",
+          "parameters": "8:7 14643200"
+        },
+        {
+          "start_sector": 65536,
+          "sectors": 40,
+          "type": "linear",
+          "parameters": "8:7 18308096"
+        }
+      ]
+    },
+    {
+      "name": "vendor_dlkm_b-cow",
+      "target_types": [
+        "linear"
+      ],
+      "status": "Targets in the device-mapper table for vendor_dlkm_b-cow:\n0-37832: linear",
+      "matches_backup_slot1_extents": true,
+      "mapped_bytes": 19369984,
+      "matches_partition_size": true,
+      "extents": [
+        {
+          "start_sector": 0,
+          "sectors": 37832,
+          "type": "linear",
+          "parameters": "8:7 26520576"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Only seven logical B partitions, their cow maps and verity maps were queried; userdata excluded.",
+    "No active snapshot target observed is not a guarantee about future OTA state or restoration safety.",
+    "Empty state file and directory do not substitute for a working snapshot/update-engine status API.",
+    "Verity root agreement does not validate OEM trust anchor, rollback or FEC correctness."
+  ]
+}

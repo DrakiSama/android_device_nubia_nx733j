@@ -1,0 +1,12 @@
+{
+  "captured_utc": "2026-09-24T16:38:38.447363+00:00",
+  "command": "timeout -k 2 5 update_engine_client --follow",
+  "exit_code": 0,
+  "status_lines": [
+    "[INFO:update_engine_client_android.cc(96)] onStatusUpdate(UPDATE_STATUS_IDLE (0), 0)"
+  ],
+  "limits": [
+    "Read-only status subscription, bounded to five seconds; no update/merge/reset/cancel/switch-slot flag used.",
+    "Client timeout does not indicate failure of the update-engine daemon."
+  ]
+}
