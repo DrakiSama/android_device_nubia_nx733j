@@ -1,0 +1,29 @@
+{
+  "stock_init_bytes": 3245000,
+  "magisk_saved_init_bytes": 3245000,
+  "stock_init_sha256": "bd5bc6cb4b06e614bfb5d1fbad75d7bd31a7297dbf77b8b9e5c59d940010c5b3",
+  "magisk_saved_init_sha256": "bd5bc6cb4b06e614bfb5d1fbad75d7bd31a7297dbf77b8b9e5c59d940010c5b3",
+  "matches": true,
+  "stock_paths": [
+    "debug_ramdisk",
+    "dev",
+    "dev/console",
+    "dev/null",
+    "dev/urandom",
+    "init",
+    "metadata",
+    "mnt",
+    "proc",
+    "second_stage_resources",
+    "sys",
+    "system",
+    "system/bin",
+    "system/bin/snapuserd",
+    "system/bin/snapuserd_ramdisk",
+    "system/etc",
+    "system/etc/init",
+    "system/etc/init/snapuserd.rc",
+    "system/etc/ramdisk",
+    "system/etc/ramdisk/build.prop"
+  ]
+}

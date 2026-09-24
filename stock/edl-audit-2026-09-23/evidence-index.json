@@ -1,0 +1,22 @@
+{
+  "source": "NX733J owner-provided 9008 backup dated 2026-05-04, earlier stock captures, and live rooted stock observation",
+  "audit_date": "2026-09-23",
+  "sha256": {
+    "gpt-audit.json": "37f31175d5a7a5f0e49ae63e59275eea216b2e6b8f2b9f86976cd26fe8ff03e1",
+    "super-metadata-audit.json": "4116185e6a3011ffb19d4109f4dcfa7db002b1cab4a9f8f3ac4bc785cf4ad625",
+    "super-versus-captures.json": "e2e42166b44b0872c1685443d3730078bb8635047153b866a2b15f4dcbe59bda",
+    "super-hashtree-checks-b.json": "438d07c3903b7f3d289ae5e339beff4091c2aa2092a26ce16252a540ecf8c6c6",
+    "embedded-signature-checks.json": "944bb7569edfe7fd080d8642f9c091c07c4d886794702650d587682cceb7920b",
+    "chain-signature-checks.json": "abff0807a8fd55d8ca402928b203e57a0bb31798a16aa3d42e10d1a6cacfd486",
+    "magisk-original-init-check.json": "7a3cca9595886ec9dd93e043f8dea9952a127ae48b3cafd2c67b82ff00f16a34",
+    "ramdisk-load-closure.json": "2942bca657aeb08eebf598f7ed931e0c0b99287c5a90a4d17149c6a890eb0a26",
+    "module-build-id-comparison.json": "5d9b6193b292d3730c1a08eb80c2eb4b7a505a8813d115a4a64c378b7120360b",
+    "module-inventory-summary.json": "e0628eec95ae29cc8f588ebd878b2393958ae05c31e2df7c58cd70e648164e3e"
+  },
+  "limits": [
+    "Reports contain measurements, not firmware or a restoration recipe.",
+    "Original images and locally executed audit scripts are not included.",
+    "Report hashes identify these results; they do not independently authenticate the original firmware."
+  ],
+  "hash_encoding": "UTF-8, LF line endings as stored in Git; normalize CRLF to LF before checking a Windows checkout."
+}

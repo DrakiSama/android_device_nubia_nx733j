@@ -1,0 +1,72 @@
+[
+  {
+    "partition": "odm_b",
+    "descriptor_source": "vbmeta_b.img",
+    "data_bytes": 794624,
+    "tree_bytes": 12288,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 0.0
+  },
+  {
+    "partition": "system_dlkm_b",
+    "descriptor_source": "vbmeta_b.img",
+    "data_bytes": 7348224,
+    "tree_bytes": 65536,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 0.1
+  },
+  {
+    "partition": "vendor_b",
+    "descriptor_source": "vbmeta_b.img",
+    "data_bytes": 1903648768,
+    "tree_bytes": 14995456,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 9.67
+  },
+  {
+    "partition": "vendor_dlkm_b",
+    "descriptor_source": "vbmeta_b.img",
+    "data_bytes": 32858112,
+    "tree_bytes": 262144,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 0.63
+  },
+  {
+    "partition": "product_b",
+    "descriptor_source": "vbmeta_system_b.img",
+    "data_bytes": 1946824704,
+    "tree_bytes": 15339520,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 9.68
+  },
+  {
+    "partition": "system_b",
+    "descriptor_source": "vbmeta_system_b.img",
+    "data_bytes": 4436180992,
+    "tree_bytes": 34938880,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 48.82
+  },
+  {
+    "partition": "system_ext_b",
+    "descriptor_source": "vbmeta_system_b.img",
+    "data_bytes": 867667968,
+    "tree_bytes": 6836224,
+    "root_digest_matches": true,
+    "stored_tree_matches": true,
+    "fec_verified": false,
+    "elapsed_seconds": 4.01
+  }
+]

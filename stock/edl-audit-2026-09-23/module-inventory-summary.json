@@ -1,0 +1,73 @@
+{
+  "source_report_sha256": "adf15da607dc61956cd3f449cdd29a535fb9d5dfdb24d8e5f33d1e80e44b8292",
+  "module_files": 681,
+  "unique_names": 479,
+  "by_partition": {
+    "vendor_boot": 306,
+    "system_dlkm": 94,
+    "vendor_dlkm": 280,
+    "vendor": 1
+  },
+  "duplicate_names": 202,
+  "loaded_names_unaccounted": [],
+  "symbol_crc_conflicts": {},
+  "duplicate_candidates": [
+    {
+      "path": "vendor_boot/lib/modules/zram.ko",
+      "name": "zram",
+      "sha256": "91d0ff3d86d99c310d0734cb6ed51d062036f83bf95f333c00c22241e5f8eb51",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "depends": [
+        "zsmalloc"
+      ],
+      "versioned_imports": 108,
+      "observed_loaded_name": true
+    },
+    {
+      "path": "vendor_boot/lib/modules/zsmalloc.ko",
+      "name": "zsmalloc",
+      "sha256": "41e4f238c2ae060f0ceffa49882e76e4e59e60caa82e9d7bb26c38ecb1a48b3f",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 43,
+      "observed_loaded_name": true
+    },
+    {
+      "path": "system_dlkm/lib/modules/zram.ko",
+      "name": "zram",
+      "sha256": "eefaebaeb6fbb9894a90b2234bef772c922feb2e48268c168ef956054f602562",
+      "vermagic": [
+        "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "depends": [
+        "zsmalloc"
+      ],
+      "versioned_imports": 83,
+      "observed_loaded_name": true
+    },
+    {
+      "path": "system_dlkm/lib/modules/zsmalloc.ko",
+      "name": "zsmalloc",
+      "sha256": "a323e35db4dbb51d846d6df232dc866dab65d5e7e477f13359d55bdac82892dd",
+      "vermagic": [
+        "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "depends": [
+        ""
+      ],
+      "versioned_imports": 51,
+      "observed_loaded_name": true
+    }
+  ],
+  "limits": [
+    "Name matching does not identify loaded bytes.",
+    "Cross-module CRC consistency is not verification against kernel exports.",
+    "Input runtime module list comes from the earlier capture on the same firmware."
+  ]
+}

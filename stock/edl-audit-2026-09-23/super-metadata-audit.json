@@ -1,0 +1,1963 @@
+{
+  "source": "NX733J 9008 backup super.img",
+  "image_bytes": 17179869184,
+  "format_source": "AOSP local liblp metadata_format.h and utility.cpp",
+  "geometry": {
+    "primary_backup_match": true,
+    "checksums_valid": true,
+    "metadata_max_size": 65536,
+    "metadata_slots": 3,
+    "logical_block_size": 4096
+  },
+  "metadata": [
+    {
+      "slot_index": 0,
+      "backup": false,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "a83ca5f0f64194f77f999be3df8daac1d3c8b4b78ad451a8d86821d9812f197e",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_a",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 8264818688
+        },
+        {
+          "name": "cow",
+          "maximum_bytes": 0,
+          "used_bytes": 1995284480
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 524288,
+          "alignment_offset": 491520
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_a",
+          "bytes": 872448,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1704,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_a",
+          "bytes": 1773477888,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3051520,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9915392,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9931776,
+              "source_index": 0
+            },
+            {
+              "sectors": 16384,
+              "type": 0,
+              "start_sector": 14708736,
+              "source_index": 0
+            },
+            {
+              "sectors": 38912,
+              "type": 0,
+              "start_sector": 15060992,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 15296512,
+              "source_index": 0
+            },
+            {
+              "sectors": 81920,
+              "type": 0,
+              "start_sector": 15129600,
+              "source_index": 0
+            },
+            {
+              "sectors": 23552,
+              "type": 0,
+              "start_sector": 15260672,
+              "source_index": 0
+            },
+            {
+              "sectors": 248464,
+              "type": 0,
+              "start_sector": 15888384,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_a",
+          "bytes": 3976900608,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859776,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            },
+            {
+              "sectors": 335872,
+              "type": 0,
+              "start_sector": 14725120,
+              "source_index": 0
+            },
+            {
+              "sectors": 109568,
+              "type": 0,
+              "start_sector": 15297536,
+              "source_index": 0
+            },
+            {
+              "sectors": 86016,
+              "type": 0,
+              "start_sector": 15432704,
+              "source_index": 0
+            },
+            {
+              "sectors": 14336,
+              "type": 0,
+              "start_sector": 15407104,
+              "source_index": 0
+            },
+            {
+              "sectors": 356352,
+              "type": 0,
+              "start_sector": 15518720,
+              "source_index": 0
+            },
+            {
+              "sectors": 5464,
+              "type": 0,
+              "start_sector": 16137216,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_a",
+          "bytes": 7618560,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14880,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_a",
+          "bytes": 585248768,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1085440,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15211520,
+              "source_index": 0
+            },
+            {
+              "sectors": 29696,
+              "type": 0,
+              "start_sector": 15099904,
+              "source_index": 0
+            },
+            {
+              "sectors": 3352,
+              "type": 0,
+              "start_sector": 16143360,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_a",
+          "bytes": 1887203328,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624960,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15236096,
+              "source_index": 0
+            },
+            {
+              "sectors": 12288,
+              "type": 0,
+              "start_sector": 15284224,
+              "source_index": 0
+            },
+            {
+              "sectors": 11264,
+              "type": 0,
+              "start_sector": 15421440,
+              "source_index": 0
+            },
+            {
+              "sectors": 12856,
+              "type": 0,
+              "start_sector": 15875072,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_a",
+          "bytes": 33497088,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65424,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_a-cow",
+          "bytes": 4231168,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 8264,
+              "type": 0,
+              "start_sector": 16147456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_a-cow",
+          "bytes": 1305632768,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 2550064,
+              "type": 0,
+              "start_sector": 16156672,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_a-cow",
+          "bytes": 425455616,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 830968,
+              "type": 0,
+              "start_sector": 18707456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_a-cow",
+          "bytes": 10911744,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 21312,
+              "type": 0,
+              "start_sector": 19538944,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_a-cow",
+          "bytes": 190111744,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 371312,
+              "type": 0,
+              "start_sector": 19560448,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_a-cow",
+          "bytes": 52858880,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 103240,
+              "type": 0,
+              "start_sector": 19932160,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_a-cow",
+          "bytes": 6082560,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 11880,
+              "type": 0,
+              "start_sector": 20035584,
+              "source_index": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_index": 0,
+      "backup": true,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "a83ca5f0f64194f77f999be3df8daac1d3c8b4b78ad451a8d86821d9812f197e",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_a",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 8264818688
+        },
+        {
+          "name": "cow",
+          "maximum_bytes": 0,
+          "used_bytes": 1995284480
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 524288,
+          "alignment_offset": 491520
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_a",
+          "bytes": 872448,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1704,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_a",
+          "bytes": 1773477888,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3051520,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9915392,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9931776,
+              "source_index": 0
+            },
+            {
+              "sectors": 16384,
+              "type": 0,
+              "start_sector": 14708736,
+              "source_index": 0
+            },
+            {
+              "sectors": 38912,
+              "type": 0,
+              "start_sector": 15060992,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 15296512,
+              "source_index": 0
+            },
+            {
+              "sectors": 81920,
+              "type": 0,
+              "start_sector": 15129600,
+              "source_index": 0
+            },
+            {
+              "sectors": 23552,
+              "type": 0,
+              "start_sector": 15260672,
+              "source_index": 0
+            },
+            {
+              "sectors": 248464,
+              "type": 0,
+              "start_sector": 15888384,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_a",
+          "bytes": 3976900608,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859776,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            },
+            {
+              "sectors": 335872,
+              "type": 0,
+              "start_sector": 14725120,
+              "source_index": 0
+            },
+            {
+              "sectors": 109568,
+              "type": 0,
+              "start_sector": 15297536,
+              "source_index": 0
+            },
+            {
+              "sectors": 86016,
+              "type": 0,
+              "start_sector": 15432704,
+              "source_index": 0
+            },
+            {
+              "sectors": 14336,
+              "type": 0,
+              "start_sector": 15407104,
+              "source_index": 0
+            },
+            {
+              "sectors": 356352,
+              "type": 0,
+              "start_sector": 15518720,
+              "source_index": 0
+            },
+            {
+              "sectors": 5464,
+              "type": 0,
+              "start_sector": 16137216,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_a",
+          "bytes": 7618560,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14880,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_a",
+          "bytes": 585248768,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1085440,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15211520,
+              "source_index": 0
+            },
+            {
+              "sectors": 29696,
+              "type": 0,
+              "start_sector": 15099904,
+              "source_index": 0
+            },
+            {
+              "sectors": 3352,
+              "type": 0,
+              "start_sector": 16143360,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_a",
+          "bytes": 1887203328,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624960,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15236096,
+              "source_index": 0
+            },
+            {
+              "sectors": 12288,
+              "type": 0,
+              "start_sector": 15284224,
+              "source_index": 0
+            },
+            {
+              "sectors": 11264,
+              "type": 0,
+              "start_sector": 15421440,
+              "source_index": 0
+            },
+            {
+              "sectors": 12856,
+              "type": 0,
+              "start_sector": 15875072,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_a",
+          "bytes": 33497088,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65424,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_a-cow",
+          "bytes": 4231168,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 8264,
+              "type": 0,
+              "start_sector": 16147456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_a-cow",
+          "bytes": 1305632768,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 2550064,
+              "type": 0,
+              "start_sector": 16156672,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_a-cow",
+          "bytes": 425455616,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 830968,
+              "type": 0,
+              "start_sector": 18707456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_a-cow",
+          "bytes": 10911744,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 21312,
+              "type": 0,
+              "start_sector": 19538944,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_a-cow",
+          "bytes": 190111744,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 371312,
+              "type": 0,
+              "start_sector": 19560448,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_a-cow",
+          "bytes": 52858880,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 103240,
+              "type": 0,
+              "start_sector": 19932160,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_a-cow",
+          "bytes": 6082560,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 11880,
+              "type": 0,
+              "start_sector": 20035584,
+              "source_index": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_index": 1,
+      "backup": false,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "2d9495da8a20a81dfc62eedfd5ac6a43a02678b65e4bd88196d32b22a6fa5ea0",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_b",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 9371389952
+        },
+        {
+          "name": "cow",
+          "maximum_bytes": 0,
+          "used_bytes": 4222287872
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 524288,
+          "alignment_offset": 491520
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_b",
+          "bytes": 892928,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1744,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b",
+          "bytes": 1984057344,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3051520,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9915392,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9931776,
+              "source_index": 0
+            },
+            {
+              "sectors": 16384,
+              "type": 0,
+              "start_sector": 14708736,
+              "source_index": 0
+            },
+            {
+              "sectors": 38912,
+              "type": 0,
+              "start_sector": 15060992,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 15296512,
+              "source_index": 0
+            },
+            {
+              "sectors": 81920,
+              "type": 0,
+              "start_sector": 15129600,
+              "source_index": 0
+            },
+            {
+              "sectors": 23552,
+              "type": 0,
+              "start_sector": 15260672,
+              "source_index": 0
+            },
+            {
+              "sectors": 248832,
+              "type": 0,
+              "start_sector": 15888384,
+              "source_index": 0
+            },
+            {
+              "sectors": 410920,
+              "type": 0,
+              "start_sector": 16147456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b",
+          "bytes": 4520910848,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859776,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            },
+            {
+              "sectors": 335872,
+              "type": 0,
+              "start_sector": 14725120,
+              "source_index": 0
+            },
+            {
+              "sectors": 109568,
+              "type": 0,
+              "start_sector": 15297536,
+              "source_index": 0
+            },
+            {
+              "sectors": 86016,
+              "type": 0,
+              "start_sector": 15432704,
+              "source_index": 0
+            },
+            {
+              "sectors": 14336,
+              "type": 0,
+              "start_sector": 15407104,
+              "source_index": 0
+            },
+            {
+              "sectors": 356352,
+              "type": 0,
+              "start_sector": 15518720,
+              "source_index": 0
+            },
+            {
+              "sectors": 6144,
+              "type": 0,
+              "start_sector": 16137216,
+              "source_index": 0
+            },
+            {
+              "sectors": 1061840,
+              "type": 0,
+              "start_sector": 16559104,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b",
+          "bytes": 7577600,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14800,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b",
+          "bytes": 884314112,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1085440,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15211520,
+              "source_index": 0
+            },
+            {
+              "sectors": 29696,
+              "type": 0,
+              "start_sector": 15099904,
+              "source_index": 0
+            },
+            {
+              "sectors": 4096,
+              "type": 0,
+              "start_sector": 16143360,
+              "source_index": 0
+            },
+            {
+              "sectors": 583368,
+              "type": 0,
+              "start_sector": 17620992,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b",
+          "bytes": 1940062208,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624960,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15236096,
+              "source_index": 0
+            },
+            {
+              "sectors": 12288,
+              "type": 0,
+              "start_sector": 15284224,
+              "source_index": 0
+            },
+            {
+              "sectors": 11264,
+              "type": 0,
+              "start_sector": 15421440,
+              "source_index": 0
+            },
+            {
+              "sectors": 13312,
+              "type": 0,
+              "start_sector": 15875072,
+              "source_index": 0
+            },
+            {
+              "sectors": 102784,
+              "type": 0,
+              "start_sector": 18204672,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b",
+          "bytes": 33574912,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65536,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            },
+            {
+              "sectors": 40,
+              "type": 0,
+              "start_sector": 18308096,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_b-cow",
+          "bytes": 4927488,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 9624,
+              "type": 0,
+              "start_sector": 18309120,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b-cow",
+          "bytes": 765456384,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 1495032,
+              "type": 0,
+              "start_sector": 18319360,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b-cow",
+          "bytes": 2272006144,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 4437512,
+              "type": 0,
+              "start_sector": 19814400,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b-cow",
+          "bytes": 4382720,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 8560,
+              "type": 0,
+              "start_sector": 24252416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b-cow",
+          "bytes": 756375552,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 1477296,
+              "type": 0,
+              "start_sector": 24261632,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b-cow",
+          "bytes": 399769600,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 780800,
+              "type": 0,
+              "start_sector": 25739264,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b-cow",
+          "bytes": 19369984,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 37832,
+              "type": 0,
+              "start_sector": 26520576,
+              "source_index": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_index": 1,
+      "backup": true,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "2d9495da8a20a81dfc62eedfd5ac6a43a02678b65e4bd88196d32b22a6fa5ea0",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_b",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 9371389952
+        },
+        {
+          "name": "cow",
+          "maximum_bytes": 0,
+          "used_bytes": 4222287872
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 524288,
+          "alignment_offset": 491520
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_b",
+          "bytes": 892928,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1744,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b",
+          "bytes": 1984057344,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3051520,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9915392,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 9931776,
+              "source_index": 0
+            },
+            {
+              "sectors": 16384,
+              "type": 0,
+              "start_sector": 14708736,
+              "source_index": 0
+            },
+            {
+              "sectors": 38912,
+              "type": 0,
+              "start_sector": 15060992,
+              "source_index": 0
+            },
+            {
+              "sectors": 1024,
+              "type": 0,
+              "start_sector": 15296512,
+              "source_index": 0
+            },
+            {
+              "sectors": 81920,
+              "type": 0,
+              "start_sector": 15129600,
+              "source_index": 0
+            },
+            {
+              "sectors": 23552,
+              "type": 0,
+              "start_sector": 15260672,
+              "source_index": 0
+            },
+            {
+              "sectors": 248832,
+              "type": 0,
+              "start_sector": 15888384,
+              "source_index": 0
+            },
+            {
+              "sectors": 410920,
+              "type": 0,
+              "start_sector": 16147456,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b",
+          "bytes": 4520910848,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859776,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            },
+            {
+              "sectors": 335872,
+              "type": 0,
+              "start_sector": 14725120,
+              "source_index": 0
+            },
+            {
+              "sectors": 109568,
+              "type": 0,
+              "start_sector": 15297536,
+              "source_index": 0
+            },
+            {
+              "sectors": 86016,
+              "type": 0,
+              "start_sector": 15432704,
+              "source_index": 0
+            },
+            {
+              "sectors": 14336,
+              "type": 0,
+              "start_sector": 15407104,
+              "source_index": 0
+            },
+            {
+              "sectors": 356352,
+              "type": 0,
+              "start_sector": 15518720,
+              "source_index": 0
+            },
+            {
+              "sectors": 6144,
+              "type": 0,
+              "start_sector": 16137216,
+              "source_index": 0
+            },
+            {
+              "sectors": 1061840,
+              "type": 0,
+              "start_sector": 16559104,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b",
+          "bytes": 7577600,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14800,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b",
+          "bytes": 884314112,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1085440,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15211520,
+              "source_index": 0
+            },
+            {
+              "sectors": 29696,
+              "type": 0,
+              "start_sector": 15099904,
+              "source_index": 0
+            },
+            {
+              "sectors": 4096,
+              "type": 0,
+              "start_sector": 16143360,
+              "source_index": 0
+            },
+            {
+              "sectors": 583368,
+              "type": 0,
+              "start_sector": 17620992,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b",
+          "bytes": 1940062208,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624960,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            },
+            {
+              "sectors": 24576,
+              "type": 0,
+              "start_sector": 15236096,
+              "source_index": 0
+            },
+            {
+              "sectors": 12288,
+              "type": 0,
+              "start_sector": 15284224,
+              "source_index": 0
+            },
+            {
+              "sectors": 11264,
+              "type": 0,
+              "start_sector": 15421440,
+              "source_index": 0
+            },
+            {
+              "sectors": 13312,
+              "type": 0,
+              "start_sector": 15875072,
+              "source_index": 0
+            },
+            {
+              "sectors": 102784,
+              "type": 0,
+              "start_sector": 18204672,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b",
+          "bytes": 33574912,
+          "attributes": 5,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65536,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            },
+            {
+              "sectors": 40,
+              "type": 0,
+              "start_sector": 18308096,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_b-cow",
+          "bytes": 4927488,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 9624,
+              "type": 0,
+              "start_sector": 18309120,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b-cow",
+          "bytes": 765456384,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 1495032,
+              "type": 0,
+              "start_sector": 18319360,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b-cow",
+          "bytes": 2272006144,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 4437512,
+              "type": 0,
+              "start_sector": 19814400,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b-cow",
+          "bytes": 4382720,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 8560,
+              "type": 0,
+              "start_sector": 24252416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b-cow",
+          "bytes": 756375552,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 1477296,
+              "type": 0,
+              "start_sector": 24261632,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b-cow",
+          "bytes": 399769600,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 780800,
+              "type": 0,
+              "start_sector": 25739264,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b-cow",
+          "bytes": 19369984,
+          "attributes": 0,
+          "group": "cow",
+          "filesystem_magic": "unknown",
+          "extents": [
+            {
+              "sectors": 37832,
+              "type": 0,
+              "start_sector": 26520576,
+              "source_index": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_index": 2,
+      "backup": false,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "67ac9cd0631eb9d62e11325ba282095b1ca2b80d4b10d24e8a11f2883f98955d",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_a",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 7526797312
+        },
+        {
+          "name": "qti_dynamic_partitions_b",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 0
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 1048576,
+          "alignment_offset": 0
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_a",
+          "bytes": 868352,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1696,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "product_a",
+          "bytes": 1561853952,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3050496,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_a",
+          "bytes": 3511894016,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859168,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_dlkm_a",
+          "bytes": 7499776,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14648,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_ext_a",
+          "bytes": 555294720,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1084560,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "vendor_a",
+          "bytes": 1855860736,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624728,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "vendor_dlkm_a",
+          "bytes": 33525760,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65480,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        }
+      ]
+    },
+    {
+      "slot_index": 2,
+      "backup": true,
+      "present": true,
+      "checksums_valid": true,
+      "version": "10.2",
+      "header_flags": 1,
+      "sha256": "67ac9cd0631eb9d62e11325ba282095b1ca2b80d4b10d24e8a11f2883f98955d",
+      "groups": [
+        {
+          "name": "default",
+          "maximum_bytes": 0,
+          "used_bytes": 0
+        },
+        {
+          "name": "qti_dynamic_partitions_a",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 7526797312
+        },
+        {
+          "name": "qti_dynamic_partitions_b",
+          "maximum_bytes": 17175674880,
+          "used_bytes": 0
+        }
+      ],
+      "devices": [
+        {
+          "name": "super",
+          "bytes": 17179869184,
+          "first_sector": 2048,
+          "alignment": 1048576,
+          "alignment_offset": 0
+        }
+      ],
+      "partitions": [
+        {
+          "name": "odm_a",
+          "bytes": 868352,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1696,
+              "type": 0,
+              "start_sector": 2048,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "odm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "product_a",
+          "bytes": 1561853952,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3050496,
+              "type": 0,
+              "start_sector": 4096,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "product_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_a",
+          "bytes": 3511894016,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 6859168,
+              "type": 0,
+              "start_sector": 3055616,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_dlkm_a",
+          "bytes": 7499776,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 14648,
+              "type": 0,
+              "start_sector": 9916416,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_dlkm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "system_ext_a",
+          "bytes": 555294720,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 1084560,
+              "type": 0,
+              "start_sector": 9932800,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "system_ext_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "vendor_a",
+          "bytes": 1855860736,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 3624728,
+              "type": 0,
+              "start_sector": 11018240,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        },
+        {
+          "name": "vendor_dlkm_a",
+          "bytes": 33525760,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_a",
+          "filesystem_magic": "erofs",
+          "extents": [
+            {
+              "sectors": 65480,
+              "type": 0,
+              "start_sector": 14643200,
+              "source_index": 0
+            }
+          ]
+        },
+        {
+          "name": "vendor_dlkm_b",
+          "bytes": 0,
+          "attributes": 1,
+          "group": "qti_dynamic_partitions_b",
+          "filesystem_magic": "unexamined",
+          "extents": []
+        }
+      ]
+    }
+  ],
+  "discrepancies": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "image": "vbmeta_a.img",
+    "signature_valid_with_embedded_key": true,
+    "algorithm_type": 2,
+    "flags": 0,
+    "rollback_index": 0,
+    "key_sha1": "c0b5900ac98072a4a521d50c85af4c8b8a9e6449",
+    "key_sha256": "cb1d6118fa04f2634e9d837796033b13df1d086d14a8c49a1874e622321a58c6",
+    "oem_trust_anchor_verified": false
+  },
+  {
+    "image": "vbmeta_b.img",
+    "signature_valid_with_embedded_key": true,
+    "algorithm_type": 2,
+    "flags": 0,
+    "rollback_index": 0,
+    "key_sha1": "c0b5900ac98072a4a521d50c85af4c8b8a9e6449",
+    "key_sha256": "cb1d6118fa04f2634e9d837796033b13df1d086d14a8c49a1874e622321a58c6",
+    "oem_trust_anchor_verified": false
+  },
+  {
+    "image": "vbmeta_system_a.img",
+    "signature_valid_with_embedded_key": true,
+    "algorithm_type": 1,
+    "flags": 0,
+    "rollback_index": 1764547200,
+    "key_sha1": "4c630744affc5ebcf7105e9af184cad25f0bf215",
+    "key_sha256": "d60f62dc3ceb8816876477d265873c8b7b78c65f51d0338cfc1a850603adc85f",
+    "oem_trust_anchor_verified": false
+  },
+  {
+    "image": "vbmeta_system_b.img",
+    "signature_valid_with_embedded_key": true,
+    "algorithm_type": 1,
+    "flags": 0,
+    "rollback_index": 1769904000,
+    "key_sha1": "4c630744affc5ebcf7105e9af184cad25f0bf215",
+    "key_sha256": "d60f62dc3ceb8816876477d265873c8b7b78c65f51d0338cfc1a850603adc85f",
+    "oem_trust_anchor_verified": false
+  }
+]

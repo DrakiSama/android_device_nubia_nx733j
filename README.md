@@ -1,6 +1,8 @@
-# Nubia NX733J — base de bring-up para LineageOS
+# Nubia NX733J — base de dispositivo Android
 
-Base independiente de TWRP. Referencia inicial: LineageOS `lineage-23.2`.
+Base NX733J independiente de TWRP, orientada a AOSP y derivados.
+El scaffold actual sigue siendo LineageOS `lineage-23.2`; su separación genérica
+está pendiente. Estado vigente: [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
 **No es todavía un árbol compilable ni un producto flasheable.**
 La inclusión obligatoria de BoardConfigBringup.mk mantiene bloqueada la
 compilación hasta resolver las decisiones pendientes. No se debe sustituir por
@@ -24,7 +26,9 @@ No se han copiado políticas SELinux compiladas como sustituto de su fuente.
    y 306 módulos de ramdisk con vermagic 6.6.30-android15-8; los números de parche
    distintos no bastan para declarar compatibilidad ni incompatibilidad.
 2. Ya se auditaron imágenes de arranque por lectura; ver docs/BOOT-AUDIT.md.
-   Resolver init_boot limpio, KMI y política AVB/OTA antes de BoardConfigBringup.mk.
+   La referencia init_boot limpia quedó identificada en la
+   [auditoría 9008](docs/EDL-BACKUP-AUDIT.md). Resolver KMI y política AVB/OTA
+   antes de BoardConfigBringup.mk.
 3. Completar proprietary-files.txt y extraer un dump stock organizado por
    particiones. Desde device/nubia/nx733j, ejecutar ./extract-files.py /ruta/dump
    con tools/extract-utils y sus dependencias disponibles. La clasificación
@@ -71,3 +75,6 @@ Solo se versionan fuentes, herramientas y metadatos; los dumps y binarios quedan
 fuera del repositorio. Todavía no hay una ROM compilada ni instrucciones de flasheo.
 
 La [auditoría de kernel y servicios OEM](docs/KERNEL-AND-OEM-AUDIT.md) registra la consistencia de CRC de los módulos y las decisiones pendientes de init.
+
+La [auditoría del respaldo 9008](docs/EDL-BACKUP-AUDIT.md) amplía GPT/super/AVB
+y resuelve por build ID la identidad observada de zram/zsmalloc.

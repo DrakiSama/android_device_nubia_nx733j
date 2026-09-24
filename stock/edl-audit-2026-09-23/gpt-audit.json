@@ -1,0 +1,1590 @@
+{
+  "source": "for_ROM_maker/orig GPT, cross-checked against original rawprogram XML",
+  "luns": [
+    {
+      "lun": 0,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 12,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 61390847,
+          "first_usable": 6,
+          "last_usable": 61390842,
+          "sha256": "a4ec9c5d06f0c2ffff92c4102e6396e76ddfe6bfe06dbce4a41a1801a4481bf1",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ssd",
+              "start_sector": 6,
+              "end_sector": 7,
+              "bytes": 8192
+            },
+            {
+              "label": "persist",
+              "start_sector": 8,
+              "end_sector": 8199,
+              "bytes": 33554432
+            },
+            {
+              "label": "misc",
+              "start_sector": 8200,
+              "end_sector": 8455,
+              "bytes": 1048576
+            },
+            {
+              "label": "parameter",
+              "start_sector": 8456,
+              "end_sector": 8711,
+              "bytes": 1048576
+            },
+            {
+              "label": "keystore",
+              "start_sector": 8712,
+              "end_sector": 8839,
+              "bytes": 524288
+            },
+            {
+              "label": "frp",
+              "start_sector": 8840,
+              "end_sector": 8967,
+              "bytes": 524288
+            },
+            {
+              "label": "super",
+              "start_sector": 8968,
+              "end_sector": 4203271,
+              "bytes": 17179869184
+            },
+            {
+              "label": "vbmeta_system_a",
+              "start_sector": 4203272,
+              "end_sector": 4203287,
+              "bytes": 65536
+            },
+            {
+              "label": "vbmeta_system_b",
+              "start_sector": 4203288,
+              "end_sector": 4203303,
+              "bytes": 65536
+            },
+            {
+              "label": "metadata",
+              "start_sector": 4203304,
+              "end_sector": 4219687,
+              "bytes": 67108864
+            },
+            {
+              "label": "rawdump",
+              "start_sector": 4219688,
+              "end_sector": 4350759,
+              "bytes": 536870912
+            },
+            {
+              "label": "userdata",
+              "start_sector": 4350760,
+              "end_sector": 61390842,
+              "bytes": 233636179968
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 61390847,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 61390842,
+          "sha256": "27f61579474d2fbe754b2bd5652f223eb2e5372b4435a31f87176331b0662d6a",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ssd",
+              "start_sector": 6,
+              "end_sector": 7,
+              "bytes": 8192
+            },
+            {
+              "label": "persist",
+              "start_sector": 8,
+              "end_sector": 8199,
+              "bytes": 33554432
+            },
+            {
+              "label": "misc",
+              "start_sector": 8200,
+              "end_sector": 8455,
+              "bytes": 1048576
+            },
+            {
+              "label": "parameter",
+              "start_sector": 8456,
+              "end_sector": 8711,
+              "bytes": 1048576
+            },
+            {
+              "label": "keystore",
+              "start_sector": 8712,
+              "end_sector": 8839,
+              "bytes": 524288
+            },
+            {
+              "label": "frp",
+              "start_sector": 8840,
+              "end_sector": 8967,
+              "bytes": 524288
+            },
+            {
+              "label": "super",
+              "start_sector": 8968,
+              "end_sector": 4203271,
+              "bytes": 17179869184
+            },
+            {
+              "label": "vbmeta_system_a",
+              "start_sector": 4203272,
+              "end_sector": 4203287,
+              "bytes": 65536
+            },
+            {
+              "label": "vbmeta_system_b",
+              "start_sector": 4203288,
+              "end_sector": 4203303,
+              "bytes": 65536
+            },
+            {
+              "label": "metadata",
+              "start_sector": 4203304,
+              "end_sector": 4219687,
+              "bytes": 67108864
+            },
+            {
+              "label": "rawdump",
+              "start_sector": 4219688,
+              "end_sector": 4350759,
+              "bytes": 536870912
+            },
+            {
+              "label": "userdata",
+              "start_sector": 4350760,
+              "end_sector": 61390842,
+              "bytes": 233636179968
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lun": 1,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 5,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 5119,
+          "first_usable": 6,
+          "last_usable": 5114,
+          "sha256": "4440d2f03dd93456e0ca9b2d572cbc21bf681ae1481f0797089e4ba4e3c9547f",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "xbl_a",
+              "start_sector": 6,
+              "end_sector": 901,
+              "bytes": 3670016
+            },
+            {
+              "label": "xbl_config_a",
+              "start_sector": 902,
+              "end_sector": 1029,
+              "bytes": 524288
+            },
+            {
+              "label": "multiimgqti_a",
+              "start_sector": 1030,
+              "end_sector": 1037,
+              "bytes": 32768
+            },
+            {
+              "label": "multiimgoem_a",
+              "start_sector": 1038,
+              "end_sector": 1045,
+              "bytes": 32768
+            },
+            {
+              "label": "apdp",
+              "start_sector": 1046,
+              "end_sector": 1109,
+              "bytes": 262144
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 5119,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 5114,
+          "sha256": "9e264a371548ff5550c97eb8acf4acc4fee117a44c682f58f256d07b89f9d86e",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "xbl_a",
+              "start_sector": 6,
+              "end_sector": 901,
+              "bytes": 3670016
+            },
+            {
+              "label": "xbl_config_a",
+              "start_sector": 902,
+              "end_sector": 1029,
+              "bytes": 524288
+            },
+            {
+              "label": "multiimgqti_a",
+              "start_sector": 1030,
+              "end_sector": 1037,
+              "bytes": 32768
+            },
+            {
+              "label": "multiimgoem_a",
+              "start_sector": 1038,
+              "end_sector": 1045,
+              "bytes": 32768
+            },
+            {
+              "label": "apdp",
+              "start_sector": 1046,
+              "end_sector": 1109,
+              "bytes": 262144
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lun": 2,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 5,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 5119,
+          "first_usable": 6,
+          "last_usable": 5114,
+          "sha256": "57117f9286eaad8a3069c391a30ce18256c2683cf27767d3ddcd7c6eef80dd65",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "xbl_b",
+              "start_sector": 6,
+              "end_sector": 901,
+              "bytes": 3670016
+            },
+            {
+              "label": "xbl_config_b",
+              "start_sector": 902,
+              "end_sector": 1029,
+              "bytes": 524288
+            },
+            {
+              "label": "multiimgqti_b",
+              "start_sector": 1030,
+              "end_sector": 1037,
+              "bytes": 32768
+            },
+            {
+              "label": "multiimgoem_b",
+              "start_sector": 1038,
+              "end_sector": 1045,
+              "bytes": 32768
+            },
+            {
+              "label": "apdpb",
+              "start_sector": 1046,
+              "end_sector": 1109,
+              "bytes": 262144
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 5119,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 5114,
+          "sha256": "47d582a724a9663ebfb16064f00bfa42ccf9e70a115c51b7844a06e2e048d751",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "xbl_b",
+              "start_sector": 6,
+              "end_sector": 901,
+              "bytes": 3670016
+            },
+            {
+              "label": "xbl_config_b",
+              "start_sector": 902,
+              "end_sector": 1029,
+              "bytes": 524288
+            },
+            {
+              "label": "multiimgqti_b",
+              "start_sector": 1030,
+              "end_sector": 1037,
+              "bytes": 32768
+            },
+            {
+              "label": "multiimgoem_b",
+              "start_sector": 1038,
+              "end_sector": 1045,
+              "bytes": 32768
+            },
+            {
+              "label": "apdpb",
+              "start_sector": 1046,
+              "end_sector": 1109,
+              "bytes": 262144
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lun": 3,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 3,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 8191,
+          "first_usable": 6,
+          "last_usable": 8186,
+          "sha256": "9b9053fd05a209a009b3f595310a825ffbefbf2c2b33846666825d0575962489",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ALIGN_TO_128K_1",
+              "start_sector": 6,
+              "end_sector": 31,
+              "bytes": 106496
+            },
+            {
+              "label": "cdt",
+              "start_sector": 32,
+              "end_sector": 63,
+              "bytes": 131072
+            },
+            {
+              "label": "ddr",
+              "start_sector": 64,
+              "end_sector": 319,
+              "bytes": 1048576
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 8191,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 8186,
+          "sha256": "9e2731a0712a5ad63319b32c9006f6bab77654e057e781e503966b34fe4eed2b",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ALIGN_TO_128K_1",
+              "start_sector": 6,
+              "end_sector": 31,
+              "bytes": 106496
+            },
+            {
+              "label": "cdt",
+              "start_sector": 32,
+              "end_sector": 63,
+              "bytes": 131072
+            },
+            {
+              "label": "ddr",
+              "start_sector": 64,
+              "end_sector": 319,
+              "bytes": 1048576
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lun": 4,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 84,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 1048575,
+          "first_usable": 6,
+          "last_usable": 1048570,
+          "sha256": "a5071a367711d45b334267bffbda012e57fb4aac16f98f5819aca2bfce1d6133",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "uefi_a",
+              "start_sector": 6,
+              "end_sector": 1285,
+              "bytes": 5242880
+            },
+            {
+              "label": "aop_a",
+              "start_sector": 1286,
+              "end_sector": 1413,
+              "bytes": 524288
+            },
+            {
+              "label": "aop_config_a",
+              "start_sector": 1414,
+              "end_sector": 1541,
+              "bytes": 524288
+            },
+            {
+              "label": "tz_a",
+              "start_sector": 1542,
+              "end_sector": 2821,
+              "bytes": 5242880
+            },
+            {
+              "label": "hyp_a",
+              "start_sector": 2822,
+              "end_sector": 4869,
+              "bytes": 8388608
+            },
+            {
+              "label": "modem_a",
+              "start_sector": 4870,
+              "end_sector": 94469,
+              "bytes": 367001600
+            },
+            {
+              "label": "bluetooth_a",
+              "start_sector": 94470,
+              "end_sector": 96517,
+              "bytes": 8388608
+            },
+            {
+              "label": "abl_a",
+              "start_sector": 96518,
+              "end_sector": 96773,
+              "bytes": 1048576
+            },
+            {
+              "label": "dsp_a",
+              "start_sector": 96774,
+              "end_sector": 113157,
+              "bytes": 67108864
+            },
+            {
+              "label": "keymaster_a",
+              "start_sector": 113158,
+              "end_sector": 113285,
+              "bytes": 524288
+            },
+            {
+              "label": "spuservice_a",
+              "start_sector": 113286,
+              "end_sector": 113317,
+              "bytes": 131072
+            },
+            {
+              "label": "boot_a",
+              "start_sector": 113318,
+              "end_sector": 137893,
+              "bytes": 100663296
+            },
+            {
+              "label": "devcfg_a",
+              "start_sector": 137894,
+              "end_sector": 137925,
+              "bytes": 131072
+            },
+            {
+              "label": "qupfw_a",
+              "start_sector": 137926,
+              "end_sector": 137945,
+              "bytes": 81920
+            },
+            {
+              "label": "vbmeta_a",
+              "start_sector": 137946,
+              "end_sector": 137961,
+              "bytes": 65536
+            },
+            {
+              "label": "dtbo_a",
+              "start_sector": 137962,
+              "end_sector": 144105,
+              "bytes": 25165824
+            },
+            {
+              "label": "uefisecapp_a",
+              "start_sector": 144106,
+              "end_sector": 144617,
+              "bytes": 2097152
+            },
+            {
+              "label": "imagefv_a",
+              "start_sector": 144618,
+              "end_sector": 145129,
+              "bytes": 2097152
+            },
+            {
+              "label": "shrm_a",
+              "start_sector": 145130,
+              "end_sector": 145193,
+              "bytes": 262144
+            },
+            {
+              "label": "vm-bootsys_a",
+              "start_sector": 145194,
+              "end_sector": 282693,
+              "bytes": 563200000
+            },
+            {
+              "label": "cpucp_a",
+              "start_sector": 282694,
+              "end_sector": 282949,
+              "bytes": 1048576
+            },
+            {
+              "label": "featenabler_a",
+              "start_sector": 282950,
+              "end_sector": 282981,
+              "bytes": 131072
+            },
+            {
+              "label": "vendor_boot_a",
+              "start_sector": 282982,
+              "end_sector": 307557,
+              "bytes": 100663296
+            },
+            {
+              "label": "qmcs",
+              "start_sector": 307558,
+              "end_sector": 315237,
+              "bytes": 31457280
+            },
+            {
+              "label": "qweslicstore_a",
+              "start_sector": 315238,
+              "end_sector": 315301,
+              "bytes": 262144
+            },
+            {
+              "label": "recovery_a",
+              "start_sector": 315302,
+              "end_sector": 340901,
+              "bytes": 104857600
+            },
+            {
+              "label": "xbl_ramdump_a",
+              "start_sector": 340902,
+              "end_sector": 341413,
+              "bytes": 2097152
+            },
+            {
+              "label": "init_boot_a",
+              "start_sector": 341414,
+              "end_sector": 343461,
+              "bytes": 8388608
+            },
+            {
+              "label": "cpucp_dtb_a",
+              "start_sector": 343462,
+              "end_sector": 343477,
+              "bytes": 65536
+            },
+            {
+              "label": "pvmfw_a",
+              "start_sector": 343478,
+              "end_sector": 343733,
+              "bytes": 1048576
+            },
+            {
+              "label": "soccp_debug_a",
+              "start_sector": 343734,
+              "end_sector": 343861,
+              "bytes": 524288
+            },
+            {
+              "label": "soccp_dcd_a",
+              "start_sector": 343862,
+              "end_sector": 343867,
+              "bytes": 24576
+            },
+            {
+              "label": "pdp_a",
+              "start_sector": 343868,
+              "end_sector": 343931,
+              "bytes": 262144
+            },
+            {
+              "label": "pdp_cdb_a",
+              "start_sector": 343932,
+              "end_sector": 343963,
+              "bytes": 131072
+            },
+            {
+              "label": "splash_a",
+              "start_sector": 343964,
+              "end_sector": 352319,
+              "bytes": 34226176
+            },
+            {
+              "label": "uefi_b",
+              "start_sector": 352320,
+              "end_sector": 353599,
+              "bytes": 5242880
+            },
+            {
+              "label": "aop_b",
+              "start_sector": 353600,
+              "end_sector": 353727,
+              "bytes": 524288
+            },
+            {
+              "label": "aop_config_b",
+              "start_sector": 353728,
+              "end_sector": 353855,
+              "bytes": 524288
+            },
+            {
+              "label": "tz_b",
+              "start_sector": 353856,
+              "end_sector": 355135,
+              "bytes": 5242880
+            },
+            {
+              "label": "hyp_b",
+              "start_sector": 355136,
+              "end_sector": 357183,
+              "bytes": 8388608
+            },
+            {
+              "label": "modem_b",
+              "start_sector": 357184,
+              "end_sector": 446783,
+              "bytes": 367001600
+            },
+            {
+              "label": "bluetooth_b",
+              "start_sector": 446784,
+              "end_sector": 448831,
+              "bytes": 8388608
+            },
+            {
+              "label": "abl_b",
+              "start_sector": 448832,
+              "end_sector": 449087,
+              "bytes": 1048576
+            },
+            {
+              "label": "dsp_b",
+              "start_sector": 449088,
+              "end_sector": 465471,
+              "bytes": 67108864
+            },
+            {
+              "label": "keymaster_b",
+              "start_sector": 465472,
+              "end_sector": 465599,
+              "bytes": 524288
+            },
+            {
+              "label": "spuservice_b",
+              "start_sector": 465600,
+              "end_sector": 465631,
+              "bytes": 131072
+            },
+            {
+              "label": "boot_b",
+              "start_sector": 465632,
+              "end_sector": 490207,
+              "bytes": 100663296
+            },
+            {
+              "label": "devcfg_b",
+              "start_sector": 490208,
+              "end_sector": 490239,
+              "bytes": 131072
+            },
+            {
+              "label": "qupfw_b",
+              "start_sector": 490240,
+              "end_sector": 490259,
+              "bytes": 81920
+            },
+            {
+              "label": "vbmeta_b",
+              "start_sector": 490260,
+              "end_sector": 490275,
+              "bytes": 65536
+            },
+            {
+              "label": "dtbo_b",
+              "start_sector": 490276,
+              "end_sector": 496419,
+              "bytes": 25165824
+            },
+            {
+              "label": "uefisecapp_b",
+              "start_sector": 496420,
+              "end_sector": 496931,
+              "bytes": 2097152
+            },
+            {
+              "label": "imagefv_b",
+              "start_sector": 496932,
+              "end_sector": 497443,
+              "bytes": 2097152
+            },
+            {
+              "label": "shrm_b",
+              "start_sector": 497444,
+              "end_sector": 497507,
+              "bytes": 262144
+            },
+            {
+              "label": "vm-bootsys_b",
+              "start_sector": 497508,
+              "end_sector": 635007,
+              "bytes": 563200000
+            },
+            {
+              "label": "cpucp_b",
+              "start_sector": 635008,
+              "end_sector": 635263,
+              "bytes": 1048576
+            },
+            {
+              "label": "featenabler_b",
+              "start_sector": 635264,
+              "end_sector": 635295,
+              "bytes": 131072
+            },
+            {
+              "label": "vendor_boot_b",
+              "start_sector": 635296,
+              "end_sector": 659871,
+              "bytes": 100663296
+            },
+            {
+              "label": "qweslicstore_b",
+              "start_sector": 659872,
+              "end_sector": 659935,
+              "bytes": 262144
+            },
+            {
+              "label": "recovery_b",
+              "start_sector": 659936,
+              "end_sector": 685535,
+              "bytes": 104857600
+            },
+            {
+              "label": "xbl_ramdump_b",
+              "start_sector": 685536,
+              "end_sector": 686047,
+              "bytes": 2097152
+            },
+            {
+              "label": "init_boot_b",
+              "start_sector": 686048,
+              "end_sector": 688095,
+              "bytes": 8388608
+            },
+            {
+              "label": "cpucp_dtb_b",
+              "start_sector": 688096,
+              "end_sector": 688111,
+              "bytes": 65536
+            },
+            {
+              "label": "pvmfw_b",
+              "start_sector": 688112,
+              "end_sector": 688367,
+              "bytes": 1048576
+            },
+            {
+              "label": "soccp_debug_b",
+              "start_sector": 688368,
+              "end_sector": 688495,
+              "bytes": 524288
+            },
+            {
+              "label": "soccp_dcd_b",
+              "start_sector": 688496,
+              "end_sector": 688501,
+              "bytes": 24576
+            },
+            {
+              "label": "pdp_b",
+              "start_sector": 688502,
+              "end_sector": 688565,
+              "bytes": 262144
+            },
+            {
+              "label": "pdp_cdb_b",
+              "start_sector": 688566,
+              "end_sector": 688597,
+              "bytes": 131072
+            },
+            {
+              "label": "splash_b",
+              "start_sector": 688598,
+              "end_sector": 696953,
+              "bytes": 34226176
+            },
+            {
+              "label": "devinfo",
+              "start_sector": 696954,
+              "end_sector": 696954,
+              "bytes": 4096
+            },
+            {
+              "label": "toolsfv",
+              "start_sector": 696955,
+              "end_sector": 697210,
+              "bytes": 1048576
+            },
+            {
+              "label": "logfs",
+              "start_sector": 697211,
+              "end_sector": 699258,
+              "bytes": 8388608
+            },
+            {
+              "label": "logdump",
+              "start_sector": 699259,
+              "end_sector": 830330,
+              "bytes": 536870912
+            },
+            {
+              "label": "storsec",
+              "start_sector": 830331,
+              "end_sector": 830362,
+              "bytes": 131072
+            },
+            {
+              "label": "uefivarstore",
+              "start_sector": 830363,
+              "end_sector": 830490,
+              "bytes": 524288
+            },
+            {
+              "label": "secdata",
+              "start_sector": 830491,
+              "end_sector": 830497,
+              "bytes": 28672
+            },
+            {
+              "label": "vm-persist",
+              "start_sector": 830498,
+              "end_sector": 889377,
+              "bytes": 241172480
+            },
+            {
+              "label": "mdcompress",
+              "start_sector": 889378,
+              "end_sector": 894497,
+              "bytes": 20971520
+            },
+            {
+              "label": "connsec",
+              "start_sector": 894498,
+              "end_sector": 894529,
+              "bytes": 131072
+            },
+            {
+              "label": "tzsc",
+              "start_sector": 894530,
+              "end_sector": 894561,
+              "bytes": 131072
+            },
+            {
+              "label": "spunvm",
+              "start_sector": 894562,
+              "end_sector": 902753,
+              "bytes": 33554432
+            },
+            {
+              "label": "xbl_sc_test_mode",
+              "start_sector": 902754,
+              "end_sector": 902769,
+              "bytes": 65536
+            },
+            {
+              "label": "xbl_sc_logs",
+              "start_sector": 902770,
+              "end_sector": 902801,
+              "bytes": 131072
+            },
+            {
+              "label": "dpm",
+              "start_sector": 902802,
+              "end_sector": 902803,
+              "bytes": 8192
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1048575,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 1048570,
+          "sha256": "4b3d31b06e0cc8d08ce5598bd0c2e57df4d06021f22942bfe1e649d37e2328f4",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "uefi_a",
+              "start_sector": 6,
+              "end_sector": 1285,
+              "bytes": 5242880
+            },
+            {
+              "label": "aop_a",
+              "start_sector": 1286,
+              "end_sector": 1413,
+              "bytes": 524288
+            },
+            {
+              "label": "aop_config_a",
+              "start_sector": 1414,
+              "end_sector": 1541,
+              "bytes": 524288
+            },
+            {
+              "label": "tz_a",
+              "start_sector": 1542,
+              "end_sector": 2821,
+              "bytes": 5242880
+            },
+            {
+              "label": "hyp_a",
+              "start_sector": 2822,
+              "end_sector": 4869,
+              "bytes": 8388608
+            },
+            {
+              "label": "modem_a",
+              "start_sector": 4870,
+              "end_sector": 94469,
+              "bytes": 367001600
+            },
+            {
+              "label": "bluetooth_a",
+              "start_sector": 94470,
+              "end_sector": 96517,
+              "bytes": 8388608
+            },
+            {
+              "label": "abl_a",
+              "start_sector": 96518,
+              "end_sector": 96773,
+              "bytes": 1048576
+            },
+            {
+              "label": "dsp_a",
+              "start_sector": 96774,
+              "end_sector": 113157,
+              "bytes": 67108864
+            },
+            {
+              "label": "keymaster_a",
+              "start_sector": 113158,
+              "end_sector": 113285,
+              "bytes": 524288
+            },
+            {
+              "label": "spuservice_a",
+              "start_sector": 113286,
+              "end_sector": 113317,
+              "bytes": 131072
+            },
+            {
+              "label": "boot_a",
+              "start_sector": 113318,
+              "end_sector": 137893,
+              "bytes": 100663296
+            },
+            {
+              "label": "devcfg_a",
+              "start_sector": 137894,
+              "end_sector": 137925,
+              "bytes": 131072
+            },
+            {
+              "label": "qupfw_a",
+              "start_sector": 137926,
+              "end_sector": 137945,
+              "bytes": 81920
+            },
+            {
+              "label": "vbmeta_a",
+              "start_sector": 137946,
+              "end_sector": 137961,
+              "bytes": 65536
+            },
+            {
+              "label": "dtbo_a",
+              "start_sector": 137962,
+              "end_sector": 144105,
+              "bytes": 25165824
+            },
+            {
+              "label": "uefisecapp_a",
+              "start_sector": 144106,
+              "end_sector": 144617,
+              "bytes": 2097152
+            },
+            {
+              "label": "imagefv_a",
+              "start_sector": 144618,
+              "end_sector": 145129,
+              "bytes": 2097152
+            },
+            {
+              "label": "shrm_a",
+              "start_sector": 145130,
+              "end_sector": 145193,
+              "bytes": 262144
+            },
+            {
+              "label": "vm-bootsys_a",
+              "start_sector": 145194,
+              "end_sector": 282693,
+              "bytes": 563200000
+            },
+            {
+              "label": "cpucp_a",
+              "start_sector": 282694,
+              "end_sector": 282949,
+              "bytes": 1048576
+            },
+            {
+              "label": "featenabler_a",
+              "start_sector": 282950,
+              "end_sector": 282981,
+              "bytes": 131072
+            },
+            {
+              "label": "vendor_boot_a",
+              "start_sector": 282982,
+              "end_sector": 307557,
+              "bytes": 100663296
+            },
+            {
+              "label": "qmcs",
+              "start_sector": 307558,
+              "end_sector": 315237,
+              "bytes": 31457280
+            },
+            {
+              "label": "qweslicstore_a",
+              "start_sector": 315238,
+              "end_sector": 315301,
+              "bytes": 262144
+            },
+            {
+              "label": "recovery_a",
+              "start_sector": 315302,
+              "end_sector": 340901,
+              "bytes": 104857600
+            },
+            {
+              "label": "xbl_ramdump_a",
+              "start_sector": 340902,
+              "end_sector": 341413,
+              "bytes": 2097152
+            },
+            {
+              "label": "init_boot_a",
+              "start_sector": 341414,
+              "end_sector": 343461,
+              "bytes": 8388608
+            },
+            {
+              "label": "cpucp_dtb_a",
+              "start_sector": 343462,
+              "end_sector": 343477,
+              "bytes": 65536
+            },
+            {
+              "label": "pvmfw_a",
+              "start_sector": 343478,
+              "end_sector": 343733,
+              "bytes": 1048576
+            },
+            {
+              "label": "soccp_debug_a",
+              "start_sector": 343734,
+              "end_sector": 343861,
+              "bytes": 524288
+            },
+            {
+              "label": "soccp_dcd_a",
+              "start_sector": 343862,
+              "end_sector": 343867,
+              "bytes": 24576
+            },
+            {
+              "label": "pdp_a",
+              "start_sector": 343868,
+              "end_sector": 343931,
+              "bytes": 262144
+            },
+            {
+              "label": "pdp_cdb_a",
+              "start_sector": 343932,
+              "end_sector": 343963,
+              "bytes": 131072
+            },
+            {
+              "label": "splash_a",
+              "start_sector": 343964,
+              "end_sector": 352319,
+              "bytes": 34226176
+            },
+            {
+              "label": "uefi_b",
+              "start_sector": 352320,
+              "end_sector": 353599,
+              "bytes": 5242880
+            },
+            {
+              "label": "aop_b",
+              "start_sector": 353600,
+              "end_sector": 353727,
+              "bytes": 524288
+            },
+            {
+              "label": "aop_config_b",
+              "start_sector": 353728,
+              "end_sector": 353855,
+              "bytes": 524288
+            },
+            {
+              "label": "tz_b",
+              "start_sector": 353856,
+              "end_sector": 355135,
+              "bytes": 5242880
+            },
+            {
+              "label": "hyp_b",
+              "start_sector": 355136,
+              "end_sector": 357183,
+              "bytes": 8388608
+            },
+            {
+              "label": "modem_b",
+              "start_sector": 357184,
+              "end_sector": 446783,
+              "bytes": 367001600
+            },
+            {
+              "label": "bluetooth_b",
+              "start_sector": 446784,
+              "end_sector": 448831,
+              "bytes": 8388608
+            },
+            {
+              "label": "abl_b",
+              "start_sector": 448832,
+              "end_sector": 449087,
+              "bytes": 1048576
+            },
+            {
+              "label": "dsp_b",
+              "start_sector": 449088,
+              "end_sector": 465471,
+              "bytes": 67108864
+            },
+            {
+              "label": "keymaster_b",
+              "start_sector": 465472,
+              "end_sector": 465599,
+              "bytes": 524288
+            },
+            {
+              "label": "spuservice_b",
+              "start_sector": 465600,
+              "end_sector": 465631,
+              "bytes": 131072
+            },
+            {
+              "label": "boot_b",
+              "start_sector": 465632,
+              "end_sector": 490207,
+              "bytes": 100663296
+            },
+            {
+              "label": "devcfg_b",
+              "start_sector": 490208,
+              "end_sector": 490239,
+              "bytes": 131072
+            },
+            {
+              "label": "qupfw_b",
+              "start_sector": 490240,
+              "end_sector": 490259,
+              "bytes": 81920
+            },
+            {
+              "label": "vbmeta_b",
+              "start_sector": 490260,
+              "end_sector": 490275,
+              "bytes": 65536
+            },
+            {
+              "label": "dtbo_b",
+              "start_sector": 490276,
+              "end_sector": 496419,
+              "bytes": 25165824
+            },
+            {
+              "label": "uefisecapp_b",
+              "start_sector": 496420,
+              "end_sector": 496931,
+              "bytes": 2097152
+            },
+            {
+              "label": "imagefv_b",
+              "start_sector": 496932,
+              "end_sector": 497443,
+              "bytes": 2097152
+            },
+            {
+              "label": "shrm_b",
+              "start_sector": 497444,
+              "end_sector": 497507,
+              "bytes": 262144
+            },
+            {
+              "label": "vm-bootsys_b",
+              "start_sector": 497508,
+              "end_sector": 635007,
+              "bytes": 563200000
+            },
+            {
+              "label": "cpucp_b",
+              "start_sector": 635008,
+              "end_sector": 635263,
+              "bytes": 1048576
+            },
+            {
+              "label": "featenabler_b",
+              "start_sector": 635264,
+              "end_sector": 635295,
+              "bytes": 131072
+            },
+            {
+              "label": "vendor_boot_b",
+              "start_sector": 635296,
+              "end_sector": 659871,
+              "bytes": 100663296
+            },
+            {
+              "label": "qweslicstore_b",
+              "start_sector": 659872,
+              "end_sector": 659935,
+              "bytes": 262144
+            },
+            {
+              "label": "recovery_b",
+              "start_sector": 659936,
+              "end_sector": 685535,
+              "bytes": 104857600
+            },
+            {
+              "label": "xbl_ramdump_b",
+              "start_sector": 685536,
+              "end_sector": 686047,
+              "bytes": 2097152
+            },
+            {
+              "label": "init_boot_b",
+              "start_sector": 686048,
+              "end_sector": 688095,
+              "bytes": 8388608
+            },
+            {
+              "label": "cpucp_dtb_b",
+              "start_sector": 688096,
+              "end_sector": 688111,
+              "bytes": 65536
+            },
+            {
+              "label": "pvmfw_b",
+              "start_sector": 688112,
+              "end_sector": 688367,
+              "bytes": 1048576
+            },
+            {
+              "label": "soccp_debug_b",
+              "start_sector": 688368,
+              "end_sector": 688495,
+              "bytes": 524288
+            },
+            {
+              "label": "soccp_dcd_b",
+              "start_sector": 688496,
+              "end_sector": 688501,
+              "bytes": 24576
+            },
+            {
+              "label": "pdp_b",
+              "start_sector": 688502,
+              "end_sector": 688565,
+              "bytes": 262144
+            },
+            {
+              "label": "pdp_cdb_b",
+              "start_sector": 688566,
+              "end_sector": 688597,
+              "bytes": 131072
+            },
+            {
+              "label": "splash_b",
+              "start_sector": 688598,
+              "end_sector": 696953,
+              "bytes": 34226176
+            },
+            {
+              "label": "devinfo",
+              "start_sector": 696954,
+              "end_sector": 696954,
+              "bytes": 4096
+            },
+            {
+              "label": "toolsfv",
+              "start_sector": 696955,
+              "end_sector": 697210,
+              "bytes": 1048576
+            },
+            {
+              "label": "logfs",
+              "start_sector": 697211,
+              "end_sector": 699258,
+              "bytes": 8388608
+            },
+            {
+              "label": "logdump",
+              "start_sector": 699259,
+              "end_sector": 830330,
+              "bytes": 536870912
+            },
+            {
+              "label": "storsec",
+              "start_sector": 830331,
+              "end_sector": 830362,
+              "bytes": 131072
+            },
+            {
+              "label": "uefivarstore",
+              "start_sector": 830363,
+              "end_sector": 830490,
+              "bytes": 524288
+            },
+            {
+              "label": "secdata",
+              "start_sector": 830491,
+              "end_sector": 830497,
+              "bytes": 28672
+            },
+            {
+              "label": "vm-persist",
+              "start_sector": 830498,
+              "end_sector": 889377,
+              "bytes": 241172480
+            },
+            {
+              "label": "mdcompress",
+              "start_sector": 889378,
+              "end_sector": 894497,
+              "bytes": 20971520
+            },
+            {
+              "label": "connsec",
+              "start_sector": 894498,
+              "end_sector": 894529,
+              "bytes": 131072
+            },
+            {
+              "label": "tzsc",
+              "start_sector": 894530,
+              "end_sector": 894561,
+              "bytes": 131072
+            },
+            {
+              "label": "spunvm",
+              "start_sector": 894562,
+              "end_sector": 902753,
+              "bytes": 33554432
+            },
+            {
+              "label": "xbl_sc_test_mode",
+              "start_sector": 902754,
+              "end_sector": 902769,
+              "bytes": 65536
+            },
+            {
+              "label": "xbl_sc_logs",
+              "start_sector": 902770,
+              "end_sector": 902801,
+              "bytes": 131072
+            },
+            {
+              "label": "dpm",
+              "start_sector": 902802,
+              "end_sector": 902803,
+              "bytes": 8192
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lun": 5,
+      "sector_bytes": 4096,
+      "primary_backup_match": true,
+      "xml_partitions_checked": 6,
+      "headers": [
+        {
+          "kind": "main",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 1,
+          "alternate_lba": 8191,
+          "first_usable": 6,
+          "last_usable": 8186,
+          "sha256": "69d2472d8aeb966c6230b437ae8bde64384bee25640330e70cbb815e91cb2f85",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ALIGN_TO_128K_2",
+              "start_sector": 6,
+              "end_sector": 31,
+              "bytes": 106496
+            },
+            {
+              "label": "modemst1",
+              "start_sector": 32,
+              "end_sector": 1055,
+              "bytes": 4194304
+            },
+            {
+              "label": "modemst2",
+              "start_sector": 1056,
+              "end_sector": 2079,
+              "bytes": 4194304
+            },
+            {
+              "label": "fsg",
+              "start_sector": 2080,
+              "end_sector": 3103,
+              "bytes": 4194304
+            },
+            {
+              "label": "fsc",
+              "start_sector": 3104,
+              "end_sector": 3135,
+              "bytes": 131072
+            },
+            {
+              "label": "ztecfg",
+              "start_sector": 3136,
+              "end_sector": 3263,
+              "bytes": 524288
+            }
+          ]
+        },
+        {
+          "kind": "backup",
+          "header_crc_valid": true,
+          "entries_crc_valid": true,
+          "current_lba": 8191,
+          "alternate_lba": 1,
+          "first_usable": 6,
+          "last_usable": 8186,
+          "sha256": "e2cffab9765026c5001d12cc08b0b9afb22187c925164a55ce9f503759b5fed9",
+          "matches_images_copy": true,
+          "partitions": [
+            {
+              "label": "ALIGN_TO_128K_2",
+              "start_sector": 6,
+              "end_sector": 31,
+              "bytes": 106496
+            },
+            {
+              "label": "modemst1",
+              "start_sector": 32,
+              "end_sector": 1055,
+              "bytes": 4194304
+            },
+            {
+              "label": "modemst2",
+              "start_sector": 1056,
+              "end_sector": 2079,
+              "bytes": 4194304
+            },
+            {
+              "label": "fsg",
+              "start_sector": 2080,
+              "end_sector": 3103,
+              "bytes": 4194304
+            },
+            {
+              "label": "fsc",
+              "start_sector": 3104,
+              "end_sector": 3135,
+              "bytes": 131072
+            },
+            {
+              "label": "ztecfg",
+              "start_sector": 3136,
+              "end_sector": 3263,
+              "bytes": 524288
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "discrepancies": []
+}

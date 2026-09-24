@@ -1,0 +1,59 @@
+{
+  "capture": {
+    "captured_utc": "2026-09-24T02:37:55.239915+00:00",
+    "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+    "slot": "_b",
+    "modules": {
+      "zram": {
+        "sysfs_note_hex": "040000001400000003000000474e55001ba177010bd9be0cc57f14eca4f93ee690544c1b",
+        "build_id": "1ba177010bd9be0cc57f14eca4f93ee690544c1b"
+      },
+      "zsmalloc": {
+        "sysfs_note_hex": "040000001400000003000000474e55001e3deb0414b3019d40324363ee5e322f3c3ea163",
+        "build_id": "1e3deb0414b3019d40324363ee5e322f3c3ea163"
+      }
+    }
+  },
+  "candidates": [
+    {
+      "path": "vendor_boot/lib/modules/zram.ko",
+      "sha256": "91d0ff3d86d99c310d0734cb6ed51d062036f83bf95f333c00c22241e5f8eb51",
+      "build_id": "1ba177010bd9be0cc57f14eca4f93ee690544c1b",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "matches_live_note": true
+    },
+    {
+      "path": "vendor_boot/lib/modules/zsmalloc.ko",
+      "sha256": "41e4f238c2ae060f0ceffa49882e76e4e59e60caa82e9d7bb26c38ecb1a48b3f",
+      "build_id": "1e3deb0414b3019d40324363ee5e322f3c3ea163",
+      "vermagic": [
+        "6.6.30-android15-8-maybe-dirty-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "matches_live_note": true
+    },
+    {
+      "path": "system_dlkm/lib/modules/zsmalloc.ko",
+      "sha256": "a323e35db4dbb51d846d6df232dc866dab65d5e7e477f13359d55bdac82892dd",
+      "build_id": "34d5315ed5ed2e8325977da00b25adc5a4a0471b",
+      "vermagic": [
+        "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "matches_live_note": false
+    },
+    {
+      "path": "system_dlkm/lib/modules/zram.ko",
+      "sha256": "eefaebaeb6fbb9894a90b2234bef772c922feb2e48268c168ef956054f602562",
+      "build_id": "814e2cb1387b81266c3a2e1b8686160c02a8e6c7",
+      "vermagic": [
+        "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k SMP preempt mod_unload modversions aarch64"
+      ],
+      "matches_live_note": false
+    }
+  ],
+  "limits": [
+    "Matching build ID identifies the observed build, not a runtime hash of all module bytes.",
+    "This observation is specific to the captured stock boot; preserve both partition copies until loader policy is understood."
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "partition": "odm_b",
+    "bytes": 892928,
+    "sha256": "a26ba138b6605a6a7a5762b1b400a48cc03a949e23db066e8db1b9f336772206",
+    "size_matches": true,
+    "matches_captured_image": true
+  },
+  {
+    "partition": "product_b",
+    "bytes": 1984057344,
+    "sha256": "fdac6f6549f76fa2a93347c783a14d49405c7557fce140f9ec58fe37efe1bf77",
+    "size_matches": true,
+    "matches_captured_image": true
+  },
+  {
+    "partition": "system_ext_b",
+    "bytes": 884314112,
+    "sha256": "07777d5f25467ba5e1e26aee48c9175eda8a524731ef007ed809a04408f39c00",
+    "size_matches": true,
+    "matches_captured_image": true
+  },
+  {
+    "partition": "vendor_b",
+    "bytes": 1940062208,
+    "sha256": "814b34867437436dd2b55204ff8652f6c11dcf231fc7836d8e77df229569bff4",
+    "size_matches": true,
+    "matches_captured_image": true
+  }
+]

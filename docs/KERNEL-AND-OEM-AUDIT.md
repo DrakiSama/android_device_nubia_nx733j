@@ -54,3 +54,9 @@ de la dependencia ELF del cliente. No se modificó ningún servicio del teléfon
 Las evidencias completas de init/config/dmesg quedan localmente en
 `diagnostics/rom-audit-2026-09-23/`. Este informe no habilita BoardConfigBringup.mk,
 ni declara servicios portados, ni genera una imagen flasheable.
+## Ampliación: respaldo 9008 y módulos DLKM
+
+El [informe posterior](EDL-BACKUP-AUDIT.md) amplía el inventario a 681 archivos
+y documenta dos variantes de zram/zsmalloc. Los build IDs de sysfs identifican
+las variantes vendor_boot 6.6.30 en el arranque stock observado; se conservan
+ambas copias por partición. Los límites del análisis de CRC anterior siguen vigentes.

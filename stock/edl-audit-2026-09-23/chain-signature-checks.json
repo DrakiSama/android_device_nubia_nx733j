@@ -1,0 +1,123 @@
+{
+  "chains": [
+    {
+      "slot": "a",
+      "partition": "boot",
+      "partition_bytes": 100663296,
+      "rollback_location": 3,
+      "rollback_index": 1764547200,
+      "algorithm_type": 2,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": [
+        {
+          "partition": "boot",
+          "covered_bytes": 36618240,
+          "matches": true
+        }
+      ],
+      "boot_header": {
+        "kernel_bytes": 36596224,
+        "ramdisk_bytes": 0,
+        "header_version": 4
+      }
+    },
+    {
+      "slot": "a",
+      "partition": "recovery",
+      "partition_bytes": 104857600,
+      "rollback_location": 1,
+      "rollback_index": 1,
+      "algorithm_type": 2,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": [
+        {
+          "partition": "recovery",
+          "covered_bytes": 19787776,
+          "matches": true
+        }
+      ],
+      "boot_header": {
+        "kernel_bytes": 0,
+        "ramdisk_bytes": 19780388,
+        "header_version": 4
+      }
+    },
+    {
+      "slot": "a",
+      "partition": "vbmeta_system",
+      "partition_bytes": 65536,
+      "rollback_location": 2,
+      "rollback_index": 1764547200,
+      "algorithm_type": 1,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": []
+    },
+    {
+      "slot": "b",
+      "partition": "boot",
+      "partition_bytes": 100663296,
+      "rollback_location": 3,
+      "rollback_index": 1764547200,
+      "algorithm_type": 2,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": [
+        {
+          "partition": "boot",
+          "covered_bytes": 36618240,
+          "matches": true
+        }
+      ],
+      "boot_header": {
+        "kernel_bytes": 36596224,
+        "ramdisk_bytes": 0,
+        "header_version": 4
+      }
+    },
+    {
+      "slot": "b",
+      "partition": "recovery",
+      "partition_bytes": 104857600,
+      "rollback_location": 1,
+      "rollback_index": 1,
+      "algorithm_type": 2,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": [
+        {
+          "partition": "recovery",
+          "covered_bytes": 19881984,
+          "matches": true
+        }
+      ],
+      "boot_header": {
+        "kernel_bytes": 0,
+        "ramdisk_bytes": 19873794,
+        "header_version": 4
+      }
+    },
+    {
+      "slot": "b",
+      "partition": "vbmeta_system",
+      "partition_bytes": 65536,
+      "rollback_location": 2,
+      "rollback_index": 1769904000,
+      "algorithm_type": 1,
+      "signed": true,
+      "signature_valid_with_embedded_key": true,
+      "public_key_matches_parent": true,
+      "hash_descriptors": []
+    }
+  ],
+  "limits": [
+    "Embedded-key signature and parent-key matching only; OEM trust anchor and rollback acceptance not verified."
+  ]
+}

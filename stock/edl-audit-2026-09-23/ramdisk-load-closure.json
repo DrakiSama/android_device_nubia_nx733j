@@ -1,0 +1,20 @@
+{
+  "normal": {
+    "list_entries": 106,
+    "missing_list_files": [],
+    "dependency_closure": 106,
+    "modules_added_by_dependencies": [],
+    "dependencies_outside_ramdisk": {},
+    "limits": "modinfo depends only; built-ins, modules.softdep, aliases and actual loader ordering require separate review"
+  },
+  "recovery": {
+    "list_entries": 303,
+    "missing_list_files": [],
+    "dependency_closure": 303,
+    "modules_added_by_dependencies": [
+      "hdcp_qseecom_dlkm"
+    ],
+    "dependencies_outside_ramdisk": {},
+    "limits": "modinfo depends only; built-ins, modules.softdep, aliases and actual loader ordering require separate review"
+  }
+}
