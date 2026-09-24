@@ -20,5 +20,12 @@
     "files": {
       "avbtool.py": "2f8dfbf118e37566d8e3cf54fa252614955b7acc12c233a6b232068a3fae8f9f"
     }
+  },
+  "system/tools/mkbootimg": {
+    "commit": "68697756a3ad6a2f123534b21ad55b9d4a97f0b5",
+    "working_tree_state": "not_queried; exact inspected file hash recorded",
+    "files": {
+      "mkbootimg.py": "021f2d960b2d3158a9df2ff6255f1140cebb09bc09f4886373438f2919559cd9"
+    }
   }
 }

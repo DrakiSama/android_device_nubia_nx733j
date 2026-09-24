@@ -10,7 +10,18 @@ TARGET_NO_BOOTLOADER := true
 
 # Header sizes/format verified from installed images; see stock/boot-audit.json.
 BOARD_BOOT_HEADER_VERSION := 4
+# mkbootimg does not derive its CLI header version from the board variable.
+# init_boot has a separate argument list; see docs/BOOT-BUILD-COMPOSITION.md.
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_PAGESIZE := 4096
+# Stock vendor_boot stores absolute load addresses. Base zero is the chosen
+# mkbootimg representation of those values, not a GPT/flash offset.
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_MKBOOTIMG_ARGS += --kernel_offset 0x00008000
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000
+BOARD_MKBOOTIMG_ARGS += --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS += --dtb_offset 0x01f00000
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 AB_OTA_UPDATER := true

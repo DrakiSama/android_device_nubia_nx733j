@@ -12,6 +12,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | --- | --- | --- | --- | --- |
 | GPT y tamaños | CONFIRMED | CRC primario/backup; 115 entradas XML | Respaldo NX733J, seis LUN | Sectores físicos de 4096 bytes; sin offsets prestados |
 | Super y particiones B | CONFIRMED | Geometría, seis metadatos y siete hashtrees | super del respaldo | Sectores liblp de 512 bytes; COW presentes |
+| Argumentos de empaquetado | PARTIAL | v4 explícito en ambas listas; direcciones stock representadas con base cero | Cabecera vendor_boot y mkbootimg local | Sin build; cmdline/bootconfig y ramdisk pendientes |
 | Boot chain | PARTIAL | Firmas internas y claves padre/hijo A/B | vbmeta, boot, recovery | Trust anchor OEM y aceptación de rollback pendientes |
 | init_boot limpio de referencia | CONFIRMED | init guardado por Magisk idéntico al stock | Respaldo B y captura instalada | La imagen instalada está parcheada |
 | Recovery separado | CONFIRMED | Header v4; kernel vacío; ramdisk propio | Respaldo A/B | No demuestra restauración disponible |
@@ -60,3 +61,7 @@ interno de 18 MiB con footer, dentro de la partición de 24 MiB. Véase
 [corrección y evidencia](DTBO-AVB-ENVELOPE.md). Entrada privada del contenedor preparada y
 verificada por hash. Siguiente: cerrar la composición boot/init_boot/vendor_boot
 y la política AVB ROM antes de activar el adaptador.
+
+Se completaron argumentos de header y direcciones en BoardConfig;
+[composición de imágenes](BOOT-BUILD-COMPOSITION.md). El bloqueo deliberado de
+compilación permanece. No se han ejecutado pruebas ni builds de la ROM.
