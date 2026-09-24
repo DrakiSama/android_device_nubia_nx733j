@@ -78,3 +78,7 @@ La [auditoría de kernel y servicios OEM](docs/KERNEL-AND-OEM-AUDIT.md) registra
 
 La [auditoría del respaldo 9008](docs/EDL-BACKUP-AUDIT.md) amplía GPT/super/AVB
 y resuelve por build ID la identidad observada de zram/zsmalloc.
+
+El [contrato del proveedor de kernel](docs/KERNEL-PROVIDER.md) separa artefactos,
+módulos por partición e integración ROM. Su manifiesto stock registra hashes;
+aún no activa un adaptador de build.

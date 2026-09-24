@@ -1,6 +1,6 @@
 # NX733J: estado del bring-up
 
-Actualizado: 2026-09-23 (Chile). Base auditada: `0590ddd`.
+Actualizado: 2026-09-23 (Chile). Base inicial auditada: `0590ddd`; ampliada con la auditoría publicada en `3fbcb9c`.
 Objetivo: una base NX733J reutilizable para AOSP y derivados; adaptación específica
 a LineageOS después del cierre de particiones, arranque y kernel.
 
@@ -15,7 +15,8 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Boot chain | PARTIAL | Firmas internas y claves padre/hijo A/B | vbmeta, boot, recovery | Trust anchor OEM y aceptación de rollback pendientes |
 | init_boot limpio de referencia | CONFIRMED | init guardado por Magisk idéntico al stock | Respaldo B y captura instalada | La imagen instalada está parcheada |
 | Recovery separado | CONFIRMED | Header v4; kernel vacío; ramdisk propio | Respaldo A/B | No demuestra restauración disponible |
-| Kernel stock y módulos | PARTIAL | 681 archivos, 479 nombres; sin CRC importados contradictorios | vendor_boot, DLKM, vendor | Falta contrastar ABI con exportaciones del kernel |
+| Kernel stock y módulos | PARTIAL | 681 archivos; 5089 nombres importados presentes entre exports vivos | vendor_boot, DLKM, vendor y kernel vivo | Falta contrastar valores CRC, namespaces, firmas y orden de carga |
+| Contrato del proveedor kernel | PARTIAL | KERNEL-PROVIDER.md y manifiesto de hashes | Artefactos stock auditados | Diseño documentado; adaptador de build pendiente |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
 | Política de carga para la ROM | PARTIAL | Listas ramdisk y scripts stock observados | Captura stock | No trasladar la lista recovery al arranque normal |
 | Merge de snapshots | UNKNOWN | Propiedades Virtual A/B; snapshotctl ausente | Teléfono | COW no acredita estado actual del merge |
@@ -26,11 +27,12 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 
 ## Siguiente objetivo concreto
 
-Definir el contrato del proveedor de kernel stock: entradas de boot/vendor_boot,
-módulos por partición, listas de carga y dependencias; mantener separada la futura
-alternativa desde fuentes. Conservar las variantes stock de zram/zsmalloc en sus
-particiones originales. Antes de generar imágenes, cerrar ABI/exportaciones,
-política AVB/OTA y una vía de recuperación comprobable.
+El [contrato del proveedor](KERNEL-PROVIDER.md) y su manifiesto de referencia
+identifican las entradas, hashes y responsabilidades. Siguiente: localizar evidencia
+de valores CRC/exportaciones del kernel exacto (por ejemplo, Module.symvers de esa
+compilación) y contrastar las dependencias de carga por fase. La coincidencia de
+5089 nombres no cierra ABI. Conservar ambas variantes stock de zram/zsmalloc por
+partición. AVB/OTA y recuperación siguen pendientes antes de generar imágenes.
 
 Evidencia y límites: [auditoría del respaldo](EDL-BACKUP-AUDIT.md).
 No se ha compilado ni flasheado una ROM durante esta auditoría.
