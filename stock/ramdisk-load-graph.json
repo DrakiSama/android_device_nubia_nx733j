@@ -1,0 +1,2925 @@
+{
+  "schema_version": 1,
+  "source": "NX733J vendor_boot B ramdisk metadata",
+  "metadata_sha256": {
+    "modules.dep": "4a8daef5d8d44f86156100c14649121bb7bb09b6bea0cf479a43b23e7e749a5b",
+    "modules.softdep": "e140127b4bd94092ee19ee37ae5404b4eb3551441883c602a8e3fe0fa10c1d00",
+    "modules.alias": "74da187a3a0c41c614b53fbc041c227778626a5b2821b72d41cef94089bbf3ff",
+    "modules.blocklist": "e58ac6660d6c6fee8a9e928c001682571c3daca35f30ae7a3698383e7f57e90b",
+    "modules.load": "e72f892f962f099b572adc500d926ee346a2843408621a62a56317bbf9749462"
+  },
+  "module_files": 306,
+  "dep_entries": 306,
+  "dep_unknown_targets": [],
+  "softdep_rules": 14,
+  "normal_active_softdeps": [
+    {
+      "module": "qcom_pmu_lib",
+      "path": "vendor_boot/lib/modules/qcom-pmu-lib.ko",
+      "pre": [
+        {
+          "name": "qcom_scmi_client",
+          "path": "vendor_boot/lib/modules/qcom_scmi_client.ko"
+        }
+      ],
+      "post": []
+    },
+    {
+      "module": "smem",
+      "path": "vendor_boot/lib/modules/smem.ko",
+      "pre": [
+        {
+          "name": "qcom_hwspinlock",
+          "path": "vendor_boot/lib/modules/qcom_hwspinlock.ko"
+        }
+      ],
+      "post": []
+    },
+    {
+      "module": "pinctrl_msm",
+      "path": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "pre": [
+        {
+          "name": "qcom-pdc",
+          "path": "vendor_boot/lib/modules/qcom-pdc.ko"
+        }
+      ],
+      "post": []
+    },
+    {
+      "module": "qcom_scmi_client",
+      "path": "vendor_boot/lib/modules/qcom_scmi_client.ko",
+      "pre": [
+        {
+          "name": "qcom_scmi_vendor",
+          "path": "vendor_boot/lib/modules/qcom_scmi_vendor.ko"
+        }
+      ],
+      "post": []
+    },
+    {
+      "module": "sched_walt",
+      "path": "vendor_boot/lib/modules/sched-walt.ko",
+      "pre": [
+        {
+          "name": "socinfo",
+          "path": "vendor_boot/lib/modules/socinfo.ko"
+        }
+      ],
+      "post": []
+    }
+  ],
+  "alias_entries": 974,
+  "aliases_with_missing_target": [],
+  "normal_explicit_entries_matching_alias_patterns": [],
+  "blocklist_entries": 60,
+  "blocklist_unique_names": 59,
+  "normal_blocklisted_modules": [],
+  "normal_initial_modules": 106,
+  "normal_hard_and_soft_closure": 106,
+  "normal_added_modules": [],
+  "normal_unknown_softdep_targets": [],
+  "combined_graph_edges": 771,
+  "topological_layers": [
+    [
+      "vendor_boot/lib/modules/cmd-db.ko",
+      "vendor_boot/lib/modules/cpu_hotplug.ko",
+      "vendor_boot/lib/modules/cpu_phys_log_map.ko",
+      "vendor_boot/lib/modules/cqhci.ko",
+      "vendor_boot/lib/modules/debug-regulator.ko",
+      "vendor_boot/lib/modules/debug_symbol.ko",
+      "vendor_boot/lib/modules/gh_arm_drv.ko",
+      "vendor_boot/lib/modules/gh_dbl.ko",
+      "vendor_boot/lib/modules/gh_msgq.ko",
+      "vendor_boot/lib/modules/gic_intr_routing.ko",
+      "vendor_boot/lib/modules/icc-debug.ko",
+      "vendor_boot/lib/modules/iommu-logger.ko",
+      "vendor_boot/lib/modules/kmparam.ko",
+      "vendor_boot/lib/modules/llcc-qcom.ko",
+      "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "vendor_boot/lib/modules/nvmem_qcom-spmi-sdam.ko",
+      "vendor_boot/lib/modules/phy-qcom-ufs.ko",
+      "vendor_boot/lib/modules/proxy-consumer.ko",
+      "vendor_boot/lib/modules/qcom-cpufreq-thermal.ko",
+      "vendor_boot/lib/modules/qcom-ipcc.ko",
+      "vendor_boot/lib/modules/qcom-reboot-reason.ko",
+      "vendor_boot/lib/modules/qcom_cpu_vendor_hooks.ko",
+      "vendor_boot/lib/modules/qcom_cpucp.ko",
+      "vendor_boot/lib/modules/qcom_hwspinlock.ko",
+      "vendor_boot/lib/modules/qcom_scmi_vendor.ko",
+      "vendor_boot/lib/modules/qnoc-qos.ko",
+      "vendor_boot/lib/modules/qti-regmap-debugfs.ko",
+      "vendor_boot/lib/modules/qti_thermal_vendor_hooks.ko",
+      "vendor_boot/lib/modules/rtc-pm8xxx.ko",
+      "vendor_boot/lib/modules/sg.ko",
+      "vendor_boot/lib/modules/spmi-pmic-arb.ko",
+      "vendor_boot/lib/modules/zsmalloc.ko",
+      "vendor_boot/lib/modules/zte_imem_info.ko",
+      "vendor_boot/lib/modules/zte_ramdisk_reboot.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "vendor_boot/lib/modules/phy-qcom-ufs-qmp-v4-sun.ko",
+      "vendor_boot/lib/modules/phy-qcom-ufs-qrbtc-sdm845.ko",
+      "vendor_boot/lib/modules/qcom-spmi-pmic.ko",
+      "vendor_boot/lib/modules/qcom_llcc_pmu.ko",
+      "vendor_boot/lib/modules/qcom_scmi_client.ko",
+      "vendor_boot/lib/modules/smem.ko",
+      "vendor_boot/lib/modules/stub-regulator.ko",
+      "vendor_boot/lib/modules/zram.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/qcom-pmu-lib.ko",
+      "vendor_boot/lib/modules/qcom-scm.ko",
+      "vendor_boot/lib/modules/socinfo.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/mdt_loader.ko",
+      "vendor_boot/lib/modules/qcom_ice.ko",
+      "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "vendor_boot/lib/modules/sched-walt.ko",
+      "vendor_boot/lib/modules/secure_buffer.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/arm_smmu.ko",
+      "vendor_boot/lib/modules/cpucp_fast.ko",
+      "vendor_boot/lib/modules/gunyah_loader.ko",
+      "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "vendor_boot/lib/modules/thermal_pause.ko",
+      "vendor_boot/lib/modules/ufshcd-crypto-qti.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "vendor_boot/lib/modules/qcom_dma_heaps.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/mem_buf.ko",
+      "vendor_boot/lib/modules/minidump.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/dcc_v2.ko",
+      "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "vendor_boot/lib/modules/qcom_wdt_core.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "vendor_boot/lib/modules/crm-v2.ko",
+      "vendor_boot/lib/modules/gh_virt_wdt.ko",
+      "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "vendor_boot/lib/modules/qcom-pdc.ko",
+      "vendor_boot/lib/modules/qcom_aoss.ko",
+      "vendor_boot/lib/modules/qcom_tsens.ko",
+      "vendor_boot/lib/modules/qrtr.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/clk-qcom.ko",
+      "vendor_boot/lib/modules/msm_qmp.ko",
+      "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "vendor_boot/lib/modules/qrtr-gunyah.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "vendor_boot/lib/modules/camcc-sun.ko",
+      "vendor_boot/lib/modules/clk-dummy.ko",
+      "vendor_boot/lib/modules/clk-rpmh.ko",
+      "vendor_boot/lib/modules/dcvs_fp.ko",
+      "vendor_boot/lib/modules/dispcc-sun.ko",
+      "vendor_boot/lib/modules/evacc-sun.ko",
+      "vendor_boot/lib/modules/gcc-kera.ko",
+      "vendor_boot/lib/modules/gcc-sun.ko",
+      "vendor_boot/lib/modules/gcc-tuna.ko",
+      "vendor_boot/lib/modules/gpucc-sun.ko",
+      "vendor_boot/lib/modules/icc-bcm-voter.ko",
+      "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "vendor_boot/lib/modules/sdhci-msm.ko",
+      "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "vendor_boot/lib/modules/ufs-qcom.ko",
+      "vendor_boot/lib/modules/videocc-sun.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/icc-rpmh.ko",
+      "vendor_boot/lib/modules/qcom-dcvs.ko"
+    ],
+    [
+      "vendor_boot/lib/modules/qnoc-sun.ko"
+    ]
+  ],
+  "unresolved_topological_nodes": [],
+  "prerequisites_after_consumer_in_text": [
+    {
+      "prerequisite": "vendor_boot/lib/modules/cmd-db.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 29,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/cqhci.ko",
+      "consumer": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "prerequisite_line": 83,
+      "consumer_line": 82
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/crm-v2.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 30,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 15
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/stub-regulator.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 61
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 62,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/debug_symbol.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 58,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 15,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 15,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 78
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/gh_virt_wdt.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 91
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/mdt_loader.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 31
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 53
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 54
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/msm_qmp.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 89
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 11
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 9
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 12
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 10
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 74
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-scm.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 87
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 70
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ice.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 45
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 65
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_tsens.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 77
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 82
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/secure_buffer.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 55
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 84
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 85
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_dbl.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 92,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 78
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/gh_virt_wdt.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 91
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/mdt_loader.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 31
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 53
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 54
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/msm_qmp.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 89
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 11
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 9
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 12
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 10
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 74
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-scm.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 87
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 70
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ice.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 45
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 65
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_tsens.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 77
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 82
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/secure_buffer.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 55
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 84
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 85
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 93,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 78
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/gh_virt_wdt.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 91
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/mdt_loader.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 31
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 53
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 54
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/msm_qmp.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 89
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 11
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 9
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 12
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 10
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 74
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-scm.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 87
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 70
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ice.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 45
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 65
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_tsens.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 77
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 82
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/secure_buffer.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 55
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 84
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 85
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 94,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/icc-debug.ko",
+      "consumer": "vendor_boot/lib/modules/icc-rpmh.ko",
+      "prerequisite_line": 102,
+      "consumer_line": 99
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/icc-debug.ko",
+      "consumer": "vendor_boot/lib/modules/qnoc-sun.ko",
+      "prerequisite_line": 102,
+      "consumer_line": 100
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/iommu-logger.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 66,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/kmparam.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "prerequisite_line": 104,
+      "consumer_line": 74
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 53,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 54,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/minidump.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 41,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 64,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 15
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 59,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 78
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/mdt_loader.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 31
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 53
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 54
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 11
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 9
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 12
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 10
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 74
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 70
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ice.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 45
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 65
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_tsens.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 77
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 82
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/secure_buffer.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 55
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 84
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 85
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom-scm.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 87,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 57
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 60
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 70,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_hwspinlock.ko",
+      "consumer": "vendor_boot/lib/modules/smem.ko",
+      "prerequisite_line": 90,
+      "consumer_line": 33
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "consumer": "vendor_boot/lib/modules/arm_smmu.ko",
+      "prerequisite_line": 65,
+      "consumer_line": 63
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_llcc_pmu.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pmu-lib.ko",
+      "prerequisite_line": 96,
+      "consumer_line": 46
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 32,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_scmi_client.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pmu-lib.ko",
+      "prerequisite_line": 49,
+      "consumer_line": 46
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qcom_scmi_vendor.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_scmi_client.ko",
+      "prerequisite_line": 86,
+      "consumer_line": 49
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/qnoc-qos.ko",
+      "consumer": "vendor_boot/lib/modules/qnoc-sun.ko",
+      "prerequisite_line": 101,
+      "consumer_line": 100
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/dcc_v2.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 36
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 47
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 52
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 53
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 54
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 40
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/minidump.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 41
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 48
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 43
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 42
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 37
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/secure_buffer.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 55,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 25
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/camcc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 21
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/clk-dummy.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 14
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/clk-qcom.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 13
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 16
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/crm-v2.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 30
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 24
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/evacc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 22
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-kera.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 18
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 17
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 19
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 23
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 5
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 28
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 3
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 32
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/sched-walt.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 2
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 26
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 20
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/smem.ko",
+      "consumer": "vendor_boot/lib/modules/videocc-sun.ko",
+      "prerequisite_line": 33,
+      "consumer_line": 27
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/socinfo.ko",
+      "consumer": "vendor_boot/lib/modules/sched-walt.ko",
+      "prerequisite_line": 34,
+      "consumer_line": 2
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "consumer": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "prerequisite_line": 85,
+      "consumer_line": 84
+    },
+    {
+      "prerequisite": "vendor_boot/lib/modules/zte_ramdisk_reboot.ko",
+      "consumer": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "prerequisite_line": 38,
+      "consumer_line": 37
+    }
+  ],
+  "limits": [
+    "Topological layers describe declared constraints, not observed execution times.",
+    "Aliases are checked structurally and against explicit normal-load names, not against every live device modalias.",
+    "No assertion about stock loader implementation or successful insertion is derived from this graph."
+  ]
+}

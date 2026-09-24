@@ -1,0 +1,38 @@
+[
+  {
+    "path": "lib/modules/modules.alias",
+    "bytes": 44450,
+    "sha256": "74da187a3a0c41c614b53fbc041c227778626a5b2821b72d41cef94089bbf3ff",
+    "lines": 975
+  },
+  {
+    "path": "lib/modules/modules.blocklist",
+    "bytes": 1325,
+    "sha256": "e58ac6660d6c6fee8a9e928c001682571c3daca35f30ae7a3698383e7f57e90b",
+    "lines": 62
+  },
+  {
+    "path": "lib/modules/modules.dep",
+    "bytes": 72564,
+    "sha256": "4a8daef5d8d44f86156100c14649121bb7bb09b6bea0cf479a43b23e7e749a5b",
+    "lines": 306
+  },
+  {
+    "path": "lib/modules/modules.load",
+    "bytes": 1647,
+    "sha256": "e72f892f962f099b572adc500d926ee346a2843408621a62a56317bbf9749462",
+    "lines": 106
+  },
+  {
+    "path": "lib/modules/modules.load.recovery",
+    "bytes": 4898,
+    "sha256": "6d167cfe256991f34bc03fbb67c248d9656f5ab097197004e08dd631ff8ef23b",
+    "lines": 303
+  },
+  {
+    "path": "lib/modules/modules.softdep",
+    "bytes": 587,
+    "sha256": "e140127b4bd94092ee19ee37ae5404b4eb3551441883c602a8e3fe0fa10c1d00",
+    "lines": 15
+  }
+]

@@ -1,0 +1,865 @@
+{
+  "captured_utc": "2026-09-24T16:31:23.861186+00:00",
+  "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "slot": "_b",
+  "same_boot_during_capture": true,
+  "modules_requested": 106,
+  "status_counts": {
+    "MATCH": 106
+  },
+  "modules": [
+    {
+      "module": "arm_smmu",
+      "reference_path": "vendor_boot/lib/modules/arm_smmu.ko",
+      "reference_sha256": "6fadf46c8c086241e776b2f3eeca671aa3872e9b0652115dda87df11c7be1e45",
+      "reference_build_id": "e1871198e15fca388cf336c5f4d8fedff058aedf",
+      "observed_note_hex": "040000001400000003000000474e5500e1871198e15fca388cf336c5f4d8fedff058aedf",
+      "status": "MATCH"
+    },
+    {
+      "module": "bcl_pmic5",
+      "reference_path": "vendor_boot/lib/modules/bcl_pmic5.ko",
+      "reference_sha256": "dc3a047326fdd2f1dd5f85fde82420748e076b9769ca4c64901286557d265ed4",
+      "reference_build_id": "149e4799c942cd38513ffd5fe77015387dd330c5",
+      "observed_note_hex": "040000001400000003000000474e5500149e4799c942cd38513ffd5fe77015387dd330c5",
+      "status": "MATCH"
+    },
+    {
+      "module": "cambistmclkcc_sun",
+      "reference_path": "vendor_boot/lib/modules/cambistmclkcc-sun.ko",
+      "reference_sha256": "a291338740a35f43fb3f884d45f3b44b02dfc635cb07a525edfac4faa9dd7e5e",
+      "reference_build_id": "6f95f6bc850a3b6513e11f15250690d3186333d6",
+      "observed_note_hex": "040000001400000003000000474e55006f95f6bc850a3b6513e11f15250690d3186333d6",
+      "status": "MATCH"
+    },
+    {
+      "module": "camcc_sun",
+      "reference_path": "vendor_boot/lib/modules/camcc-sun.ko",
+      "reference_sha256": "4f51d9d08f93c8a65855201ba82188368bf268200b45e4432ac625bc54475b71",
+      "reference_build_id": "254187cbeb59abf201b8510d761fe9d31e4a3de4",
+      "observed_note_hex": "040000001400000003000000474e5500254187cbeb59abf201b8510d761fe9d31e4a3de4",
+      "status": "MATCH"
+    },
+    {
+      "module": "clk_dummy",
+      "reference_path": "vendor_boot/lib/modules/clk-dummy.ko",
+      "reference_sha256": "3efcebeb2c9a822dccd12f2c44ba18d938c151319991425e6a1d43058b1a626a",
+      "reference_build_id": "0080401c73ce152d8e8f9d2a3ba0bfac04eeada2",
+      "observed_note_hex": "040000001400000003000000474e55000080401c73ce152d8e8f9d2a3ba0bfac04eeada2",
+      "status": "MATCH"
+    },
+    {
+      "module": "clk_qcom",
+      "reference_path": "vendor_boot/lib/modules/clk-qcom.ko",
+      "reference_sha256": "dd82eaca0ad041da974511cf68c51112b29095239aec579640400e9c6ebdf016",
+      "reference_build_id": "22332eba4fe99610a4b388915a465b4e75a15044",
+      "observed_note_hex": "040000001400000003000000474e550022332eba4fe99610a4b388915a465b4e75a15044",
+      "status": "MATCH"
+    },
+    {
+      "module": "clk_rpmh",
+      "reference_path": "vendor_boot/lib/modules/clk-rpmh.ko",
+      "reference_sha256": "2eb123fd2db1a94683b0553252e9529ba15f546b494afb7be43f710c1bf09dd8",
+      "reference_build_id": "e0dacd413c34294bea685c4c04c229d4d80cf423",
+      "observed_note_hex": "040000001400000003000000474e5500e0dacd413c34294bea685c4c04c229d4d80cf423",
+      "status": "MATCH"
+    },
+    {
+      "module": "cmd_db",
+      "reference_path": "vendor_boot/lib/modules/cmd-db.ko",
+      "reference_sha256": "838fea884bf90fb91a4683d6f83e41cf62782075f08afe12990e143c0434ebd2",
+      "reference_build_id": "9ffaecfed8ce46e3131b0eed99d25effd3cfd7a7",
+      "observed_note_hex": "040000001400000003000000474e55009ffaecfed8ce46e3131b0eed99d25effd3cfd7a7",
+      "status": "MATCH"
+    },
+    {
+      "module": "cpu_hotplug",
+      "reference_path": "vendor_boot/lib/modules/cpu_hotplug.ko",
+      "reference_sha256": "c9bc6576703887661f341187b0bea9c9d275880be54221aed9a182cc8190e2e6",
+      "reference_build_id": "5df9e6c3e996682fc65e100c41bacb9e0b404706",
+      "observed_note_hex": "040000001400000003000000474e55005df9e6c3e996682fc65e100c41bacb9e0b404706",
+      "status": "MATCH"
+    },
+    {
+      "module": "cpu_phys_log_map",
+      "reference_path": "vendor_boot/lib/modules/cpu_phys_log_map.ko",
+      "reference_sha256": "d84cda305082001afe8e370325af069623105d8a19e2f9d6bf110e32dd587ea4",
+      "reference_build_id": "2df0813d047c3b98514d10fd7df1fccc3d6f454e",
+      "observed_note_hex": "040000001400000003000000474e55002df0813d047c3b98514d10fd7df1fccc3d6f454e",
+      "status": "MATCH"
+    },
+    {
+      "module": "cpucp_fast",
+      "reference_path": "vendor_boot/lib/modules/cpucp_fast.ko",
+      "reference_sha256": "4cc6a3d543c4b46e13d97e149ea659ea8296a9846c7809fb534daf9f3596f5bf",
+      "reference_build_id": "ee5c11a4bb3193814b6e218fe43af90ab7f4e243",
+      "observed_note_hex": "040000001400000003000000474e5500ee5c11a4bb3193814b6e218fe43af90ab7f4e243",
+      "status": "MATCH"
+    },
+    {
+      "module": "cqhci",
+      "reference_path": "vendor_boot/lib/modules/cqhci.ko",
+      "reference_sha256": "cc24e3ef772f7a71e8e6e19e374efe8ec69995b1ca0fa46c88baa1c5f4a97a57",
+      "reference_build_id": "ed94685beb73e01178225e289b84bb1abe973f3e",
+      "observed_note_hex": "040000001400000003000000474e5500ed94685beb73e01178225e289b84bb1abe973f3e",
+      "status": "MATCH"
+    },
+    {
+      "module": "crm_v2",
+      "reference_path": "vendor_boot/lib/modules/crm-v2.ko",
+      "reference_sha256": "a619a06c2967b6cd31f0062868f5c0fe7ca880f6a5f0f5d3f69d4e9f36a8df90",
+      "reference_build_id": "c0176b7f924ed7d9372e2f0b8ebcdc93e17f78b7",
+      "observed_note_hex": "040000001400000003000000474e5500c0176b7f924ed7d9372e2f0b8ebcdc93e17f78b7",
+      "status": "MATCH"
+    },
+    {
+      "module": "dcc_v2",
+      "reference_path": "vendor_boot/lib/modules/dcc_v2.ko",
+      "reference_sha256": "931044410bff9a33e33d2e9cd03d1eb56b80d919b749be7e21435e57ecce0ea8",
+      "reference_build_id": "6f0eabefe173b37d489a1e7728f33d68feb1e78f",
+      "observed_note_hex": "040000001400000003000000474e55006f0eabefe173b37d489a1e7728f33d68feb1e78f",
+      "status": "MATCH"
+    },
+    {
+      "module": "dcvs_fp",
+      "reference_path": "vendor_boot/lib/modules/dcvs_fp.ko",
+      "reference_sha256": "fda7242aef036e753b5a70743e53291c1527e5193969510b90c8aa3ccea7c87f",
+      "reference_build_id": "a1ffd43d25073d9859dc1a91d4ab96d685b20db1",
+      "observed_note_hex": "040000001400000003000000474e5500a1ffd43d25073d9859dc1a91d4ab96d685b20db1",
+      "status": "MATCH"
+    },
+    {
+      "module": "debug_regulator",
+      "reference_path": "vendor_boot/lib/modules/debug-regulator.ko",
+      "reference_sha256": "2419556aee47fb791126a8f5311bd3a9039902f25a531904be28332a5fe2f8ce",
+      "reference_build_id": "27319c77ee3d3458f4321e3d61c05b1bd146c3f8",
+      "observed_note_hex": "040000001400000003000000474e550027319c77ee3d3458f4321e3d61c05b1bd146c3f8",
+      "status": "MATCH"
+    },
+    {
+      "module": "debug_symbol",
+      "reference_path": "vendor_boot/lib/modules/debug_symbol.ko",
+      "reference_sha256": "bdec6d062320a074965ed9bb7b06a3df7c2f89c68f6dd4e5ace1f592ca471a55",
+      "reference_build_id": "743fd48b6bb312e99d3a7712d2e004bb8e53a9f9",
+      "observed_note_hex": "040000001400000003000000474e5500743fd48b6bb312e99d3a7712d2e004bb8e53a9f9",
+      "status": "MATCH"
+    },
+    {
+      "module": "dispcc_sun",
+      "reference_path": "vendor_boot/lib/modules/dispcc-sun.ko",
+      "reference_sha256": "561cbd17b8d00ec0e871a2d6e6823e447586b05b8822bd376be7f49b30523b94",
+      "reference_build_id": "295405a0272a30528bdf8026c79d591dab0f1207",
+      "observed_note_hex": "040000001400000003000000474e5500295405a0272a30528bdf8026c79d591dab0f1207",
+      "status": "MATCH"
+    },
+    {
+      "module": "evacc_sun",
+      "reference_path": "vendor_boot/lib/modules/evacc-sun.ko",
+      "reference_sha256": "a548615fb71803363fb2c512c5da81961257dbb3a26f97c7b2172ef4deb6efdd",
+      "reference_build_id": "0df470d235947574353c83f203f27377ce31a462",
+      "observed_note_hex": "040000001400000003000000474e55000df470d235947574353c83f203f27377ce31a462",
+      "status": "MATCH"
+    },
+    {
+      "module": "gcc_kera",
+      "reference_path": "vendor_boot/lib/modules/gcc-kera.ko",
+      "reference_sha256": "9346a52d1fd797a3f90d0fd523278c73d00ee7f8946cda08c928a903875b0fce",
+      "reference_build_id": "7516a68816513524d77f17fde6ba1f2546c866cb",
+      "observed_note_hex": "040000001400000003000000474e55007516a68816513524d77f17fde6ba1f2546c866cb",
+      "status": "MATCH"
+    },
+    {
+      "module": "gcc_sun",
+      "reference_path": "vendor_boot/lib/modules/gcc-sun.ko",
+      "reference_sha256": "714f6420db36fe96ae720a684a131484b54b8fe2062b87faba00bbc519d4cf7d",
+      "reference_build_id": "b9a82df9e992a8424916105a28c90253619aabad",
+      "observed_note_hex": "040000001400000003000000474e5500b9a82df9e992a8424916105a28c90253619aabad",
+      "status": "MATCH"
+    },
+    {
+      "module": "gcc_tuna",
+      "reference_path": "vendor_boot/lib/modules/gcc-tuna.ko",
+      "reference_sha256": "d26590c87eb41ef2eccc13012dbb39834d3f54c9c8b60ac63fa63d700f5be02a",
+      "reference_build_id": "5d2e5e7e27ee9230d77ce3d9a0d4a2546f455602",
+      "observed_note_hex": "040000001400000003000000474e55005d2e5e7e27ee9230d77ce3d9a0d4a2546f455602",
+      "status": "MATCH"
+    },
+    {
+      "module": "gdsc_regulator",
+      "reference_path": "vendor_boot/lib/modules/gdsc-regulator.ko",
+      "reference_sha256": "935df2b178d0bc4a78c313313ca7bdc166f3097b3eb19cd70ee18b0c0bf0f667",
+      "reference_build_id": "100f502846e22ccd69607b1fa233017c5f040685",
+      "observed_note_hex": "040000001400000003000000474e5500100f502846e22ccd69607b1fa233017c5f040685",
+      "status": "MATCH"
+    },
+    {
+      "module": "gh_arm_drv",
+      "reference_path": "vendor_boot/lib/modules/gh_arm_drv.ko",
+      "reference_sha256": "a8975ae0ce7993728abbfce7a9e9e4e695e6b04ab6a5e917d4675e1bb0525e7e",
+      "reference_build_id": "09e94ff36683eb500286b0961363cd81c21424e6",
+      "observed_note_hex": "040000001400000003000000474e550009e94ff36683eb500286b0961363cd81c21424e6",
+      "status": "MATCH"
+    },
+    {
+      "module": "gh_dbl",
+      "reference_path": "vendor_boot/lib/modules/gh_dbl.ko",
+      "reference_sha256": "1edd3510cabf8a79dcaa6a1b6670986aa45b38b7bffd3c2ece5122f2cc9a8653",
+      "reference_build_id": "b590c7779eebae5559f832255301ba7ce4451bbf",
+      "observed_note_hex": "040000001400000003000000474e5500b590c7779eebae5559f832255301ba7ce4451bbf",
+      "status": "MATCH"
+    },
+    {
+      "module": "gh_msgq",
+      "reference_path": "vendor_boot/lib/modules/gh_msgq.ko",
+      "reference_sha256": "50b72d6f99719b3c48da89944b8c1326624149f38402cb89bc520c87caaa1d66",
+      "reference_build_id": "8715e9e3712fe94ff0f699ee073a49763dd83016",
+      "observed_note_hex": "040000001400000003000000474e55008715e9e3712fe94ff0f699ee073a49763dd83016",
+      "status": "MATCH"
+    },
+    {
+      "module": "gh_rm_drv",
+      "reference_path": "vendor_boot/lib/modules/gh_rm_drv.ko",
+      "reference_sha256": "f5df630b658ef9530e66172f13b3626ef0afeab095685616b3d621bb68e86b2c",
+      "reference_build_id": "651a149c81a16c233033a8c559b62a160c75f5cc",
+      "observed_note_hex": "040000001400000003000000474e5500651a149c81a16c233033a8c559b62a160c75f5cc",
+      "status": "MATCH"
+    },
+    {
+      "module": "gh_virt_wdt",
+      "reference_path": "vendor_boot/lib/modules/gh_virt_wdt.ko",
+      "reference_sha256": "2bd78793bff6c00964c2ecc25ed2d81ebfd0d7d92251e41fbe5b249f3945ef73",
+      "reference_build_id": "203e02e9be99216dae96b78ae2309229efdb27d8",
+      "observed_note_hex": "040000001400000003000000474e5500203e02e9be99216dae96b78ae2309229efdb27d8",
+      "status": "MATCH"
+    },
+    {
+      "module": "gic_intr_routing",
+      "reference_path": "vendor_boot/lib/modules/gic_intr_routing.ko",
+      "reference_sha256": "a832839b6aadcf18e9c031a8aa9ceaec1cc83dbbc27e55e9f20e22742d3563a5",
+      "reference_build_id": "859446c15c84f7e1c210b6cd20a95bf6d8f0ca48",
+      "observed_note_hex": "040000001400000003000000474e5500859446c15c84f7e1c210b6cd20a95bf6d8f0ca48",
+      "status": "MATCH"
+    },
+    {
+      "module": "gpucc_sun",
+      "reference_path": "vendor_boot/lib/modules/gpucc-sun.ko",
+      "reference_sha256": "691b289e5730abdcc4524349fc3a99f809d372a0875ae2d98189bf31005ff491",
+      "reference_build_id": "fc1cc2d58832b4e5aebb74c657551a12c72e56e9",
+      "observed_note_hex": "040000001400000003000000474e5500fc1cc2d58832b4e5aebb74c657551a12c72e56e9",
+      "status": "MATCH"
+    },
+    {
+      "module": "gunyah_loader",
+      "reference_path": "vendor_boot/lib/modules/gunyah_loader.ko",
+      "reference_sha256": "45fa025734c94e95123bed0829af93c29e74d4c8b98a30d38bb92d2c6d851bd2",
+      "reference_build_id": "35b013da1b9f4cdd8c32b1d4c90f4b8f06232087",
+      "observed_note_hex": "040000001400000003000000474e550035b013da1b9f4cdd8c32b1d4c90f4b8f06232087",
+      "status": "MATCH"
+    },
+    {
+      "module": "icc_bcm_voter",
+      "reference_path": "vendor_boot/lib/modules/icc-bcm-voter.ko",
+      "reference_sha256": "34fac87a4c4aea1a7ba8595a2658e4028b4c3376a7056872e0683d527ddc67be",
+      "reference_build_id": "e203a0e8232831757e6fcb5ecf428e7cd606fdb2",
+      "observed_note_hex": "040000001400000003000000474e5500e203a0e8232831757e6fcb5ecf428e7cd606fdb2",
+      "status": "MATCH"
+    },
+    {
+      "module": "icc_debug",
+      "reference_path": "vendor_boot/lib/modules/icc-debug.ko",
+      "reference_sha256": "e1258e26e6e0d5a7fb2f0714d87effa8285859194453303fa09d0d69d6a3c4f5",
+      "reference_build_id": "bc12613863a01cd1212294013364d70bb662b80a",
+      "observed_note_hex": "040000001400000003000000474e5500bc12613863a01cd1212294013364d70bb662b80a",
+      "status": "MATCH"
+    },
+    {
+      "module": "icc_rpmh",
+      "reference_path": "vendor_boot/lib/modules/icc-rpmh.ko",
+      "reference_sha256": "2ccfe58b89f0a9fe053dc85833dbe94754325744106cdc4fa3d7370a2d05e3c2",
+      "reference_build_id": "3710faed54abbdf8ef35e72d59f6b92858de6813",
+      "observed_note_hex": "040000001400000003000000474e55003710faed54abbdf8ef35e72d59f6b92858de6813",
+      "status": "MATCH"
+    },
+    {
+      "module": "iommu_logger",
+      "reference_path": "vendor_boot/lib/modules/iommu-logger.ko",
+      "reference_sha256": "391f41494998e0809fea70a470bdec232f7f3f723cab84e7b8f1f4001800835f",
+      "reference_build_id": "2b2d7b6b97e83188dc8dc5b662b9cf9f7d8b7a34",
+      "observed_note_hex": "040000001400000003000000474e55002b2d7b6b97e83188dc8dc5b662b9cf9f7d8b7a34",
+      "status": "MATCH"
+    },
+    {
+      "module": "kmparam",
+      "reference_path": "vendor_boot/lib/modules/kmparam.ko",
+      "reference_sha256": "ee6df11574fe37b2b0c5410a5583ceb031fa72fd2f3643e64144bfbd2aadbc22",
+      "reference_build_id": "b4ee1951a0598c041e86f2d66961b8869b520959",
+      "observed_note_hex": "040000001400000003000000474e5500b4ee1951a0598c041e86f2d66961b8869b520959",
+      "status": "MATCH"
+    },
+    {
+      "module": "llcc_qcom",
+      "reference_path": "vendor_boot/lib/modules/llcc-qcom.ko",
+      "reference_sha256": "5f972355152c9082b612ff23580be0724e566f35393bc85f19f6701b04b1dd00",
+      "reference_build_id": "3c748b63cbf8e71582ef978de29b65f3ca9488fe",
+      "observed_note_hex": "040000001400000003000000474e55003c748b63cbf8e71582ef978de29b65f3ca9488fe",
+      "status": "MATCH"
+    },
+    {
+      "module": "mdt_loader",
+      "reference_path": "vendor_boot/lib/modules/mdt_loader.ko",
+      "reference_sha256": "0eb0f99d969fcdb427e794d2358f4a81f8b03540c4d8cd4e969f27dd9fdb20cd",
+      "reference_build_id": "bc9a6844f582452794e77e49dfc192d680723a0c",
+      "observed_note_hex": "040000001400000003000000474e5500bc9a6844f582452794e77e49dfc192d680723a0c",
+      "status": "MATCH"
+    },
+    {
+      "module": "mem_buf",
+      "reference_path": "vendor_boot/lib/modules/mem_buf.ko",
+      "reference_sha256": "a4bf79b72bccaa78282c212c380f2c5420998f0a05f757da3f5885c12716c478",
+      "reference_build_id": "5b8bc6251ccce14c2be1855dc7bb0908d11eff5b",
+      "observed_note_hex": "040000001400000003000000474e55005b8bc6251ccce14c2be1855dc7bb0908d11eff5b",
+      "status": "MATCH"
+    },
+    {
+      "module": "mem_buf_dev",
+      "reference_path": "vendor_boot/lib/modules/mem_buf_dev.ko",
+      "reference_sha256": "e88057fad328b164870d9f7998d954c60f1490904b23baf99ef034424c0d525c",
+      "reference_build_id": "6a1ae6b4d0ebdcc10de6d73ed96415a00d4bcb75",
+      "observed_note_hex": "040000001400000003000000474e55006a1ae6b4d0ebdcc10de6d73ed96415a00d4bcb75",
+      "status": "MATCH"
+    },
+    {
+      "module": "mem_buf_msgq",
+      "reference_path": "vendor_boot/lib/modules/mem_buf_msgq.ko",
+      "reference_sha256": "a7f1f5cda67138616ca48065d4b6fce2b0f9249d8bb832265c037134d66efb7b",
+      "reference_build_id": "df3dd2a2053b6946582ac01100fe2367f67b1977",
+      "observed_note_hex": "040000001400000003000000474e5500df3dd2a2053b6946582ac01100fe2367f67b1977",
+      "status": "MATCH"
+    },
+    {
+      "module": "memory_dump_v2",
+      "reference_path": "vendor_boot/lib/modules/memory_dump_v2.ko",
+      "reference_sha256": "52707bdfd2670305a9f8e3397d148c9044c149580ecc8f402ac3775b58ae946e",
+      "reference_build_id": "6227c3218690eb4e1de020c83a861818b719c610",
+      "observed_note_hex": "040000001400000003000000474e55006227c3218690eb4e1de020c83a861818b719c610",
+      "status": "MATCH"
+    },
+    {
+      "module": "minidump",
+      "reference_path": "vendor_boot/lib/modules/minidump.ko",
+      "reference_sha256": "7507d70e45cda230b8879f5bbdc26ee1084f6dbb681f1bbf09eb93d66bd24185",
+      "reference_build_id": "bd05690f78fbc30ddc1c94e05583174af1cc57cb",
+      "observed_note_hex": "040000001400000003000000474e5500bd05690f78fbc30ddc1c94e05583174af1cc57cb",
+      "status": "MATCH"
+    },
+    {
+      "module": "msm_dma_iommu_mapping",
+      "reference_path": "vendor_boot/lib/modules/msm_dma_iommu_mapping.ko",
+      "reference_sha256": "cbf04262fe34d0468c5f9f772514053cf160f6c1fec6755a11ef4e3da024c23c",
+      "reference_build_id": "e3860d7f9c9b0fa24c51dec0a6a4fcf476fbc9d6",
+      "observed_note_hex": "040000001400000003000000474e5500e3860d7f9c9b0fa24c51dec0a6a4fcf476fbc9d6",
+      "status": "MATCH"
+    },
+    {
+      "module": "msm_qmp",
+      "reference_path": "vendor_boot/lib/modules/msm_qmp.ko",
+      "reference_sha256": "331b9aff20fa1e96f251659469ebfe03f4bec44da82fb21ad8b59c739d776d09",
+      "reference_build_id": "516ad57954df8663fba50048fa0344066cd03fd2",
+      "observed_note_hex": "040000001400000003000000474e5500516ad57954df8663fba50048fa0344066cd03fd2",
+      "status": "MATCH"
+    },
+    {
+      "module": "nvmem_qcom_spmi_sdam",
+      "reference_path": "vendor_boot/lib/modules/nvmem_qcom-spmi-sdam.ko",
+      "reference_sha256": "5b63124778fc14d04a9ecfa65fb9a75b4bc2846853eaa9976b3edfb3eaee5790",
+      "reference_build_id": "61b7debb743bb2db94e5250e50e3dd0044a6edd5",
+      "observed_note_hex": "040000001400000003000000474e550061b7debb743bb2db94e5250e50e3dd0044a6edd5",
+      "status": "MATCH"
+    },
+    {
+      "module": "phy_qcom_ufs_qmp_v4_sun",
+      "reference_path": "vendor_boot/lib/modules/phy-qcom-ufs-qmp-v4-sun.ko",
+      "reference_sha256": "ee7a30dd485a92b45dab198dd86deef5140bf1156420736aadf75867c3d4b7de",
+      "reference_build_id": "78914701eaf67a3b10f9510a9ad5d61ff3b45d88",
+      "observed_note_hex": "040000001400000003000000474e550078914701eaf67a3b10f9510a9ad5d61ff3b45d88",
+      "status": "MATCH"
+    },
+    {
+      "module": "phy_qcom_ufs_qrbtc_sdm845",
+      "reference_path": "vendor_boot/lib/modules/phy-qcom-ufs-qrbtc-sdm845.ko",
+      "reference_sha256": "9a58ccb01c9067bbe5bad42bdda1e92d36cfd38a1e3f2a932daafc65b66e2d40",
+      "reference_build_id": "1f0876220fd1b5c8f035785c0e213798ae77375c",
+      "observed_note_hex": "040000001400000003000000474e55001f0876220fd1b5c8f035785c0e213798ae77375c",
+      "status": "MATCH"
+    },
+    {
+      "module": "phy_qcom_ufs",
+      "reference_path": "vendor_boot/lib/modules/phy-qcom-ufs.ko",
+      "reference_sha256": "75e3806935b4368401585a62a2dc3c8e4e0a4520eba7593acf4e2df37c9a9add",
+      "reference_build_id": "6d35174aa779e0e2465f16f98efd2a4795af8898",
+      "observed_note_hex": "040000001400000003000000474e55006d35174aa779e0e2465f16f98efd2a4795af8898",
+      "status": "MATCH"
+    },
+    {
+      "module": "pinctrl_kera",
+      "reference_path": "vendor_boot/lib/modules/pinctrl-kera.ko",
+      "reference_sha256": "0f9d898b7e7ad2713d2c8e0c3838515c21866f95029ed5e50e662006131485de",
+      "reference_build_id": "67e6ddf33f12581d94ae09ff7b45ecde4be0bd99",
+      "observed_note_hex": "040000001400000003000000474e550067e6ddf33f12581d94ae09ff7b45ecde4be0bd99",
+      "status": "MATCH"
+    },
+    {
+      "module": "pinctrl_msm",
+      "reference_path": "vendor_boot/lib/modules/pinctrl-msm.ko",
+      "reference_sha256": "aa4bdf6655148f45f9e6eeb545e3f8b968d05ae70223c8bd55d7132aa79ca526",
+      "reference_build_id": "5df7bd369ab36a90f2039bc57c019909d9db4e8d",
+      "observed_note_hex": "040000001400000003000000474e55005df7bd369ab36a90f2039bc57c019909d9db4e8d",
+      "status": "MATCH"
+    },
+    {
+      "module": "pinctrl_sun",
+      "reference_path": "vendor_boot/lib/modules/pinctrl-sun.ko",
+      "reference_sha256": "c43abdaad4fa98bbbeaef9fe4d16efc16316e14a1f64cdfe9f58c90dc071b2e8",
+      "reference_build_id": "f1c156c9401013b1a6ef86b338d1bc05ef82ea3f",
+      "observed_note_hex": "040000001400000003000000474e5500f1c156c9401013b1a6ef86b338d1bc05ef82ea3f",
+      "status": "MATCH"
+    },
+    {
+      "module": "pinctrl_tuna",
+      "reference_path": "vendor_boot/lib/modules/pinctrl-tuna.ko",
+      "reference_sha256": "4080e707cabc4c7c78f40c05271b7c7a16b9ab4e87f38468fe8ceb4b4f4d5c2a",
+      "reference_build_id": "fa0b93d021fbd47c9b0a6ac53741959242b12621",
+      "observed_note_hex": "040000001400000003000000474e5500fa0b93d021fbd47c9b0a6ac53741959242b12621",
+      "status": "MATCH"
+    },
+    {
+      "module": "pmic_pon_log",
+      "reference_path": "vendor_boot/lib/modules/pmic-pon-log.ko",
+      "reference_sha256": "aa26a165da6d11850261e81c2c56c86ffb9ddb1e038b6ed81c85b275fd4e50f7",
+      "reference_build_id": "38474e70603f3cfceabfec7ed7feab99df80ed4d",
+      "observed_note_hex": "040000001400000003000000474e550038474e70603f3cfceabfec7ed7feab99df80ed4d",
+      "status": "MATCH"
+    },
+    {
+      "module": "proxy_consumer",
+      "reference_path": "vendor_boot/lib/modules/proxy-consumer.ko",
+      "reference_sha256": "b6b967ed844aaf35f5b6ed6489092e1db77ca5f3c37f4938bc2d0c460fdf71f2",
+      "reference_build_id": "8ca60de9ae54d3fa3a93af94ec315eac88b107cf",
+      "observed_note_hex": "040000001400000003000000474e55008ca60de9ae54d3fa3a93af94ec315eac88b107cf",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_cpufreq_thermal",
+      "reference_path": "vendor_boot/lib/modules/qcom-cpufreq-thermal.ko",
+      "reference_sha256": "266764131feeb817d3d246af375c3544338f373ba725ba86a24460a6546c5f27",
+      "reference_build_id": "6e99cb0c8413d27a247775fea24175da0ebcec19",
+      "observed_note_hex": "040000001400000003000000474e55006e99cb0c8413d27a247775fea24175da0ebcec19",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_dcvs",
+      "reference_path": "vendor_boot/lib/modules/qcom-dcvs.ko",
+      "reference_sha256": "3f432bf46c32b64f4b49fe925ec40e275f6aabaee80d3cbd9c1a3d55f87e0bce",
+      "reference_build_id": "5cb28693cfcebc63530cf41694da0abcea987f94",
+      "observed_note_hex": "040000001400000003000000474e55005cb28693cfcebc63530cf41694da0abcea987f94",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_dload_mode",
+      "reference_path": "vendor_boot/lib/modules/qcom-dload-mode.ko",
+      "reference_sha256": "90d34299752012f5f85e48a34a2cda72d15a45fe870bd2292207908835f3e922",
+      "reference_build_id": "663152a1d0f0e6381cab8c563cf13cc9c25089e1",
+      "observed_note_hex": "040000001400000003000000474e5500663152a1d0f0e6381cab8c563cf13cc9c25089e1",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_ipcc",
+      "reference_path": "vendor_boot/lib/modules/qcom-ipcc.ko",
+      "reference_sha256": "92548485586eefcc83b49ccf01a8cd0e2f943d674fd6cd97cb23fc254a5e7e54",
+      "reference_build_id": "c15076bb54db30c367b6b1af1cf6d903771ef9e2",
+      "observed_note_hex": "040000001400000003000000474e5500c15076bb54db30c367b6b1af1cf6d903771ef9e2",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_pdc",
+      "reference_path": "vendor_boot/lib/modules/qcom-pdc.ko",
+      "reference_sha256": "63d79837632349fc8ed4c42708b4afc9a64d128b6fab0669ca02f64c0d06c9a8",
+      "reference_build_id": "3d320ac5eca658bcc1713567fd83a314c31c51a4",
+      "observed_note_hex": "040000001400000003000000474e55003d320ac5eca658bcc1713567fd83a314c31c51a4",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_pmu_lib",
+      "reference_path": "vendor_boot/lib/modules/qcom-pmu-lib.ko",
+      "reference_sha256": "47dae526c5da28f3835048eed49b4ed2bcf56e74170abd2e8b5140ec3858e255",
+      "reference_build_id": "4bd021092f80aec26772c4e9e58b452e36848ac5",
+      "observed_note_hex": "040000001400000003000000474e55004bd021092f80aec26772c4e9e58b452e36848ac5",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_reboot_reason",
+      "reference_path": "vendor_boot/lib/modules/qcom-reboot-reason.ko",
+      "reference_sha256": "4442ac1b50f53e36dd32000287d034021627c8cc4c8dd67fe7ea46dcc4344a42",
+      "reference_build_id": "a75972b71ee73f90bbb199bb18119df5b3e118bb",
+      "observed_note_hex": "040000001400000003000000474e5500a75972b71ee73f90bbb199bb18119df5b3e118bb",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_scm",
+      "reference_path": "vendor_boot/lib/modules/qcom-scm.ko",
+      "reference_sha256": "df48b9701b5744facc9852acba1ae32471a84a8cd2b5e197d91033ee6b33c20e",
+      "reference_build_id": "8eb11021d8ba1eb94a81796d6c87629a0d7bf6d6",
+      "observed_note_hex": "040000001400000003000000474e55008eb11021d8ba1eb94a81796d6c87629a0d7bf6d6",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_spmi_pmic",
+      "reference_path": "vendor_boot/lib/modules/qcom-spmi-pmic.ko",
+      "reference_sha256": "ffc769d4fb074553bd83d1d3f22adf673477c11ef5db4f1443aaa23b73db82bb",
+      "reference_build_id": "bc683a7e5118a581de1dfa62b58fb1a69e61bc14",
+      "observed_note_hex": "040000001400000003000000474e5500bc683a7e5118a581de1dfa62b58fb1a69e61bc14",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_aoss",
+      "reference_path": "vendor_boot/lib/modules/qcom_aoss.ko",
+      "reference_sha256": "9097181c8d3f1a22762dc556d6225d07f2458476dcadbdb9c9f20e8a7d71baa2",
+      "reference_build_id": "c455c7b10a12625d970df2078b064bdb38006e9d",
+      "observed_note_hex": "040000001400000003000000474e5500c455c7b10a12625d970df2078b064bdb38006e9d",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_cpu_vendor_hooks",
+      "reference_path": "vendor_boot/lib/modules/qcom_cpu_vendor_hooks.ko",
+      "reference_sha256": "2e85ce61e25f4a015f1489ee8ff8a36ee9c47a28a379a96fa348d339ca486e21",
+      "reference_build_id": "9d73d36a9c0243462cad1b4813aa38c60c98e393",
+      "observed_note_hex": "040000001400000003000000474e55009d73d36a9c0243462cad1b4813aa38c60c98e393",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_cpucp",
+      "reference_path": "vendor_boot/lib/modules/qcom_cpucp.ko",
+      "reference_sha256": "3318b116f0b2a318db057cfd079dc2eb5fa76ab72e1ec1b26c11ae8fc6955f7a",
+      "reference_build_id": "78f000047e18999e9d4d87a1cc7afa687ed28c25",
+      "observed_note_hex": "040000001400000003000000474e550078f000047e18999e9d4d87a1cc7afa687ed28c25",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_dma_heaps",
+      "reference_path": "vendor_boot/lib/modules/qcom_dma_heaps.ko",
+      "reference_sha256": "b47692443bf22b31ac0d491d08995fbe7be4a644a3df4f6435016a136b7daac4",
+      "reference_build_id": "6b6332bae24d21a91c59b2f4b4f00978e411287f",
+      "observed_note_hex": "040000001400000003000000474e55006b6332bae24d21a91c59b2f4b4f00978e411287f",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_hwspinlock",
+      "reference_path": "vendor_boot/lib/modules/qcom_hwspinlock.ko",
+      "reference_sha256": "ae3a8bcf02338b0059ddb11af13aece36574406f2e6346b969a3648b095c1ddc",
+      "reference_build_id": "2550f8159ec586c52eb54d76857df6a28e3dfe41",
+      "observed_note_hex": "040000001400000003000000474e55002550f8159ec586c52eb54d76857df6a28e3dfe41",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_ice",
+      "reference_path": "vendor_boot/lib/modules/qcom_ice.ko",
+      "reference_sha256": "b92c6ce27e0752740e49a94b9687dba233ba4a1c2781965881573413f6aec89e",
+      "reference_build_id": "5d6a00c495f679e8fa133a44c53da625c7c1cd8c",
+      "observed_note_hex": "040000001400000003000000474e55005d6a00c495f679e8fa133a44c53da625c7c1cd8c",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_iommu_util",
+      "reference_path": "vendor_boot/lib/modules/qcom_iommu_util.ko",
+      "reference_sha256": "2760c2263bcc326eafc3b6fb59c025079c404cdad081b1f02d7a9f4a7f0c0269",
+      "reference_build_id": "3741bdd3c857000dde7ebf514148496887a4121e",
+      "observed_note_hex": "040000001400000003000000474e55003741bdd3c857000dde7ebf514148496887a4121e",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_ipc_logging",
+      "reference_path": "vendor_boot/lib/modules/qcom_ipc_logging.ko",
+      "reference_sha256": "30b34354e151aec699e878236a302844488d6dc5afd98b5a28860d3003ccedff",
+      "reference_build_id": "3a3395bbd9e53e3432bab2e4b6aa2b1e047ba96e",
+      "observed_note_hex": "040000001400000003000000474e55003a3395bbd9e53e3432bab2e4b6aa2b1e047ba96e",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_llcc_pmu",
+      "reference_path": "vendor_boot/lib/modules/qcom_llcc_pmu.ko",
+      "reference_sha256": "862db4e9a5b015a356b80f185fec0266408d458fb779fb95aaf2498631af331a",
+      "reference_build_id": "28348e90135e6ef60e9816359f3ba54631e0eabe",
+      "observed_note_hex": "040000001400000003000000474e550028348e90135e6ef60e9816359f3ba54631e0eabe",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_logbuf_boot_log",
+      "reference_path": "vendor_boot/lib/modules/qcom_logbuf_boot_log.ko",
+      "reference_sha256": "7d5747bac58357e5de043ca72a47ae6a15debc7cf1e3727d01a2042af9478e12",
+      "reference_build_id": "29b40a7876eef585f824ea8c2bced69706bf56c8",
+      "observed_note_hex": "040000001400000003000000474e550029b40a7876eef585f824ea8c2bced69706bf56c8",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_logbuf_vendor_hooks",
+      "reference_path": "vendor_boot/lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "reference_sha256": "510bb4e5d310ab37552f3a0fe7a73137b0453891ec734bc8643e8a57abdc3e9c",
+      "reference_build_id": "7fc410d45ce93254ddb3fc31532b875cf2576a52",
+      "observed_note_hex": "040000001400000003000000474e55007fc410d45ce93254ddb3fc31532b875cf2576a52",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_rpmh",
+      "reference_path": "vendor_boot/lib/modules/qcom_rpmh.ko",
+      "reference_sha256": "846a3355b3d5f6450b0575cdcd52fa3013dcde3159fc213255d59f7f4a089f98",
+      "reference_build_id": "15c972a20ff7a390ea8baf50c0146cc2cd786929",
+      "observed_note_hex": "040000001400000003000000474e550015c972a20ff7a390ea8baf50c0146cc2cd786929",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_scmi_client",
+      "reference_path": "vendor_boot/lib/modules/qcom_scmi_client.ko",
+      "reference_sha256": "7d646f1e6c787544c7b080f7dd70efb1a8661463b271751d690b3aca0bace985",
+      "reference_build_id": "6dafb29368ad518bf6d7736da9297ca719dca005",
+      "observed_note_hex": "040000001400000003000000474e55006dafb29368ad518bf6d7736da9297ca719dca005",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_scmi_vendor",
+      "reference_path": "vendor_boot/lib/modules/qcom_scmi_vendor.ko",
+      "reference_sha256": "0c6fff5039dfb032ad1cb24cf75041f0280da7887eca08e26326ecbfae8caad6",
+      "reference_build_id": "92823d2ddcdc695d41fcf6fe33cb68ad9bca7381",
+      "observed_note_hex": "040000001400000003000000474e550092823d2ddcdc695d41fcf6fe33cb68ad9bca7381",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_tsens",
+      "reference_path": "vendor_boot/lib/modules/qcom_tsens.ko",
+      "reference_sha256": "56ae131a27b5e65f6a8e1196fcb41c928979798e5fb2a9dda753edd08258ed93",
+      "reference_build_id": "0afecfe3a23cf26b2fae25bce60cec89264e2e9f",
+      "observed_note_hex": "040000001400000003000000474e55000afecfe3a23cf26b2fae25bce60cec89264e2e9f",
+      "status": "MATCH"
+    },
+    {
+      "module": "qcom_wdt_core",
+      "reference_path": "vendor_boot/lib/modules/qcom_wdt_core.ko",
+      "reference_sha256": "76851fa5c5ece3079602acaf889d2b9bdf6761badcd80a26c0c5ecd305328002",
+      "reference_build_id": "2a8dbe9c39ebe89717e0dff2baca04e70c32dbe2",
+      "observed_note_hex": "040000001400000003000000474e55002a8dbe9c39ebe89717e0dff2baca04e70c32dbe2",
+      "status": "MATCH"
+    },
+    {
+      "module": "qnoc_qos",
+      "reference_path": "vendor_boot/lib/modules/qnoc-qos.ko",
+      "reference_sha256": "b7e171ccf6fe97b950e0f51143860d1b5094b9fd59b873193a00dad4afced69b",
+      "reference_build_id": "54fd742b419267f64fe9c44ec7d142a24b49291e",
+      "observed_note_hex": "040000001400000003000000474e550054fd742b419267f64fe9c44ec7d142a24b49291e",
+      "status": "MATCH"
+    },
+    {
+      "module": "qnoc_sun",
+      "reference_path": "vendor_boot/lib/modules/qnoc-sun.ko",
+      "reference_sha256": "b25900d69d4a35cb0d51952c9247944003400bbb9c939b63e1c55d484f4cb4bb",
+      "reference_build_id": "b88d7bbbec35288ef3b4d9e25c1dee47fc77d322",
+      "observed_note_hex": "040000001400000003000000474e5500b88d7bbbec35288ef3b4d9e25c1dee47fc77d322",
+      "status": "MATCH"
+    },
+    {
+      "module": "qrtr_gunyah",
+      "reference_path": "vendor_boot/lib/modules/qrtr-gunyah.ko",
+      "reference_sha256": "c607c2e756d59294b69dc7e0832f25300f5b3685791d3882da492ebe75727fac",
+      "reference_build_id": "9c76c0bc24c8576b280329a7077434e984da29b2",
+      "observed_note_hex": "040000001400000003000000474e55009c76c0bc24c8576b280329a7077434e984da29b2",
+      "status": "MATCH"
+    },
+    {
+      "module": "qrtr",
+      "reference_path": "vendor_boot/lib/modules/qrtr.ko",
+      "reference_sha256": "dd0a69eb342d72c5764b5a53fe3cb00ccef38202f7d8f380ac83b838469aa1f7",
+      "reference_build_id": "f17bfd11e6c8222f6a614581c8c6ebd23ecbeef3",
+      "observed_note_hex": "040000001400000003000000474e5500f17bfd11e6c8222f6a614581c8c6ebd23ecbeef3",
+      "status": "MATCH"
+    },
+    {
+      "module": "qti_regmap_debugfs",
+      "reference_path": "vendor_boot/lib/modules/qti-regmap-debugfs.ko",
+      "reference_sha256": "6100e382868bdeb1e863504dfd673c0889386e37fdc3d3e1ead6e66d305e0c9f",
+      "reference_build_id": "34632fbbad4b78274b9b14ca5ce33517c7f46568",
+      "observed_note_hex": "040000001400000003000000474e550034632fbbad4b78274b9b14ca5ce33517c7f46568",
+      "status": "MATCH"
+    },
+    {
+      "module": "qti_thermal_vendor_hooks",
+      "reference_path": "vendor_boot/lib/modules/qti_thermal_vendor_hooks.ko",
+      "reference_sha256": "5f2c5fd66787886542f1fe7dca188d8f5e28694eb3b3443b419c4de70a550805",
+      "reference_build_id": "f4c3a9d6adec7c37b17d3501430264b1ed82385b",
+      "observed_note_hex": "040000001400000003000000474e5500f4c3a9d6adec7c37b17d3501430264b1ed82385b",
+      "status": "MATCH"
+    },
+    {
+      "module": "rpmh_regulator",
+      "reference_path": "vendor_boot/lib/modules/rpmh-regulator.ko",
+      "reference_sha256": "663eae787bd2a40efccf232902efbc51e19bc8f23ec816497b164d625ed07c1a",
+      "reference_build_id": "5aab2ad8dd97ec58dc75991e7efd3a5593270062",
+      "observed_note_hex": "040000001400000003000000474e55005aab2ad8dd97ec58dc75991e7efd3a5593270062",
+      "status": "MATCH"
+    },
+    {
+      "module": "rtc_pm8xxx",
+      "reference_path": "vendor_boot/lib/modules/rtc-pm8xxx.ko",
+      "reference_sha256": "a64a0b6c1026af081ab04195b2730c416dd38b656c8aa82d1a44463ba9d3bf36",
+      "reference_build_id": "84dc0111c9b4924cc185af6b93112261b945b5f1",
+      "observed_note_hex": "040000001400000003000000474e550084dc0111c9b4924cc185af6b93112261b945b5f1",
+      "status": "MATCH"
+    },
+    {
+      "module": "sched_walt",
+      "reference_path": "vendor_boot/lib/modules/sched-walt.ko",
+      "reference_sha256": "d2a03e8cd1d7e6965e0bd4a37fd4d7de490aff555eebf762db8507bd68135056",
+      "reference_build_id": "c02b7341a95893d93e77584daa43e46c1fc37da3",
+      "observed_note_hex": "040000001400000003000000474e5500c02b7341a95893d93e77584daa43e46c1fc37da3",
+      "status": "MATCH"
+    },
+    {
+      "module": "sdhci_msm",
+      "reference_path": "vendor_boot/lib/modules/sdhci-msm.ko",
+      "reference_sha256": "6c9ab72eca5a4025df184a95b2d65dea6d03802fc3481c7f9aa5148734965f19",
+      "reference_build_id": "620c6b079cfaa7d431fcaea7da938bf43c3e54a4",
+      "observed_note_hex": "040000001400000003000000474e5500620c6b079cfaa7d431fcaea7da938bf43c3e54a4",
+      "status": "MATCH"
+    },
+    {
+      "module": "secure_buffer",
+      "reference_path": "vendor_boot/lib/modules/secure_buffer.ko",
+      "reference_sha256": "65d55ae67dacb1dc9edfa9b0517d7a0cc00675dff41e975f37020af8ef0ebdda",
+      "reference_build_id": "cacee15d34fd11a0b68c3aafb79a01d1ae773416",
+      "observed_note_hex": "040000001400000003000000474e5500cacee15d34fd11a0b68c3aafb79a01d1ae773416",
+      "status": "MATCH"
+    },
+    {
+      "module": "sg",
+      "reference_path": "vendor_boot/lib/modules/sg.ko",
+      "reference_sha256": "ce73c0aec7d1676dd2f0dc5dda675348f1a6d397123c780db9d457f8d09b6e2e",
+      "reference_build_id": "eb6a72265b6466cc914ac75cdf8bababfc911235",
+      "observed_note_hex": "040000001400000003000000474e5500eb6a72265b6466cc914ac75cdf8bababfc911235",
+      "status": "MATCH"
+    },
+    {
+      "module": "smem",
+      "reference_path": "vendor_boot/lib/modules/smem.ko",
+      "reference_sha256": "1da6e50339cde2b5dfab285b25c7b1c8856922e5dab4497698b0b7029e177cc2",
+      "reference_build_id": "a16619064bbb21f7fdd698846f7929d8b6ae3d64",
+      "observed_note_hex": "040000001400000003000000474e5500a16619064bbb21f7fdd698846f7929d8b6ae3d64",
+      "status": "MATCH"
+    },
+    {
+      "module": "socinfo",
+      "reference_path": "vendor_boot/lib/modules/socinfo.ko",
+      "reference_sha256": "fadcd36d70e9d613a7e9dc3861aa233b21f807e800d01448a58d56f936e48812",
+      "reference_build_id": "ffae721eb73336ec25ea54640ed09e0969866f2f",
+      "observed_note_hex": "040000001400000003000000474e5500ffae721eb73336ec25ea54640ed09e0969866f2f",
+      "status": "MATCH"
+    },
+    {
+      "module": "spmi_pmic_arb",
+      "reference_path": "vendor_boot/lib/modules/spmi-pmic-arb.ko",
+      "reference_sha256": "ea9fa991bb3de94864fc4c029cdad284c3998cdf6d672b3028036451efeda7a9",
+      "reference_build_id": "b4a22f0036d2bb506e2e728da3b7e941bb798047",
+      "observed_note_hex": "040000001400000003000000474e5500b4a22f0036d2bb506e2e728da3b7e941bb798047",
+      "status": "MATCH"
+    },
+    {
+      "module": "stub_regulator",
+      "reference_path": "vendor_boot/lib/modules/stub-regulator.ko",
+      "reference_sha256": "da02d91388e9ae72a72e31bc31dc748468bc0c69f133ab5de22bc80c730284dd",
+      "reference_build_id": "4c40be1dc1f1e07766047e87533af1d2b73a9e19",
+      "observed_note_hex": "040000001400000003000000474e55004c40be1dc1f1e07766047e87533af1d2b73a9e19",
+      "status": "MATCH"
+    },
+    {
+      "module": "tcsrcc_sun",
+      "reference_path": "vendor_boot/lib/modules/tcsrcc-sun.ko",
+      "reference_sha256": "5a11fca8fda39c997a16100c7865f5eb59f96bbffc240c9e70cfe55b32f2da72",
+      "reference_build_id": "f529bebd17445abee2c31c76df992e3715bc79d8",
+      "observed_note_hex": "040000001400000003000000474e5500f529bebd17445abee2c31c76df992e3715bc79d8",
+      "status": "MATCH"
+    },
+    {
+      "module": "tcsrcc_tuna",
+      "reference_path": "vendor_boot/lib/modules/tcsrcc-tuna.ko",
+      "reference_sha256": "c8309a751ffe67474615a0fcfe748c5f795928b4787d2a81afea0f1c811225a8",
+      "reference_build_id": "f54ce71c45a842612fb8a351fb47522e64a53565",
+      "observed_note_hex": "040000001400000003000000474e5500f54ce71c45a842612fb8a351fb47522e64a53565",
+      "status": "MATCH"
+    },
+    {
+      "module": "thermal_pause",
+      "reference_path": "vendor_boot/lib/modules/thermal_pause.ko",
+      "reference_sha256": "0a1082602ade6f90882279dada389b033d47716f2044117965bc68ff8f54faba",
+      "reference_build_id": "7195faa6951ba4184356c1012eda853ba313de83",
+      "observed_note_hex": "040000001400000003000000474e55007195faa6951ba4184356c1012eda853ba313de83",
+      "status": "MATCH"
+    },
+    {
+      "module": "ufs_qcom",
+      "reference_path": "vendor_boot/lib/modules/ufs-qcom.ko",
+      "reference_sha256": "7169fdca54656016e4311d61b8398f93791224dc4073668a098baece3e6aa43e",
+      "reference_build_id": "3074174f2ce5e8f10638eef7d45806a70e4cf65c",
+      "observed_note_hex": "040000001400000003000000474e55003074174f2ce5e8f10638eef7d45806a70e4cf65c",
+      "status": "MATCH"
+    },
+    {
+      "module": "ufshcd_crypto_qti",
+      "reference_path": "vendor_boot/lib/modules/ufshcd-crypto-qti.ko",
+      "reference_sha256": "73e852d37449e5d088d6d80f3a7995af7a292d6b3718e1230eb4ee7cc13b1c30",
+      "reference_build_id": "ffb8c53dc13ff62513d3da46f1945721d3377bf4",
+      "observed_note_hex": "040000001400000003000000474e5500ffb8c53dc13ff62513d3da46f1945721d3377bf4",
+      "status": "MATCH"
+    },
+    {
+      "module": "videocc_sun",
+      "reference_path": "vendor_boot/lib/modules/videocc-sun.ko",
+      "reference_sha256": "5ce1be8e38c7b93e96b373139bfae4fd79ff6dc4f594153fde7a58b00b09aca1",
+      "reference_build_id": "5da57d782bab9e5ec1c396d11629253213083be2",
+      "observed_note_hex": "040000001400000003000000474e55005da57d782bab9e5ec1c396d11629253213083be2",
+      "status": "MATCH"
+    },
+    {
+      "module": "zram",
+      "reference_path": "vendor_boot/lib/modules/zram.ko",
+      "reference_sha256": "91d0ff3d86d99c310d0734cb6ed51d062036f83bf95f333c00c22241e5f8eb51",
+      "reference_build_id": "1ba177010bd9be0cc57f14eca4f93ee690544c1b",
+      "observed_note_hex": "040000001400000003000000474e55001ba177010bd9be0cc57f14eca4f93ee690544c1b",
+      "status": "MATCH"
+    },
+    {
+      "module": "zsmalloc",
+      "reference_path": "vendor_boot/lib/modules/zsmalloc.ko",
+      "reference_sha256": "41e4f238c2ae060f0ceffa49882e76e4e59e60caa82e9d7bb26c38ecb1a48b3f",
+      "reference_build_id": "1e3deb0414b3019d40324363ee5e322f3c3ea163",
+      "observed_note_hex": "040000001400000003000000474e55001e3deb0414b3019d40324363ee5e322f3c3ea163",
+      "status": "MATCH"
+    },
+    {
+      "module": "zte_imem_info",
+      "reference_path": "vendor_boot/lib/modules/zte_imem_info.ko",
+      "reference_sha256": "b1de3ea658b398e8ae570c4ed59b4d88e88a199fc1e35c05bbd24ae8b0059bdd",
+      "reference_build_id": "1c305bb3d88702cf5cf47a3f6d9b3fc298393510",
+      "observed_note_hex": "040000001400000003000000474e55001c305bb3d88702cf5cf47a3f6d9b3fc298393510",
+      "status": "MATCH"
+    },
+    {
+      "module": "zte_ramdisk_reboot",
+      "reference_path": "vendor_boot/lib/modules/zte_ramdisk_reboot.ko",
+      "reference_sha256": "36918283e0e8464f14680f4e7d05ec5c14c4c92a983b8e8db83398f01c4a0bef",
+      "reference_build_id": "432a191a7a4134deb8f87cea0464c3eecd066b63",
+      "observed_note_hex": "040000001400000003000000474e5500432a191a7a4134deb8f87cea0464c3eecd066b63",
+      "status": "MATCH"
+    }
+  ],
+  "limits": [
+    "Matches are GNU build-ID note identity, not hashes of all bytes loaded in memory.",
+    "A currently loaded module does not establish when it was inserted.",
+    "Does not prove compatibility with another kernel or acceptance of signatures on a different boot policy."
+  ]
+}

@@ -1,0 +1,15 @@
+# Soft dependencies extracted from modules themselves.
+softdep cpu_mpam pre: mpam
+softdep mpam pre: qcom_scmi_client
+softdep zte_tpd pre: msm_drm
+softdep qcom_pmu_lib pre: qcom_scmi_client
+softdep ipclite pre: qcom_hwspinlock
+softdep qsee_ipc_irq_bridge pre: qcom_ipcc
+softdep platform_mpam pre: mpam
+softdep smem pre: qcom_hwspinlock
+softdep dwc3_msm pre: phy-generic phy-msm-snps-hs phy-msm-ssusb-qmp eud
+softdep pinctrl_msm pre: qcom-pdc
+softdep msm_drm pre: qnoc-sun
+softdep qcom_scmi_client pre: qcom_scmi_vendor
+softdep sched_walt pre: socinfo
+softdep memlat pre: qcom_scmi_client

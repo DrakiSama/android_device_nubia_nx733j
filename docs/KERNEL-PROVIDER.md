@@ -88,3 +88,6 @@ variables de build ficticias, no instala módulos y no contiene comandos de flas
 
 El [análisis de símbolos y CRC](MODULE-EXPORT-CRC.md) documenta el cierre estático
 del conjunto normal. No implica validación temporal de la carga en paralelo.
+
+La [auditoría de carga normal](RAMDISK-LOAD-AUDIT.md) confirma el cierre con
+softdeps y los 106 build IDs observados; conserva pendiente la secuencia temporal.

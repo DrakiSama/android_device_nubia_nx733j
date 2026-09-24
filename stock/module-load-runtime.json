@@ -1,0 +1,15 @@
+{
+  "captured_utc": "2026-09-24T16:25:18.192476+00:00",
+  "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "slot": "_b",
+  "parallel_property": "true",
+  "vendor_modules_ready_property": "1",
+  "gki_service_state": "stopped",
+  "vendor_service_state": "stopped",
+  "dmesg_total_lines": 5251,
+  "matching_lines": 0,
+  "limits": [
+    "Ring buffer may have overwritten first-stage messages.",
+    "A stopped oneshot or modules-ready property does not prove every module succeeded."
+  ]
+}
