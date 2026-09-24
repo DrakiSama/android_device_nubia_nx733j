@@ -1,0 +1,19 @@
+{
+  "captured_utc": "2026-09-24T22:11:29.386561+00:00",
+  "source": "adb exec-out su -c cat /proc/config.gz; gzip decoded on host",
+  "config_sha256": "f21f8de739dc13dd5af6fda290ab62322968836af5133f4cb32c02c1a4f6ff18",
+  "matches_previous_kernel_config": true,
+  "selected_lines": [
+    "CONFIG_F2FS_FS=y",
+    "CONFIG_EROFS_FS=y",
+    "# CONFIG_EROFS_FS_DEBUG is not set",
+    "CONFIG_EROFS_FS_XATTR=y",
+    "CONFIG_EROFS_FS_POSIX_ACL=y",
+    "CONFIG_EROFS_FS_SECURITY=y",
+    "CONFIG_EROFS_FS_ZIP=y",
+    "# CONFIG_EROFS_FS_ZIP_LZMA is not set",
+    "# CONFIG_EROFS_FS_ZIP_DEFLATE is not set",
+    "CONFIG_EROFS_FS_PCPU_KTHREAD=y",
+    "CONFIG_EROFS_FS_PCPU_KTHREAD_HIPRI=y"
+  ]
+}

@@ -54,3 +54,21 @@ copian fechas/firmas stock para aparentar una imagen oficial.
 BoardConfigBringup.mk permanece ausente, bloqueando la construcción de imágenes.
 Cambiar los argumentos documentados no demuestra un build correcto ni un boot.
 Referencia del código: `stock/build-interface-reference.json`.
+
+## Imágenes lógicas: tipos explícitos
+
+Se añadieron BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE,
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE y BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE
+como EROFS. Evidencia: siete volúmenes del super auditado, fstab y observación
+viva del mismo NX733J. No son valores heredados del recovery ni de NX789J.
+
+`board_config.mk:725–739,765–779` utiliza los tipos product/system_ext para
+habilitar sus imágenes separadas; enumerarlas en el grupo dinámico no basta.
+El árbol ya tenía estas variables para vendor/odm y ambos DLKM.
+
+La [configuración del kernel](../stock/kernel-filesystem-config.json) vuelve a
+coincidir por SHA-256 con la auditada: EROFS, xattrs, ACL, etiquetas y ZIP están
+habilitados; LZMA y DEFLATE están deshabilitados. El build local usa LZ4/LZ4HC
+por defecto (Makefile:2247–2249). No se eligió un compresor alternativo ni se
+cambiaron geometría, tamaños o extents stock. Falta medir tamaño de imágenes
+ROM cuando el build sea habilitado; estas variables no prueban que quepan.

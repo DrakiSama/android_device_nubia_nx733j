@@ -11,6 +11,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Component | Status | Evidence | Source | Notes |
 | --- | --- | --- | --- | --- |
 | GPT y tamaños | CONFIRMED | CRC primario/backup; 115 entradas XML | Respaldo NX733J, seis LUN | Sectores físicos de 4096 bytes; sin offsets prestados |
+| Tipos de imagen ROM | CONFIRMED | EROFS en siete particiones; system/system_ext/product explícitos | Super, fstab, montajes y config del kernel | Pendientes tamaño real y empaquetado de imágenes ROM |
 | Super y particiones B | CONFIRMED | Geometría, seis metadatos y siete hashtrees | super del respaldo | Sectores liblp de 512 bytes; COW presentes |
 | Argumentos de empaquetado | PARTIAL | v4 explícito en ambas listas; direcciones stock representadas con base cero | Cabecera vendor_boot y mkbootimg local | Sin build; cmdline/bootconfig y ramdisk pendientes |
 | Boot chain | PARTIAL | Firmas internas y claves padre/hijo A/B | vbmeta, boot, recovery | Trust anchor OEM y aceptación de rollback pendientes |

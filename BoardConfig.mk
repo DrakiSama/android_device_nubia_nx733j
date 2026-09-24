@@ -45,6 +45,11 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
+# Stock super and mounted filesystems agree; see stock/first-stage-mount-observation.json.
+# Explicit types also enable separate product/system_ext image construction.
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
