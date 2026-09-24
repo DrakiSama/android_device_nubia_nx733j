@@ -48,7 +48,7 @@ montaje Android. Las rutas concretas se enumeran individualmente en el manifiest
 
 | Momento / partición | CONFIRMED | Decisión pendiente |
 | --- | --- | --- |
-| Vendor ramdisk, arranque normal | modules.load.boot: 106 entradas; cierre modinfo dentro del ramdisk | Revisar softdeps, alias y orden temporal antes de integrar |
+| Vendor ramdisk, arranque normal | modules.load.boot: 106 entradas; cierre modinfo y de símbolos dentro del ramdisk/kernel | Revisar softdeps, alias y orden temporal antes de integrar |
 | Vendor ramdisk, recovery | 303 entradas; cierre incluye dependencia hdcp_qseecom_dlkm | Mantener lista independiente; no usarla para arranque normal |
 | Segunda etapa init, system_dlkm | early-init ejecuta gki.modprobe; script enumera .ko y aplica blocklist | Reproducir necesidades con init/SELinux propios; lista vacía no significa ausencia de carga |
 | Segunda etapa init, vendor_dlkm | vendor.modprobe se inicia tras exec_start gki.modprobe; procesa modules.load y filtros | Respeta dependencias y módulos excluidos; el script lanza cargas en paralelo |
@@ -85,3 +85,6 @@ runtime corresponde a un teléfono con root. Aún faltan los valores de exportac
 CRC del kernel contrastados contra los imports, namespaces y política de firmas.
 La ausencia deliberada de BoardConfigBringup.mk se conserva; este contrato no añade
 variables de build ficticias, no instala módulos y no contiene comandos de flasheo.
+
+El [análisis de símbolos y CRC](MODULE-EXPORT-CRC.md) documenta el cierre estático
+del conjunto normal. No implica validación temporal de la carga en paralelo.

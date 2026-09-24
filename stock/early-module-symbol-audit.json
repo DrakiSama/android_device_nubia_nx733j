@@ -1,0 +1,642 @@
+{
+  "schema_version": 1,
+  "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "live_capture_utc": "2026-09-24T03:31:11.747740+00:00",
+  "load_list_sha256_lf": "e72f892f962f099b572adc500d926ee346a2843408621a62a56317bbf9749462",
+  "list_entries": 106,
+  "unique_selected_modules": 106,
+  "unique_import_names": 1620,
+  "kernel_provider_names": 1320,
+  "selected_ramdisk_provider_names": 300,
+  "imports_without_provider_in_selected_set_or_kernel": [],
+  "module_crc_conflicts": [],
+  "modules": [
+    {
+      "path": "lib/modules/arm_smmu.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/iommu-logger.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/qcom_iommu_util.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/bcl_pmic5.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/cambistmclkcc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/camcc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/clk-dummy.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/clk-qcom.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/crm-v2.ko",
+        "lib/modules/gdsc-regulator.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/clk-rpmh.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cmd-db.ko",
+        "lib/modules/qcom_rpmh.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/cmd-db.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/cpu_hotplug.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/cpu_phys_log_map.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/cpucp_fast.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/sched-walt.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/cqhci.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/crm-v2.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/dcc_v2.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/minidump.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/dcvs_fp.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cmd-db.ko",
+        "lib/modules/qcom_rpmh.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/debug-regulator.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/debug_symbol.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/dispcc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/evacc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gcc-kera.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gcc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gcc-tuna.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gdsc-regulator.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/debug-regulator.ko",
+        "lib/modules/proxy-consumer.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gh_arm_drv.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/gh_dbl.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/gh_msgq.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/gh_rm_drv.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_arm_drv.ko",
+        "lib/modules/gh_dbl.ko",
+        "lib/modules/gh_msgq.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gh_virt_wdt.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_wdt_core.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gic_intr_routing.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/gpucc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/gunyah_loader.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_rm_drv.ko",
+        "lib/modules/mdt_loader.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/secure_buffer.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/icc-bcm-voter.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/crm-v2.ko",
+        "lib/modules/qcom_rpmh.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/icc-debug.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/icc-rpmh.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cmd-db.ko",
+        "lib/modules/icc-bcm-voter.ko",
+        "lib/modules/icc-debug.ko",
+        "lib/modules/socinfo.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/iommu-logger.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/kmparam.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/llcc-qcom.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/mdt_loader.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/mem_buf.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/mem_buf_dev.ko",
+        "lib/modules/mem_buf_msgq.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/mem_buf_dev.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_rm_drv.ko",
+        "lib/modules/secure_buffer.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/mem_buf_msgq.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_msgq.ko",
+        "lib/modules/mem_buf_dev.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/memory_dump_v2.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/minidump.ko",
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/minidump.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/debug_symbol.ko",
+        "lib/modules/gh_rm_drv.ko",
+        "lib/modules/qcom_dma_heaps.ko",
+        "lib/modules/smem.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/msm_dma_iommu_mapping.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/msm_qmp.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_aoss.ko",
+        "lib/modules/qcom_ipc_logging.ko",
+        "lib/modules/smem.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/nvmem_qcom-spmi-sdam.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs-qmp-v4-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/phy-qcom-ufs.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs-qrbtc-sdm845.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/phy-qcom-ufs.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/phy-qcom-ufs.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/pinctrl-kera.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/pinctrl-msm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/pinctrl-msm.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/pinctrl-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/pinctrl-msm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/pinctrl-tuna.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/pinctrl-msm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/pmic-pon-log.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/proxy-consumer.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom-cpufreq-thermal.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom-dcvs.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/dcvs_fp.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom-dload-mode.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/kmparam.ko",
+        "lib/modules/minidump.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/qcom_wdt_core.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom-ipcc.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom-pdc.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom-pmu-lib.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cpu_phys_log_map.ko",
+        "lib/modules/qcom_llcc_pmu.ko",
+        "lib/modules/qcom_scmi_client.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom-reboot-reason.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom-scm.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_rm_drv.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom-spmi-pmic.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qti-regmap-debugfs.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_aoss.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_cpu_vendor_hooks.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom_cpucp.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom_dma_heaps.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/mem_buf_dev.ko",
+        "lib/modules/msm_dma_iommu_mapping.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/secure_buffer.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_hwspinlock.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom_ice.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_iommu_util.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_ipc_logging.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/minidump.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_llcc_pmu.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cpu_phys_log_map.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_logbuf_boot_log.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/minidump.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_logbuf_vendor_hooks.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/debug_symbol.ko",
+        "lib/modules/minidump.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_rpmh.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cmd-db.ko",
+        "lib/modules/crm-v2.ko",
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_scmi_client.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom_scmi_vendor.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qcom_tsens.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qcom_wdt_core.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/minidump.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/zte_ramdisk_reboot.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qnoc-qos.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qnoc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/icc-rpmh.ko",
+        "lib/modules/qnoc-qos.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qrtr-gunyah.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/gh_dbl.ko",
+        "lib/modules/gh_rm_drv.ko",
+        "lib/modules/gunyah_loader.ko",
+        "lib/modules/qcom-scm.ko",
+        "lib/modules/qrtr.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qrtr.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/qti-regmap-debugfs.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/qti_thermal_vendor_hooks.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/rpmh-regulator.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/cmd-db.ko",
+        "lib/modules/debug-regulator.ko",
+        "lib/modules/proxy-consumer.ko",
+        "lib/modules/qcom_ipc_logging.ko",
+        "lib/modules/qcom_rpmh.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/rtc-pm8xxx.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/sched-walt.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/socinfo.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/sdhci-msm.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko",
+        "lib/modules/cqhci.ko",
+        "lib/modules/pinctrl-msm.ko",
+        "lib/modules/qcom_ice.ko",
+        "lib/modules/qcom_ipc_logging.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/secure_buffer.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom-scm.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/sg.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/smem.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/socinfo.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/smem.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/spmi-pmic-arb.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/stub-regulator.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/debug-regulator.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/tcsrcc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/tcsrcc-tuna.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/thermal_pause.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/sched-walt.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/ufs-qcom.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko",
+        "lib/modules/minidump.ko",
+        "lib/modules/phy-qcom-ufs.ko",
+        "lib/modules/qcom_ice.ko",
+        "lib/modules/qcom_ipc_logging.ko",
+        "lib/modules/sched-walt.ko",
+        "lib/modules/ufshcd-crypto-qti.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/ufshcd-crypto-qti.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/qcom_ice.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/videocc-sun.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/clk-qcom.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/zram.ko",
+      "symbol_provider_dependencies": [
+        "lib/modules/zsmalloc.ko"
+      ]
+    },
+    {
+      "path": "lib/modules/zsmalloc.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/zte_imem_info.ko",
+      "symbol_provider_dependencies": []
+    },
+    {
+      "path": "lib/modules/zte_ramdisk_reboot.ko",
+      "symbol_provider_dependencies": []
+    }
+  ],
+  "limits": [
+    "Static symbol-provider closure only; parallel scheduling and softdeps not validated.",
+    "Kernel export names are observed but their CRC values remain unchecked.",
+    "Only __versions imports are checked, not every undefined ELF symbol.",
+    "Runtime exports do not certify acceptance of signatures, licenses or namespaces."
+  ]
+}

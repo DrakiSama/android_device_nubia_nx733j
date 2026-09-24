@@ -79,3 +79,27 @@ Estos fallos no prueban que los artefactos no existan.
 Se necesita el Image exacto y su Module.symvers o información equivalente; primero
 contrastar SHA-256 del Image con la referencia stock, después comparar los 3404 CRC.
 No se sustituyen por los de una compilación cercana ni se habilita carga forzada.
+
+## Frontera de símbolos del ramdisk normal
+
+[CONFIRMED] Los 106 módulos únicos de modules.load.boot requieren 1620 nombres
+versionados: 1320 exportados por el kernel observado y 300 exportados dentro del
+propio conjunto seleccionado. No faltan proveedores y no hay conflictos CRC entre
+los módulos seleccionados. No se necesita un proveedor de símbolos de carga tardía
+para esos imports. Esto amplía el cierre de dependencias modinfo ya documentado.
+
+Evidencia: [early-module-symbol-audit.json](../stock/early-module-symbol-audit.json).
+El informe enumera los proveedores requeridos por cada módulo. No es una traza de
+inserción: softdeps, alias, scheduling paralelo, namespaces y firmas permanecen
+fuera de esta comprobación. Los 1320 CRC del kernel de esta lista no se validaron.
+
+Repetir, con los mismos insumos privados descritos arriba:
+
+```sh
+python3 tools/audit_early_module_symbols.py /private/vendor_ramdisk00 stock/kernel-provider-reference.json stock/modules.load.boot /private/runtime-exports.json /private/early-symbols.json
+```
+
+La herramienta valida hashes de los 306 módulos disponibles del ramdisk, selecciona
+únicamente la lista suministrada y compara sus imports. Rechaza entradas ambiguas o
+ausentes, y genera el informe con salida 2 si detecta proveedores ausentes o CRC
+contradictorios. Esta ejecución cubre la lista normal; no se extrapola a recovery.

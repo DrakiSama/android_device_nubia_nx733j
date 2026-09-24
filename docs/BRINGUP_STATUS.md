@@ -18,7 +18,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Kernel stock y módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden; 3404 CRC del kernel pendientes | vendor_boot, DLKM, vendor y kernel vivo | Faltan CRC del kernel base, namespaces, firmas y orden de carga |
 | Contrato del proveedor kernel | PARTIAL | KERNEL-PROVIDER.md y manifiesto de hashes | Artefactos stock auditados | Diseño documentado; adaptador de build pendiente |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
-| Política de carga para la ROM | PARTIAL | Listas ramdisk y scripts stock observados | Captura stock | No trasladar la lista recovery al arranque normal |
+| Política de carga para la ROM | PARTIAL | Lista normal de 106 módulos: cierre estático de 1620 nombres; 300 CRC internos coinciden | Ramdisk y exports stock | Faltan softdeps/alias/orden paralelo; recovery separado |
 | Merge de snapshots | UNKNOWN | Propiedades Virtual A/B; snapshotctl ausente | Teléfono | COW no acredita estado actual del merge |
 | AVB/FEC/OTA del producto | UNKNOWN | Cadena stock documentada | Pendiente | No copiar rollback, firmas ni alcance OTA automáticamente |
 | Producto genérico | PARTIAL | Scaffold actualmente Lineage | Repositorio | Separación del producto pendiente; no se modifican makefiles en esta actualización |
@@ -30,7 +30,8 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 El [contrato del proveedor](KERNEL-PROVIDER.md) y su manifiesto de referencia
 identifican las entradas, hashes y responsabilidades. Siguiente: localizar evidencia
 de valores CRC/exportaciones del kernel exacto (por ejemplo, Module.symvers de esa
-compilación) y contrastar las dependencias de carga por fase. La coincidencia de
+compilación) y contrastar softdeps/alias y la ejecución paralela de la carga.
+La frontera estática del ramdisk normal ya está comprobada. La coincidencia de
 5089 nombres y 1685 CRC entre módulos no cierra ABI. Conservar ambas variantes stock de zram/zsmalloc por
 partición. AVB/OTA y recuperación siguen pendientes antes de generar imágenes.
 
