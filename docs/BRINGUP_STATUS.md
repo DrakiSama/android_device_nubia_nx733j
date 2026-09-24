@@ -17,7 +17,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Recovery separado | CONFIRMED | Header v4; kernel vacío; ramdisk propio | Respaldo A/B | No demuestra restauración disponible |
 | Kernel stock y módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden; 3404 CRC del kernel pendientes | vendor_boot, DLKM, vendor y kernel vivo | Faltan CRC del kernel base, namespaces, firmas y orden de carga |
 | Contrato del proveedor kernel | PARTIAL | Contrato y paquete preparados; consumidores del build identificados | Stock y build local | Adaptador detenido por diferencias DTB/DTBO y política AVB pendiente |
-| Entrada DTB y límite DTBO | PARTIAL | Copia DTB íntegra; 37 entradas DTBO acotadas | Paquete stock y descriptor ya verificado | Footer interno A/B identificado; falta política AVB ROM |
+| Entrada DTB y límite DTBO | PARTIAL | Copia DTB íntegra; contenedor DTBO de 18 MiB conservado | Paquete stock y descriptor ya verificado | Footer interno A/B identificado; falta política AVB ROM |
 | Paquete privado stock | CONFIRMED | 715 copias verificadas; 681 módulos y 5 artefactos coinciden con manifiesto | Capturas stock locales | Preparado, sin integrar al build ni publicar binarios |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
 | Política de carga para la ROM | PARTIAL | Cierre duro+soft de 106 módulos, grafo sin ciclos, 106 build IDs coincidentes | Ramdisk y teléfono stock | Falta secuencia efectiva y vinculación de aliases al hardware; recovery separado |
@@ -57,5 +57,6 @@ Bloqueos de integración precisos: [mapeo al build](BUILD-PROVIDER-MAPPING.md).
 
 Los datos posteriores al payload DTBO quedaron identificados: contenedor AVB
 interno de 18 MiB con footer, dentro de la partición de 24 MiB. Véase
-[corrección y evidencia](DTBO-AVB-ENVELOPE.md). Siguiente: preparar entrada de
-trabajo que preserve el contenedor y resolver la política AVB ROM antes de activar.
+[corrección y evidencia](DTBO-AVB-ENVELOPE.md). Entrada privada del contenedor preparada y
+verificada por hash. Siguiente: cerrar la composición boot/init_boot/vendor_boot
+y la política AVB ROM antes de activar el adaptador.

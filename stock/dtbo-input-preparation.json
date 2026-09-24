@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-24T22:00:19.975158+00:00",
+  "device": "NX733J",
+  "status": "STOCK_ENVELOPE_STAGED_NOT_ROM_IMAGE",
+  "audit_sha256_lf": "297ebb536cee56b955f88636600c7615fc04e4a839d324a128b3344ec62e76e0",
+  "source_bytes": 25165824,
+  "source_sha256": "16e294f299ffd12310489f40fd2c5653949031cf99464f33097999104d6b9957",
+  "output": "dtbo.img",
+  "output_bytes": 18874368,
+  "output_sha256": "379359da9e7e6db999f827b74fa9b2402c50be944103ca1d9de7e2e77f829188",
+  "omitted_zero_suffix_bytes": 6291456,
+  "partition_size_unchanged": 25165824,
+  "existing_avb_footer_preserved": true,
+  "existing_embedded_algorithm": "NONE",
+  "limits": [
+    "Work input only; no new signature or AVB policy",
+    "No build, OTA or flash operation",
+    "Full partition reference remains unchanged"
+  ]
+}

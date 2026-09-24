@@ -61,3 +61,19 @@ cada entrada, valida límites, descriptores y hashes; no usa offsets del NX789J.
 Rechaza candidatos ambiguos y datos no nulos sin explicar. No extrae imágenes.
 Los informes anteriores que referencian el hash antiguo de boot-audit.json se
 conservan como evidencia histórica de sus respectivas revisiones Git.
+
+## Entrada privada preparada
+
+Se ejecutó `tools/prepare_stock_dtbo_input.py` contra la captura B y el informe.
+La copia resultante conserva los **18874368 bytes** hasta el footer incluido;
+sólo omite **6291456 bytes verificados como ceros**. El SHA-256 de salida coincide
+con el del contenedor auditado. No se modificó la captura original ni el proveedor.
+[Metadatos de preparación](../stock/dtbo-input-preparation.json).
+
+```text
+python tools/prepare_stock_dtbo_input.py stock/dtbo-avb-envelope-audit.json <dtbo-completo-del-proveedor> <directorio-privado-nuevo>
+```
+
+No reutiliza destinos. El tamaño de partición sigue siendo 25165824 bytes.
+Este artefacto es una entrada stock de trabajo; no es una imagen ROM recién
+firmada, no se incluyó en BoardConfig y no se ejecutó `add_hash_footer` sobre él.
