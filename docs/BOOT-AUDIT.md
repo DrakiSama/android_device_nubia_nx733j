@@ -55,8 +55,11 @@ system_dlkm ni justifica cargarlos todos.
 - **init_boot B no coincide** con el descriptor de vbmeta. Una captura adicional
   de init_boot A tampoco coincide con el descriptor del slot B. No asumir que A
   corresponde a la misma versión o que es una alternativa limpia.
-- dtbo no tiene footer AVB propio; su hash está en vbmeta. El fallo de info_image
-  sobre dtbo por sí solo no indica que la partición esté dañada.
+- **Corrección 2026-09-24:** DTBO sí contiene un footer AVB interno al final de
+  un contenedor de 18 MiB, seguido de 6 MiB de ceros hasta el fin de partición.
+  El descriptor interno coincide con el externo de vbmeta; el bloque interno usa
+  algoritmo NONE. Véase [auditoría del contenedor](DTBO-AVB-ENVELOPE.md).
+  El fallo de info_image sobre la captura de 24 MiB no demostraba ausencia de footer.
 - No se verificaron firmas contra una clave OEM confiable ni aceptación de rollback
   por el bootloader. Coincidir con un descriptor no autentica el paquete completo.
 

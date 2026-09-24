@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-24T21:57:39.024467+00:00",
+  "device": "NX733J",
+  "status": "CONFIRMED_WITHIN_REPORTED_SCOPE",
+  "avbtool_sha256": "2f8dfbf118e37566d8e3cf54fa252614955b7acc12c233a6b232068a3fae8f9f",
+  "provider_reference_sha256_lf": "a08717920b6b4c3bd8f39d961d36e27c659ecf963822386ca95cef501a881e1d",
+  "provider_equals_backup_b": true,
+  "slots": {
+    "a": {
+      "partition_bytes": 25165824,
+      "partition_sha256": "76fb58e675b0ca16bcc1ccbbdd08748c1adca06dfd70ed35fec6b886ecd00588",
+      "parent_vbmeta_sha256": "62f965488630ded6620196fde2944ec0f0318da8b3806fef3e26f4c970ad45bc",
+      "dtbo_table_bytes": 13361082,
+      "dtbo_entries": 37,
+      "footer_offset": 18874304,
+      "envelope_bytes": 18874368,
+      "envelope_sha256": "459255c2b597e7fc9ecaf7efbb3cd33d8c02df4250947b821e41720b66ef0966",
+      "vbmeta_offset": 13361152,
+      "vbmeta_bytes": 640,
+      "embedded_vbmeta_sha256": "3836133d6b73ef8d524da4ae4c4b01d3967beb617fd984a7484790ce800cc94c",
+      "embedded_algorithm": "NONE",
+      "embedded_rollback_index": 0,
+      "embedded_flags": 0,
+      "descriptor": {
+        "partition_name": "dtbo",
+        "image_size": 13361082,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "salt": "0726ce69a9ac3523e1a3362f8568b830632fe0017020dd0cda1273aa96db9b63",
+        "digest": "3566fe2a0f7e9d4aff77b24ee576f7c3a0861fc8952fea76f355d1f4b11d9419"
+      },
+      "payload_matches_descriptor": true,
+      "descriptor_equals_parent": true,
+      "all_other_trailing_regions_zero": true,
+      "gaps": [
+        {
+          "start": 13361082,
+          "end_exclusive": 13361152,
+          "bytes": 70,
+          "nonzero_bytes": 0,
+          "sha256": "82fcfd5215175da9e65ca7c4fb927a1fb0e61f09d54987c368e8e16ebd9c2969"
+        },
+        {
+          "start": 13361792,
+          "end_exclusive": 18874304,
+          "bytes": 5512512,
+          "nonzero_bytes": 0,
+          "sha256": "9866a240656ae0189d690edea7008c1b64bdcf7601bddbdf53723202a2180621"
+        },
+        {
+          "start": 18874368,
+          "end_exclusive": 25165824,
+          "bytes": 6291456,
+          "nonzero_bytes": 0,
+          "sha256": "b69dae56a14d1a8314ed40664c4033ea0a550eea2673e04df42a66ac6b9faf2c"
+        }
+      ]
+    },
+    "b": {
+      "partition_bytes": 25165824,
+      "partition_sha256": "16e294f299ffd12310489f40fd2c5653949031cf99464f33097999104d6b9957",
+      "parent_vbmeta_sha256": "f402706b7b657aa0e6eaef869a9a7fd1a6b444916c5384585210321a66aae655",
+      "dtbo_table_bytes": 14124069,
+      "dtbo_entries": 37,
+      "footer_offset": 18874304,
+      "envelope_bytes": 18874368,
+      "envelope_sha256": "379359da9e7e6db999f827b74fa9b2402c50be944103ca1d9de7e2e77f829188",
+      "vbmeta_offset": 14127104,
+      "vbmeta_bytes": 640,
+      "embedded_vbmeta_sha256": "20b8d728ec2a6e88c9dcbd4a8f6b822b19f3dfb3a0523993f1dbf78d4b3a8e00",
+      "embedded_algorithm": "NONE",
+      "embedded_rollback_index": 0,
+      "embedded_flags": 0,
+      "descriptor": {
+        "partition_name": "dtbo",
+        "image_size": 14124069,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "salt": "5885bbc0143a7016470e0646c772c3513f2b8a82d57590cba83f5c22fa350612",
+        "digest": "3902345005035ca9461c6cb87d39b0d2fd190914885e69f7e51b9881adfc23b0"
+      },
+      "payload_matches_descriptor": true,
+      "descriptor_equals_parent": true,
+      "all_other_trailing_regions_zero": true,
+      "gaps": [
+        {
+          "start": 14124069,
+          "end_exclusive": 14127104,
+          "bytes": 3035,
+          "nonzero_bytes": 0,
+          "sha256": "74b491311c76e050c22c65a47daf4ed3a87a60361e9ba6bce5d82d5c5dafed98"
+        },
+        {
+          "start": 14127744,
+          "end_exclusive": 18874304,
+          "bytes": 4746560,
+          "nonzero_bytes": 0,
+          "sha256": "27c90f7afd428e6a0e7b9329f23b2c897f9a14ca1a5372f6d7fb5be8381233c0"
+        },
+        {
+          "start": 18874368,
+          "end_exclusive": 25165824,
+          "bytes": 6291456,
+          "nonzero_bytes": 0,
+          "sha256": "b69dae56a14d1a8314ed40664c4033ea0a550eea2673e04df42a66ac6b9faf2c"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Embedded vbmeta is unsigned (NONE); descriptor equality is not an embedded signature",
+    "Parent signatures were audited separately; this tool compares descriptors and payload hashes",
+    "Bootloader consumption of the internal footer is unknown",
+    "No key, rollback, OTA or restoration policy is selected",
+    "No image output or partition write"
+  ]
+}

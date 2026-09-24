@@ -1,6 +1,8 @@
 # Integración del proveedor: diferencias antes de activar el build
 
-Fecha: 2026-09-24. Se detuvo la activación del adaptador al encontrar diferencias
+Fecha: 2026-09-24. **Actualización:** el footer DTBO interno ya fue identificado;
+las observaciones iniciales sobre su ausencia quedan corregidas por
+[DTBO-AVB-ENVELOPE](DTBO-AVB-ENVELOPE.md). Se detuvo la activación del adaptador al encontrar diferencias
 entre la interfaz del build local y la representación stock. No se modificó
 BoardConfig.mk ni se creó BoardConfigBringup.mk.
 
@@ -18,12 +20,13 @@ estaban limpios; [revisiones y hashes](../stock/build-interface-reference.json).
 | --- | --- | --- | --- |
 | build/make/core/Makefile:1089 | BOARD_PREBUILT_DTBIMAGE_DIR concatena únicamente *.dtb; el paquete usa dtb/dtb.img | Glob explícito frente al layout y SHA-256 del paquete | Preparar una entrada de trabajo con extensión .dtb y el payload íntegro; comprobar igualdad de bytes, sin dividir ni escoger árboles |
 | build/make/core/board_config.mk:985 | Esa ruta requiere BOARD_INCLUDE_DTB_IN_BOOTIMG=true | Validación explícita del build | Resolver su colocación en vendor_boot según las reglas de header v4; no confundir el nombre de la variable con la partición final |
-| build/make/core/Makefile:1101 | Con BOARD_AVB_ENABLE=true, BOARD_PREBUILT_DTBOIMAGE pasa por add_hash_footer | Regla copia y añade footer; stock carece de footer propio y tiene descriptor externo | No conectar directamente la captura completa; definir entrada de trabajo, política de firma/descriptor y tratamiento del relleno antes de activar |
+| build/make/core/Makefile:1101 | Con BOARD_AVB_ENABLE=true, BOARD_PREBUILT_DTBOIMAGE pasa por add_hash_footer | Regla copia y añade footer; stock tiene footer interno a 18 MiB, además del descriptor externo | No conectar directamente la captura completa; definir entrada de trabajo, política de firma/descriptor y tratamiento del relleno antes de activar |
 | build/make/core/Makefile:703,709 | Las rutas vendor y vendor ramdisk habilitan staging de stripping salvo opción true | BOARD_DO_NOT_STRIP_VENDOR_MODULES y BOARD_DO_NOT_STRIP_VENDOR_RAMDISK_MODULES | Preservar bytes de los módulos stock usando los controles correspondientes en el futuro adaptador; comparar outputs con el manifiesto |
 | vendor/lineage/build/tasks/kernel.mk:131-204 | TARGET_PREBUILT_KERNEL tiene aquí un consumidor de Lineage | Selección explícita entre prebuilt y kernel source | Mantener este enlace en la adaptación al producto; no presentarlo como contrato universal de AOSP |
 
 La captura DTBO mide 25165824 bytes; la tabla ocupa 14124069 bytes y contiene
-37 entradas verificadas. [INFERRED] Su relleno puede impedir el empaquetado esperado
+37 entradas verificadas. La ausencia de footer indicada originalmente sólo
+correspondía al final de la partición completa (corregido posteriormente). [INFERRED] Su relleno puede impedir el empaquetado esperado
 por una regla que añade información AVB. No se ejecutó esa regla ni se generó un
 DTBO alternativo: esto es un riesgo de integración identificado, no un fallo de
 compilación observado ni evidencia de corrupción stock.
@@ -54,7 +57,7 @@ y recuperación sigue abierta; no desactivar AVB para eludir esta decisión.
 
 No se activó el build, no se ejecutó stripping y no se escribió el dispositivo.
 
-## Preparación acotada y nuevo hallazgo (2026-09-24)
+## Preparación inicial: hallazgo resuelto en auditoría posterior (2026-09-24)
 
 - [CONFIRMED] Se preparó una copia privada `dtb/nx733j-stock.dtb` con los
   4487979 bytes íntegros y el SHA-256 stock indicado arriba. Esto resuelve la
@@ -68,7 +71,7 @@ No se activó el build, no se ejecutó stripping y no se escribió el dispositiv
 - [UNKNOWN] Función y vigencia de esos bytes posteriores; pertenencia a otro
   contenedor o metadatos aún sin determinar. No se presupone corrupción.
 
-Se detiene aquí la preparación DTBO por la regla del proyecto de reportar
+En ese punto se detuvo la preparación DTBO por la regla del proyecto de reportar
  discrepancias antes de activar cambios. Siguiente: identificar las estructuras
 posteriores y comparar con DTBO del respaldo 9008, sin escribir particiones.
 El descriptor externo sólo cubre el prefijo indicado; no autentica toda esa zona.
@@ -98,3 +101,8 @@ Rechaza destinos existentes; comprueba hashes DTB/DTBO antes de escribir.
 Genera sólo una copia íntegra del DTB y un informe; conserva proveedor y respaldo.
 No interpreta semántica de overlays ni crea un DTBO firmable.
 [Resultado sin binarios](../stock/dtb-input-preparation.json).
+
+La auditoría posterior identifica todos los bytes adicionales como estructuras
+AVB o ceros. Los límites del empaquetador siguen aplicando a la captura completa,
+pero una copia íntegra del contenedor de 18 MiB permite que avbtool encuentre su
+footer. Esto resuelve la representación de entrada; no define la firma ROM.

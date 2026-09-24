@@ -69,8 +69,17 @@
     "used_bytes": 14124069,
     "page_size": 4096,
     "version": 0,
-    "standalone_avb_footer": false,
-    "protection": "external hash descriptor in vbmeta"
+    "standalone_avb_footer": true,
+    "protection": "external hash descriptor in vbmeta",
+    "avb_footer_at_partition_end": false,
+    "avb_footer_offset": 18874304,
+    "avb_envelope_bytes": 18874368,
+    "embedded_vbmeta_algorithm": "NONE",
+    "footer_correction": {
+      "date": "2026-09-24",
+      "evidence": "stock/dtbo-avb-envelope-audit.json",
+      "note": "Original inspection only checked the full partition end; the footer exists at the end of an internal 18 MiB envelope."
+    }
   },
   "vendor_ramdisk": {
     "modules": 306,

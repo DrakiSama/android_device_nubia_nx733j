@@ -39,7 +39,8 @@ captura. Un proveedor custom/source tendrá su propio manifiesto y validación.
 | modules/vendor_dlkm/lib/modules/* | 280 archivos de vendor_dlkm B | Preservar listas, dependencias y filtros stock como evidencia |
 | modules/vendor/ifas.ko | vendor B | Módulo OEM tardío; inventariado, inclusión pendiente |
 
-La ruta dtbo representa la imagen de partición completa, incluido su relleno;
+La ruta dtbo representa la partición completa: payload, contenedor AVB interno
+y ceros finales;
 no confundir sus 25165824 bytes con los 14124069 bytes usados por la tabla.
 Los directorios modules/vendor_boot son nombres del inventario, no puntos de
 montaje Android. Las rutas concretas se enumeran individualmente en el manifiesto.
