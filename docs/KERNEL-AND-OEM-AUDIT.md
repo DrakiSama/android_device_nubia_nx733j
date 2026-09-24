@@ -90,3 +90,22 @@ Las direcciones de símbolos __crc_ no se interpretan como valores CRC. Esta
 comparación de __versions no es una auditoría de todos los símbolos ELF indefinidos.
 Los módulos ya cargados pueden aportar símbolos que todavía no existen en una
 fase anterior: el resultado no demuestra el cierre temporal del orden de carga.
+
+## Seguimiento CRC (2026-09-24)
+
+Los 3322 símbolos __crc_ visibles pertenecen a módulos, no al kernel base, y
+son de tipo r. Los 11 marcadores consultados de tablas/texto tienen dirección
+cero en esta captura. No se modificó la configuración del teléfono para exponerlas
+ni se leyeron regiones de memoria del kernel. La búsqueda local acotada no encontró
+Module.symvers, System.map o vmlinux; esto no demuestra su ausencia en otros discos.
+Detalle: [kernel-crc-evidence-status.json](../stock/kernel-crc-evidence-status.json).
+
+REFERENCE: Android Common Kernel, `android15-6.6-2025-07_r10`.
+PURPOSE: localizar artefactos de la compilación GKI candidata, no sustituir el kernel.
+La [entrada oficial de lanzamientos](https://source.android.com/docs/core/architecture/kernel/gki-android15-6_6-release-builds)
+asocia el commit `3637f4904cf55eb3e7eccb9d747d754a4e199740` al build `13944661`,
+coherente con la cadena de versión stock. [INFERRED] Equivalencia binaria: no se
+obtuvo ni contrastó Image/Module.symvers oficial. Una URL candidata de symvers
+respondió 404; no se convierte ese fallo en prueba de que el artefacto no exista.
+El siguiente paso es obtener el artefacto exacto y comparar Image por SHA-256 antes
+de usar sus CRC como evidencia del kernel NX733J.

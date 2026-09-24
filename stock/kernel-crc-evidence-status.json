@@ -1,0 +1,25 @@
+{
+  "kernel": "6.6.92-android15-8-g3637f4904cf5-ab13944661-4k",
+  "crc_symbol_count": 3322,
+  "kernel_owned_crc_symbols": 0,
+  "crc_symbol_types": {
+    "r": 3322
+  },
+  "table_markers_found": 11,
+  "table_markers_with_zero_address": 11,
+  "exact_build_artifacts_found_in_bounded_local_search": false,
+  "public_source_candidate": {
+    "status": "INFERRED_BINARY_EQUIVALENCE_NOT_VERIFIED",
+    "tag": "android15-6.6-2025-07_r10",
+    "commit": "3637f4904cf55eb3e7eccb9d747d754a4e199740",
+    "build_id": "13944661",
+    "source": "https://source.android.com/docs/core/architecture/kernel/gki-android15-6_6-release-builds",
+    "basis": "Official indexed release entry matches the observed release string; no downloaded Image/Module.symvers was validated."
+  },
+  "limits": [
+    "CRC symbol addresses are not CRC values.",
+    "Search covered the active Windows workspace and /home/draki to depth 4, not every disk or nested build output.",
+    "No kernel settings were changed to expose addresses; no kernel memory was read.",
+    "Direct candidate Module.symvers URL returned HTTP 404; official artifact retrieval remains unresolved."
+  ]
+}
