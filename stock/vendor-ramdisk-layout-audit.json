@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-24T22:07:52.458305+00:00",
+  "device": "NX733J",
+  "ramdisk_sha256": "2990ab531fc4cee8e42103bded00ee87af906e3155845f407899eeab8448cdcc",
+  "reference_sha256_lf": "a08717920b6b4c3bd8f39d961d36e27c659ecf963822386ca95cef501a881e1d",
+  "cpio_sha256": "1049e57a8b4b90f36887047e34b138fde8300c5ccceb3e7632dc5b8b8ef69c50",
+  "nonmodule_entries": [
+    {
+      "path": "first_stage_ramdisk",
+      "mode": "0o40755",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "type": "directory"
+    },
+    {
+      "path": "first_stage_ramdisk/fstab.qcom",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 7503,
+      "sha256": "66496095432ca044b812521f08fe4e28c515d43d3ed7131c6334b599f720afeb",
+      "type": "regular"
+    },
+    {
+      "path": "lib",
+      "mode": "0o40755",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "type": "directory"
+    },
+    {
+      "path": "lib/modules",
+      "mode": "0o40755",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "type": "directory"
+    },
+    {
+      "path": "lib/modules/modules.alias",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 44450,
+      "sha256": "74da187a3a0c41c614b53fbc041c227778626a5b2821b72d41cef94089bbf3ff",
+      "type": "regular"
+    },
+    {
+      "path": "lib/modules/modules.blocklist",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 1325,
+      "sha256": "e58ac6660d6c6fee8a9e928c001682571c3daca35f30ae7a3698383e7f57e90b",
+      "type": "regular"
+    },
+    {
+      "path": "lib/modules/modules.dep",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 72564,
+      "sha256": "4a8daef5d8d44f86156100c14649121bb7bb09b6bea0cf479a43b23e7e749a5b",
+      "type": "regular"
+    },
+    {
+      "path": "lib/modules/modules.load",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 1647,
+      "sha256": "e72f892f962f099b572adc500d926ee346a2843408621a62a56317bbf9749462",
+      "type": "regular"
+    },
+    {
+      "path": "lib/modules/modules.load.recovery",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 4898,
+      "sha256": "6d167cfe256991f34bc03fbb67c248d9656f5ab097197004e08dd631ff8ef23b",
+      "type": "regular"
+    },
+    {
+      "path": "lib/modules/modules.softdep",
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "bytes": 587,
+      "sha256": "e140127b4bd94092ee19ee37ae5404b4eb3551441883c602a8e3fe0fa10c1d00",
+      "type": "regular"
+    }
+  ],
+  "module_count": 306,
+  "all_module_hashes_match_reference": true,
+  "module_permissions": [
+    {
+      "mode": "0o100644",
+      "uid": 0,
+      "gid": 0,
+      "nlink": 1,
+      "count": 306
+    }
+  ],
+  "fstab_sha256": "66496095432ca044b812521f08fe4e28c515d43d3ed7131c6334b599f720afeb",
+  "fstab_matches_published_lf": true,
+  "fstab_entries": [
+    {
+      "line": 38,
+      "source": "system",
+      "mount_point": "/system",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta_system",
+        "logical",
+        "first_stage_mount",
+        "avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey:/avb/t-gsi.avbpubkey:/avb/u-gsi.avbpubkey:/avb/v-gsi.avbpubkey"
+      ]
+    },
+    {
+      "line": 39,
+      "source": "system",
+      "mount_point": "/system",
+      "filesystem": "ext4",
+      "mount_options": [
+        "ro",
+        "barrier=1",
+        "discard"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta_system",
+        "logical",
+        "first_stage_mount",
+        "avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey:/avb/t-gsi.avbpubkey:/avb/u-gsi.avbpubkey:/avb/v-gsi.avbpubkey"
+      ]
+    },
+    {
+      "line": 40,
+      "source": "system_ext",
+      "mount_point": "/system_ext",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta_system",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 41,
+      "source": "product",
+      "mount_point": "/product",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta_system",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 42,
+      "source": "vendor",
+      "mount_point": "/vendor",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 43,
+      "source": "vendor_dlkm",
+      "mount_point": "/vendor_dlkm",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 44,
+      "source": "system_dlkm",
+      "mount_point": "/system_dlkm",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 45,
+      "source": "odm",
+      "mount_point": "/odm",
+      "filesystem": "erofs",
+      "mount_options": [
+        "ro"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect",
+        "avb=vbmeta",
+        "logical",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 46,
+      "source": "/dev/block/by-name/boot",
+      "mount_point": "/boot",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "slotselect",
+        "avb=vbmeta",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 47,
+      "source": "/dev/block/by-name/init_boot",
+      "mount_point": "/init_boot",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "slotselect",
+        "avb=vbmeta",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 48,
+      "source": "/dev/block/by-name/vendor_boot",
+      "mount_point": "/vendor_boot",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "slotselect",
+        "avb=vbmeta",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 49,
+      "source": "/dev/block/by-name/dtbo",
+      "mount_point": "/dtbo",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "slotselect",
+        "avb=vbmeta",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 50,
+      "source": "/dev/block/by-name/recovery",
+      "mount_point": "/recovery",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "slotselect",
+        "avb=vbmeta",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 51,
+      "source": "/dev/block/by-name/metadata",
+      "mount_point": "/metadata",
+      "filesystem": "f2fs",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "discard"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "check",
+        "formattable",
+        "first_stage_mount"
+      ]
+    },
+    {
+      "line": 52,
+      "source": "/dev/block/bootdevice/by-name/persist",
+      "mount_point": "/mnt/vendor/persist",
+      "filesystem": "ext4",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "barrier=1"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "check",
+        "formattable"
+      ]
+    },
+    {
+      "line": 53,
+      "source": "/dev/block/bootdevice/by-name/userdata",
+      "mount_point": "/data",
+      "filesystem": "f2fs",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "discard",
+        "reserve_root=32768",
+        "resgid=1065",
+        "fsync_mode=nobarrier",
+        "inlinecrypt"
+      ],
+      "fs_mgr_flags": [
+        "latemount",
+        "wait",
+        "check",
+        "formattable",
+        "fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0",
+        "keydirectory=/metadata/vold/metadata_encryption",
+        "metadata_encryption=aes-256-xts:wrappedkey_v0",
+        "quota",
+        "reservedsize=128M",
+        "sysfs_path=/sys/devices/platform/soc/1d84000.ufshc",
+        "checkpoint=fs"
+      ]
+    },
+    {
+      "line": 54,
+      "source": "/dev/block/bootdevice/by-name/misc",
+      "mount_point": "/misc",
+      "filesystem": "emmc",
+      "mount_options": [
+        "defaults"
+      ],
+      "fs_mgr_flags": [
+        "defaults"
+      ]
+    },
+    {
+      "line": 55,
+      "source": "/devices/platform/soc/8804000.sdhci/mmc_host*",
+      "mount_point": "/storage/sdcard1",
+      "filesystem": "vfat",
+      "mount_options": [
+        "nosuid",
+        "nodev"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "voldmanaged=sdcard1:auto",
+        "encryptable=footer"
+      ]
+    },
+    {
+      "line": 56,
+      "source": "/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*",
+      "mount_point": "/storage/usbotg",
+      "filesystem": "vfat",
+      "mount_options": [
+        "nosuid",
+        "nodev"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "voldmanaged=usbotg:auto"
+      ]
+    },
+    {
+      "line": 57,
+      "source": "/dev/block/bootdevice/by-name/modem",
+      "mount_point": "/vendor/firmware_mnt",
+      "filesystem": "vfat",
+      "mount_options": [
+        "ro",
+        "shortname=lower",
+        "uid=1000",
+        "gid=1000",
+        "dmask=227",
+        "fmask=337",
+        "context=u:object_r:firmware_file:s0"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect"
+      ]
+    },
+    {
+      "line": 58,
+      "source": "/dev/block/bootdevice/by-name/dsp",
+      "mount_point": "/vendor/dsp",
+      "filesystem": "ext4",
+      "mount_options": [
+        "ro",
+        "nosuid",
+        "nodev",
+        "barrier=1"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect"
+      ]
+    },
+    {
+      "line": 61,
+      "source": "/dev/block/bootdevice/by-name/bluetooth",
+      "mount_point": "/vendor/bt_firmware",
+      "filesystem": "vfat",
+      "mount_options": [
+        "ro",
+        "shortname=lower",
+        "uid=1002",
+        "gid=3002",
+        "dmask=227",
+        "fmask=337",
+        "context=u:object_r:bt_firmware_file:s0"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "slotselect"
+      ]
+    },
+    {
+      "line": 62,
+      "source": "/dev/block/bootdevice/by-name/qmcs",
+      "mount_point": "/mnt/vendor/qmcs",
+      "filesystem": "vfat",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "context=u:object_r:vendor_qmcs_file:s0"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "check",
+        "formattable"
+      ]
+    },
+    {
+      "line": 63,
+      "source": "/dev/block/bootdevice/by-name/spunvm",
+      "mount_point": "/mnt/vendor/spunvm",
+      "filesystem": "vfat",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "context=u:object_r:vendor_spunvm_file:s0"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "check",
+        "formattable"
+      ]
+    },
+    {
+      "line": 64,
+      "source": "/dev/block/bootdevice/by-name/logdump",
+      "mount_point": "/logdump",
+      "filesystem": "ext4",
+      "mount_options": [
+        "noatime",
+        "nosuid",
+        "nodev",
+        "barrier=1",
+        "discard"
+      ],
+      "fs_mgr_flags": [
+        "wait",
+        "formattable"
+      ]
+    }
+  ],
+  "limits": [
+    "newc does not encode SELinux xattrs; runtime labels not proven",
+    "fstab presence does not prove every entry is exercised",
+    "No ramdisk, mount, format or filesystem changes"
+  ]
+}

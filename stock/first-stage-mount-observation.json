@@ -1,0 +1,135 @@
+{
+  "captured_utc": "2026-09-24T22:10:09.938963+00:00",
+  "slot": "_b",
+  "same_boot_during_capture": true,
+  "source": "adb exec-out su -c cat /proc/mounts; selected mount points only",
+  "mounts": [
+    {
+      "source": "/dev/block/dm-14",
+      "mount_point": "/",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/sda10",
+      "mount_point": "/metadata",
+      "filesystem": "f2fs",
+      "options": [
+        "rw",
+        "lazytime",
+        "seclabel",
+        "nosuid",
+        "nodev",
+        "noatime",
+        "background_gc=on",
+        "nogc_merge",
+        "discard",
+        "discard_unit=block",
+        "user_xattr",
+        "inline_xattr",
+        "acl",
+        "inline_data",
+        "inline_dentry",
+        "flush_merge",
+        "barrier",
+        "extent_cache",
+        "mode=adaptive",
+        "active_logs=6",
+        "alloc_mode=reuse",
+        "checkpoint_merge",
+        "fsync_mode=posix",
+        "memory=normal",
+        "errors=continue"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-15",
+      "mount_point": "/system_ext",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-16",
+      "mount_point": "/product",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-17",
+      "mount_point": "/vendor",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-18",
+      "mount_point": "/vendor_dlkm",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-19",
+      "mount_point": "/system_dlkm",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    },
+    {
+      "source": "/dev/block/dm-20",
+      "mount_point": "/odm",
+      "filesystem": "erofs",
+      "options": [
+        "ro",
+        "seclabel",
+        "relatime",
+        "user_xattr",
+        "acl",
+        "cache_strategy=readaround"
+      ]
+    }
+  ],
+  "limits": [
+    "Observed mounted filesystems only; not a restore or format authorization",
+    "Device-mapper names are capture-local and must not be copied to fstab"
+  ]
+}

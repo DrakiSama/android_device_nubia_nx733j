@@ -21,6 +21,7 @@ suficiente; BLOCKED requiere resolver una dependencia antes de avanzar.
 | Entrada DTB y límite DTBO | PARTIAL | Copia DTB íntegra; contenedor DTBO de 18 MiB conservado | Paquete stock y descriptor ya verificado | Footer interno A/B identificado; falta política AVB ROM |
 | Paquete privado stock | CONFIRMED | 715 copias verificadas; 681 módulos y 5 artefactos coinciden con manifiesto | Capturas stock locales | Preparado, sin integrar al build ni publicar binarios |
 | zram/zsmalloc cargados | CONFIRMED | Notas GNU de sysfs coinciden con variantes vendor_boot 6.6.30 | Arranque stock B, kernel 6.6.92 | Identidad de build; no hash completo de memoria; conservar ambas copias |
+| Contenido vendor ramdisk/fstab | PARTIAL | 316 entradas CPIO; propietarios/modos; 25 filas fstab, 14 tempranas | Ramdisk y montajes stock | Sin init OEM en ramdisk; política de formato/AVB pendiente |
 | Política de carga para la ROM | PARTIAL | Cierre duro+soft de 106 módulos, grafo sin ciclos, 106 build IDs coincidentes | Ramdisk y teléfono stock | Falta secuencia efectiva y vinculación de aliases al hardware; recovery separado |
 | Snapshots en la captura actual | CONFIRMED | Mapas linear/verity; 14 coinciden con backup; update_engine IDLE | Teléfono, 2026-09-24 | Sin snapshot activo observado; enum interno libsnapshot no consultado; conservar COW |
 | AVB/FEC/OTA del producto | UNKNOWN | Cadena stock documentada | Pendiente | No copiar rollback, firmas ni alcance OTA automáticamente |
@@ -65,3 +66,5 @@ y la política AVB ROM antes de activar el adaptador.
 Se completaron argumentos de header y direcciones en BoardConfig;
 [composición de imágenes](BOOT-BUILD-COMPOSITION.md). El bloqueo deliberado de
 compilación permanece. No se han ejecutado pruebas ni builds de la ROM.
+
+Inventario de contenido y semántica del fstab: [vendor ramdisk](VENDOR-RAMDISK-LAYOUT.md).

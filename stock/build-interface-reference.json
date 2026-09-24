@@ -27,5 +27,13 @@
     "files": {
       "mkbootimg.py": "021f2d960b2d3158a9df2ff6255f1140cebb09bc09f4886373438f2919559cd9"
     }
+  },
+  "system/core": {
+    "commit": "bcb8623207cf6e7a51876a891d8b7ad3d04fd8c2",
+    "working_tree_state": "exact inspected file hashes recorded; source commit also used in ramdisk load audit",
+    "files": {
+      "init/first_stage_mount.cpp": "e3b56971771e9f50dff1b01f52cf1433574945ed4e00847060325e4c0b3328a3",
+      "fs_mgr/fs_mgr.cpp": "494f4a6963543fb837a2a7902532a929a14cdc7ac8d9a9cc8612129b0f042a12"
+    }
   }
 }
