@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "name": "stock-b-build-only",
+  "device": "NX733J",
+  "status": "DESIGN_NOT_ACTIVATED",
+  "decision_kind": "engineering choice, not a stock property",
+  "reference_firmware_slot": "b",
+  "destination_slot": null,
+  "ota_enabled": false,
+  "flash_ready": false,
+  "kernel_provider": "stock_prebuilt_replaceable",
+  "partitions": {
+    "system": {
+      "action": "rebuild",
+      "filesystem": "erofs",
+      "avb": "new_hashtree_descriptor"
+    },
+    "system_ext": {
+      "action": "rebuild",
+      "filesystem": "erofs",
+      "avb": "new_hashtree_descriptor"
+    },
+    "product": {
+      "action": "rebuild",
+      "filesystem": "erofs",
+      "avb": "new_hashtree_descriptor"
+    },
+    "vendor": {
+      "action": "preserve_stock_b_prebuilt",
+      "filesystem": "erofs",
+      "avb": "retain_matching_stock_hashtree_descriptor",
+      "private_full_image_required": true
+    },
+    "odm": {
+      "action": "preserve_stock_b_prebuilt",
+      "filesystem": "erofs",
+      "avb": "retain_matching_stock_hashtree_descriptor",
+      "private_full_image_required": true
+    },
+    "vendor_dlkm": {
+      "action": "preserve_stock_b_prebuilt",
+      "filesystem": "erofs",
+      "avb": "retain_matching_stock_hashtree_descriptor",
+      "private_full_image_required": true
+    },
+    "system_dlkm": {
+      "action": "preserve_stock_b_prebuilt",
+      "filesystem": "erofs",
+      "avb": "retain_matching_stock_hashtree_descriptor",
+      "private_full_image_required": true
+    },
+    "boot": {
+      "action": "rebuild",
+      "header_version": 4,
+      "avb": "new_metadata_required",
+      "kernel": "verified_stock_Image"
+    },
+    "init_boot": {
+      "action": "rebuild",
+      "header_version": 4,
+      "avb": "new_metadata_required",
+      "init": "built_from_ROM_sources"
+    },
+    "vendor_boot": {
+      "action": "rebuild",
+      "header_version": 4,
+      "avb": "new_metadata_required",
+      "dtb": "intact_stock_payload"
+    },
+    "recovery": {
+      "action": "rebuild",
+      "header_version": 4,
+      "avb": "new_metadata_required",
+      "kernel_in_image": false
+    },
+    "dtbo": {
+      "action": "repackage_stock_envelope",
+      "input_bytes": 18874368,
+      "partition_bytes": 25165824,
+      "avb": "new_descriptor_from_unchanged_payload"
+    },
+    "pvmfw": {
+      "action": "preserve_stock_b_firmware",
+      "partition_bytes": 1048576,
+      "sha256": "b4d3651a1a3c06f3249d429e2276c51025c735553d6bdbd70bfb618dc1f908c2",
+      "avb": "preserve_only_matching_pvmfw_hash_descriptor",
+      "requires_destination_identity_check": true
+    },
+    "vbmeta": {
+      "action": "rebuild_metadata",
+      "avb": "sign_with_explicit_product_keys"
+    },
+    "vbmeta_system": {
+      "action": "rebuild_metadata",
+      "avb": "sign_with_explicit_product_keys"
+    }
+  },
+  "signing": {
+    "enabled_required": true,
+    "root_key": null,
+    "boot_key": null,
+    "recovery_key": null,
+    "vbmeta_system_key": null,
+    "rollback_policy": null,
+    "bootloader_acceptance": "UNKNOWN"
+  },
+  "activation_requirements": [
+    "Complete image identities for preserved partitions",
+    "Resolve minimal vendor dependencies in rebuilt system_ext/product",
+    "Resolve VINTF compatibility and source SELinux policy",
+    "Specify keys and rollback policy without OEM/test-key defaults",
+    "Specify fstab error/format policy and ramdisk contents",
+    "Implement and review build adapter; keep mandatory BoardConfigBringup guard until then"
+  ],
+  "installation_requirements": [
+    "Explicit destination slot and firmware identities",
+    "Validated recovery method",
+    "Bootloader key and rollback acceptance evidence",
+    "Separate OTA design before any slot-switching package"
+  ]
+}
