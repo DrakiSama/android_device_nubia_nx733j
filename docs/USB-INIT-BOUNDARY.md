@@ -138,3 +138,29 @@ de política completa con vendor. No equivale a ADB funcional en una ROM propia.
 Siguiente objetivo concreto: cerrar selección del backend y provisión del APEX/adbd
 para el producto mínimo; contrastar grupos y propiedades sin añadir un segundo
 servicio adbd, un segundo montaje FunctionFS ni permisos SELinux especulativos.
+
+## Dependencias OEM externas: revisión acotada final
+
+CONFIRMED por lectura del script vivo /system/bin/init.vendor.usb.sh, SHA-256
+9844ccc0da3be8e2195e3a6e5504b4642ccc4aa1e159e5cf82084c0f2b6267f6.
+No se ejecutó el script. ro.board.platform consultado con root devuelve sun.
+
+init.vendor.usb.rc:37–43 declara repeater_tune disabled/oneshot, root, grupos
+shell/system/usb, dominio usbscript. La regla :913–914 pide iniciarlo cuando
+persist.sys.usb.default es vacío. El script admite sun/canoe y, si esa propiedad
+está vacía, lee diagram_param; para sun usa
+/sys/module/repeater_qti_pmic_eusb2/parameters/diagram_param. Solicita guardar el
+valor en persist.sys.usb.default. En su contenido leído no crea enlaces configfs,
+no monta FunctionFS y no arranca adbd. No se deduce que sea prescindible para
+hardware a partir de esa ausencia ni se copia automáticamente al producto.
+
+init.vendor.usb.rc:45–48 declara usbconfig como class main, root, oneshot, sin
+disabled. Su ejecutable es /system/bin/usbconfig: preservar vendor no conserva
+ese archivo en system reconstruido. Los estados root observados de usbconfig y
+repeater_tune son stopped; un servicio oneshot detenido pudo haber terminado,
+por lo que eso no demuestra que nunca se ejecutara o que sea innecesario.
+
+UNKNOWN prioritario: comportamiento y dependencias de usbconfig y necesidad de
+su proveedor en system. Siguiente selección concreta: auditar ese ejecutable en
+lectura, empezando por identidad/ELF y contrato con init, antes de decidir fuente,
+blob o cambio documentado de servicio. No ejecutar binarios OEM como prueba.

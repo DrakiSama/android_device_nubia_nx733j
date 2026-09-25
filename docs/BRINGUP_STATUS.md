@@ -73,3 +73,6 @@ revalidadas y fragmento privado preparado; sin inclusión automática en BoardCo
 
 [Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
 cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.
+
+Próxima dependencia concreta: /system/bin/usbconfig (class main, oneshot),
+referenciada desde vendor preservado. Su estado stopped no autoriza omitirla.
