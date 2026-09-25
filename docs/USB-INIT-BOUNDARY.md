@@ -108,3 +108,33 @@ Siguiente objetivo actualizado: seguir la definición del servicio adbd ROM, su
 publicación de sys.usb.ffs.ready y los permisos de acceso a FunctionFS; revisar
 solo entonces si la secuencia preservada necesita adaptación. La revisión de
 superposiciones continúa como compatibilidad pendiente, no como fallo demostrado.
+
+## Interfaz adbd ROM y permisos FunctionFS
+
+[Identidades de fuentes y metadatos vivos](../stock/adb-functionfs-interface.json).
+CONFIRMED en el checkout ROM, sin ejecutar ni compilar sus componentes:
+
+- packages/modules/adb/apex/adbd.rc declara servicio adbd desde el APEX,
+  class core, disabled, override, usuario root y dominio adbd.
+- daemon/usb.cpp:725 y siguientes reintenta open_functionfs si falla; contempla
+  sys.usb.adb.disabled. La selección efectiva de este backend queda por verificar.
+- daemon/usb_ffs.cpp:253–315 abre control, escribe descriptores y strings;
+  luego solicita sys.usb.ffs.ready=1 (:302), antes de abrir endpoints bulk.
+  Por tanto, ready no certifica éxito de todas las operaciones posteriores.
+- system/sepolicy/private/adbd.te:50–52 permite búsqueda de directorio y acceso
+  rw_file_perms a archivos functionfs, además de una lista específica de ioctl.
+- private/genfs_contexts:328 asigna functionfs:s0 a ese filesystem.
+
+CONFIRMED en el teléfono: directorio y ep0/ep1/ep2 etiquetados
+u:object_r:functionfs:s0; endpoints shell:system, modo 0660. El directorio observado
+es 0550: no deducir su modo final a partir del mkdir previo al montaje (0770).
+No se han cambiado permisos ni copiado una política SELinux compilada a la ROM.
+
+INFERRED: los contratos de FunctionFS vendor y adbd ROM son coherentes en estos
+puntos. UNKNOWN: backend seleccionado, instalación/activación del APEX, grupos
+tras reducción de privilegios, permisos para publicar propiedades y compatibilidad
+de política completa con vendor. No equivale a ADB funcional en una ROM propia.
+
+Siguiente objetivo concreto: cerrar selección del backend y provisión del APEX/adbd
+para el producto mínimo; contrastar grupos y propiedades sin añadir un segundo
+servicio adbd, un segundo montaje FunctionFS ni permisos SELinux especulativos.
