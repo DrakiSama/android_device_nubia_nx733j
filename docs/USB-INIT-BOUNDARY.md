@@ -18,7 +18,7 @@ no un binario arrancado. No se ha compilado ni probado una ROM.
 | CONFIRMED | init.vendor.usb.rc:445–461 y ROM init.usb.configfs.rc:14–23 | Para adb y ffs.ready=1 ambos escriben UDC; OEM anuncia charging,adb y ROM anuncia adb | Valores distintos para el mismo evento; falta establecer orden y propietario efectivo |
 | INFERRED | Composición ROM con vendor preservado | Reejecución de enlaces o escrituras sobre un gadget ya conectado podría fallar o dejar estado distinto | No declarar fallo real a partir de la lectura; requiere resolver arquitectura antes de activar |
 
-## Captura NX733J
+## Captura inicial NX733J (contexto shell)
 
 CONFIRMED en esta captura, slot B, firmware 20260210.135030:
 
@@ -34,15 +34,50 @@ no constituyen una instantánea atómica ni prueban qué actor creó los enlaces
 El dispositivo está rooteado; no se atribuye automáticamente todo estado vivo al
 firmware original. ADB funciona en este teléfono, pero eso no valida ADB en la ROM.
 
-## Bloqueo y siguiente paso
+## Corrección: contexto de consulta y regla RNDIS
 
-La composición viva no puede explicarse solamente por las ramas adb/mtp,adb leídas.
-Se detiene la activación de esta integración y se reporta la discrepancia; no se
-corrigen propiedades, reglas ni enlaces del teléfono para hacerlos coincidir.
+[Evidencia adicional](../stock/usb-init-root-context.json), consultada en el mismo
+boot y comparando shell/root secuencialmente:
 
-UNKNOWN: actor efectivo que configura el gadget (HAL, reglas adicionales u otro
-componente), orden de escrituras, integración de adbd ROM y permisos SELinux.
-Siguiente objetivo: identificar en lectura el servicio USB registrado/en ejecución,
-su declaración init/VINTF y las reglas exactas de rndis,none,adb/rndis,adb. Comparar
-la selección de reglas del sistema stock y ROM antes de diseñar un único responsable
-de composición. No hacen falta nuevos dumps de particiones ni cambiar el modo USB.
+| Propiedad | Shell | Root |
+| --- | --- | --- |
+| sys.usb.ffs.ready | vacío | 1 |
+| vendor.usb.use_ffs_mtp | vacío | 1 |
+| vendor.usb.controller | vacío | a600000.dwc3 |
+| vendor.usb.rndis.func.name | vacío | gsi |
+| init.svc.vendor.usb-hal | vacío | running |
+| persist.vendor.usb.config | vacío | vacío |
+
+CONFIRMED: el contexto de consulta cambia la visibilidad observada. La captura
+anterior conserva las salidas reales de shell, pero sus vacíos NO describen la
+vista de init/root. No se ha establecido el mecanismo exacto de esa diferencia.
+En capturas futuras, consultar estas propiedades con root y registrar el contexto.
+
+CONFIRMED: init.vendor.usb.rc:238–256 tiene una rama exacta para rndis,none,adb.
+Arranca adbd; con ffs.ready=1 configura f1 mediante vendor.usb.rndis.func.name,
+f2 mediante ffs.adb, escribe UDC y publica deliberadamente sys.usb.state=rndis,adb.
+Por tanto, la diferencia config/state no es por sí misma una incompatibilidad:
+está expresamente prevista en stock. Los valores root y enlaces capturados son
+compatibles con esta rama (INFERRED), sin demostrar su ejecución histórica.
+La fuente ROM init.usb.configfs.rc:131–139 utiliza rndis,adb, una condición distinta.
+
+CONFIRMED: vendor/etc/init/android.hardware.usb-service.qti.rc declara
+vendor.usb-hal, binario /vendor/bin/hw/android.hardware.usb-service.qti, class hal,
+usuario system y grupos system/mtp/usb. Su manifest declara AIDL
+android.hardware.usb.IUsb/default. Se observa servicio registrado y estado running
+con root. Ambos archivos coinciden por SHA-256 con el teléfono.
+Esto identifica el HAL de puerto; no demuestra un HAL gadget ni que ese proceso
+sea el responsable de escribir la composición configfs.
+
+## Bloqueo restante y siguiente paso
+
+La composición RNDIS observada tiene ahora una explicación estática NX733J.
+Se corrige la interpretación anterior, sin modificar ninguna propiedad del teléfono.
+Permanece la superposición OEM/ROM para adb y mtp,adb descrita arriba: no activar
+la integración hasta decidir quién configura enlaces, UDC y sys.usb.state.
+
+UNKNOWN: historial real de ejecución, posibles escritores adicionales del gadget,
+integración de adbd ROM y permisos SELinux. Siguiente objetivo: comparar los rc
+USB del sistema stock con ROM y rastrear la creación de ffs.adb/montaje FunctionFS,
+para diseñar un único responsable de composición en el perfil de bring-up.
+No hacen falta nuevos dumps de particiones ni cambiar el modo USB.

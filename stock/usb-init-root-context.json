@@ -1,0 +1,83 @@
+{
+  "captured_utc": "2026-09-25T16:06:40.846914+00:00",
+  "same_boot": true,
+  "properties_by_query_context": {
+    "sys.usb.ffs.ready": {
+      "shell": "",
+      "root": "1"
+    },
+    "vendor.usb.use_ffs_mtp": {
+      "shell": "",
+      "root": "1"
+    },
+    "persist.vendor.usb.config": {
+      "shell": "",
+      "root": ""
+    },
+    "vendor.usb.controller": {
+      "shell": "",
+      "root": "a600000.dwc3"
+    },
+    "vendor.usb.rndis.func.name": {
+      "shell": "",
+      "root": "gsi"
+    },
+    "init.svc.vendor.usb-hal": {
+      "shell": "",
+      "root": "running"
+    },
+    "sys.usb.config": {
+      "shell": "rndis,none,adb",
+      "root": "rndis,none,adb"
+    },
+    "sys.usb.state": {
+      "shell": "rndis,adb",
+      "root": "rndis,adb"
+    }
+  },
+  "sources": {
+    "vendor/etc/init/android.hardware.usb-service.qti.rc": {
+      "sha256": "d930596fd5216cd2969f758467e5c3fa150cd0f4cab83b7c4a0eb69d425efb7e",
+      "matches_live": true
+    },
+    "vendor/etc/vintf/manifest/android.hardware.usb-service.qti.xml": {
+      "sha256": "b45bd76d45c1e5828314700a388da1ad40b16ec8ee2af0d1e19507c7991ff407",
+      "matches_live": true
+    },
+    "vendor/etc/init/hw/init.vendor.usb.rc": {
+      "sha256": "e0ac631c6543c264a2cb7328e7a8b0d4f9b909ae2a5c7d2ba876a54b5584a0a7",
+      "matches_live": true
+    }
+  },
+  "oem_rndis_action": {
+    "first_line": 238,
+    "last_line": 256,
+    "lines": [
+      "on property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=1",
+      "    start adbd",
+      "",
+      "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=1",
+      "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"rndis_adb\"",
+      "    rm /config/usb_gadget/g1/configs/b.1/f1",
+      "    rm /config/usb_gadget/g1/configs/b.1/f2",
+      "    rm /config/usb_gadget/g1/configs/b.1/f3",
+      "    rm /config/usb_gadget/g1/configs/b.1/f4",
+      "    rm /config/usb_gadget/g1/configs/b.1/f5",
+      "    symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1",
+      "    write /config/usb_gadget/g1/idVendor 0x19d2",
+      "    write /config/usb_gadget/g1/idProduct 0x1373",
+      "    write /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis/rndis_class_id 1",
+      "    write /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis/wceis 1",
+      "    symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1",
+      "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2",
+      "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}",
+      "    setprop sys.usb.state rndis,adb"
+    ]
+  },
+  "registered_port_hal": "Service android.hardware.usb.IUsb/default: found",
+  "limitations": [
+    "Read-only sequential observations, not proof of action execution history.",
+    "Root and shell property visibility differ; mechanism not established.",
+    "Port IUsb registration does not establish a gadget HAL or ownership of composition."
+  ]
+}
