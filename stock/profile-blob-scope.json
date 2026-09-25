@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "profile_sha256": "6c71960b504264106b0fa63eeef326128eddafbd0ceddb6e92c6ab83e620749d",
+  "inventories": [
+    {
+      "inventory": "proprietary-files.candidates.txt",
+      "sha256": "46e67fe0e93c4614ff5f6b729bdbcdc2e153beb7a55728a3f404dbdd7ec07d23",
+      "entries": 3718,
+      "partitions": {
+        "odm": 13,
+        "vendor": 3705
+      },
+      "scope": {
+        "already_inside_preserved_image_do_not_extract_individually": 3718
+      }
+    },
+    {
+      "inventory": "system-ext-product-inventory.txt",
+      "sha256": "cc29e1420d70562bd7dcb5ee493848f9c8f5a463294d277237502770e53bcfa9",
+      "entries": 2621,
+      "partitions": {
+        "product": 476,
+        "system_ext": 2145
+      },
+      "scope": {
+        "review_source_or_blob_no_install_approval": 2621
+      }
+    }
+  ],
+  "extraction_approved": false,
+  "limitations": [
+    "Partition scope only, not dependency closure or necessity.",
+    "No namespace, ABI, SELinux, VINTF or license decisions.",
+    "Whole-image preservation does not prove framework compatibility."
+  ]
+}

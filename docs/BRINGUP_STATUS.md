@@ -70,3 +70,6 @@ permisos de ffs.ready trazados; orden efectivo y política combinada pendientes.
 
 [Entradas de imágenes preservadas](PRESERVED-IMAGE-INPUTS.md): cuatro imágenes
 revalidadas y fragmento privado preparado; sin inclusión automática en BoardConfig.
+
+[Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
+cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.

@@ -1,5 +1,10 @@
 # Auditoría de blobs NX733J — 2026-09-15
 
+> Alcance histórico: reconstrucción de vendor/odm desde blobs. Para el perfil
+> inicial de imágenes stock preservadas, usar [PROFILE-BLOB-SCOPE.md](PROFILE-BLOB-SCOPE.md).
+> Las decisiones de extracción de este documento no se aplican automáticamente
+> al contenido de imágenes completas preservadas.
+
 Estado actualizado al 2026-09-23: las cuatro particiones vendor/odm/system_ext/product
 ya están capturadas y extraídas. Ver [auditoría ELF](ELF-AUDIT.md) para los
 resultados actuales. El árbol sigue sin ser compilable. La clasificación de
