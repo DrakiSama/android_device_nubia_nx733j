@@ -25,7 +25,7 @@ que impide habilitar el siguiente paso.
 | Fstab ROM | PARTIAL | 25 entradas, 14 tempranas; semántica emmc/formattable revisada | Stock y código init/fs_mgr | Sigue como referencia; no instalado en producto |
 | Proveedor kernel | PARTIAL | 715 payloads privados comprobados; contrato definido | Capturas stock | Falta adaptador consumido por el build |
 | Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
-| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; imágenes completas identificadas, integración y dependencias pendientes |
+| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; adaptador privado preparado con hashes; producto/AVB pendientes |
 | AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Perfil inicial sin OTA; claves, rollback y aceptación aún abiertos |
 | Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; RNDIS explicado; visibilidad shell/root corregida; superposición USB pendiente |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
@@ -67,3 +67,6 @@ No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos
 
 [Contrato ADB del producto](ADB-PRODUCT-CONTRACT.md): provisión, backend y
 permisos de ffs.ready trazados; orden efectivo y política combinada pendientes.
+
+[Entradas de imágenes preservadas](PRESERVED-IMAGE-INPUTS.md): cuatro imágenes
+revalidadas y fragmento privado preparado; sin inclusión automática en BoardConfig.

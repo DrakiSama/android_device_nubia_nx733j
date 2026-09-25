@@ -1,0 +1,30 @@
+{
+  "prepared_utc": "2026-09-25T16:16:52.323454+00:00",
+  "status": "PREPARED_NOT_ACTIVATED",
+  "profile_sha256": "6c71960b504264106b0fa63eeef326128eddafbd0ceddb6e92c6ab83e620749d",
+  "images": {
+    "vendor": {
+      "bytes": 1940062208,
+      "sha256": "814b34867437436dd2b55204ff8652f6c11dcf231fc7836d8e77df229569bff4"
+    },
+    "odm": {
+      "bytes": 892928,
+      "sha256": "a26ba138b6605a6a7a5762b1b400a48cc03a949e23db066e8db1b9f336772206"
+    },
+    "vendor_dlkm": {
+      "bytes": 33574912,
+      "sha256": "12e553d4d1d0a97a95ba7fabee53f4df530fe684eca9d5eebfd1711bf294d668"
+    },
+    "system_dlkm": {
+      "bytes": 7577600,
+      "sha256": "7464f32315130ebbd5d72580bb4ce523f6a4fb25856f8b3b415d8c5e1b267fe6"
+    }
+  },
+  "output_kind": "Linux symlinks and private dormant BoardConfig fragment",
+  "flash_ready": false,
+  "limitations": [
+    "Sources can change after preparation; recheck hashes before builds.",
+    "No AVB signature/FEC verification, build, OTA or flash.",
+    "No automatic include; vendor product selection and AVB remain unresolved."
+  ]
+}

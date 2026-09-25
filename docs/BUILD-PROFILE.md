@@ -24,8 +24,8 @@ particiones reconstruidas; el generador vendor actual aún no implementa ese per
 
 La interfaz local soporta BOARD_PREBUILT_VENDORIMAGE, BOARD_PREBUILT_ODMIMAGE,
 BOARD_PREBUILT_VENDOR_DLKMIMAGE y BOARD_PREBUILT_SYSTEM_DLKMIMAGE. No se asignaron:
-falta preparar y registrar todas las imágenes privadas completas y revisar los
-consumidores AVB/target_files. El proveedor de módulos sueltos no sustituye esas
+las imágenes y el adaptador privado ya están preparados; falta integrar el
+producto y revisar el uso final de AVB/target_files. El proveedor de módulos sueltos no sustituye esas
 imágenes. Los tipos EROFS existentes también sirven para un perfil futuro que
 reconstruya esas particiones; no fuerzan por sí solos esta decisión.
 
@@ -84,3 +84,6 @@ de la política fuente del framework nuevo.** Debe comprobar compatibilidad de
 versiones/mappings SELinux y VINTF, y el tratamiento del precompiled_sepolicy.
 No se borran archivos internos de los prebuilts para aparentar compatibilidad.
 El inventario antiguo no se promueve automáticamente al producto conservado.
+
+Preparación posterior: [adaptador privado de entradas](PRESERVED-IMAGE-INPUTS.md),
+sin activar el perfil ni seleccionar una política de firma.
