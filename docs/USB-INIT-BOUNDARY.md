@@ -164,3 +164,8 @@ UNKNOWN prioritario: comportamiento y dependencias de usbconfig y necesidad de
 su proveedor en system. Siguiente selección concreta: auditar ese ejecutable en
 lectura, empezando por identidad/ELF y contrato con init, antes de decidir fuente,
 blob o cambio documentado de servicio. No ejecutar binarios OEM como prueba.
+
+Actualización final: [identidad de usbconfig](../stock/usbconfig-elf.json) capturada
+localmente, 377840 bytes, SHA-256 igual antes/después en teléfono y copia. ELF64
+AArch64 ET_EXEC; metadatos dinámicos no obtenidos por el analizador existente.
+No se ejecutó ni publicó el binario; comportamiento y dependencias siguen UNKNOWN.
