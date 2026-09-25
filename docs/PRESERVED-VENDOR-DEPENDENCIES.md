@@ -86,3 +86,7 @@ del proyecto. No se añadió un import indiscriminado ni se ejecutaron acciones
 OEM. Siguiente objetivo: clasificar acciones tempranas y referencias imprescindibles
 de init.vendor.rc frente a lo que ya proporciona init ROM, con foco en montajes,
 permisos y arranque de ADB; luego revisar la propuesta antes de conectarla.
+
+Actualización: [acciones OEM clasificadas](OEM-INIT-PORT-DECISIONS.md). Se decide
+no importar el archivo globalmente; la dependencia del nombre USB tiene fuente
+stock en build.prop. Continúa pendiente la integración USB/ADB de la ROM.

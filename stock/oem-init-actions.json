@@ -1,0 +1,848 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-25T04:39:01.564691+00:00",
+  "oem_file": "init.vendor.rc",
+  "oem_sha256": "9f1a11249b7be6900daf875b57f2452de4e991898de08a316be68c3e925faebe",
+  "rom_builtins_sha256": "32f88a0b19b8829da018739a2d44b1677d8f89a870092a06233e66816df376d0",
+  "rom_builtin_names": [
+    "bootchart",
+    "chmod",
+    "chown",
+    "class_reset",
+    "class_restart",
+    "class_start",
+    "class_stop",
+    "copy",
+    "copy_per_line",
+    "domainname",
+    "enable",
+    "enter_default_mount_ns",
+    "exec",
+    "exec_background",
+    "exec_start",
+    "export",
+    "hostname",
+    "ifup",
+    "insmod",
+    "installkey",
+    "interface_restart",
+    "interface_start",
+    "interface_stop",
+    "load_exports",
+    "load_persist_props",
+    "load_system_props",
+    "loglevel",
+    "mark_post_data",
+    "mkdir",
+    "mount",
+    "mount_all",
+    "perform_apex_config",
+    "readahead",
+    "restart",
+    "restorecon",
+    "restorecon_recursive",
+    "rm",
+    "rmdir",
+    "setprop",
+    "setrlimit",
+    "start",
+    "stop",
+    "swapoff",
+    "swapon_all",
+    "symlink",
+    "sysclktz",
+    "trigger",
+    "umount",
+    "umount_all",
+    "update_linker_config",
+    "verity_update_state",
+    "wait",
+    "wait_for_prop",
+    "write"
+  ],
+  "action_blocks": [
+    {
+      "line": 6,
+      "trigger": "early-init",
+      "command_count": 1,
+      "commands": {
+        "mkdir": 1
+      }
+    },
+    {
+      "line": 9,
+      "trigger": "init",
+      "command_count": 12,
+      "commands": {
+        "mkdir": 3,
+        "chmod": 3,
+        "chown": 5,
+        "write": 1
+      }
+    },
+    {
+      "line": 27,
+      "trigger": "brd-post-fs",
+      "command_count": 17,
+      "commands": {
+        "mkdir": 1,
+        "chown": 11,
+        "chmod": 5
+      }
+    },
+    {
+      "line": 48,
+      "trigger": "late-init",
+      "command_count": 7,
+      "commands": {
+        "trigger": 1,
+        "class_start": 1,
+        "write": 1,
+        "chown": 2,
+        "chmod": 2
+      }
+    },
+    {
+      "line": 57,
+      "trigger": "charger",
+      "command_count": 8,
+      "commands": {
+        "wait": 2,
+        "symlink": 1,
+        "mkdir": 1,
+        "mount": 1,
+        "trigger": 1,
+        "setprop": 1,
+        "class_start": 1
+      }
+    },
+    {
+      "line": 72,
+      "trigger": "property:persist.sys.ztelog.enable=1 && property:ro.vendor.feature.zte_feature_charger_adsp=true",
+      "command_count": 3,
+      "commands": {
+        "wait": 1,
+        "chown": 1,
+        "chmod": 1
+      }
+    },
+    {
+      "line": 77,
+      "trigger": "property:ro.vendor.feature.zte_feature_charger_adsp=true",
+      "command_count": 13,
+      "commands": {
+        "wait": 1,
+        "chown": 6,
+        "chmod": 6
+      }
+    },
+    {
+      "line": 92,
+      "trigger": "property:ro.vendor.feature.zte_feature_charger_adsp=true",
+      "command_count": 3,
+      "commands": {
+        "wait": 1,
+        "chown": 1,
+        "chmod": 1
+      }
+    },
+    {
+      "line": 97,
+      "trigger": "property:persist.sys.smooth.soc=1",
+      "command_count": 6,
+      "commands": {
+        "wait": 2,
+        "chown": 2,
+        "chmod": 2
+      }
+    },
+    {
+      "line": 106,
+      "trigger": "property:sys.boot_completed=1",
+      "command_count": 1,
+      "commands": {
+        "chmod": 1
+      }
+    },
+    {
+      "line": 109,
+      "trigger": "boot",
+      "command_count": 119,
+      "commands": {
+        "chmod": 48,
+        "chown": 70,
+        "insmod": 1
+      }
+    },
+    {
+      "line": 263,
+      "trigger": "post-fs",
+      "command_count": 8,
+      "commands": {
+        "mkdir": 2,
+        "setprop": 1,
+        "chmod": 1,
+        "chown": 1,
+        "restorecon": 2,
+        "concat_props_zte": 1
+      }
+    },
+    {
+      "line": 290,
+      "trigger": "mmi && property:ro.bootmode=ffbm-02",
+      "command_count": 7,
+      "commands": {
+        "chown": 1,
+        "chmod": 5,
+        "setprop": 1
+      }
+    },
+    {
+      "line": 299,
+      "trigger": "property:persist.odm.sys.pmicregdump=0",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 303,
+      "trigger": "property:persist.odm.sys.pmicregdump=1",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 307,
+      "trigger": "property:odm.force_warm_reset=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 310,
+      "trigger": "property:odm.force_warm_reset=1",
+      "command_count": 3,
+      "commands": {
+        "write": 1,
+        "chown": 1,
+        "chmod": 1
+      }
+    },
+    {
+      "line": 317,
+      "trigger": "property:persist.odm.sys.minidump=0",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 321,
+      "trigger": "property:persist.odm.sys.minidump=1",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 332,
+      "trigger": "property:sys.diag_socket_log.enable=1",
+      "command_count": 1,
+      "commands": {
+        "start": 1
+      }
+    },
+    {
+      "line": 335,
+      "trigger": "property:sys.diag_socket_log.enable=0",
+      "command_count": 1,
+      "commands": {
+        "stop": 1
+      }
+    },
+    {
+      "line": 338,
+      "trigger": "property:persist.sys.lcd.backlight_ratio=*",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 341,
+      "trigger": "property:sys.demochargingpolicy.protect=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 343,
+      "trigger": "property:sys.demochargingpolicy.protect=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 346,
+      "trigger": "property:persist.sys.keeppower.anyway=1",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "write": 2
+      }
+    },
+    {
+      "line": 350,
+      "trigger": "property:persist.sys.keeppower.anyway=0",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "write": 2
+      }
+    },
+    {
+      "line": 355,
+      "trigger": "property:persist.sys.expiredchargingpolicy.protect=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 357,
+      "trigger": "property:persist.sys.expiredchargingpolicy.protect=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 360,
+      "trigger": "property:sys.driverchargingpolicy.protect=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 362,
+      "trigger": "property:sys.driverchargingpolicy.protect=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 375,
+      "trigger": "property:persist.sys.tskin=*",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "restart": 2
+      }
+    },
+    {
+      "line": 380,
+      "trigger": "property:debug.oem.thermctl=*",
+      "command_count": 2,
+      "commands": {
+        "restart": 2
+      }
+    },
+    {
+      "line": 384,
+      "trigger": "property:sys.thermal.mode_type=*",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "restart": 2
+      }
+    },
+    {
+      "line": 389,
+      "trigger": "property:persist.sys.emode.thermal=1",
+      "command_count": 2,
+      "commands": {
+        "start": 2
+      }
+    },
+    {
+      "line": 393,
+      "trigger": "property:persist.sys.emode.thermal=0",
+      "command_count": 2,
+      "commands": {
+        "stop": 2
+      }
+    },
+    {
+      "line": 398,
+      "trigger": "property:sys.led_green.brightness=1",
+      "command_count": 3,
+      "commands": {
+        "write": 3
+      }
+    },
+    {
+      "line": 402,
+      "trigger": "property:sys.led_green.brightness=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 405,
+      "trigger": "property:sys.led_red.brightness=1",
+      "command_count": 3,
+      "commands": {
+        "write": 3
+      }
+    },
+    {
+      "line": 409,
+      "trigger": "property:sys.led_red.brightness=0",
+      "command_count": 3,
+      "commands": {
+        "write": 3
+      }
+    },
+    {
+      "line": 414,
+      "trigger": "property:sys.led_blue.brightness=1",
+      "command_count": 3,
+      "commands": {
+        "write": 3
+      }
+    },
+    {
+      "line": 418,
+      "trigger": "property:sys.led_blue.brightness=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 421,
+      "trigger": "property:sys.fanlight.cfg=1",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 424,
+      "trigger": "property:sys.fanlight.cfg=0",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 428,
+      "trigger": "property:sys.emode.fingerprint.test=true",
+      "command_count": 3,
+      "commands": {
+        "mkdir": 1,
+        "write": 1,
+        "chmod": 1
+      }
+    },
+    {
+      "line": 432,
+      "trigger": "property:sys.emode.fingerprint.test=false",
+      "command_count": 1,
+      "commands": {
+        "rm": 1
+      }
+    },
+    {
+      "line": 435,
+      "trigger": "property:sys.led_green.singlecolor=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 437,
+      "trigger": "property:sys.led_green.singlecolor=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 440,
+      "trigger": "property:sys.led_red.singlecolor=1",
+      "command_count": 4,
+      "commands": {
+        "write": 4
+      }
+    },
+    {
+      "line": 446,
+      "trigger": "property:sys.led_red.singlecolor=0",
+      "command_count": 4,
+      "commands": {
+        "write": 4
+      }
+    },
+    {
+      "line": 452,
+      "trigger": "property:sys.thermal.wifi.5G=1",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "restart": 2
+      }
+    },
+    {
+      "line": 457,
+      "trigger": "property:sys.thermal.wifi.5G=0",
+      "command_count": 3,
+      "commands": {
+        "setprop": 1,
+        "restart": 2
+      }
+    },
+    {
+      "line": 463,
+      "trigger": "property:persist.zte.dualthermal.enable=0",
+      "command_count": 2,
+      "commands": {
+        "stop": 2
+      }
+    },
+    {
+      "line": 467,
+      "trigger": "property:persist.zte.dualthermal.enable=1",
+      "command_count": 2,
+      "commands": {
+        "start": 2
+      }
+    },
+    {
+      "line": 471,
+      "trigger": "property:persist.zte.dualzperf.enable=0",
+      "command_count": 2,
+      "commands": {
+        "stop": 2
+      }
+    },
+    {
+      "line": 475,
+      "trigger": "property:persist.zte.dualzperf.enable=1",
+      "command_count": 2,
+      "commands": {
+        "start": 2
+      }
+    },
+    {
+      "line": 480,
+      "trigger": "property:vendor.thermal.mode_type=* && property:ro.vendor.feature.zte_feature_zperf_cube=true",
+      "command_count": 2,
+      "commands": {
+        "restart": 2
+      }
+    },
+    {
+      "line": 484,
+      "trigger": "post-fs-data",
+      "command_count": 47,
+      "commands": {
+        "mkdir": 1,
+        "copy": 4,
+        "rm": 1,
+        "chown": 19,
+        "setprop": 3,
+        "chmod": 18,
+        "restorecon": 1
+      }
+    },
+    {
+      "line": 541,
+      "trigger": "property:sys.led.logo.switch=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 543,
+      "trigger": "property:sys.led.logo.switch=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 546,
+      "trigger": "property:sys.keypad.wakeup.switch=1",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 549,
+      "trigger": "property:sys.keypad.wakeup.switch=0",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 553,
+      "trigger": "property:persist.oem.battery.type=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 556,
+      "trigger": "property:persist.odm.reset.source.sink=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 565,
+      "trigger": "property:persist.odm.getqrtr.lookup=1",
+      "command_count": 1,
+      "commands": {
+        "start": 1
+      }
+    },
+    {
+      "line": 577,
+      "trigger": "property:persist.zte.mindsync.zram.wb_enabled=true",
+      "command_count": 1,
+      "commands": {
+        "setprop": 1
+      }
+    },
+    {
+      "line": 580,
+      "trigger": "property:persist.zte.mindsync.zram.wb_enabled=false",
+      "command_count": 1,
+      "commands": {
+        "setprop": 1
+      }
+    },
+    {
+      "line": 584,
+      "trigger": "property:vendor.MB.running=0",
+      "command_count": 1,
+      "commands": {
+        "setprop": 1
+      }
+    },
+    {
+      "line": 587,
+      "trigger": "property:vendor.MB.running=1",
+      "command_count": 1,
+      "commands": {
+        "setprop": 1
+      }
+    },
+    {
+      "line": 590,
+      "trigger": "property:persist.shell.tcpip.debug=0",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 594,
+      "trigger": "property:persist.shell.tcpip.debug=1",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 598,
+      "trigger": "property:persist.shell.tcpip.debug=2",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 602,
+      "trigger": "property:persist.shell.tcpip.debug=3",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 606,
+      "trigger": "property:persist.shell.tcpip.debug=4",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 610,
+      "trigger": "property:persist.shell.tcpip.debug=7",
+      "command_count": 2,
+      "commands": {
+        "write": 2
+      }
+    },
+    {
+      "line": 639,
+      "trigger": "property:persist.sys.startcheckkeybox=1",
+      "command_count": 1,
+      "commands": {
+        "start": 1
+      }
+    },
+    {
+      "line": 642,
+      "trigger": "property:vendor.post_boot.zramwb=1 && property:persist.zte.mindsync.zram.wb_enabled=true && property:sys.mindsync.zram.init=\"\"",
+      "command_count": 6,
+      "commands": {
+        "swapon_all": 1,
+        "chown": 2,
+        "chmod": 2,
+        "setprop": 1
+      }
+    },
+    {
+      "line": 651,
+      "trigger": "property:persist.vendor.sys.singletap=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 653,
+      "trigger": "property:persist.vendor.sys.fingerlockflag=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 655,
+      "trigger": "property:persist.vendor.sys.tp_palm_mode=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 657,
+      "trigger": "property:persist.vendor.sys.tp_palm_mode=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 659,
+      "trigger": "property:persist.vendor.sys.tp_palm_mode_2nd=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 661,
+      "trigger": "property:persist.vendor.sys.tp_palm_mode_2nd=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 663,
+      "trigger": "property:persist.vendor.sys.tp_save_thp_log=1",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 665,
+      "trigger": "property:persist.vendor.sys.tp_save_thp_log=0",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 668,
+      "trigger": "property:persist.vendor.ssr.restart_level=ALL_DISABLE",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 671,
+      "trigger": "property:persist.vendor.ssr.restart_level=ALL_ENABLE",
+      "command_count": 1,
+      "commands": {
+        "write": 1
+      }
+    },
+    {
+      "line": 674,
+      "trigger": "post-fs-data",
+      "command_count": 16,
+      "commands": {
+        "chown": 8,
+        "chmod": 8
+      }
+    }
+  ],
+  "command_counts": {
+    "chmod": 105,
+    "chown": 130,
+    "class_start": 2,
+    "concat_props_zte": 1,
+    "copy": 4,
+    "insmod": 1,
+    "mkdir": 10,
+    "mount": 1,
+    "restart": 12,
+    "restorecon": 3,
+    "rm": 2,
+    "setprop": 17,
+    "start": 9,
+    "stop": 7,
+    "swapon_all": 1,
+    "symlink": 1,
+    "trigger": 2,
+    "wait": 7,
+    "write": 82
+  },
+  "commands_absent_from_rom_map": [
+    {
+      "line": 288,
+      "command": "concat_props_zte",
+      "trigger": "post-fs"
+    }
+  ],
+  "parse_limits_or_errors": [],
+  "limits": [
+    "Only action command names compared, not argument arity, SELinux permissions or execution",
+    "Service definitions and imports not interpreted by this tool",
+    "Presence of an OEM action does not establish a ROM requirement",
+    "No changes to the phone, stock rc or build activation"
+  ]
+}

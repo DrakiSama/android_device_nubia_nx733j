@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-09-25T04:41:28.518795+00:00",
+  "property": "ro.vendor.product.ztename",
+  "stock_vendor_build_prop_sha256": "9e4e15e8dba0ff40a394426f57946e10f077445f564c4aa2e5688d3df1e01490",
+  "stock_line": 795,
+  "stock_value": "nubia Z70 Ultra",
+  "observed_value": "nubia Z70 Ultra",
+  "matches": true,
+  "source": "Read-only getprop and extracted vendor/build.prop",
+  "rom_source_hashes": {
+    "init/builtins.cpp": "32f88a0b19b8829da018739a2d44b1677d8f89a870092a06233e66816df376d0",
+    "init/property_service.cpp": "1c47a448f11ac479fd162abef8047c6fab45e9a24909f135d9b8962d2c575299",
+    "init/init.cpp": "8fc39a08452ecfd8df09c3c27e91fb02245304202b94d33aa034d965eb15a416"
+  },
+  "limits": [
+    "One selected property, not all effects of concat_props_zte",
+    "ROM load order inferred from source; no ROM boot performed",
+    "Later property overrides and SELinux integration remain to verify"
+  ]
+}

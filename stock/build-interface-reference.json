@@ -36,7 +36,9 @@
       "fs_mgr/fs_mgr.cpp": "494f4a6963543fb837a2a7902532a929a14cdc7ac8d9a9cc8612129b0f042a12",
       "init/init.cpp": "8fc39a08452ecfd8df09c3c27e91fb02245304202b94d33aa034d965eb15a416",
       "init/parser.cpp": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
-      "rootdir/init.rc": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b"
+      "rootdir/init.rc": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b",
+      "init/builtins.cpp": "32f88a0b19b8829da018739a2d44b1677d8f89a870092a06233e66816df376d0",
+      "init/property_service.cpp": "1c47a448f11ac479fd162abef8047c6fab45e9a24909f135d9b8962d2c575299"
     }
   }
 }

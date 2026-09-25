@@ -27,7 +27,7 @@ que impide habilitar el siguiente paso.
 | Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
 | Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; imágenes completas identificadas, integración y dependencias pendientes |
 | AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Perfil inicial sin OTA; claves, rollback y aceptación aún abiertos |
-| Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | Diferencia init.vendor.rc detectada; activación detenida, sin blobs nuevos |
+| Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; no importar globalmente; USB/ADB pendiente |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
 | Build mínimo | BLOCKED | BoardConfigBringup.mk ausente deliberadamente | BoardConfig | Kernel, ramdisk, AVB, vendor, VINTF y SELinux incompletos |
 | Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
@@ -36,9 +36,10 @@ que impide habilitar el siguiente paso.
 
 El [perfil inicial](BUILD-PROFILE.md) define qué se reconstruye y qué se conserva.
 Imágenes completas vendor/odm/DLKM contrastadas con super y descriptores AVB.
-Se detectó una diferencia de importación de init.vendor.rc entre stock y ROM;
-la activación queda detenida. Siguiente: clasificar sus acciones tempranas y
-resolver la propuesta de integración antes de conectar prebuilts, ramdisk y AVB.
+Las acciones de init.vendor.rc quedaron clasificadas: no se añadirá un import
+global ni concat_props_zte al init ROM. La propiedad de nombre USB ya existe
+en vendor/build.prop. Siguiente: revisar la cadena USB/configfs/adbd existente
+antes de conectar prebuilts, ramdisk y AVB; no activar el modo USB del teléfono.
 La identidad diferente de pvmfw A/B impide tratar ambos slots como firmware
 intercambiable. Las claves y firmware OEM no se heredan como política de firma ROM.
 
@@ -58,3 +59,5 @@ No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos
 
 [Dependencias del vendor conservado](PRESERVED-VENDOR-DEPENDENCIES.md) y
 [capas de producto](PRODUCT-LAYERS.md).
+
+[Decisiones de port de init OEM](OEM-INIT-PORT-DECISIONS.md).
