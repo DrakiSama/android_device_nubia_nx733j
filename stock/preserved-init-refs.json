@@ -1,0 +1,987 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-25T04:05:11.606960+00:00",
+  "scope": "literal service declarations in extracted stock vendor/etc/init",
+  "files_sha256": {
+    "vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc": "26ffb47daa258711ac1d66dcdb2f211ad18bc14b68e7dbfd6cbd7b4a43a9d0ae",
+    "vendor/etc/init/android.hardware.boot-service.qti.rc": "6fc5cb92af56344cffebbe7c23a2b9f366e1ccb0e317e014bcb1e7a624aad446",
+    "vendor/etc/init/android.hardware.drm-service.clearkey.rc": "5b7b5e1eaf964301570bb0947e50bf5e81af7de629cdfbeafe9915a0bfe4fcee",
+    "vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc": "a81f13b6a2e10337ea9e550421f1ffb1e38dd30f0573f3ffdc6f142402a4cf0b",
+    "vendor/etc/init/android.hardware.gatekeeper-service-qti.rc": "6adc5db1c1636667d4aa4005ce0155eaea19ecc7d21fc250341ac7a4f6be8ab8",
+    "vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc": "1992ff7953a18a6a3dae6def07c5b4b5d7b0ae6859e9b48a495b73fa2939425c",
+    "vendor/etc/init/android.hardware.health-service.qti.rc": "c0998af6c8969eb6de01324578faae5319a3fafdc409cc25445bf6f150abb934",
+    "vendor/etc/init/android.hardware.identity-service-qti.rc": "05eed49d012601868df6c24fe617a27fee956392d0b7f40ec92bacab9e4ccf3e",
+    "vendor/etc/init/android.hardware.ir-service.rc": "b49e1a8e30d8786811fd7f1b4d5bcd32f3ee3999879e74442c4e72e73072682c",
+    "vendor/etc/init/android.hardware.power-service.rc": "467513bcf53906f9acb940ea77273d622c88dac8a07960767b011febbee57fee",
+    "vendor/etc/init/android.hardware.security.keymint-service-qti.rc": "4f2aea385713f86aa193a1cb3a24fc141b63fc54dec330f25a4f5a722d87c456",
+    "vendor/etc/init/android.hardware.sensors-service-multihal.rc": "8a42a1eaab48439f3400a2e34781c517e3368d1d793aa61a273669dd4984a7b5",
+    "vendor/etc/init/android.hardware.thermal-service.qti.rc": "8dc8ab6db50edb80aec5f6ea9396970edecbfb2a9fcbc033169d88d1386b66b5",
+    "vendor/etc/init/android.hardware.usb-service.qti.rc": "d930596fd5216cd2969f758467e5c3fa150cd0f4cab83b7c4a0eb69d425efb7e",
+    "vendor/etc/init/android.hardware.wifi-service.rc": "392ddaa25fcf242c88368e6a59e261c0074215dce02d0eddda60340b804e52bd",
+    "vendor/etc/init/android.hardware.wifi.supplicant-service.rc": "3d34e5aff950858805d48e81d49960911862604d62f343c9fb9c3ed83f580067",
+    "vendor/etc/init/audiohalservice_qti.rc": "16a92a2cfd2494f827e963f519c9bfed6cbd916a7250e2a88acd9a023f110971",
+    "vendor/etc/init/boringssl_self_test.rc": "a30ca035b49329cd72994ca3a75125990bca7fcfa9ef00c39632cc200d7caa48",
+    "vendor/etc/init/c2painternetservice.rc": "1dcbd5699098eabe5200b65f622043e8b6b00b351b8b1cb1348cb4da399e3c98",
+    "vendor/etc/init/camerahalvs.rc": "b71eac0c8550d3f499ebe02f159e226788f6d054e58cbaf2a291f17fc758b32e",
+    "vendor/etc/init/cnd.rc": "0bc8ee5db974beb21578a1e2f66eb45a87a8c572d3f6c8024811370e3a6a5fa0",
+    "vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc": "a8ac68e72fbce5e2382515961a12a82e2fe2c9dd4ad7dff05e7dcf166d28051b",
+    "vendor/etc/init/dataadpl.rc": "8fb07a4eb3f8222e9266deada743d05f40633a6f8a9b06d0577e3af632210443",
+    "vendor/etc/init/dataqti.rc": "9f9ed58938ab6e31965fefd52ef4820c29a778a3205302ca8542cdeee652dd6e",
+    "vendor/etc/init/dcfd.rc": "1d823284a1dbd9278b50c939d99a2262c002e528f61605475c125af858a590d8",
+    "vendor/etc/init/diagcommd.rc": "7727fede082e735b7357c525ecbab1771ec8d55879b8e81a2386910b66297a06",
+    "vendor/etc/init/dlsc.rc": "dac20842bd5c7439fa8fde206cc5dd35395d6aef2548683fa9ba10f50fc40a94",
+    "vendor/etc/init/feature_enabler_client.rc": "03794cb79b1206a61c126ff283215ef41419e5978a2b8d0bd1049b8300385740",
+    "vendor/etc/init/hexlpservice.rc": "9e6abecbc84447dfab120e40805a21a7641c86ae017aa6718aa7b313f83bdbfa",
+    "vendor/etc/init/hlosminkdaemon.rc": "5b0728de5a5f1b2c9e9e2a3bc35b92eb8367b3f9362e269e20791d22a6baee56",
+    "vendor/etc/init/hostapd.android.rc": "2498bdb3b7e160defc3fa802012a5dd0591274c504ad30949506e6a7e5a4cb65",
+    "vendor/etc/init/hw/init.fingerprint.gf95xx.rc": "2233ab8606e1352c7e7e6920771b62d5a10c54c7df86abeb251d63e55b63fd89",
+    "vendor/etc/init/hw/init.qcom.factory.rc": "36771a15a4f6738010f307383b8d26bd2d867df2164c0b7e3f6e0ac4ecd4c18f",
+    "vendor/etc/init/hw/init.qcom.rc": "affefcaed0761c216c57331e1fe628b60430f0b5d05bc8ccb7e12a6dbad65206",
+    "vendor/etc/init/hw/init.qcom.usb.rc": "4e48acef486d92dbdb2ff9b7f3f417ac4694fe4f6b5bb10c3003983a10724064",
+    "vendor/etc/init/hw/init.qti.kernel.rc": "d7ab00aa322e40b8aae2f333b3635398dd03d92b1e5e977470b747dff8fc3e92",
+    "vendor/etc/init/hw/init.qti.kernel.target.rc": "c21c92a0af6bfe8a6d833276500ee3ea486999de73feab435230b843ec62b6a0",
+    "vendor/etc/init/hw/init.qti.kernel.test.rc": "1e3758a6a18ecfe5d6907d98da997e8873f8251b20de6c73e0786c8fb1ec4594",
+    "vendor/etc/init/hw/init.qti.ufs.rc": "2da94fa233c863383dedac4abada140087f920b566116c29f0aaff5240ea73e9",
+    "vendor/etc/init/hw/init.target.rc": "aa0ec9c35d4cb3f6f437180706bfdc32dc3f1e5f999ae7f7b2a9cc1f0b40bc60",
+    "vendor/etc/init/hw/init.vendor.rc": "9f1a11249b7be6900daf875b57f2452de4e991898de08a316be68c3e925faebe",
+    "vendor/etc/init/hw/init.vendor.usb.rc": "e0ac631c6543c264a2cb7328e7a8b0d4f9b909ae2a5c7d2ba876a54b5584a0a7",
+    "vendor/etc/init/ims-dataservice-daemon.rc": "412d5b542652e309b53d954d6dcc3ad9aae9edff0c1eaa66c9fe55ec04c6b62c",
+    "vendor/etc/init/ims_rtp_daemon.rc": "97be32080dd143b65542f248a244ef01e96c7e22f81f1952e2e6529cf4a57494",
+    "vendor/etc/init/imsdaemon.rc": "4b9980537f142e1e780dff4f69c148a5e7e4ec21dd354e9bb090f5b7e0b7b2d0",
+    "vendor/etc/init/init.audio.awinic.rc": "dde89e4ade85fa9c12450e833dd6155c50d37e349e298307d9808230e6b1668a",
+    "vendor/etc/init/init.audio.awinic882xx.rc": "e4577632dfb113eb3ad96bf5d103034134d856ce6d588c17b2add8ce79f6b82f",
+    "vendor/etc/init/init.brd_daemon.rc": "3b37fe7737d83dffd8224db0be6257b71e7278ca7e916edb35678d08142026c5",
+    "vendor/etc/init/init.camera.dual_cali.rc": "28843d13d5865f975beaae4e201a908f99cb7ddbb3623b0133e79937f5194445",
+    "vendor/etc/init/init.embmssl_server.rc": "2558fdd6b3b6f8fbc2a21f354a404fcad5edb6f41b70dc0ee8b9bbe7bc569996",
+    "vendor/etc/init/init.fingerprint.alipay.rc": "d373a7fd0da6d09f2157c5d81b0fb22073063102ec37da863ab7714e0659443b",
+    "vendor/etc/init/init.light_longchg.rc": "eb7548da744a72985f794c2037fe31244fa05f7f0e8ec8ccc4ca1d0d23f8a50f",
+    "vendor/etc/init/init.nfc.st54j.rc": "a8d54d38a24e97a1a350b6ddc8fc40716fa0bffb311e320231112c372ddd5211",
+    "vendor/etc/init/init.qccvendor.rc": "9f2a4812f8d81868b3844474d099e41a987dff949a8fcbc83a72321c20fd3fb4",
+    "vendor/etc/init/init.qlm-service.rc": "e93770bb99c9ecd74b26e743f2112c9805ee5afcefc4fdd14afc15cde8dea02b",
+    "vendor/etc/init/init.qt-service.rc": "9e9d2480bee5c6d996b139fa38189bd060a1616ca2f7345bb7759e9bf7f44bb9",
+    "vendor/etc/init/init.qti.display_boot.rc": "21de1b2cbdb30bfb976d53f2e7c2fb165ba105731a8a7152068f0a608490cefa",
+    "vendor/etc/init/init.qti.fm.rc": "bf511ef4ca873230aa8049a30527509d48fce3cc6b10b1add1e1c687e3f57872",
+    "vendor/etc/init/init.qti.media.rc": "e9a90a4d8028282c7f48a268f2297461b7df705119b8410901204882c7d20e0e",
+    "vendor/etc/init/init.qti.qcv.rc": "178c45079b5d57eb19d92454345206cac0307ed15580d109297d6f27dd8ff52b",
+    "vendor/etc/init/init.smartpa_cali.rc": "abd31bc97b654dee4fdc7bc0ec0fd6b7374e381f3af7e7ee1d6898fea3b3b5ff",
+    "vendor/etc/init/init.spdaemon.rc": "0b5869564ce597b3aebbb09e1b379ba39278cce40096fafb042d72c5c99a30b3",
+    "vendor/etc/init/init.time_daemon.rc": "59e1d3352a6151d6217b03d1e7214dbcedbc63cce4870d68ae6f73d713a93761",
+    "vendor/etc/init/init.vendor.sensors.rc": "29b8739687e9df2b535c9c92580e82934acb47efcb8cb141cf5dbd7889205a37",
+    "vendor/etc/init/init.vendor.wlan.rc": "8f075ffe16992139b99626f5f492e90338b507e47fe3c451541c79b368453e2b",
+    "vendor/etc/init/init.zte.perf.rc": "8285f028a3f1d04df50ccda93131baa90959c85657ea8cc5b9401149a1db5074",
+    "vendor/etc/init/init_fan_service.rc": "6ec640d9597d1a1ee15f355294398165af8349e8926e96dc95b2e5d4bc893815",
+    "vendor/etc/init/init_thermal-engine-v2.rc": "98a6dc503592da46e035a07b4b2bf64071da61c2e269bf54d747124cd83c78ea",
+    "vendor/etc/init/ipacm-diag.rc": "8211647bf67bc48a84bb935126010be0d04c64f6f2bf83f9f78b6399365470a8",
+    "vendor/etc/init/ipacm.rc": "38aaba79d3598e7cde5d8a8c5296f4374c36ef281874d5672952321eb3007856",
+    "vendor/etc/init/loc-launcher.rc": "b5eb6991452dbcec9e4e6bfe35ac1e2f33178caae60b22bb129d3dafbad1b183",
+    "vendor/etc/init/memtrack_qti.rc": "dacbe63a58e9f938232f1fa029ebe25620714271ff3c78dfb50694646a21b003",
+    "vendor/etc/init/nfc-service-aidl.rc": "85d2e21c285fec7af460355eb4ca0eefd78d7acdceb1bec09d78f5c17e30fcb7",
+    "vendor/etc/init/nicmd.rc": "b756045f1b044b7f690bd3296fec9e82351cd8afee99ee5af8bdc2f8c1a3f7e3",
+    "vendor/etc/init/NookModemDaemon.rc": "76b89ffb8ed5810e7b319a8d87f5524a7714c01c5b53f98b174a508823228de6",
+    "vendor/etc/init/port-bridge.rc": "724dfc23fc98e926cf951273fa7f5b771c0367890696b9cfa844aa32d0b79881",
+    "vendor/etc/init/poweropt-service.rc": "201af565fe236f42f6e0cf7c60d5a623a7d4e77d0111fda73adf939b95d49666",
+    "vendor/etc/init/qconfig.rc": "8255e1b5388c143c2e87486bb38608e2621b7b35b3fa64637d8d0c317ca305ff",
+    "vendor/etc/init/qcrilNrd.rc": "6a72babfff43e0a7d070038d9d3ec112f71d9c590ce8f6ede9488eb0234f2312",
+    "vendor/etc/init/qdcmss.rc": "7e217b9bf00d8afb0acb693f3f672904dba2c8db26e9130875e0b376d0ed7d12",
+    "vendor/etc/init/qesdk-manager.rc": "b13aa37e3c9ab70daa284da92b4a4bb1fa0971ad0e3356d4ad8ebd11aadee23e",
+    "vendor/etc/init/qesdk-secmanager.rc": "d61c3dba6e54b40a1f8ece5bb91f8b9355dd3830f94337306cb6a8aae5c4059f",
+    "vendor/etc/init/qguard.rc": "16fb8568c38d4f2202d66a0964c766dcd16762f0359ce4866abeea495b2badc8",
+    "vendor/etc/init/qmipriod.debug.rc": "9cfe4dfeb6a9119a8e48a796f40595b56ff00ef5c98c298ef75686b519d5a74f",
+    "vendor/etc/init/qmipriod.rc": "ef06fc1a5bf99043102ddd0e0e3ecc402776462cb32a3df65139afa019ec0792",
+    "vendor/etc/init/qms.rc": "c3a0514170a55d901b47f6957d314606bf68227889164c6ba5aa937be0e35431",
+    "vendor/etc/init/qseecomd.rc": "86e35abcf3522b31f4faba41a957d8501681472d8e63987d00a020e679b6bd86",
+    "vendor/etc/init/qspa_vendor.rc": "f93f96e3f8b4b18bc6d50b7d315295afbd70fc75bdb7da5a0f1d6bdac222d5c6",
+    "vendor/etc/init/qttestservice.rc": "07be43b617a433a6b08472ab9ab5ceee0cbe89a91d8043f5fcc63eeb5aab029a",
+    "vendor/etc/init/qvrd_vndr.rc": "aab2fba32d092170d29bc81e8f04875a5855e95ab3630b61d38280296fd173aa",
+    "vendor/etc/init/qwesd.rc": "54c2dce51cab875409f089db780cdfa26100a76d751da04617230b809298fd74",
+    "vendor/etc/init/shsusrd.rc": "e518d2d4f2e0615e6c763dc8e7b3b00bf7e4aaeb1f96fd4b75841973eaecf35b",
+    "vendor/etc/init/snapdragon_services.rc": "bb76182befc1603fdd6cf2a3a2eb6608fec714f51b2860e47c7161894464df0d",
+    "vendor/etc/init/ssdaemon_vendor.rc": "019ea97a941f3733b02185b491fff2cfe6756dbeb79a3663c478d50d1e1a5046",
+    "vendor/etc/init/ssgtzd.rc": "a47de1559b7b90ff173a1adf346beffd9d90ff45d98b0499312d5f084acc6e2e",
+    "vendor/etc/init/sxrd.rc": "5ef3163bf978b24f127c6279a0719958a6efbac816061902090258c12a7adab6",
+    "vendor/etc/init/tlpd.rc": "d2a3153b8c09ab52eb7d48434ecfb439000990309ec4e4afc80a1f5bd64dfd22",
+    "vendor/etc/init/touchscreen_zte.rc": "147e41330c8c1d461d3dec18ffb728b5cc21dd19c9404cde38b3cc9432a23e36",
+    "vendor/etc/init/trusteduilistener.rc": "2eb2abeda67376b6caa5e9097897b2224cbc9506875fc59b20b93c44ed273f8f",
+    "vendor/etc/init/vendor-ldd-zte.rc": "277cedc0e8579462e81005719f42ba05a0ef96cc18a7910220d2f8b7ed558ed1",
+    "vendor/etc/init/vendor.btaudio_intermediate.btaudiointeraidl-service.rc": "7ea12bdfb071c8bffc3db643a6d71419e18b48e2fc423326883ddc6068f076f9",
+    "vendor/etc/init/vendor.dpmd.rc": "aec9bdfb1184dddbfcb09aea11bb1ebd459d16844f286f7ac01ea1fbf0b83df0",
+    "vendor/etc/init/vendor.qsap.location.rc": "b969a4acb7065fda2421687c93b1ef84be5d3ee9dc68ab89fad8931d4f8786ad",
+    "vendor/etc/init/vendor.qsap.qapeservice.rc": "6dc4dc014d0ec3b4c328375c47c6d82446049647b4e54de138aa7a5bf09cec17",
+    "vendor/etc/init/vendor.qsap.sensors.rc": "a9d1a4f3ea202e27c9f495cf7226c9e44354035a3a001fd497c5aa89f9be2815",
+    "vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc": "e5b4dcd64c444c4974f754acc987447867550d03c3d6d10f8ed452396571cfcc",
+    "vendor/etc/init/vendor.qti.audio-adsprpc-service.rc": "d5c80d2b4e61f05b0186db6fa9c198193bd80db621225ed6bdb8d01847a39f6c",
+    "vendor/etc/init/vendor.qti.camera.provider-service_64.rc": "a0249cd1195128e74626db98d0327cb69eef48cf2b7673a2e437f14bf8f72b96",
+    "vendor/etc/init/vendor.qti.cdsprpc-service.rc": "2649f1760b30a9cb72c826ed9ba7f30589c751480583681f5317dee9d2970865",
+    "vendor/etc/init/vendor.qti.diag.rc": "1c5e71b9d8bc076e1120308fcbad0eb68a00a5223f5b00751d7271888ca8b753",
+    "vendor/etc/init/vendor.qti.hardware.alarm-service.rc": "ceea6590f93c4f44a4d74f43628e56d7ba23107543bea3ebf8a7b9db7cfb7333",
+    "vendor/etc/init/vendor.qti.hardware.c2pa-aidl-service-qti.rc": "dde6837d5abaaea84bb1c6582a15a26b91165874cd0d82c9eda74187a44be651",
+    "vendor/etc/init/vendor.qti.hardware.capabilityconfigstore-service.rc": "e6086e6d1e732a9eb9907405e49455bd302da40f479c8a78510bc008351a869d",
+    "vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc": "5f1d3dbdd7c2ca4ffbcdfd54883f5d6f1b98fe0eed6f0f0c84f67644da828f78",
+    "vendor/etc/init/vendor.qti.hardware.display.color-service.rc": "d59294d8b2deb4266d7cf6531f21b731edd9dfe1e875688acbd49f6078f87ce9",
+    "vendor/etc/init/vendor.qti.hardware.display.composer-service.rc": "c8af863b03729a88b690a6bf5b63ca9c674c05ad051864d629ab85fce4a51b9d",
+    "vendor/etc/init/vendor.qti.hardware.display.demura-service.rc": "7d5e9541a479d156a85772ef419e775271507ab0e082e53da47a6813fb618954",
+    "vendor/etc/init/vendor.qti.hardware.dsp-service.rc": "97405cbf9659b56a8839926b9e2ebfa5f65b04c5b72ea91fd255b4f5c1990b15",
+    "vendor/etc/init/vendor.qti.hardware.lights.service.rc": "dd42446a73e8c12c7945903911c81f84e9193946e0281301be3c98462db58736",
+    "vendor/etc/init/vendor.qti.hardware.minkipcbinder@1.0-service.rc": "02ac533db9d5f093a4f476a831846a21d111e88cd163cee72e9cd7a1e586f902",
+    "vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc": "aeebc7e101a93aadd998704f3a916b43e5309152952222c74dd4f9119a5d8248",
+    "vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc": "ad6c3939dd6b9f7e1e88fe079b1a2b762910fb412cb2de32ed017797c510b9f8",
+    "vendor/etc/init/vendor.qti.hardware.secureprocessor.rc": "9416bc1f9b4e367f7906b6f85be403a8d087e3887a03f46486fc799a599b965a",
+    "vendor/etc/init/vendor.qti.hardware.sensorscalibrate-service.rc": "10da4cae7b86f772ed5f43ac647cfdc9959088e95e7746d17607733f9ff93fbd",
+    "vendor/etc/init/vendor.qti.hardware.servicetrackeraidl-service.rc": "bb49bbaf5043db508e02b6eb5d4e3e83ec28294560b721c47326712abc26f4ee",
+    "vendor/etc/init/vendor.qti.hardware.soter-service.rc": "d9bc16db40606354362157255d44cec29536ebe4eadcff456ba4820da72f3f2d",
+    "vendor/etc/init/vendor.qti.hardware.trustedui-aidl-service-qti.rc": "9c3062cddcced914601be5547a184fb908949ee9eb36a296e2a7bdf67b2af10f",
+    "vendor/etc/init/vendor.qti.hardware.vibrator.service.rc": "d48fe0603984997f5f6f3fef0e84e7a3052068f09cf62a6be6738138304cceaf",
+    "vendor/etc/init/vendor.qti.hardware.wifi.wifilearner-service.rc": "85645559a1929001bf88894d27d8120202bcf310ca6119cd75c74b5589a8fa2e",
+    "vendor/etc/init/vendor.qti.media.c2@1.0-service.rc": "00ceea6cca0d19d5b3d228bc4889c56cd9579ff9fa00dd636bc3a08a21509b4b",
+    "vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc": "f80f9c23fd596e2d4d15d861e1a79992e583eadec0d023c934658ab361f0324d",
+    "vendor/etc/init/vendor.qti.MemHal-service.rc": "ea9c0621ef9db39a40dd746bd750324eb061c24d4b30e4175e83c30ac36ce9cf",
+    "vendor/etc/init/vendor.qti.psiclient@1.0-service.rc": "47068fd1e4c94fa7b8a309db98fc0f76efbe15f2ad95fc367f01479c1ddebac8",
+    "vendor/etc/init/vendor.qti.qspa-service.rc": "41aa77522653070568c5db7740f4bcf46f4eaad63a24fdc4c3075ca150c9205f",
+    "vendor/etc/init/vendor.qti.qspmhal-service.rc": "4ccd2615d141b6a12a2839847b47e94f487cccce214422dbe0eaa65965a5deeb",
+    "vendor/etc/init/vendor.qti.rmt_storage.rc": "e43198fb1fbdac63e8439d1445d9068d5a2c168a7daeb8683c3168e1155d0169",
+    "vendor/etc/init/vendor.qti.smp2p.rc": "3c304524d7961f9690062b97fc8c4ef11ce7278055f7ae509f2ca502abc72656",
+    "vendor/etc/init/vendor.qti.syshealthmon-service.rc": "77c8c4584347844aa86853a3c142b6c4efcfba7140a9cf8a783a02bf4d836586",
+    "vendor/etc/init/vendor.qti.tftp.rc": "07f8714fea9616c2ae240ee120117b8b12a94770a3f6e1102d3c5c22e402a833",
+    "vendor/etc/init/vendor.sensors.qti.rc": "1800f5377680afb37e9e210484b59daec0dc2ea4cbab1f7daca5bedea7a656e9",
+    "vendor/etc/init/vendor.sensors.sscrpcd.rc": "bf9deea8f93f0ce06a5aa5f00d4f6ed292de8224bca06c51d006efd88701de3f",
+    "vendor/etc/init/vendor.zte.fingerprint.ifaaaidl-service.rc": "442a1f68392726fc755f1b4af7180a6f5d6c246f3f922e731ad8370a612d37f5",
+    "vendor/etc/init/vendor.zte.fingerprint.ztecmdaidl-service.rc": "f5e204affc773094193e2246bfe7d487188f2a09db6d1130b9ff071b5b4ced93",
+    "vendor/etc/init/vendor.zte.hardware.laser2-service.rc": "2b3fc52cc4066d9b0156ffc2f6dd3224fef7adc54b8639c137efba9317425360",
+    "vendor/etc/init/vendorapdpswitch.rc": "2b26c7134ecc51dfe35b44fd608acde338c6595122e458605b22fb823b134a47",
+    "vendor/etc/init/vmmgr.rc": "c109872823dcc029e10e3eb42aa88421c99b31eadc58cad780bd3578a7c2462d",
+    "vendor/etc/init/vndservicemanager.rc": "6fe6a33e67975bda8690e6fe568d66d3c29a528ba8bd9e8b386f5ec014eded38",
+    "vendor/etc/init/vppservice.rc": "5e6a1fc089d9e106487ac8c159c47d46aa825797870d84d47b0057e10f4076db",
+    "vendor/etc/init/wfdvndservice.rc": "5e689f961b5d0c0ee4b36e29d751dd374920699492f740736e325d04fa7bf630",
+    "vendor/etc/init/wifi_sniffer.rc": "22e4d58b55946893ddeb68dc63311bdb2a5d3075fb55076e1a3db9b9816948d7",
+    "vendor/etc/init/xrcommservice.rc": "ae435dd0cd202afd6475a68ab6e1e06553ddc933d69f1890609b8f22b1b7ae88",
+    "vendor/etc/init/zcustom.rc": "a45f253738bfef0df7174d196def61d40cbd292068ea6adb591612f2dc5e62d6",
+    "vendor/etc/init/zte_ldd_test.rc": "21e10fa475cd3fe0d7d3d2f33d51a86b1f20960107351aa38bf19bc4deb8fbe0",
+    "vendor/etc/init/ztevendordiag.rc": "2ecde73b1503feb9b734d4b16692e6e6e22c68a0a43c4d9f73d304ecb44a98b7"
+  },
+  "external_service_declarations": [
+    {
+      "file": "vendor/etc/init/hw/init.qcom.factory.rc",
+      "line": 30,
+      "service": "fastmmi",
+      "executable": "/system_ext/bin/mmi",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "user",
+          "root"
+        ],
+        [
+          "group",
+          "root"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.factory.rc",
+      "line": 40,
+      "service": "mmi_diag",
+      "executable": "/system_ext/bin/mmi_diag",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "group",
+          "root",
+          "oem_2901"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 847,
+      "service": "qmiproxy",
+      "executable": "/system/bin/qmiproxy",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "user",
+          "radio"
+        ],
+        [
+          "group",
+          "radio",
+          "diag"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 869,
+      "service": "vendor.move_wifi_data",
+      "executable": "/system/bin/move_wifi_data.sh",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "user",
+          "wifi"
+        ],
+        [
+          "group",
+          "wifi"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 895,
+      "service": "dhcpcd_wlan0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 900,
+      "service": "dhcpcd_bond0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 905,
+      "service": "dhcpcd_p2p",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 910,
+      "service": "dhcpcd_wigig0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 915,
+      "service": "iprenew_wlan0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 920,
+      "service": "iprenew_bond0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 925,
+      "service": "iprenew_p2p",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 930,
+      "service": "iprenew_wigig0",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 968,
+      "service": "dhcpcd_bt-pan",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 973,
+      "service": "iprenew_bt-pan",
+      "executable": "/system/bin/dhcpcd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1013,
+      "service": "qti-testscripts",
+      "executable": "/system/bin/sh",
+      "literal_external_arguments": [
+        "/product/etc/init.qcom.testscripts.sh"
+      ],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1057,
+      "service": "battery_monitor",
+      "executable": "/system/bin/battery_monitor",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "user",
+          "system"
+        ],
+        [
+          "group",
+          "system"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1076,
+      "service": "profiler_daemon",
+      "executable": "/system/bin/profiler_daemon",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "group",
+          "root"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1102,
+      "service": "qlogd",
+      "executable": "/system/xbin/qlogd",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1209,
+      "service": "bugreport",
+      "executable": "/system/bin/dumpstate",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1215,
+      "service": "bugreport_clean",
+      "executable": "/system/bin/dumpstate",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.rc",
+      "line": 327,
+      "service": "diag_socket_log",
+      "executable": "/system/bin/diag_socket_log.sh",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "user",
+          "root"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.rc",
+      "line": 568,
+      "service": "shutdownanim",
+      "executable": "/system/bin/bootanimation",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "core",
+          "animation"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "group",
+          "root",
+          "graphics",
+          "audio",
+          "system"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.rc",
+      "line": 614,
+      "service": "tcpip_attach",
+      "executable": "/system_ext/bin/tcpip_attach_detach",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.rc",
+      "line": 620,
+      "service": "tcpip_dettach",
+      "executable": "/system_ext/bin/tcpip_attach_detach",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.rc",
+      "line": 626,
+      "service": "tcpcat_poll",
+      "executable": "/system_ext/bin/tcpcat",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.usb.rc",
+      "line": 37,
+      "service": "repeater_tune",
+      "executable": "/system/bin/init.vendor.usb.sh",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "core"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "oneshot"
+        ],
+        [
+          "group",
+          "shell",
+          "system",
+          "usb"
+        ],
+        [
+          "disabled"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/hw/init.vendor.usb.rc",
+      "line": 45,
+      "service": "usbconfig",
+      "executable": "/system/bin/usbconfig",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "main"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "oneshot"
+        ]
+      ]
+    },
+    {
+      "file": "vendor/etc/init/init.fingerprint.alipay.rc",
+      "line": 10,
+      "service": "alikey",
+      "executable": "/system/bin/alikey_client",
+      "literal_external_arguments": [],
+      "options": [
+        [
+          "class",
+          "late_start"
+        ],
+        [
+          "disabled"
+        ],
+        [
+          "oneshot"
+        ],
+        [
+          "user",
+          "root"
+        ],
+        [
+          "group",
+          "system"
+        ]
+      ]
+    }
+  ],
+  "system_vendor_alias_declarations": [
+    {
+      "file": "vendor/etc/init/cnd.rc",
+      "line": 1,
+      "service": "vendor.cnd",
+      "executable": "/system/vendor/bin/cnd",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/dataadpl.rc",
+      "line": 8,
+      "service": "vendor.dataadpl",
+      "executable": "/system/vendor/bin/adpl",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/dataqti.rc",
+      "line": 14,
+      "service": "vendor.dataqti",
+      "executable": "/system/vendor/bin/qti",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/dlsc.rc",
+      "line": 11,
+      "service": "vendor.dlsc",
+      "executable": "/system/vendor/bin/dlsc",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 688,
+      "service": "nqnfcinfo",
+      "executable": "/system/vendor/bin/nqnfcinfo",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 694,
+      "service": "iop",
+      "executable": "/system/vendor/bin/iop",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 701,
+      "service": "qcomsysd",
+      "executable": "/system/vendor/bin/qcom-system-daemon",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 717,
+      "service": "vendor.ssr_setup",
+      "executable": "/system/vendor/bin/ssr_setup",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 721,
+      "service": "vendor.ss_ramdump",
+      "executable": "/system/vendor/bin/subsystem_ramdump",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 935,
+      "service": "ptt_socket_app",
+      "executable": "/system/vendor/bin/ptt_socket_app",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 942,
+      "service": "ptt_ffbm",
+      "executable": "/system/vendor/bin/ptt_socket_app",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 948,
+      "service": "wifi_ftmd",
+      "executable": "/system/vendor/bin/wifi_ftmd",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 958,
+      "service": "cnss-daemon",
+      "executable": "/system/vendor/bin/cnss-daemon",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 990,
+      "service": "loc_launcher",
+      "executable": "/system/vendor/bin/loc_launcher",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1082,
+      "service": "vendor.ssr_diag",
+      "executable": "/system/vendor/bin/ssr_diag",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1088,
+      "service": "diag_mdlog_start",
+      "executable": "/system/vendor/bin/diag_mdlog",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1095,
+      "service": "diag_mdlog_stop",
+      "executable": "/system/vendor/bin/diag_mdlog",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1150,
+      "service": "qseeproxydaemon",
+      "executable": "/system/vendor/bin/qseeproxydaemon",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1155,
+      "service": "esepmdaemon",
+      "executable": "/system/vendor/bin/esepmdaemon",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.qcom.rc",
+      "line": 1165,
+      "service": "poweroffhandler",
+      "executable": "/system/vendor/bin/poweroffhandler",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/hw/init.target.rc",
+      "line": 204,
+      "service": "vendor.cnss_diag",
+      "executable": "/system/vendor/bin/cnss_diag",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/init.qccvendor.rc",
+      "line": 17,
+      "service": "vendor.qcc-vendor",
+      "executable": "/system/vendor/bin/qcc-vendor",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/ipacm-diag.rc",
+      "line": 12,
+      "service": "vendor.ipacm-diag",
+      "executable": "/system/vendor/bin/ipacm-diag",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/ipacm.rc",
+      "line": 28,
+      "service": "vendor.ipacm",
+      "executable": "/system/vendor/bin/ipacm",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/nicmd.rc",
+      "line": 23,
+      "service": "vendor.nicmd",
+      "executable": "/system/vendor/bin/nicmd",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/port-bridge.rc",
+      "line": 16,
+      "service": "vendor.port-bridge",
+      "executable": "/system/vendor/bin/port-bridge",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/qmipriod.rc",
+      "line": 5,
+      "service": "vendor.qmipriod",
+      "executable": "/system/vendor/bin/qmipriod",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/shsusrd.rc",
+      "line": 19,
+      "service": "vendor.shsusrd",
+      "executable": "/system/vendor/bin/shsusrd",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/tlpd.rc",
+      "line": 14,
+      "service": "vendor.tlpd",
+      "executable": "/system/vendor/bin/tlpd",
+      "classification": "requires /system/vendor alias; not assumed external"
+    },
+    {
+      "file": "vendor/etc/init/vendor.qti.hardware.wifi.wifilearner-service.rc",
+      "line": 7,
+      "service": "vendor.wifilearner",
+      "executable": "/system/vendor/bin/wifilearner",
+      "classification": "requires /system/vendor alias; not assumed external"
+    }
+  ],
+  "parse_limits_or_errors": [],
+  "limits": [
+    "Declarations do not prove active imports or actual service execution",
+    "Duplicate names and overrides require separate resolution",
+    "Only selected options retained; not a complete Android init parser",
+    "No package selected for installation; no hardware subsystem ported"
+  ]
+}

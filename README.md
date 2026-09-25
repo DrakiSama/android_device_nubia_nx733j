@@ -1,8 +1,8 @@
 # Nubia NX733J — base de dispositivo Android
 
 Base NX733J independiente de TWRP, orientada a AOSP y derivados.
-El scaffold actual sigue siendo LineageOS `lineage-23.2`; su separación genérica
-está pendiente. Estado vigente: [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
+La capa genérica `nx733j.mk` está separada del wrapper LineageOS `lineage-23.2`;
+la única entrada de producto registrada sigue siendo la de Lineage. Estado vigente: [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
 **No es todavía un árbol compilable ni un producto flasheable.**
 La inclusión obligatoria de BoardConfigBringup.mk mantiene bloqueada la
 compilación hasta resolver las decisiones pendientes. No se debe sustituir por
@@ -101,3 +101,8 @@ verificación de hashes. GitHub contiene la herramienta y el informe, sin binari
 No se ejecutaron builds ni pruebas de la ROM durante esta tanda. Los cambios de
 BoardConfig conservan el bloqueo deliberado; no existe todavía una imagen ROM
 validada para instalar.
+
+El [perfil inicial de compilación](docs/BUILD-PROFILE.md) conserva imágenes stock B
+de vendor/odm/DLKM con identidades comprobadas. Sigue sin activar OTA ni build;
+las [referencias externas de init](docs/PRESERVED-VENDOR-DEPENDENCIES.md) se revisan
+antes de seleccionar dependencias para las particiones reconstruidas.

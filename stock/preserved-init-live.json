@@ -1,0 +1,135 @@
+{
+  "captured_utc": "2026-09-25T04:07:15.929432+00:00",
+  "slot": "_b",
+  "same_boot_during_capture": true,
+  "references_sha256_lf": "8b069b54df922641cdcd8458156b3df6b83a470253081888437e9452925b73e0",
+  "transport": "adb shell -T with remote exit codes and validated output",
+  "system_vendor_symlink_target": "/vendor",
+  "service_states": {
+    "alikey": null,
+    "battery_monitor": null,
+    "bugreport": null,
+    "bugreport_clean": null,
+    "dhcpcd_bond0": null,
+    "dhcpcd_bt-pan": null,
+    "dhcpcd_p2p": null,
+    "dhcpcd_wigig0": null,
+    "dhcpcd_wlan0": null,
+    "diag_socket_log": null,
+    "fastmmi": null,
+    "iprenew_bond0": null,
+    "iprenew_bt-pan": null,
+    "iprenew_p2p": null,
+    "iprenew_wigig0": null,
+    "iprenew_wlan0": null,
+    "mmi_diag": null,
+    "profiler_daemon": null,
+    "qlogd": null,
+    "qmiproxy": null,
+    "qti-testscripts": null,
+    "repeater_tune": "stopped",
+    "shutdownanim": null,
+    "tcpcat_poll": null,
+    "tcpip_attach": null,
+    "tcpip_dettach": null,
+    "usbconfig": "stopped",
+    "vendor.move_wifi_data": null
+  },
+  "path_observations": {
+    "/product/etc/init.qcom.testscripts.sh": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/alikey_client": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/battery_monitor": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/bootanimation": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/bin/dhcpcd": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/diag_socket_log.sh": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/bin/dumpstate": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/bin/init.vendor.usb.sh": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/bin/move_wifi_data.sh": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/profiler_daemon": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/qmiproxy": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system/bin/sh": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/bin/usbconfig": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system/xbin/qlogd": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system_ext/bin/mmi": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system_ext/bin/mmi_diag": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    },
+    "/system_ext/bin/tcpcat": {
+      "stat_succeeded": true,
+      "remote_exit_code": 0,
+      "file_type": "regular file"
+    },
+    "/system_ext/bin/tcpip_attach_detach": {
+      "stat_succeeded": false,
+      "remote_exit_code": 1,
+      "file_type": null
+    }
+  },
+  "limits": [
+    "Service-name state does not identify a particular duplicate/override declaration",
+    "Missing state or failed stat is not proof a component is unnecessary for ROM",
+    "No service started/stopped; no file contents read"
+  ]
+}

@@ -27,6 +27,7 @@ que impide habilitar el siguiente paso.
 | Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
 | Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; imágenes completas identificadas, integración y dependencias pendientes |
 | AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Perfil inicial sin OTA; claves, rollback y aceptación aún abiertos |
+| Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | Resolver imports y necesidad; no se aprobaron blobs nuevos |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
 | Build mínimo | BLOCKED | BoardConfigBringup.mk ausente deliberadamente | BoardConfig | Kernel, ramdisk, AVB, vendor, VINTF y SELinux incompletos |
 | Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
@@ -53,3 +54,6 @@ No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos
 - [Contrato kernel](KERNEL-PROVIDER.md), [paquete privado](KERNEL-PROVIDER-PACKAGE.md).
 - [Contenido ramdisk / fstab](VENDOR-RAMDISK-LAYOUT.md), [carga normal](RAMDISK-LOAD-AUDIT.md).
 - [CRC entre módulos](MODULE-EXPORT-CRC.md), [auditoría boot histórica corregida](BOOT-AUDIT.md).
+
+[Dependencias del vendor conservado](PRESERVED-VENDOR-DEPENDENCIES.md) y
+[capas de producto](PRODUCT-LAYERS.md).
