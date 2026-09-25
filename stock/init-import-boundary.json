@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "device": "NX733J",
+  "date": "2026-09-25",
+  "stock_properties": {
+    "ro.boot.init_rc": "",
+    "ro.hardware": "qcom",
+    "ro.zygote": "zygote64"
+  },
+  "stock_main": {
+    "sha256": "64e4c88c01a705116b834deb026cf6f3b86c482c58ec76e6b38c43bfb17ec0a7",
+    "imports": [
+      {
+        "line": 7,
+        "path": "/init.environ.rc"
+      },
+      {
+        "line": 8,
+        "path": "/system/etc/init/hw/init.usb.rc"
+      },
+      {
+        "line": 9,
+        "path": "/init.${ro.hardware}.rc"
+      },
+      {
+        "line": 10,
+        "path": "/vendor/etc/init/hw/init.${ro.hardware}.rc"
+      },
+      {
+        "line": 11,
+        "path": "/system/etc/init/hw/init.usb.configfs.rc"
+      },
+      {
+        "line": 12,
+        "path": "/system/etc/init/hw/init.${ro.zygote}.rc"
+      },
+      {
+        "line": 13,
+        "path": "/vendor/etc/init/hw/init.vendor.rc"
+      },
+      {
+        "line": 474,
+        "path": "/system/etc/init/hw/init.boringssl.${ro.zygote}.rc"
+      }
+    ]
+  },
+  "rom_main": {
+    "sha256": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b",
+    "imports": [
+      {
+        "line": 7,
+        "path": "/init.environ.rc"
+      },
+      {
+        "line": 8,
+        "path": "/system/etc/init/hw/init.usb.rc"
+      },
+      {
+        "line": 9,
+        "path": "/init.${ro.hardware}.rc"
+      },
+      {
+        "line": 10,
+        "path": "/vendor/etc/init/hw/init.${ro.hardware}.rc"
+      },
+      {
+        "line": 11,
+        "path": "/system/etc/init/hw/init.usb.configfs.rc"
+      },
+      {
+        "line": 12,
+        "path": "/system/etc/init/hw/init.${ro.zygote}.rc"
+      },
+      {
+        "line": 511,
+        "path": "/system/etc/init/hw/init.boringssl.${ro.zygote}.rc"
+      }
+    ]
+  },
+  "stock_only_main_imports": [
+    "/vendor/etc/init/hw/init.vendor.rc"
+  ],
+  "vendor_rc_imports_of_init_vendor": [],
+  "source_hashes": {
+    "init/init.cpp": "8fc39a08452ecfd8df09c3c27e91fb02245304202b94d33aa034d965eb15a416",
+    "init/parser.cpp": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
+    "rootdir/init.rc": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b"
+  },
+  "limits": [
+    "Main imports and vendor/etc/init scanned; not a complete device-wide import graph",
+    "ROM code is reference, not proof of identical OEM init behavior",
+    "No import added and no OEM script installed"
+  ]
+}

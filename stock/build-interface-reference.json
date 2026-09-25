@@ -33,7 +33,10 @@
     "working_tree_state": "exact inspected file hashes recorded; source commit also used in ramdisk load audit",
     "files": {
       "init/first_stage_mount.cpp": "e3b56971771e9f50dff1b01f52cf1433574945ed4e00847060325e4c0b3328a3",
-      "fs_mgr/fs_mgr.cpp": "494f4a6963543fb837a2a7902532a929a14cdc7ac8d9a9cc8612129b0f042a12"
+      "fs_mgr/fs_mgr.cpp": "494f4a6963543fb837a2a7902532a929a14cdc7ac8d9a9cc8612129b0f042a12",
+      "init/init.cpp": "8fc39a08452ecfd8df09c3c27e91fb02245304202b94d33aa034d965eb15a416",
+      "init/parser.cpp": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
+      "rootdir/init.rc": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b"
     }
   }
 }

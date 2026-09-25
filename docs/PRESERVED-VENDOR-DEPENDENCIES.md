@@ -61,3 +61,28 @@ python tools/capture_preserved_init_state.py <informe.json> <captura-nueva.json>
 
 La primera herramienta no sigue symlinks rc. Ambas rechazan destinos existentes.
 La segunda consulta sólo estados y metadatos de las rutas seleccionadas.
+
+## Diferencia detectada al comparar init principal
+
+[Metadatos y hashes](../stock/init-import-boundary.json).
+
+| Archivo / sección | Problema | Evidencia | Siguiente acción |
+| --- | --- | --- | --- |
+| init.rc stock:13 frente a rootdir/init.rc ROM | Stock importa /vendor/etc/init/hw/init.vendor.rc; ROM no | Comparación literal; ro.boot.init_rc vacío y ro.hardware=qcom observados | Revisar acciones necesarias antes de añadir un enlace o portarlas |
+| init/parser.cpp:159–182 | ParseConfigDir no recorre subdirectorios | Sólo procesa DT_REG del directorio solicitado | No asumir que escanear /vendor/etc/init carga su subdirectorio hw |
+
+No se encontró otra importación literal de init.vendor.rc en los 154 rc vendor
+escaneados. El init ROM también examina system, system_ext, odm y product; no se
+ha cerrado todo ese grafo ni los imports dinámicos. La ausencia de otra ruta
+no se afirma globalmente.
+
+El init principal ROM sí mantiene la importación de init.${ro.hardware}.rc en
+vendor. El init.qcom.rc stock enlaza init.vendor.usb.rc y otros archivos, pero
+eso no sustituye el enlace separado de init.vendor.rc. Tampoco permite concluir
+que todo el contenido OEM de ese archivo sea necesario para la ROM.
+
+**Se detuvo la activación del perfil ante esta diferencia**, conforme a la regla
+del proyecto. No se añadió un import indiscriminado ni se ejecutaron acciones
+OEM. Siguiente objetivo: clasificar acciones tempranas y referencias imprescindibles
+de init.vendor.rc frente a lo que ya proporciona init ROM, con foco en montajes,
+permisos y arranque de ADB; luego revisar la propuesta antes de conectarla.
