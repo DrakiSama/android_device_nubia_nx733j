@@ -40,7 +40,7 @@ Las acciones de init.vendor.rc quedaron clasificadas: no se añadirá un import
 global ni concat_props_zte al init ROM. La propiedad de nombre USB ya existe
 en vendor/build.prop. La revisión USB encontró acciones OEM/ROM superpuestas y
 la rama OEM que explica RNDIS. La captura root corrige los vacíos de shell. Siguiente:
-cerrar backend/APEX adbd y permisos de propiedades antes de integrar
+integrar explícitamente el perfil de imágenes preservadas con producto/proveedor antes de habilitar
 prebuilts, ramdisk y AVB. Los dos rc USB del sistema coinciden con ROM; vendor
 ya define el montaje FunctionFS; adbd ROM y su acceso SELinux básico están trazados. La superposición no prueba un defecto del port. Véase [frontera USB](USB-INIT-BOUNDARY.md).
 La identidad diferente de pvmfw A/B impide tratar ambos slots como firmware
@@ -64,3 +64,6 @@ No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos
 [capas de producto](PRODUCT-LAYERS.md).
 
 [Decisiones de port de init OEM](OEM-INIT-PORT-DECISIONS.md).
+
+[Contrato ADB del producto](ADB-PRODUCT-CONTRACT.md): provisión, backend y
+permisos de ffs.ready trazados; orden efectivo y política combinada pendientes.

@@ -1,0 +1,20 @@
+{
+  "captured_utc": "2026-09-25T16:13:26.232119+00:00",
+  "scope": "Static local source, not evaluated product configuration or compiled SELinux",
+  "sha256": {
+    "build/make/target/product/full_base_telephony.mk": "e95a12f220c2c1400d128209bd20751408edd8db3414b66f41d530bf3cce72f0",
+    "build/make/target/product/aosp_base.mk": "4dc3562de185c9aad5581b35f644d939205c56c0613760b1c1b1cdefb901e5ee",
+    "build/make/target/product/full_base.mk": "7e344dd59bc0e033740a7d45d93131e6c2804396b6c7c1f0141e74f51350c287",
+    "build/make/target/product/generic_no_telephony.mk": "34749a2faaea40ad322afa0f602e2ed8dcbae53697119b6a738128a10ed3e570",
+    "build/make/target/product/handheld_system.mk": "15e74c1527d8d12a94a965fe349e67dc534b0f97b754b574844e245eefec30cd",
+    "build/make/target/product/media_system.mk": "aa44daade7e967998c7a261768128978c9e96f304658170d5a21bf1df7d075ec",
+    "build/make/target/product/base_system.mk": "25d0e80cba3ad3244788c2f274c320adaf63d10f49745136babae54c8671dc09",
+    "packages/modules/adb/Android.bp": "7793780b136c101f990080e3264f6dc0955f5ee46e5106d500182755df354162",
+    "packages/modules/adb/apex/Android.bp": "0f2cafa8c2f20d900ddbc8e995618e44f1eda6a3eac187b29e5b9227fb9f849a",
+    "packages/modules/adb/daemon/main.cpp": "c63bb42afeeb092a7ad0da7970e653d53f48700dda7e4f7f21c47d1e1a5d381a",
+    "system/sepolicy/private/adbd.te": "8215b91e9f78af18c975763b603c9760183370df0a899ddf1a168a22d60ab0b0",
+    "system/sepolicy/private/property_contexts": "2de4fccf182796e506396e31cddf640bd0d7e3f84532b843fac854204f1894d3",
+    "system/core/rootdir/init.rc": "6c75c2c35dc558f523e57b39b4dfefebd9d8c7aa137871caf83846205eae592b",
+    "system/core/rootdir/init.usb.rc": "b42a64eab42cdb0cbdce037348696b5169e50007109d3dca32acbbcebbb6c4c5"
+  }
+}
