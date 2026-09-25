@@ -1,0 +1,176 @@
+{
+  "captured_utc": "2026-09-25T15:57:44.858001+00:00",
+  "scope": "Read-only USB snapshot; stock rooted phone, not ROM validation",
+  "same_boot": true,
+  "properties": {
+    "ro.product.device": "PQ84A01",
+    "ro.product.model": "NX733J",
+    "ro.build.fingerprint": "nubia/PQ84A01-UN/PQ84A01:16/BQ2A.250705.001-BP2A.250605.031.A3/20260210.135030:user/release-keys",
+    "ro.boot.slot_suffix": "_b",
+    "ro.boot.usbcontroller": "a600000.dwc3",
+    "vendor.usb.controller": "",
+    "sys.usb.controller": "a600000.dwc3",
+    "sys.usb.config": "rndis,none,adb",
+    "sys.usb.state": "rndis,adb",
+    "sys.usb.configfs": "1",
+    "sys.usb.ffs.ready": "",
+    "vendor.usb.use_ffs_mtp": "",
+    "persist.vendor.usb.config": "",
+    "init.svc.adbd": "running"
+  },
+  "g1_udc": "a600000.dwc3",
+  "g1_function_links": "lrwxrwxrwx 1 root root 0 2026-09-25 12:51 /config/usb_gadget/g1/configs/b.1/f1 -> ../../../../usb_gadget/g1/functions/gsi.rndis\nlrwxrwxrwx 1 root root 0 2026-09-25 12:51 /config/usb_gadget/g1/configs/b.1/f2 -> ../../../../usb_gadget/g1/functions/ffs.adb",
+  "sources": {
+    "vendor/etc/init/hw/init.qcom.usb.rc": {
+      "sha256": "4e48acef486d92dbdb2ff9b7f3f417ac4694fe4f6b5bb10c3003983a10724064",
+      "excerpts": [
+        {
+          "first_line": 174,
+          "last_line": 190,
+          "lines": [
+            "    mount functionfs diag_mdm2 /dev/ffs-diag-2 uid=2000,gid=1000,rmode=0770,fmode=0660,no_disconnect=1",
+            "    setprop sys.usb.mtp.device_type 3",
+            "",
+            "    exec u:r:vendor_qti_init_shell:s0 - system usb -- /vendor/bin/init.qcom.usb.sh",
+            "    write /config/usb_gadget/g1/strings/0x409/product ${ro.vendor.product.ztename}",
+            "    write /config/usb_gadget/g2/strings/0x409/product ${ro.vendor.product.ztename}",
+            "",
+            "on zygote-start && property:vendor.usb.use_ffs_mtp=1",
+            "   mkdir /config/usb_gadget/g1/functions/ffs.mtp 0770 system usb",
+            "   mkdir /config/usb_gadget/g1/functions/ffs.ptp 0770 system usb",
+            "   mkdir /dev/usb-ffs/mtp 0770 mtp mtp",
+            "   mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1",
+            "   mkdir /dev/usb-ffs/ptp 0770 mtp mtp",
+            "   mount functionfs ptp /dev/usb-ffs/ptp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1",
+            "",
+            "on boot",
+            "    setprop sys.usb.config ${persist.vendor.usb.config}"
+          ]
+        },
+        {
+          "first_line": 1765,
+          "last_line": 1768,
+          "lines": [
+            "on property:sys.usb.config=mtp,adb && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1",
+            "    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2",
+            "    symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1"
+          ]
+        }
+      ],
+      "live_sha256": "4e48acef486d92dbdb2ff9b7f3f417ac4694fe4f6b5bb10c3003983a10724064",
+      "live_matches_local": true
+    },
+    "vendor/etc/init/hw/init.vendor.usb.rc": {
+      "sha256": "e0ac631c6543c264a2cb7328e7a8b0d4f9b909ae2a5c7d2ba876a54b5584a0a7",
+      "excerpts": [
+        {
+          "first_line": 354,
+          "last_line": 385,
+          "lines": [
+            "on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1",
+            "    start adbd",
+            "",
+            "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:vendor.usb.use_ffs_mtp=0 && property:sys.usb.configfs=1",
+            "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"mtp_adb\"",
+            "    rm /config/usb_gadget/g1/configs/b.1/f1",
+            "    rm /config/usb_gadget/g1/configs/b.1/f2",
+            "    rm /config/usb_gadget/g1/configs/b.1/f3",
+            "    rm /config/usb_gadget/g1/configs/b.1/f4",
+            "    rm /config/usb_gadget/g1/configs/b.1/f5",
+            "    write /config/usb_gadget/g1/idVendor 0x19d2",
+            "    write /config/usb_gadget/g1/idProduct 0x0306",
+            "    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2",
+            "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}",
+            "    setprop sys.usb.state ${sys.usb.config}",
+            "",
+            "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1",
+            "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"mtp_adb\"",
+            "    rm /config/usb_gadget/g1/configs/b.1/f1",
+            "    rm /config/usb_gadget/g1/configs/b.1/f2",
+            "    rm /config/usb_gadget/g1/configs/b.1/f3",
+            "    rm /config/usb_gadget/g1/configs/b.1/f4",
+            "    rm /config/usb_gadget/g1/configs/b.1/f5",
+            "    symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1",
+            "    write /config/usb_gadget/g1/idVendor 0x19d2",
+            "    write /config/usb_gadget/g1/idProduct 0x0306",
+            "    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2",
+            "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}",
+            "    setprop sys.usb.state ${sys.usb.config}",
+            ""
+          ]
+        },
+        {
+          "first_line": 445,
+          "last_line": 461,
+          "lines": [
+            "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1",
+            "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"charging_adb\"",
+            "    rm /config/usb_gadget/g1/configs/b.1/f1",
+            "    rm /config/usb_gadget/g1/configs/b.1/f2",
+            "    rm /config/usb_gadget/g1/configs/b.1/f3",
+            "    rm /config/usb_gadget/g1/configs/b.1/f4",
+            "    rm /config/usb_gadget/g1/configs/b.1/f5",
+            "    rm /config/usb_gadget/g1/configs/b.1/f6",
+            "    rm /config/usb_gadget/g1/configs/b.1/f7",
+            "    rm /config/usb_gadget/g1/configs/b.1/f8",
+            "    rm /config/usb_gadget/g1/configs/b.1/f9",
+            "    symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1",
+            "    write /config/usb_gadget/g1/idVendor 0x19d2",
+            "    write /config/usb_gadget/g1/idProduct 0x1352",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1",
+            "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}",
+            "    setprop sys.usb.state charging,adb"
+          ]
+        }
+      ],
+      "live_sha256": "e0ac631c6543c264a2cb7328e7a8b0d4f9b909ae2a5c7d2ba876a54b5584a0a7",
+      "live_matches_local": true
+    },
+    "system/core/rootdir/init.usb.configfs.rc": {
+      "sha256": "1384154db54fe5a8b3fb62f9c8e9c6732c379066c941364c25d853ac55aa994b",
+      "excerpts": [
+        {
+          "first_line": 14,
+          "last_line": 23,
+          "lines": [
+            "on property:init.svc.adbd=stopped",
+            "    setprop sys.usb.ffs.ready 0",
+            "",
+            "on property:sys.usb.config=adb && property:sys.usb.configfs=1",
+            "    start adbd",
+            "",
+            "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1",
+            "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"adb\"",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1",
+            "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}"
+          ]
+        },
+        {
+          "first_line": 31,
+          "last_line": 40,
+          "lines": [
+            "",
+            "on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1",
+            "    start adbd",
+            "",
+            "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1",
+            "    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration \"mtp_adb\"",
+            "    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1",
+            "    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2",
+            "    write /config/usb_gadget/g1/UDC ${sys.usb.controller}",
+            "    setprop sys.usb.state ${sys.usb.config}"
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Properties queried sequentially; same boot does not guarantee unchanged USB composition.",
+    "No mode switch, init action execution, service restart, build or flash.",
+    "Matching vendor files do not prove which runtime component configured USB.",
+    "Empty getprop output does not distinguish absent from empty property."
+  ]
+}
