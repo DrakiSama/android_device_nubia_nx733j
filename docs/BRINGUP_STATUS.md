@@ -25,17 +25,18 @@ que impide habilitar el siguiente paso.
 | Fstab ROM | PARTIAL | 25 entradas, 14 tempranas; semántica emmc/formattable revisada | Stock y código init/fs_mgr | Sigue como referencia; no instalado en producto |
 | Proveedor kernel | PARTIAL | 715 payloads privados comprobados; contrato definido | Capturas stock | Falta adaptador consumido por el build |
 | Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
-| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; faltan imágenes completas privadas y dependencias |
+| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; imágenes completas identificadas, integración y dependencias pendientes |
 | AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Perfil inicial sin OTA; claves, rollback y aceptación aún abiertos |
-| Producto genérico | PARTIAL | Scaffold aún con entrada Lineage | Repo | Separar adaptación del producto cuando se cierre la base |
+| Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
 | Build mínimo | BLOCKED | BoardConfigBringup.mk ausente deliberadamente | BoardConfig | Kernel, ramdisk, AVB, vendor, VINTF y SELinux incompletos |
 | Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
 
 ## Siguiente objetivo concreto
 
 El [perfil inicial](BUILD-PROFILE.md) define qué se reconstruye y qué se conserva.
-Siguiente: preparar manifiesto de imágenes completas privadas vendor/odm/DLKM y
-separar sus dependencias hacia system_ext/product; después conectar ramdisk y AVB.
+Imágenes completas vendor/odm/DLKM contrastadas con super y descriptores AVB.
+Siguiente: conectar sus rutas privadas mediante un adaptador y resolver las
+dependencias seleccionadas hacia system_ext/product; después conectar ramdisk y AVB.
 La identidad diferente de pvmfw A/B impide tratar ambos slots como firmware
 intercambiable. Las claves y firmware OEM no se heredan como política de firma ROM.
 

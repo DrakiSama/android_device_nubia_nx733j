@@ -54,3 +54,33 @@ reconstruya esas particiones; no fuerzan por sí solos esta decisión.
 No se generaron imágenes ROM ni se ejecutaron pruebas de compilación. Este archivo
 fija el alcance inicial y permite sustituir el proveedor kernel o adoptar otro
 perfil más adelante sin convertir las decisiones stock en reglas universales.
+
+## Identidad de imágenes completas cerrada
+
+[Informe](../stock/preserved-images-audit.json): las cuatro imágenes existentes
+coinciden por SHA-256 con sus extents de super B. Se comprobaron nuevamente los
+bytes de metadatos primario/backup usados para leer el mapa. Cada imagen tiene
+footer al final y su descriptor hashtree interno coincide con el del vbmeta B.
+No se volvieron a copiar imágenes ni se publicó ningún binario. FEC sigue pendiente.
+
+El contrato JSON registra tamaños, hashes completos y hashes de descriptores.
+Las rutas absolutas están únicamente en el mapa local privado. Falta conectar
+esas rutas a un adaptador y comprobar su uso en target_files/AVB; identidad de
+entrada no equivale a integración compilada.
+
+```text
+python tools/audit_preserved_images.py <avbtool.py> <super.img> stock/edl-audit-2026-09-23/super-metadata-audit.json <mapa-privado.json> <vbmeta_b.img> <informe-nuevo.json>
+```
+
+El mapa privado tiene cuatro claves: vendor, odm, vendor_dlkm y system_dlkm;
+sus valores son rutas locales a las imágenes completas.
+
+### Diferencia respecto al inventario para reconstruir vendor
+
+La clasificación histórica de blobs corresponde a reconstruir vendor/odm.
+Este perfil conserva sus imágenes completas, incluidos VINTF, propiedades y
+política vendor existentes. **No usa la política compilada vendor como sustituto
+de la política fuente del framework nuevo.** Debe comprobar compatibilidad de
+versiones/mappings SELinux y VINTF, y el tratamiento del precompiled_sepolicy.
+No se borran archivos internos de los prebuilts para aparentar compatibilidad.
+El inventario antiguo no se promueve automáticamente al producto conservado.

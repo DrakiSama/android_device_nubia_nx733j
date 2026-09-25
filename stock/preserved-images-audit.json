@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-25T04:01:35.321095+00:00",
+  "device": "NX733J",
+  "reference_slot": "b",
+  "profile": "stock-b-build-only",
+  "metadata_sha256_lf": "4116185e6a3011ffb19d4109f4dcfa7db002b1cab4a9f8f3ac4bc785cf4ad625",
+  "avbtool_sha256": "2f8dfbf118e37566d8e3cf54fa252614955b7acc12c233a6b232068a3fae8f9f",
+  "vbmeta_b_sha256": "f402706b7b657aa0e6eaef869a9a7fd1a6b444916c5384585210321a66aae655",
+  "images": {
+    "vendor": {
+      "bytes": 1940062208,
+      "sha256": "814b34867437436dd2b55204ff8652f6c11dcf231fc7836d8e77df229569bff4",
+      "matches_super_extents": true,
+      "footer_at_image_end": true,
+      "embedded_algorithm_type": 0,
+      "embedded_descriptor_matches_parent": true,
+      "descriptor": {
+        "dm_verity_version": 1,
+        "image_size": 1903648768,
+        "tree_offset": 1903648768,
+        "tree_size": 14995456,
+        "data_block_size": 4096,
+        "hash_block_size": 4096,
+        "fec_num_roots": 2,
+        "fec_offset": 1918644224,
+        "fec_size": 15171584,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "partition_name": "vendor",
+        "salt": "dd127f39b7ff3b637113a14088b70780cca86c982e14bcb2f2c45f8633c276f4",
+        "root_digest": "4fb80b5c67de751c089bfd1fc46e0e4284710c7f0ba94c659ad3a137c253b43b"
+      },
+      "descriptor_sha256": "eda12369b11ca33ca37949fdd13ccd377f74a84e8604010d04f9cc0098f894fa"
+    },
+    "odm": {
+      "bytes": 892928,
+      "sha256": "a26ba138b6605a6a7a5762b1b400a48cc03a949e23db066e8db1b9f336772206",
+      "matches_super_extents": true,
+      "footer_at_image_end": true,
+      "embedded_algorithm_type": 0,
+      "embedded_descriptor_matches_parent": true,
+      "descriptor": {
+        "dm_verity_version": 1,
+        "image_size": 794624,
+        "tree_offset": 794624,
+        "tree_size": 12288,
+        "data_block_size": 4096,
+        "hash_block_size": 4096,
+        "fec_num_roots": 2,
+        "fec_offset": 806912,
+        "fec_size": 8192,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "partition_name": "odm",
+        "salt": "dd127f39b7ff3b637113a14088b70780cca86c982e14bcb2f2c45f8633c276f4",
+        "root_digest": "08a1f9c11dd65c801be6b75d68c8eb2df876c49f2ca2d2753c866212aed03e8f"
+      },
+      "descriptor_sha256": "8818db9b3651ac53810c2a1296c63e3980e4325a006fa060278a946f78b40172"
+    },
+    "vendor_dlkm": {
+      "bytes": 33574912,
+      "sha256": "12e553d4d1d0a97a95ba7fabee53f4df530fe684eca9d5eebfd1711bf294d668",
+      "matches_super_extents": true,
+      "footer_at_image_end": true,
+      "embedded_algorithm_type": 0,
+      "embedded_descriptor_matches_parent": true,
+      "descriptor": {
+        "dm_verity_version": 1,
+        "image_size": 32858112,
+        "tree_offset": 32858112,
+        "tree_size": 262144,
+        "data_block_size": 4096,
+        "hash_block_size": 4096,
+        "fec_num_roots": 2,
+        "fec_offset": 33120256,
+        "fec_size": 262144,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "partition_name": "vendor_dlkm",
+        "salt": "dd127f39b7ff3b637113a14088b70780cca86c982e14bcb2f2c45f8633c276f4",
+        "root_digest": "6ed0f0059449c52bd69b7d2a127a6d87650864b78fc3436a5abaef20b187c5b3"
+      },
+      "descriptor_sha256": "fc70e1d150502d56cd91a8e85b1a3049ab817c5bf123497d4e2b3a691d7890cd"
+    },
+    "system_dlkm": {
+      "bytes": 7577600,
+      "sha256": "7464f32315130ebbd5d72580bb4ce523f6a4fb25856f8b3b415d8c5e1b267fe6",
+      "matches_super_extents": true,
+      "footer_at_image_end": true,
+      "embedded_algorithm_type": 0,
+      "embedded_descriptor_matches_parent": true,
+      "descriptor": {
+        "dm_verity_version": 1,
+        "image_size": 7348224,
+        "tree_offset": 7348224,
+        "tree_size": 65536,
+        "data_block_size": 4096,
+        "hash_block_size": 4096,
+        "fec_num_roots": 2,
+        "fec_offset": 7413760,
+        "fec_size": 65536,
+        "hash_algorithm": "sha256",
+        "flags": 0,
+        "partition_name": "system_dlkm",
+        "salt": "dd127f39b7ff3b637113a14088b70780cca86c982e14bcb2f2c45f8633c276f4",
+        "root_digest": "f2343287c2a797e91e59cb4833d527f471a38cb2811be281839dc3180c9096db"
+      },
+      "descriptor_sha256": "683bea22cdefcbe8679a3e35ae32f98bd52102d2fab116ea071bf3cdfd9eabe5"
+    }
+  },
+  "limits": [
+    "No image copy or build activation",
+    "No new signature verification",
+    "Hashtrees previously checked; this run matches exact images and descriptors",
+    "FEC recovery data not checked",
+    "Input map paths remain private"
+  ]
+}

@@ -29,25 +29,41 @@
       "action": "preserve_stock_b_prebuilt",
       "filesystem": "erofs",
       "avb": "retain_matching_stock_hashtree_descriptor",
-      "private_full_image_required": true
+      "private_full_image_required": true,
+      "bytes": 1940062208,
+      "sha256": "814b34867437436dd2b55204ff8652f6c11dcf231fc7836d8e77df229569bff4",
+      "descriptor_sha256": "eda12369b11ca33ca37949fdd13ccd377f74a84e8604010d04f9cc0098f894fa",
+      "identity_evidence": "stock/preserved-images-audit.json"
     },
     "odm": {
       "action": "preserve_stock_b_prebuilt",
       "filesystem": "erofs",
       "avb": "retain_matching_stock_hashtree_descriptor",
-      "private_full_image_required": true
+      "private_full_image_required": true,
+      "bytes": 892928,
+      "sha256": "a26ba138b6605a6a7a5762b1b400a48cc03a949e23db066e8db1b9f336772206",
+      "descriptor_sha256": "8818db9b3651ac53810c2a1296c63e3980e4325a006fa060278a946f78b40172",
+      "identity_evidence": "stock/preserved-images-audit.json"
     },
     "vendor_dlkm": {
       "action": "preserve_stock_b_prebuilt",
       "filesystem": "erofs",
       "avb": "retain_matching_stock_hashtree_descriptor",
-      "private_full_image_required": true
+      "private_full_image_required": true,
+      "bytes": 33574912,
+      "sha256": "12e553d4d1d0a97a95ba7fabee53f4df530fe684eca9d5eebfd1711bf294d668",
+      "descriptor_sha256": "fc70e1d150502d56cd91a8e85b1a3049ab817c5bf123497d4e2b3a691d7890cd",
+      "identity_evidence": "stock/preserved-images-audit.json"
     },
     "system_dlkm": {
       "action": "preserve_stock_b_prebuilt",
       "filesystem": "erofs",
       "avb": "retain_matching_stock_hashtree_descriptor",
-      "private_full_image_required": true
+      "private_full_image_required": true,
+      "bytes": 7577600,
+      "sha256": "7464f32315130ebbd5d72580bb4ce523f6a4fb25856f8b3b415d8c5e1b267fe6",
+      "descriptor_sha256": "683bea22cdefcbe8679a3e35ae32f98bd52102d2fab116ea071bf3cdfd9eabe5",
+      "identity_evidence": "stock/preserved-images-audit.json"
     },
     "boot": {
       "action": "rebuild",
@@ -105,7 +121,7 @@
     "bootloader_acceptance": "UNKNOWN"
   },
   "activation_requirements": [
-    "Complete image identities for preserved partitions",
+    "Supply validated private image paths to a reviewed build adapter; image identities are recorded",
     "Resolve minimal vendor dependencies in rebuilt system_ext/product",
     "Resolve VINTF compatibility and source SELinux policy",
     "Specify keys and rollback policy without OEM/test-key defaults",
