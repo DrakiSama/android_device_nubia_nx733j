@@ -1,0 +1,307 @@
+{
+  "captured_utc": "2026-09-25T16:08:03.061442+00:00",
+  "scope": "Static comparison only; no changes on device",
+  "files": {
+    "init.usb.rc": {
+      "stock_path": "/system/etc/init/hw/init.usb.rc",
+      "stock_sha256": "8b81396577b9aef23d0c50a9aed75578fa5a0264e504a75abef1b2be5e9d6421",
+      "rom_sha256": "b42a64eab42cdb0cbdce037348696b5169e50007109d3dca32acbbcebbb6c4c5",
+      "same_text": true,
+      "stock_selected_lines": [
+        {
+          "line": 41,
+          "text": "on property:sys.usb.config=adb && property:sys.usb.configfs=0"
+        }
+      ],
+      "rom_selected_lines": [
+        {
+          "line": 41,
+          "text": "on property:sys.usb.config=adb && property:sys.usb.configfs=0"
+        }
+      ]
+    },
+    "init.usb.configfs.rc": {
+      "stock_path": "/system/etc/init/hw/init.usb.configfs.rc",
+      "stock_sha256": "d00a67d20cbdde181623d7bbfd6c0abfbe4cfcdf2e14c54d14cf61cda8a79307",
+      "rom_sha256": "1384154db54fe5a8b3fb62f9c8e9c6732c379066c941364c25d853ac55aa994b",
+      "same_text": true,
+      "stock_selected_lines": [
+        {
+          "line": 17,
+          "text": "on property:sys.usb.config=adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 20,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 22,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1"
+        },
+        {
+          "line": 32,
+          "text": "on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 35,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 38,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 54,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 70,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 86,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 104,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+        },
+        {
+          "line": 120,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 131,
+          "text": "on property:sys.usb.config=rndis,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 134,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 138,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        }
+      ],
+      "rom_selected_lines": [
+        {
+          "line": 17,
+          "text": "on property:sys.usb.config=adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 20,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 22,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1"
+        },
+        {
+          "line": 32,
+          "text": "on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 35,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 38,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 54,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 70,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 86,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 104,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+        },
+        {
+          "line": 120,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        },
+        {
+          "line": 131,
+          "text": "on property:sys.usb.config=rndis,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 134,
+          "text": "on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,adb && property:sys.usb.configfs=1"
+        },
+        {
+          "line": 138,
+          "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+        }
+      ]
+    }
+  },
+  "vendor_qcom": {
+    "sha256": "4e48acef486d92dbdb2ff9b7f3f417ac4694fe4f6b5bb10c3003983a10724064",
+    "selected_lines": [
+      {
+        "line": 86,
+        "text": "mkdir /config/usb_gadget/g1/functions/ffs.adb 0770 system usb"
+      },
+      {
+        "line": 167,
+        "text": "mkdir /dev/usb-ffs/adb 0770 shell system"
+      },
+      {
+        "line": 168,
+        "text": "mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=1000,rmode=0770,fmode=0660"
+      },
+      {
+        "line": 332,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4"
+      },
+      {
+        "line": 375,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 413,
+        "text": "on property:sys.usb.config=rndis,adb && property:vendor.usb.rndis.func.name=*"
+      },
+      {
+        "line": 475,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 516,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 559,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4"
+      },
+      {
+        "line": 620,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 640,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 685,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 731,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 777,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4"
+      },
+      {
+        "line": 816,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 858,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 906,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f5"
+      },
+      {
+        "line": 949,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4"
+      },
+      {
+        "line": 988,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1029,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 1076,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f5"
+      },
+      {
+        "line": 1129,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f8"
+      },
+      {
+        "line": 1184,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f9"
+      },
+      {
+        "line": 1233,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f6"
+      },
+      {
+        "line": 1256,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1299,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1342,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1417,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f8"
+      },
+      {
+        "line": 1468,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f8"
+      },
+      {
+        "line": 1515,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f6"
+      },
+      {
+        "line": 1539,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 1594,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f9"
+      },
+      {
+        "line": 1647,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f9"
+      },
+      {
+        "line": 1691,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3"
+      },
+      {
+        "line": 1720,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f7"
+      },
+      {
+        "line": 1765,
+        "text": "on property:sys.usb.config=mtp,adb && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1"
+      },
+      {
+        "line": 1767,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1786,
+        "text": "symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2"
+      },
+      {
+        "line": 1829,
+        "text": "on property:sys.usb.config=rndis,adb && property:sys.usb.configfs=1"
+      }
+    ]
+  }
+}

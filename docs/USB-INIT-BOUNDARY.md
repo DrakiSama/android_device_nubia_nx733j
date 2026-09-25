@@ -81,3 +81,30 @@ integración de adbd ROM y permisos SELinux. Siguiente objetivo: comparar los rc
 USB del sistema stock con ROM y rastrear la creación de ffs.adb/montaje FunctionFS,
 para diseñar un único responsable de composición en el perfil de bring-up.
 No hacen falta nuevos dumps de particiones ni cambiar el modo USB.
+
+## Comparación adicional del sistema stock y FunctionFS
+
+CONFIRMED: [comparación capturada](../stock/usb-functionfs-comparison.json) de
+/system/etc/init/hw/init.usb.rc e init.usb.configfs.rc frente a los archivos del
+checkout ROM: el texto de ambos pares coincide línea por línea. Se conservan
+SHA-256 y referencias seleccionadas; no se cambia el sistema del teléfono.
+
+Esto acota el riesgo anterior: la superposición estática de reglas existe también
+en los archivos stock examinados. No es evidencia de un defecto introducido por
+el port ni justifica eliminar reglas automáticamente. UNKNOWN: equivalencia de
+orden de importación, comportamiento del init stock y otros actores en la ROM.
+
+CONFIRMED en init.qcom.usb.rc, bloque zygote-start:
+
+- Línea 86: crea g1/functions/ffs.adb (0770 system usb).
+- Línea 167: crea /dev/usb-ffs/adb (0770 shell system).
+- Línea 168: monta functionfs adb con uid=2000,gid=1000,rmode=0770,fmode=0660.
+
+La creación y montaje están definidos en el vendor preservado. No añadir un
+segundo montaje sin resolver el orden de ejecución. Esto es evidencia estática,
+no una observación de la ejecución del bloque ni una validación de permisos ROM.
+
+Siguiente objetivo actualizado: seguir la definición del servicio adbd ROM, su
+publicación de sys.usb.ffs.ready y los permisos de acceso a FunctionFS; revisar
+solo entonces si la secuencia preservada necesita adaptación. La revisión de
+superposiciones continúa como compatibilidad pendiente, no como fallo demostrado.
