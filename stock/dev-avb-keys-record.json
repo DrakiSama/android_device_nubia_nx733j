@@ -1,0 +1,41 @@
+{
+  "capture": "dev-avb-keys",
+  "date": "2026-09-26",
+  "status": "GENERATED_LOCAL_NOT_FOR_RELEASE",
+  "algorithm": "RSA-4096",
+  "generator": "tools/generate_dev_avb_keys.sh",
+  "avbtool": {
+    "version": "1.3.0",
+    "path_reference": "external/avb/avbtool.py",
+    "commit": "6ee41dc37ea996a250f5c70d0ea16abb9f169975"
+  },
+  "location": "directorio local fuera del repositorio (ruta y claves no se publican)",
+  "keys": {
+    "root": {
+      "role": "firma del vbmeta raiz",
+      "pkmd_sha256": "9fa07fb01a3d27ffa9cb5c2a5d3840ca4a589d773e12da0ac07522045cf248a2"
+    },
+    "boot": {
+      "role": "firma del footer AVB de boot",
+      "pkmd_sha256": "9de53478364be5a0ce80c00bb68b951f41baefca47360084333961762db9c934"
+    },
+    "recovery": {
+      "role": "firma del footer AVB de recovery",
+      "pkmd_sha256": "35d11f41a64ded9e68c9749e715ce49df97421a9f7a2905ec99ecb1869a97c3e"
+    },
+    "vbmeta_system": {
+      "role": "firma del vbmeta_system encadenado",
+      "pkmd_sha256": "5f855796d66f6669e541c97685a8dcab70f398dd2442baeb4a451db4114fa21c"
+    }
+  },
+  "policy": [
+    "Claves propias generadas para desarrollo; NO son claves OEM ni test keys de AOSP.",
+    "No autorizan publicacion ni instalacion; el bootloader no las ha aceptado.",
+    "Indice de rollback de desarrollo fijo y explicito (propuesta: 1); no se copian indices stock.",
+    "Rotacion esperada antes de cualquier uso release; las claves privadas permanecen en el directorio local."
+  ],
+  "limits": [
+    "Los PEM nunca se copiaron al repositorio; este registro solo contiene hashes de metadatos publicos (pkmd).",
+    "No se genero ninguna imagen firmada; la cadena AVB se conectara en el adaptador de build."
+  ]
+}
