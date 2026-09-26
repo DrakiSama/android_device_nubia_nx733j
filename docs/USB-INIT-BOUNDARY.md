@@ -168,4 +168,13 @@ blob o cambio documentado de servicio. No ejecutar binarios OEM como prueba.
 Actualización final: [identidad de usbconfig](../stock/usbconfig-elf.json) capturada
 localmente, 377840 bytes, SHA-256 igual antes/después en teléfono y copia. ELF64
 AArch64 ET_EXEC; metadatos dinámicos no obtenidos por el analizador existente.
-No se ejecutó ni publicó el binario; comportamiento y dependencias siguen UNKNOWN.
+No se ejecutó ni publicó el binario.
+
+Resolución: el análisis estático posterior (2026-09-26) identificó el binario
+como enlazado estáticamente (sin tabla dinámica que leer) y reconstruyó su
+función: leer `android_usb/android0/manu_tag` y publicar
+`sys.usb.config=diag,adb,facmode` y `sys.usb.factory` (helper de modo fábrica).
+En el kernel actual el nodo no existe y las ramas de fábrica escriben atributos
+que el kernel no expone; el arranque de consumidor no lo usa. Decisión propuesta:
+excluirlo del system reconstruido sin sustituirlo. Detalle y evidencias en
+[análisis de usbconfig](USBCONFIG-ANALYSIS.md).

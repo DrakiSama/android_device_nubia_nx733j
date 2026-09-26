@@ -1,6 +1,6 @@
 # NX733J: estado del bring-up
 
-Actualizado: 2026-09-25 (Chile). Objetivo: base reutilizable AOSP, kernel stock
+Actualizado: 2026-09-26 (Chile). Objetivo: base reutilizable AOSP, kernel stock
 inicial sustituible; adaptación específica a una ROM después del cierre de la base.
 
 CONFIRMED se limita a la evidencia indicada. PARTIAL implica trabajo pendiente;
@@ -74,5 +74,12 @@ revalidadas y fragmento privado preparado; sin inclusión automática en BoardCo
 [Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
 cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.
 
-Próxima dependencia concreta: /system/bin/usbconfig (class main, oneshot),
-referenciada desde vendor preservado. Su estado stopped no autoriza omitirla.
+`/system/bin/usbconfig` quedó resuelto por análisis estático: es un helper de
+modo fábrica (lee android_usb/android0/manu_tag; publica
+`sys.usb.config=diag,adb,facmode` y `sys.usb.factory`) y en el kernel actual el
+nodo no existe, por lo que es inoperante en consumidor. Decisión propuesta:
+excluirlo del system reconstruido sin sustituto. Véase
+[análisis de usbconfig](USBCONFIG-ANALYSIS.md). Siguiente objetivo: integrar
+explícitamente el perfil de imágenes preservadas con producto/proveedor
+(incluye separar la herencia del vendor generado y el tratamiento
+VINTF/SELinux/AVB) antes de habilitar prebuilts, ramdisk y build.
