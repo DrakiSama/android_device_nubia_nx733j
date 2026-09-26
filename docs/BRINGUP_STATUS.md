@@ -73,6 +73,9 @@ revalidadas y fragmento privado preparado; sin inclusión automática en BoardCo
 [Integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md): diseño
 verificado contra el checkout (interfaces, target_files/OTA) y hallazgo de la
 extracción antigua no auditada en `~/lineage`.
+[Selección mínima de dependencias](BOOT-DEPENDENCY-SELECTION.md): 28 referencias
+externas de init clasificadas; cero blobs OEM requeridos para el primer arranque
+con ADB.
 
 [Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
 cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.
@@ -86,6 +89,9 @@ excluirlo del system reconstruido sin sustituto. Véase
 [diseño de integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md)
 quedó verificado contra el checkout (interfaces `BOARD_PREBUILT_*`, target_files
 y OTA) y detectó una extracción antigua sin auditar en `~/lineage` que no debe
-usarse como fuente. Siguiente objetivo: adaptador de build revisado con el
-generador acotado a system_ext/product, política de claves/fstab/bootconfig y
-activación explícita del fragmento privado.
+usarse como fuente. La [selección mínima de dependencias](BOOT-DEPENDENCY-SELECTION.md)
+concluyó que el primer arranque con ADB no requiere ningún blob OEM externo en
+las particiones reconstruidas: el generador acotado puede arrancar vacío y
+crecer por subsistema. Siguiente objetivo: adaptador de build revisado con
+política de claves/fstab/bootconfig y activación explícita del fragmento
+privado.
