@@ -1,0 +1,52 @@
+name: repo-checks
+
+on:
+  push:
+    branches: [lineage-23.2]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python tool tests
+        run: python3 tools/tests/test_elf_deps.py
+
+      - name: Compile Python tools
+        run: python3 -m compileall -q tools
+
+      - name: Shell syntax of tools
+        run: |
+          for f in tools/*.sh; do
+            bash -n "$f"
+          done
+
+      - name: Validate JSON metadata
+        run: |
+          fail=0
+          while IFS= read -r f; do
+            python3 -m json.tool "$f" > /dev/null || { echo "JSON invalido: $f"; fail=1; }
+          done < <(find stock config -name '*.json' -type f)
+          exit $fail
+
+      - name: Guard against binary artifacts
+        run: |
+          echo "== extensiones prohibidas =="
+          if git ls-files | grep -E '\.(img|ko|apk|apex|so|bin|elf)$'; then
+            echo "ERROR: binarios versionados (ver politica del repositorio)"
+            exit 1
+          fi
+          echo "== archivos mayores a 5 MB =="
+          if find . -path ./.git -prune -o -type f -size +5M -print | grep .; then
+            echo "ERROR: archivos grandes versionados"
+            exit 1
+          fi
+
+      - name: Whitespace check of the pushed commit
+        run: git show --check --oneline -1
