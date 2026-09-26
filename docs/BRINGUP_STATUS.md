@@ -25,7 +25,7 @@ que impide habilitar el siguiente paso.
 | Fstab ROM | PARTIAL | 25 entradas, 14 tempranas; semántica emmc/formattable revisada | Stock y código init/fs_mgr | Sigue como referencia; no instalado en producto |
 | Proveedor kernel | PARTIAL | 715 payloads privados comprobados; contrato definido | Capturas stock | Falta adaptador consumido por el build |
 | Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
-| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; adaptador privado preparado con hashes; producto/AVB pendientes |
+| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; [diseño de integración verificado](PRESERVED-PROFILE-INTEGRATION.md) (interfaces y checkout); adaptador, modo del generador y AVB/claves pendientes |
 | AVB / OTA ROM | UNKNOWN | Cadena e interfaces stock documentadas | Pendiente | Perfil inicial sin OTA; claves, rollback y aceptación aún abiertos |
 | Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; RNDIS explicado; visibilidad shell/root corregida; superposición USB pendiente |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
@@ -70,6 +70,9 @@ permisos de ffs.ready trazados; orden efectivo y política combinada pendientes.
 
 [Entradas de imágenes preservadas](PRESERVED-IMAGE-INPUTS.md): cuatro imágenes
 revalidadas y fragmento privado preparado; sin inclusión automática en BoardConfig.
+[Integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md): diseño
+verificado contra el checkout (interfaces, target_files/OTA) y hallazgo de la
+extracción antigua no auditada en `~/lineage`.
 
 [Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
 cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.
@@ -79,7 +82,10 @@ modo fábrica (lee android_usb/android0/manu_tag; publica
 `sys.usb.config=diag,adb,facmode` y `sys.usb.factory`) y en el kernel actual el
 nodo no existe, por lo que es inoperante en consumidor. Decisión propuesta:
 excluirlo del system reconstruido sin sustituto. Véase
-[análisis de usbconfig](USBCONFIG-ANALYSIS.md). Siguiente objetivo: integrar
-explícitamente el perfil de imágenes preservadas con producto/proveedor
-(incluye separar la herencia del vendor generado y el tratamiento
-VINTF/SELinux/AVB) antes de habilitar prebuilts, ramdisk y build.
+[análisis de usbconfig](USBCONFIG-ANALYSIS.md). El
+[diseño de integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md)
+quedó verificado contra el checkout (interfaces `BOARD_PREBUILT_*`, target_files
+y OTA) y detectó una extracción antigua sin auditar en `~/lineage` que no debe
+usarse como fuente. Siguiente objetivo: adaptador de build revisado con el
+generador acotado a system_ext/product, política de claves/fstab/bootconfig y
+activación explícita del fragmento privado.
