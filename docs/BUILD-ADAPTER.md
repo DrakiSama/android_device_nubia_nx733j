@@ -50,6 +50,31 @@ explícito si faltan las entradas. No hay ROM compilada ni flasheable.
 - Errores de cableado de variables se corrigen en esa corrida; el adaptador no
   se declara validado hasta entonces.
 
+## Estado del entorno local (2026-09-26)
+
+- Árbol actual copiado a `~/lineage/device/nubia/nx733j` (rsync del repositorio,
+  sin `.git`).
+- Copias obsoletas de mayo renombradas y movidas **fuera** del checkout a
+  `~/nx733j-stale-20260527/` (`device-nubia-nx733j`, `vendor-nubia-nx733j`);
+  no se borró nada.
+- Vendor repo regenerado con el manifiesto sin entradas:
+  `vendor/nubia/nx733j/{nx733j-vendor.mk,BoardConfigVendor.mk,Android.bp}`.
+- Entradas privadas en `~/nx733j-build-inputs`; claves en
+  `~/nx733j-avb-keys-20260926b`; variables en `~/nx733j-build-env.sh`.
+- `lunch lineage_nx733j-trunk_staging-userdebug` completó con esas variables
+  (configuración parseada; **no se compiló**).
+
+### Hallazgo: el checkout es LineageOS 22.2, no 23.2
+
+`~/lineage` usa el manifest `lineage-22.2` (`vendor/lineage/config/version.mk`:
+22.2; `lunch` produjo `LINEAGE_VERSION=22.2-…`). El árbol de dispositivo y su
+documentación apuntan a **lineage-23.2**. Consecuencias: las verificaciones de
+interfaz registradas (BUILD-PROVIDER-MAPPING, PRESERVED-PROFILE-INTEGRATION) se
+hicieron contra este checkout 22.x y deben re-verificarse contra 23.2 antes de
+confiar en ellas. Opciones: cambiar `~/lineage` a lineage-23.2 (`repo init` +
+`repo sync`, descarga grande) o crear `~/lineage-23.2` aparte. Decisión del
+usuario pendiente; **la primera compilación no debe ejecutarse hasta resolverlo**.
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
