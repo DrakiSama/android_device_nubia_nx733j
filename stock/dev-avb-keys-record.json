@@ -4,38 +4,63 @@
   "status": "GENERATED_LOCAL_NOT_FOR_RELEASE",
   "algorithm": "RSA-4096",
   "generator": "tools/generate_dev_avb_keys.sh",
+  "set": "v2 (7 claves; cobertura completa de la cadena de arranque)",
+  "supersedes": "conjunto v1 de 4 claves en ~/nx733j-avb-keys-20260926 (queda como material de desarrollo; ya no se referencia)",
   "avbtool": {
     "version": "1.3.0",
     "path_reference": "external/avb/avbtool.py",
     "commit": "6ee41dc37ea996a250f5c70d0ea16abb9f169975"
   },
   "location": "directorio local fuera del repositorio (ruta y claves no se publican)",
+  "rollback_policy": {
+    "index": 1,
+    "locations": {
+      "recovery": 1,
+      "vbmeta_system": 2,
+      "boot": 3,
+      "init_boot": 4,
+      "vendor_boot": 5,
+      "dtbo": 6
+    },
+    "note": "1-3 reproducen el esquema stock; 4-6 son asignaciones de desarrollo. No se copian índices stock."
+  },
   "keys": {
     "root": {
-      "role": "firma del vbmeta raiz",
-      "pkmd_sha256": "9fa07fb01a3d27ffa9cb5c2a5d3840ca4a589d773e12da0ac07522045cf248a2"
+      "role": "firma del vbmeta raíz",
+      "pkmd_sha256": "d8aa10b1625eba5d9ebe5298b64af7043aed739e53b2e054be70b2a987234b33"
     },
     "boot": {
-      "role": "firma del footer AVB de boot",
-      "pkmd_sha256": "9de53478364be5a0ce80c00bb68b951f41baefca47360084333961762db9c934"
+      "role": "cadena de boot (location 3)",
+      "pkmd_sha256": "93805f895e385d9d2cff77bdc423b39f7ea4c3153c33ef3fe34bbda90ee7221e"
     },
     "recovery": {
-      "role": "firma del footer AVB de recovery",
-      "pkmd_sha256": "35d11f41a64ded9e68c9749e715ce49df97421a9f7a2905ec99ecb1869a97c3e"
+      "role": "cadena de recovery (location 1)",
+      "pkmd_sha256": "87a975845e3b2b641da50ba67f8cd20b2d18d013ed557536b46af55e29888034"
     },
     "vbmeta_system": {
-      "role": "firma del vbmeta_system encadenado",
-      "pkmd_sha256": "5f855796d66f6669e541c97685a8dcab70f398dd2442baeb4a451db4114fa21c"
+      "role": "cadena de vbmeta_system (location 2)",
+      "pkmd_sha256": "2aa4846b58851cfa81219efcdafd7e04a6317514b19db432dfd3addf38e96f14"
+    },
+    "init_boot": {
+      "role": "cadena de init_boot (location 4)",
+      "pkmd_sha256": "1a8213133b12d37365ba85cacb7a0b3aa243db44ba988b000d134d1893972ea7"
+    },
+    "vendor_boot": {
+      "role": "cadena de vendor_boot (location 5)",
+      "pkmd_sha256": "37a395193c42b96160fa873dabe48384976c10ffc1008231792fd6ede9ee2f30"
+    },
+    "dtbo": {
+      "role": "cadena de dtbo (location 6)",
+      "pkmd_sha256": "dabca8e22228e5e03f0b58dac0f4f2d108cbcaffe08d7c5c891f961456cbfb41"
     }
   },
   "policy": [
     "Claves propias generadas para desarrollo; NO son claves OEM ni test keys de AOSP.",
     "No autorizan publicacion ni instalacion; el bootloader no las ha aceptado.",
-    "Indice de rollback de desarrollo fijo y explicito (propuesta: 1); no se copian indices stock.",
-    "Rotacion esperada antes de cualquier uso release; las claves privadas permanecen en el directorio local."
+    "Indice de rollback de desarrollo fijo y explicito; rotacion esperada antes de cualquier uso release."
   ],
   "limits": [
     "Los PEM nunca se copiaron al repositorio; este registro solo contiene hashes de metadatos publicos (pkmd).",
-    "No se genero ninguna imagen firmada; la cadena AVB se conectara en el adaptador de build."
+    "No se genero ninguna imagen firmada; la cadena AVB se conecta en BoardConfigBringup.mk."
   ]
 }

@@ -29,7 +29,7 @@ que impide habilitar el siguiente paso.
 | AVB / OTA ROM | PARTIAL | [Claves de desarrollo](AVB-DEV-KEYS.md) generadas y registradas; cadena e interfaces stock documentadas | Decisión + script | Sin OTA ni instalación; aceptación del bootloader UNKNOWN; rollback de desarrollo propuesto; rotación para release |
 | Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; RNDIS explicado; visibilidad shell/root corregida; superposición USB pendiente |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
-| Build mínimo | BLOCKED | BoardConfigBringup.mk ausente deliberadamente | BoardConfig | Kernel, ramdisk, AVB, vendor, VINTF y SELinux incompletos |
+| Build mínimo | PARTIAL | [Adaptador presente](BUILD-ADAPTER.md) con entradas privadas obligatorias; build no ejecutado | Repo + entradas privadas | Fstab/depmod del ramdisk y VINTF/SEPolicy pendientes; primer build no iniciado |
 | Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
 
 ## Siguiente objetivo concreto
@@ -93,6 +93,9 @@ usarse como fuente. La [selección mínima de dependencias](BOOT-DEPENDENCY-SELE
 concluyó que el primer arranque con ADB no requiere ningún blob OEM externo en
 las particiones reconstruidas: el generador acotado puede arrancar vacío y
 crecer por subsistema. Las claves AVB de desarrollo quedaron generadas y
-documentadas ([AVB-DEV-KEYS](AVB-DEV-KEYS.md)). Siguiente objetivo: adaptador
-de build revisado (`BoardConfigBringup.mk` y modo acotado del generador) con
-fstab/bootconfig y activación explícita del fragmento privado.
+documentadas ([AVB-DEV-KEYS](AVB-DEV-KEYS.md)) y el adaptador de build está
+implementado ([BUILD-ADAPTER](BUILD-ADAPTER.md)): sin entradas privadas el make
+se detiene. Siguiente objetivo: preparar el entorno de compilación (instalar el
+árbol en `~/lineage`, generar el vendor repo con el manifiesto sin entradas) y
+acordar la primera compilación; quedan fstab/depmod del ramdisk, VINTF y
+SEPolicy fuente.

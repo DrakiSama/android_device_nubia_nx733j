@@ -3,10 +3,11 @@
 Base NX733J independiente de TWRP, orientada a AOSP y derivados.
 La capa genérica `nx733j.mk` está separada del wrapper LineageOS `lineage-23.2`;
 la única entrada de producto registrada sigue siendo la de Lineage. Estado vigente: [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
-**No es todavía un árbol compilable ni un producto flasheable.**
-La inclusión obligatoria de BoardConfigBringup.mk mantiene bloqueada la
-compilación hasta resolver las decisiones pendientes. No se debe sustituir por
-un archivo vacío para saltar esa validación.
+**No hay todavía una ROM compilada ni un producto flasheable.**
+El adaptador [BoardConfigBringup.mk](BoardConfigBringup.mk) ya está presente y
+exige entradas privadas verificadas (proveedor kernel, claves AVB de desarrollo
+y, opcionalmente, el fragmento de imágenes preservadas); sin ellas el build se
+detiene con un error explícito. Detalle: [BUILD-ADAPTER](docs/BUILD-ADAPTER.md).
 
 ## Lo preparado
 

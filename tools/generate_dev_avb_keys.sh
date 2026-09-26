@@ -6,7 +6,8 @@
 # uso: generate_dev_avb_keys.sh <directorio-destino> <avbtool.py>
 #   - rechaza un destino existente (no sobrescribe intentos previos)
 #   - requiere openssl y python3
-#   - genera: root, boot, recovery, vbmeta_system (RSA 4096)
+#   - genera: root, boot, recovery, vbmeta_system, init_boot, vendor_boot,
+#     dtbo (RSA 4096)
 #   - escribe manifest.txt en el destino (hashes pkmd y datos de la corrida)
 set -euo pipefail
 
@@ -23,7 +24,7 @@ command -v python3 >/dev/null || { echo "ERROR: falta python3" >&2; exit 1; }
 
 mkdir -p "$DEST"
 
-for KEY in root boot recovery vbmeta_system; do
+for KEY in root boot recovery vbmeta_system init_boot vendor_boot dtbo; do
     openssl genrsa -out "$DEST/$KEY.pem" 4096
     chmod 600 "$DEST/$KEY.pem"
     python3 "$AVB" extract_public_key --key "$DEST/$KEY.pem" \

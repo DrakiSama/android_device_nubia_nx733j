@@ -1,0 +1,11 @@
+# Inventario de archivos propietarios para el perfil preservado NX733J.
+#
+# PRIMER ARRANQUE: sin entradas. La selección de dependencias
+# (docs/BOOT-DEPENDENCY-SELECTION.md) concluyó que el arranque hasta ADB no
+# requiere ningún blob OEM externo: system/system_ext/product se reconstruyen
+# desde fuentes LineageOS y vendor/odm/DLKM se conservan como imágenes
+# completas (BOARD_PREBUILT_*IMAGE), no como archivos individuales.
+#
+# Las entradas futuras se agregan por subsistema con su evidencia (consumidor,
+# partición destino y necesidad); no se promueve el inventario histórico
+# stock/proprietary-files.candidates.txt ni el volcado sin auditar de ~/lineage.
