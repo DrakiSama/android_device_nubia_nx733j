@@ -71,9 +71,20 @@ explícito si faltan las entradas. No hay ROM compilada ni flasheable.
 documentación apuntan a **lineage-23.2**. Consecuencias: las verificaciones de
 interfaz registradas (BUILD-PROVIDER-MAPPING, PRESERVED-PROFILE-INTEGRATION) se
 hicieron contra este checkout 22.x y deben re-verificarse contra 23.2 antes de
-confiar en ellas. Opciones: cambiar `~/lineage` a lineage-23.2 (`repo init` +
-`repo sync`, descarga grande) o crear `~/lineage-23.2` aparte. Decisión del
-usuario pendiente; **la primera compilación no debe ejecutarse hasta resolverlo**.
+confiar en ellas.
+
+**Decisión tomada (2026-09-26):** crear `~/lineage-23.2` como directorio nuevo
+(el 22.2 queda intacto para referencia). El manifest 23.2 tiene 1166 proyectos:
+290 desde `github.com/LineageOS` y **876 desde `android.googlesource.com`**.
+Se detectó que WSL (NAT) no alcanzaba googlesource (503/TLS cortado) mientras
+Windows sí; se activó **red espejo** en `C:\Users\draki\.wslconfig`
+(`networkingMode=mirrored`, `dnsTunneling=true`) y, tras `wsl --shutdown`,
+`git ls-remote` a googlesource funciona desde WSL. El `repo sync` corre en
+segundo plano con log en `~/lineage-23.2-sync.log`.
+
+Tras completar el sync: copiar este árbol a `~/lineage-23.2/device/nubia/nx733j`,
+regenerar el vendor repo, **re-verificar las interfaces contra 23.2** y repetir
+`lunch`; recién entonces la primera compilación, con autorización explícita.
 
 ## Límites
 

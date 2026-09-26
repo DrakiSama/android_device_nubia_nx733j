@@ -98,7 +98,7 @@ implementado ([BUILD-ADAPTER](BUILD-ADAPTER.md)): sin entradas privadas el make
 se detiene. Siguiente objetivo: preparar el entorno de compilación (instalar el
 árbol en `~/lineage`, generar el vendor repo con el manifiesto sin entradas) y
 acordar la primera compilación; quedan fstab/depmod del ramdisk, VINTF y
-SEPolicy fuente. El chequeo local condujo a un hallazgo: el checkout `~/lineage`
-es LineageOS 22.2, no 23.2; sincronizar (o crear) un árbol 23.2 y re-verificar
-las interfaces es requisito previo a la primera compilación
-([detalle](BUILD-ADAPTER.md)).
+SEPolicy fuente. El checkout `~/lineage` resultó ser LineageOS 22.2; ya se
+sincroniza un árbol 23.2 nuevo (`~/lineage-23.2`, en curso, tras corregir la red
+de WSL con modo espejo) y las interfaces se re-verificarán contra 23.2 antes de
+la primera compilación ([detalle](BUILD-ADAPTER.md)).
