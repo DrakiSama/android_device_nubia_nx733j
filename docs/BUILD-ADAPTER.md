@@ -52,39 +52,48 @@ explícito si faltan las entradas. No hay ROM compilada ni flasheable.
 
 ## Estado del entorno local (2026-09-26)
 
-- Árbol actual copiado a `~/lineage/device/nubia/nx733j` (rsync del repositorio,
-  sin `.git`).
-- Copias obsoletas de mayo renombradas y movidas **fuera** del checkout a
-  `~/nx733j-stale-20260527/` (`device-nubia-nx733j`, `vendor-nubia-nx733j`);
-  no se borró nada.
-- Vendor repo regenerado con el manifiesto sin entradas:
-  `vendor/nubia/nx733j/{nx733j-vendor.mk,BoardConfigVendor.mk,Android.bp}`.
+- Sync de **lineage-23.2 completado** en `~/lineage-23.2` («repo sync has
+  finished successfully»). El checkout 22.2 anterior y las copias stale se
+  eliminaron dentro de WSL con autorización del usuario (E: recuperado a
+  ~116 GB libres; dumps antiguos y `ubuntu-backup.tar` **movidos** a
+  `G:\WSL-backups-20260926`, no borrados). La red de WSL necesitó **modo
+  espejo** (`C:\Users\draki\.wslconfig`: `networkingMode=mirrored`,
+  `dnsTunneling=true`) para alcanzar `android.googlesource.com`.
+- Árbol del dispositivo instalado en `~/lineage-23.2/device/nubia/nx733j`
+  (rsync del repositorio, sin `.git`) y vendor repo regenerado con el
+  manifiesto sin entradas.
 - Entradas privadas en `~/nx733j-build-inputs`; claves en
   `~/nx733j-avb-keys-20260926b`; variables en `~/nx733j-build-env.sh`.
-- `lunch lineage_nx733j-trunk_staging-userdebug` completó con esas variables
-  (configuración parseada; **no se compiló**).
+- **Interfaces re-verificadas contra 23.2** (misma semántica; cambian líneas):
+  `BOARD_PREBUILT_*IMAGE` en `core/Makefile` 4148/4394/4463/4603, target_files
+  6531/6566/6575/6593, IMAGES 6951/6979/6983/6991, avisos 2031;
+  `BOARD_PREBUILT_DTBIMAGE_DIR` en `board_config.mk` 1004-1006 y `Makefile`
+  1043-1046; `BOARD_BOOTCONFIG_FILE` en `board_config.mk` 318-321; módulos del
+  vendor ramdisk en `soong_config.mk` 583-586; macro
+  `build-chained-vbmeta-image` y claves AVB (dtbo 1058, boot 1377, init_boot
+  1580, vendor_boot 1784).
+- **`lunch lineage_nx733j-trunk_staging-userdebug` validado** con las variables
+  privadas: `TARGET_DEVICE=nx733j`, `TARGET_ARCH=arm64`,
+  `TARGET_BOARD_PLATFORM=sun`, `TARGET_PREBUILT_KERNEL` apuntando al proveedor
+  privado y `BOARD_PREBUILT_VENDORIMAGE` del fragmento preservado. **No se
+  compiló nada.**
 
-### Hallazgo: el checkout es LineageOS 22.2, no 23.2
+### Hallazgo de configuración corregido: identidad en el producto superior
 
-`~/lineage` usa el manifest `lineage-22.2` (`vendor/lineage/config/version.mk`:
-22.2; `lunch` produjo `LINEAGE_VERSION=22.2-…`). El árbol de dispositivo y su
-documentación apuntan a **lineage-23.2**. Consecuencias: las verificaciones de
-interfaz registradas (BUILD-PROVIDER-MAPPING, PRESERVED-PROFILE-INTEGRATION) se
-hicieron contra este checkout 22.x y deben re-verificarse contra 23.2 antes de
-confiar en ellas.
+Con la identidad declarada solo en la capa heredada `nx733j.mk`, Android 16
+resolvía el producto como `generic` (arm, sin BoardConfig aplicado): las
+variables de producto se importan «primer valor gana» y los productos base de
+AOSP fijan `PRODUCT_DEVICE := generic`. Corrección: identidad
+(`PRODUCT_DEVICE/BRAND/MANUFACTURER/MODEL`) en `lineage_nx733j.mk` (nivel
+superior), documentada en [PRODUCT-LAYERS](PRODUCT-LAYERS.md). Verificado con
+`get_build_var` tras el cambio.
 
-**Decisión tomada (2026-09-26):** crear `~/lineage-23.2` como directorio nuevo
-(el 22.2 queda intacto para referencia). El manifest 23.2 tiene 1166 proyectos:
-290 desde `github.com/LineageOS` y **876 desde `android.googlesource.com`**.
-Se detectó que WSL (NAT) no alcanzaba googlesource (503/TLS cortado) mientras
-Windows sí; se activó **red espejo** en `C:\Users\draki\.wslconfig`
-(`networkingMode=mirrored`, `dnsTunneling=true`) y, tras `wsl --shutdown`,
-`git ls-remote` a googlesource funciona desde WSL. El `repo sync` corre en
-segundo plano con log en `~/lineage-23.2-sync.log`.
+Nota operativa: al copiar el árbol con rsync desde Windows conviene normalizar
+CRLF (`grep -rlI $'\r' … | xargs sed -i 's/\r$//'`); el `.gitattributes` no
+garantiza LF en la copia de trabajo Windows.
 
-Tras completar el sync: copiar este árbol a `~/lineage-23.2/device/nubia/nx733j`,
-regenerar el vendor repo, **re-verificar las interfaces contra 23.2** y repetir
-`lunch`; recién entonces la primera compilación, con autorización explícita.
+Tras esto: **primera compilación pendiente de autorización explícita**; quedan
+fstab/depmod del ramdisk, VINTF y SEPolicy fuente.
 
 ## Límites
 
