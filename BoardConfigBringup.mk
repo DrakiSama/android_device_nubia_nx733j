@@ -34,8 +34,13 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(NX733J_PROVIDER_DIR)/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(NX733J_PROVIDER_DIR)/dtbo/dtbo.img
 
 # Bootconfig stock auditado (232 bytes); su alcance está documentado en
-# docs/BOOT-AUDIT.md. No inventa parámetros: reproduce los observados.
-BOARD_BOOTCONFIG_FILE := $(NX733J_PROVIDER_DIR)/reference/bootconfig
+# docs/BOOT-AUDIT.md. PENDIENTE: el módulo fsgen de Soong (Android 16) resuelve
+# Boot_config_file relativo al directorio del módulo (build/soong/fsgen) y no
+# acepta el archivo; se activa solo si NX733J_BOOTCONFIG_FILE está definido
+# (vacío por defecto). Detalle en docs/BUILD-ADAPTER.md.
+ifneq ($(strip $(NX733J_BOOTCONFIG_FILE)),)
+BOARD_BOOTCONFIG_FILE := $(NX733J_BOOTCONFIG_FILE)
+endif
 
 # --- Vendor ramdisk: módulos stock con listas separadas normal/recovery ---
 # 306 módulos; listas de 106/303 entradas (docs/RAMDISK-LOAD-AUDIT.md).

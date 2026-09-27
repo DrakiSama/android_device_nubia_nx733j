@@ -29,7 +29,7 @@ que impide habilitar el siguiente paso.
 | AVB / OTA ROM | PARTIAL | [Claves de desarrollo](AVB-DEV-KEYS.md) generadas y registradas; cadena e interfaces stock documentadas | Decisión + script | Sin OTA ni instalación; aceptación del bootloader UNKNOWN; rollback de desarrollo propuesto; rotación para release |
 | Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; RNDIS explicado; visibilidad shell/root corregida; superposición USB pendiente |
 | Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
-| Build mínimo | PARTIAL | [Adaptador presente](BUILD-ADAPTER.md) con entradas privadas obligatorias; build no ejecutado | Repo + entradas privadas | Fstab/depmod del ramdisk y VINTF/SEPolicy pendientes; primer build no iniciado |
+| Build mínimo | PARTIAL | [Adaptador presente](BUILD-ADAPTER.md) con entradas privadas obligatorias; **primer build acotado exitoso** (boot/vendor_boot/dtbo, 2026-09-27) | Repo + entradas privadas | Fstab/depmod del ramdisk, bootconfig, VINTF/SEPolicy y target_files pendientes |
 | Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
 
 ## Siguiente objetivo concreto
@@ -98,10 +98,8 @@ implementado ([BUILD-ADAPTER](BUILD-ADAPTER.md)): sin entradas privadas el make
 se detiene. Siguiente objetivo: preparar el entorno de compilación (instalar el
 árbol en `~/lineage`, generar el vendor repo con el manifiesto sin entradas) y
 acordar la primera compilación; quedan fstab/depmod del ramdisk, VINTF y
-SEPolicy fuente. El checkout 23.2 está sincronizado y el entorno validado
-([detalle](BUILD-ADAPTER.md)): interfaces re-verificadas contra 23.2 y `lunch`
-resuelve `nx733j`/`arm64` con el proveedor kernel y las imágenes preservadas
-aplicadas (la identidad de producto se movió al nivel superior; ver
-[PRODUCT-LAYERS](PRODUCT-LAYERS.md)). La primera compilación queda pendiente de
-autorización explícita; quedan fstab/depmod del ramdisk, VINTF y SEPolicy
-fuente.
+SEPolicy fuente. El checkout 23.2 está sincronizado, el entorno validado y la **primera
+compilación acotada completó con éxito** (boot/vendor_boot/dtbo firmadas con
+claves de desarrollo; DTB y payload DTBO idénticos al stock; ver
+[BUILD-ADAPTER](BUILD-ADAPTER.md)). Siguiente: cerrar fstab/depmod del ramdisk
+y bootconfig, luego VINTF/SEPolicy y un target_files completo; nada se flasheó.

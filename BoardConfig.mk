@@ -10,6 +10,9 @@ TARGET_NO_BOOTLOADER := true
 
 # Header sizes/format verified from installed images; see stock/boot-audit.json.
 BOARD_BOOT_HEADER_VERSION := 4
+# init_boot stock tambien es header v4 (stock/boot-audit.json); el modulo fsgen
+# de Soong (Android 16) exige esta variable por separado.
+BOARD_INIT_BOOT_HEADER_VERSION := 4
 # mkbootimg does not derive its CLI header version from the board variable.
 # init_boot has a separate argument list; see docs/BOOT-BUILD-COMPOSITION.md.
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)

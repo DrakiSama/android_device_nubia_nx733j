@@ -92,8 +92,45 @@ Nota operativa: al copiar el árbol con rsync desde Windows conviene normalizar
 CRLF (`grep -rlI $'\r' … | xargs sed -i 's/\r$//'`); el `.gitattributes` no
 garantiza LF en la copia de trabajo Windows.
 
-Tras esto: **primera compilación pendiente de autorización explícita**; quedan
-fstab/depmod del ramdisk, VINTF y SEPolicy fuente.
+## Primera compilación acotada (2026-09-27)
+
+`m bootimage vendorbootimage dtboimage` completó con éxito (16:33) con las
+entradas privadas y los ajustes descritos abajo. Imágenes en
+`out/target/product/nx733j/`:
+
+| Imagen | Bytes | Nota |
+| --- | ---: | --- |
+| boot.img | 100663296 | kernel stock + AVB nuevo (rollback 1, clave dev) |
+| vendor_boot.img | 100663296 | DTB stock (sha256 `43ac35e5…` idéntico al auditado) + ramdisk de módulos |
+| dtbo.img | 25165824 | payload de 14124069 B (idéntico al stock) + descriptor nuevo |
+| dtb.img | 4487979 | byte a byte igual al DTB stock auditado |
+
+AVB verificado con `avbtool info_image`: footers v1.0, SHA256_RSA4096, rollback
+index 1 y hash descriptors presentes en las tres imágenes. **No se flasheó ni
+se tocó el teléfono.**
+
+### Ajustes aplicados para que compile
+
+- `BOARD_INIT_BOOT_HEADER_VERSION := 4` (en BoardConfig del repo): el módulo
+  fsgen de Android 16 lo exige por separado del de boot; evidencia: init_boot
+  stock v4 (`stock/boot-audit.json`).
+- Bootconfig **diferido**: hook `NX733J_BOOTCONFIG_FILE` (vacío). El módulo
+  fsgen resuelve `Boot_config_file` relativo al directorio del módulo
+  (`build/soong/fsgen/`) y no acepta el archivo; pendiente con el resto de
+  ramdisk/fstab.
+- Entradas privadas con **rutas relativas a $TOP** (`nx733j-inputs/…`): Soong
+  paniquea o rechaza rutas absolutas/fuera del árbol.
+- Target de Android 16: `vendor_bootimage` → **`vendorbootimage`**.
+- Parches locales en proyectos sincronizados (se pierden con `repo sync`):
+  `vendor_available` añadido a `libhwy` (external/google-highway) y
+  `libskia_skcms` (external/skia); `vendor_available` desactivado en `libjxl`
+  y `libdng_sdk` para cortar la cascada vendor (nuestro vendor es prebuilt).
+- Reparación del checkout tras el crash de E:: `repo sync --force-sync`,
+  índices de git reconstruidos, 3 proyectos re-clonados y archivos truncados
+  restaurados.
+
+Pendientes antes de un target_files/arranque: fstab/depmod del ramdisk,
+bootconfig, VINTF, SEPolicy y la auditoría completa de target_files.
 
 ## Límites
 
