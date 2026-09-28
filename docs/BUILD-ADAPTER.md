@@ -109,6 +109,18 @@ AVB verificado con `avbtool info_image`: footers v1.0, SHA256_RSA4096, rollback
 index 1 y hash descriptors presentes en las tres imágenes. **No se flasheó ni
 se tocó el teléfono.**
 
+Auditoría contra el stock (2026-09-27):
+
+- **boot.img**: kernel extraído byte a byte igual al proveedor (`11bf8868…`);
+  header v4, ramdisk 0, cmdline vacío.
+- **vendor_boot.img**: direcciones idénticas al stock (kernel 0x8000, ramdisk
+  0x1000000, tags 0x100, DTB 0x1f00000); DTB idéntico (`43ac35e5…`); vendor
+  ramdisk con **306 módulos** (igual al stock); `modules.load` 106 entradas y
+  `modules.load.recovery` 303 (idénticas a las listas de referencia); depmod
+  generado (alias/dep/softdep). Sin fstab y sin bootconfig (diferidos).
+- **dtbo.img**: payload de 14124069 B idéntico al stock (`bff89700…`) con
+  descriptor AVB nuevo.
+
 ### Ajustes aplicados para que compile
 
 - `BOARD_INIT_BOOT_HEADER_VERSION := 4` (en BoardConfig del repo): el módulo
