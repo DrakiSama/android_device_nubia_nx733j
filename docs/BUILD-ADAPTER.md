@@ -141,8 +141,8 @@ Auditoría contra el stock (2026-09-27):
   índices de git reconstruidos, 3 proyectos re-clonados y archivos truncados
   restaurados.
 
-Pendientes antes de un target_files/arranque: fstab/depmod del ramdisk,
-bootconfig, VINTF, SEPolicy y la auditoría completa de target_files.
+Pendientes antes de un arranque: fstab/depmod del ramdisk, bootconfig,
+VINTF y SEPolicy (la auditoría del target_files quedó completa el 2026-09-29).
 
 ## target_files: estado y reanudación (2026-09-28)
 
@@ -167,8 +167,38 @@ Ajustes locales sobre proyectos sincronizados (se pierden con `repo sync`):
 parche no-fatal del checker de ninja en `build/soong/ui/build/ninja.go`
 (`CombinedOutputOrFatal()` → `CombinedOutput()`). Reaplicar si se resincroniza.
 
-Reanudar: `wsl -d LineageOS -u root -- systemctl start nx733j-build.service`
-o `bash ~/nx733j-build-tf-loop.sh` desde una sesión persistente.
+Reanudar: `bash ~/nx733j-build-tf-loop.sh` (lanzarlo con `setsid nohup` como
+root; el cron lo relanza solo cada 5 min si no corre).
+
+## target_files completado (2026-09-29)
+
+`m -j8 target-files-package` terminó con éxito el **2026-09-29 14:28:49**
+(5.276/5.276 pasos; 01:06:40 el tramo final tras reanudar la cache).
+Paquete en
+`out/target/product/nx733j/obj/PACKAGING/target_files_intermediates/lineage_nx733j-target_files.zip`
+(3.702.606.126 B, 7.932 archivos; 13 particiones en `META/ab_partitions.txt`;
+**nada se flasheó**).
+
+Auditoría payload del zip contra las imágenes standalone ya auditadas
+(2026-09-27) — todo idéntico:
+
+- `IMAGES/boot.img` → kernel `11bf8868967b8f1657f9364afd48e0be2a351736485994fb5efae21aef595896` (referencia del proveedor).
+- `IMAGES/vendor_boot.img` → DTB `43ac35e516a10f61bdbc9ab264b66bcc2255ea4cafd50ce0923cad3b97cbba4b` (referencia exacta) y vendor ramdisk **byte a byte** idéntico (`ddbb2945…`, hereda 306 módulos y listas 106/303).
+- `IMAGES/dtbo.img` → hashes de entrada idénticos al dtbo auditado (`bff89700…`).
+
+### Causas raíz del atasco del 29-S (y su corrección)
+
+1. **Mezcla de propiedad root/draki** por reparaciones previas: `repo manifest
+   -r` (paso de `build-manifest.xml`) fallaba con *dubious ownership*. Fix:
+   `chown -R draki:draki ~/lineage-23.2` + `safe.directory '*'` para root y
+   draki.
+2. **Dos lanzadores en conflicto** (unidad systemd residual + cron con
+   `runuser`): PAM/sesión mataba los builds ("Session terminated, killing
+   shell...") y dos instancias peleaban por locks/`.ninja_fifo`. Fix: un único
+   lanzador — cron root cada 5 min → `setsid nohup bash ~/nx733j-build-tf-loop.sh`
+   (guardas: no relanzar si corre, si `chown.status` falta o si ya hay
+   `BUILD_TF_EXIT=0`). Servicio systemd deshabilitado. `runuser`/`su` como
+   lanzador de fondo **no** sirve: la sesión reapea los procesos.
 
 ## Límites
 
