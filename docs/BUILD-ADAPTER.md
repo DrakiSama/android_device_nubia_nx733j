@@ -144,6 +144,32 @@ Auditoría contra el stock (2026-09-27):
 Pendientes antes de un target_files/arranque: fstab/depmod del ramdisk,
 bootconfig, VINTF, SEPolicy y la auditoría completa de target_files.
 
+## target_files: estado y reanudación (2026-09-28)
+
+`m -j8 target-files-package` llegó al **~72% (≈103,9K/144,5K pasos)**; quedan
+~40,5K. Cache intacta en `~/lineage-23.2/out` (no borrar `.ninja_log`).
+Artefactos de packaging ya presentes (`all_modules.txt`, `build_fingerprint…`,
+`system/`, `recovery/…`); aún sin zip `target_files`.
+
+El obstáculo actual es el **entorno**, no el árbol: la VM de WSL cae
+intermitentemente (`E_UNEXPECTED`), las sesiones matan procesos lanzados desde
+ellas y el vhdx vive en un **HDD 5400 rpm** (cada reanudación de ninja escanea
+largo). Mitigaciones aplicadas: red NAT (la espejo era inestable),
+`vmIdleTimeout` 24 h, y una **unidad systemd real**
+(`/etc/systemd/system/nx733j-build.service`, `User=draki`,
+`Restart=on-failure`) que ejecuta `~/nx733j-build-tf-loop.sh`
+(`lunch` verificado con reintentos + `m -j8` con reintentos; logs
+`~/m-batch.log`, `~/lunch.log`).
+
+Ajustes locales sobre proyectos sincronizados (se pierden con `repo sync`):
+`vendor_available` añadido a `libhwy` (external/google-highway) y
+`libskia_skcms` (external/skia); desactivado en `libjxl` y `libdng_sdk`; y
+parche no-fatal del checker de ninja en `build/soong/ui/build/ninja.go`
+(`CombinedOutputOrFatal()` → `CombinedOutput()`). Reaplicar si se resincroniza.
+
+Reanudar: `wsl -d LineageOS -u root -- systemctl start nx733j-build.service`
+o `bash ~/nx733j-build-tf-loop.sh` desde una sesión persistente.
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
