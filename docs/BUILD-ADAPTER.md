@@ -200,6 +200,34 @@ Auditoría payload del zip contra las imágenes standalone ya auditadas
    `BUILD_TF_EXIT=0`). Servicio systemd deshabilitado. `runuser`/`su` como
    lanzador de fondo **no** sirve: la sesión reapea los procesos.
 
+## OTA completada (2026-09-30)
+
+`m -j8 bacon` completó el **2026-09-30 14:08:01** (`BUILD_OTA_EXIT=0`).
+Artefacto:
+`out/target/product/nx733j/lineage-23.2-20260930-UNOFFICIAL-nx733j.zip`
+(2.458.837.825 B; sha256 `4e08064e…`; payload.bin A/B de 2,4 GB; metadata
+`ota-type=AB`, `pre-device=nx733j`; firmada con claves dev locales;
+**nada se flasheó ni se publicó**).
+
+Ajustes necesarios (commits `4089915` y `8e092a1`):
+
+- En Lineage 23 el target canónico es **`bacon`** (no existe `otapackage`;
+  `vendor/lineage/build/tasks/bacon.mk`).
+- **`PRODUCT_BUILD_GENERIC_OTA_PACKAGE := true`**: con vendor prebuilt
+  (`BUILDING_VENDOR_IMAGE` vacío) el build desactiva la OTA
+  (`build_ota_package := false`, `core/Makefile:7210`) si `recovery_fstab`
+  está vacío; el flag fuerza la generación. Provisional: el fix real es el
+  recovery fstab + re-auditoría de imágenes.
+- **`PRODUCT_PACKAGES += android.hidl.allocator@1.0-service`**: el módulo solo
+  se instala para API de venta ≤34 (`PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34`),
+  pero `vintffm` (que corre en la ruta de vendor prebuilt) exige la
+  declaración `android.hidl.allocator` en el manifiesto del framework.
+
+Resiliencia verificada: un **corte de luz** (29-S ~17:31) y un **reinicio de la
+VM WSL** (30-S ~12:56) interrumpieron builds; el cron `@reboot`/cada 5 min
+relanzó solo y ninja reanudó desde cache sin pérdida. Reanudar/repetir la OTA:
+`setsid nohup bash ~/nx733j-build-ota-loop.sh` (root; el cron lo vigila).
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
