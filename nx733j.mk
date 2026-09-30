@@ -4,3 +4,4 @@
 # captura de variables usa "primer valor gana" y los productos base de AOSP
 # fijan PRODUCT_DEVICE=generic. Patrón AOSP/Lineage; ver docs/PRODUCT-LAYERS.md.
 $(call inherit-product, device/nubia/nx733j/device.mk)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/nubia/nx733j/vintf/framework_compatibility_matrix.xml
