@@ -265,6 +265,32 @@ Validacion offline (sin telefono):
 Nota: la OTA del 2026-09-30 14:06 no incluye aun esta matriz; un rebuild la
 incorporara.
 
+## Vendor ramdisk completo: fstab, blocklist y bootconfig (2026-09-30)
+
+Commit `06437c6`. `m -j8 vendorbootimage` reconstruido y auditado:
+
+- **`first_stage_ramdisk/fstab.qcom`** en el vendor ramdisk (patrón goldfish:
+  `PRODUCT_COPY_FILES` a `$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/`).
+  Contenido = fstab stock **sin `formattable`** en metadata, persist, userdata,
+  qmcs, spunvm y logdump: política de bringup "sin auto-formato" (un fallo de
+  montaje se ve en vez de formatear; protege data y las claves FBE de
+  `/metadata`). Resto de líneas byte-idéntico al stock; 25 entradas,
+  14 `first_stage_mount` (igual al audit stock).
+- **`lib/modules/modules.blocklist`** stock verbatim (62 líneas, formato
+  `blocklist <mod>`; validado contra el procesado de Soong).
+- **Bootconfig**: `BOARD_BOOTCONFIG` con las 7 líneas stock (el módulo fsgen no
+  acepta el archivo por resolución de rutas). El vendor_boot reconstruido tiene
+  el bootconfig **byte a byte idéntico** al stock (`stock/bootconfig.vendor`).
+- Auditoría del ramdisk reconstruido (parser newc del propio
+  `tools/audit_vendor_ramdisk_layout.py`): **306/306 módulos** con hash de
+  referencia; auxiliares `modules.{alias,dep,load,load.recovery,softdep}`
+  idénticos y `modules.blocklist` presente; fstab con el hash del archivo
+  publicado; DTB `43ac35e5…` y AVB RSA4096/rollback 1 en el vendor_boot.
+  Añadidos AOSP esperados por `virtual_ab_ota/compression_with_xor`:
+  `system/bin/{snapuserd,e2fsck,fsck.f2fs,...}` y libs de primera etapa.
+- La herramienta oficial `audit_vendor_ramdisk_layout.py` rechaza el ramdisk
+  (difiere del stock): correcto; su modo es auditar el stock, no la ROM.
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
