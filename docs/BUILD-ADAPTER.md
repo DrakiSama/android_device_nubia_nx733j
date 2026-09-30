@@ -291,6 +291,27 @@ Commit `06437c6`. `m -j8 vendorbootimage` reconstruido y auditado:
 - La herramienta oficial `audit_vendor_ramdisk_layout.py` rechaza el ramdisk
   (difiere del stock): correcto; su modo es auditar el stock, no la ROM.
 
+## OTA final con VINTF + ramdisk (2026-09-30 19:09)
+
+`m -j8 bacon` regeneró la OTA con todo lo anterior:
+`lineage-23.2-20260930-UNOFFICIAL-nx733j.zip`
+(2.458.851.521 B; sha256 `fdf7202e…`; copia verificada en el escritorio del
+usuario, reemplaza la de la mañana). Verificado en el árbol de target_files
+ANTES de empacar: `SYSTEM/etc/vintf/compatibility_matrix.device.xml` 29.762 B
+(126 hals), `IMAGES/vendor_boot.img` con bootconfig stock, fstab `7f3a6bf1…`
+y blocklist `e58ac666…`; empacada y firmada (AB, `pre-device=nx733j`).
+
+Nota de pipeline (Android 16):
+
+- El OTA se arma del **árbol** de target_files
+  (`obj/PACKAGING/target_files_intermediates/lineage_nx733j-target_files/`).
+  El archivo suelto `lineage_nx733j-target_files.zip` es un artefacto heredado
+  que puede quedar desactualizado y **no** es la fuente de la OTA; para auditar
+  contenido, usar el árbol.
+- `add_img_to_target_files` reutiliza `IMAGES/*.img` existentes: si cambia una
+  fuente (p. ej. vendor_boot) y el árbol conserva una imagen previa, borrar ese
+  `IMAGES/*.img` antes del rebuild para forzar la regeneración.
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
