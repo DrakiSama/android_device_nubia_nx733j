@@ -34,13 +34,18 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(NX733J_PROVIDER_DIR)/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(NX733J_PROVIDER_DIR)/dtbo/dtbo.img
 
 # Bootconfig stock auditado (232 bytes); su alcance está documentado en
-# docs/BOOT-AUDIT.md. PENDIENTE: el módulo fsgen de Soong (Android 16) resuelve
-# Boot_config_file relativo al directorio del módulo (build/soong/fsgen) y no
-# acepta el archivo; se activa solo si NX733J_BOOTCONFIG_FILE está definido
-# (vacío por defecto). Detalle en docs/BUILD-ADAPTER.md.
-ifneq ($(strip $(NX733J_BOOTCONFIG_FILE)),)
-BOARD_BOOTCONFIG_FILE := $(NX733J_BOOTCONFIG_FILE)
-endif
+# docs/BOOT-AUDIT.md. El módulo fsgen de Soong (Android 16) resuelve
+# Boot_config_file relativo al directorio del módulo y no acepta el archivo;
+# las líneas idénticas se declaran como lista (sin el \n final del stock:
+# diferencia cosmética, no funcional). Detalle en docs/BUILD-ADAPTER.md.
+BOARD_BOOTCONFIG := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.load_modules_parallel=true \
+    androidboot.hypervisor.protected_vm.supported=true \
+    androidboot.vendor.qspa=true \
+    androidboot.serialconsole=0
 
 # --- Vendor ramdisk: módulos stock con listas separadas normal/recovery ---
 # 306 módulos; listas de 106/303 entradas (docs/RAMDISK-LOAD-AUDIT.md).
@@ -50,10 +55,13 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
     $(shell cat $(NX733J_PROVIDER_DIR)/reference/modules.load.boot)
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := \
     $(shell cat $(NX733J_PROVIDER_DIR)/reference/modules.load.recovery)
-# PENDIENTE antes del primer arranque: metadatos depmod del ramdisk stock
-# (modules.dep/alias/softdep/blocklist) y fstab de primera etapa. Este
-# build/make no ofrece copy-out de archivos extra al vendor ramdisk; no se
-# copia automáticamente el fstab stock (docs/VENDOR-RAMDISK-LAYOUT.md).
+# Metadatos depmod del ramdisk: generados por Soong (modules.dep/alias/softdep).
+# Blocklist stock verbatim (62 líneas); formato `blocklist <mod>` verificado
+# contra el procesado de Soong (build/soong/kernel/prebuilt_kernel_modules.go).
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := \
+    $(DEVICE_PATH)/ramdisk/lib/modules/modules.blocklist
+# El fstab de primera etapa se instala vía PRODUCT_COPY_FILES en device.mk
+# (patrón goldfish).
 
 # --- AVB: cadena completa con claves de desarrollo explícitas ---
 # Sin claves OEM ni test keys; política en docs/AVB-DEV-KEYS.md.

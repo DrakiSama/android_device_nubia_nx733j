@@ -4,6 +4,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/ramdisk/first_stage_ramdisk/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+
 # Generate this using extract-files.py after reviewing proprietary-files.txt.
 $(call inherit-product, vendor/nubia/nx733j/nx733j-vendor.mk)
 
