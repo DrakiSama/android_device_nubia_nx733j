@@ -228,6 +228,43 @@ VM WSL** (30-S ~12:56) interrumpieron builds; el cron `@reboot`/cada 5 min
 relanzó solo y ninja reanudó desde cache sin pérdida. Reanudar/repetir la OTA:
 `setsid nohup bash ~/nx733j-build-ota-loop.sh` (root; el cron lo vigila).
 
+## VINTF: matriz del framework para el vendor stock (2026-09-30)
+
+Con vendor prebuilt, el framework debe declarar en su matriz de compatibilidad
+(FCM) los HALs que el vendor/ODM stock exponen; sin ello los servicios del
+vendor serian rechazados en el registro al arrancar. Completado en `0c96e27`:
+
+- `vintf/framework_compatibility_matrix.xml`: generado desde los manifiestos
+  stock capturados (vendor: 111 fragmentos + `manifest_sun.xml`; odm: 1) —
+  **126 entradas `<hal>`** (125 aidl + 1 native `mapper`), `optional="true"`,
+  determinista.
+- `tools/generate_framework_matrix.py` (+7 tests de regresion): soporta
+  `fqname` e `<interface>` en aidl y `@VERSION/instancia` en native; falla
+  ante formatos inesperados; mismo input -> mismo output.
+- Wiring: `DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE` en `nx733j.mk` (capa de
+  producto compartida).
+
+Detalles VINTF aprendidos del stock:
+
+- El vendor stock NO trae `/vendor/etc/vintf/manifest.xml`: su manifiesto raiz
+  es `manifest_sun.xml`, variante por SKU (`ro.boot.product.vendor.sku=sun`),
+  con `target-level="202404"` y `<sepolicy>202404</sepolicy>`.
+- El bloque `sepolicy`/`avb` de `compatibility_matrix.device.xml` lo inyecta
+  el modulo soong `framework_compatibility_matrix.device.xml`
+  (`compatibility_matrix.empty.xml` esta vacio).
+- En el esquema, las instancias de una misma interfaz van en un unico nodo
+  `<interface>` (varias `<instance>`), tanto aidl como native.
+
+Validacion offline (sin telefono):
+
+- `m -j8 framework_compatibility_matrix.device.xml` (pipeline real): instalado
+  en system y validado por `xmllint-xsd` (29.762 B, 126 hals).
+- `checkvintf --check-compat` contra vendor+odm stock, apexes,
+  `first_api_level=35` y `sku=sun`: **COMPATIBLE (rc=0)**.
+
+Nota: la OTA del 2026-09-30 14:06 no incluye aun esta matriz; un rebuild la
+incorporara.
+
 ## Límites
 
 El adaptador no demuestra compilación, arranque, aceptación AVB del bootloader
