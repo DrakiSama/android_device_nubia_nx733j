@@ -1,101 +1,83 @@
-# Plan de primer flasheo (NX733J) — borrador operativo
+# Plan de primer flasheo (NX733J) — v2 sin fastboot
 
-Estado: 2026-09-30. **NADA se ha flasheado.** Este documento define el
-procedimiento y sus prerequisitos; no autoriza escritura por sí solo.
+Estado: 2026-09-30 (v2). **NADA se ha flasheado.** El fastboot del equipo está
+capado incluso con bootloader desbloqueado (experiencia del usuario); el
+flasheo va por **EDL 9008** (probado por el usuario con init_boot_b + Magisk) y
+**TWRP** (build propio del usuario, arranca y flashea IMG físicas).
 
-## Principios de seguridad (no negociables)
+## Capacidades verificadas / por verificar
 
-1. **Nunca flashear firmware/bootloader** (xbl, abl, hyp, tz, devcfg, qupfw,
-   etc.): esos son los únicos candidatos a brick real. Nuestro build no los
-   incluye y este plan no los toca.
-2. **Flashear solo el slot inactivo**; el slot activo (stock) queda de
-   rollback inmediato (`fastboot --set-active=<slot>` y listo).
-3. **No tocar userdata, metadata ni persist** sin decisión explícita aparte:
-   userdata permanece cifrado stock (posible bootloop si algo falla, sin
-   pérdida de datos); metadata contiene las claves FBE.
-4. **Vía de rescate primero**: restaurar por EDL solo como último recurso y
-   únicamente tras validar el material (ver "Ensayo EDL"). Si el EDL no está
-   verificado, no se inicia el flasheo.
-5. Cada paso con su comando de reversión documentado.
+| Capacidad | Estado | Evidencia |
+| --- | --- | --- |
+| Escribir particiones por EDL 9008 | ✅ PROBADO | init_boot_b parcheado por Magisk, flasheado y arranca |
+| AVB relajado con unlock | ✅ PROBADO | el init_boot modificado (hash AVB roto) arranca |
+| TWRP arranca (touch/ADB/FBE PIN) | ✅ PROBADO | README TWRP, build b8.1-52997c9 |
+| TWRP flashea IMG a físicas A/B explícitas | ✅ PROBADO | instaló recovery.img → recovery_b (/dev/block/sde60); twrp.flags tiene Boot-A/Boot-B/... |
+| TWRP flashea IMG a lógicas (slot seleccionado) | ⚠️ PARCHEADO, SIN VALIDAR | parche logical-image-flash + preflights; README: "falta compilación y validación" |
+| TWRP → vbmeta | ❌ NO | twrp.flags: `/vbmeta* flashimg=0` |
+| TWRP fastbootd | ⚠️ INCLUIDO, SIN PROBAR | `TW_INCLUDE_FASTBOOTD`, README pendiente |
+| Sideload con Lineage recovery nuestro | ⚠️ SIN VALIDAR | recovery recién construido, nunca arrancado |
+| Restauración EDL del backup | ⚠️ NUNCA ejecutada (solo dump) | `stock/edl-audit-2026-09-23/` |
 
-## Prerequisitos (go/no-go)
+## Regla de oro del layout
 
-| # | Requisito | Estado | Cómo verificar |
-| --- | --- | --- | --- |
-| 1 | Backup EDL completo del stock (mayo) intacto | Auditado 2026-09-23 (GPT/super/AVB) | `stock/edl-audit-2026-09-23/`; verificar SHAs del material privado |
-| 2 | Cargador firehose + rawprogram/patch XML disponibles | **POR CONFIRMAR (privado)** | El usuario indica la carpeta del dump de mayo |
-| 3 | Vía de restauración EDL probada | **NO probada nunca** | Ensayo (abajo) o decisión consciente de aceptar el riesgo |
-| 4 | Bootloader desbloqueado | Probable (stock con Magisk instalado) | `fastboot flashing get_unlock_ability` / arranque muestra aviso naranja |
-| 5 | fastboot/fastbootd operativos en el PC | Por verificar | `fastboot devices`, `fastboot getvar current-slot` |
-| 6 | Artefacto ROM completo y auditado | En curso (rebuild bacon) | `out/target/product/nx733j/*.img` + hashes |
-| 7 | Plan de datos de usuario decidido (no se toca /data) | Por confirmar con el usuario | — |
+`vbmeta_a`/`vbmeta_system_a` **SON OBLIGATORIOS** para arrancar nuestra ROM:
+el fstab (que ya va en el vendor_boot) usa `avb=vbmeta_system`/`avb=vbmeta`;
+init valida `system_a` etc. contra `vbmeta_system_a`, y este contra el
+`vbmeta_a` raíz. Si quedan los stock (claves OEM), la cadena falla y las
+particiones no montan → bootloop. Como TWRP no puede flashear vbmeta, **esa
+escritura va por EDL** (2 particiones diminutas).
 
-## Material a flashear (del target_files/OTA)
+## Ruta B (recomendada por el usuario): "a la antigua" — TWRP + EDL mínimo
 
-| Partición | Imagen | Slot | Notas |
-| --- | --- | --- | --- |
-| boot | boot.img | inactivo | kernel stock, AVB dev |
-| init_boot | init_boot.img | inactivo | ramdisk ROM (sin Magisk) |
-| vendor_boot | vendor_boot.img | inactivo | DTB stock + fstab + módulos + bootconfig |
-| dtbo | dtbo.img | inactivo | payload stock |
-| recovery | recovery.img | inactivo | header v4, sin kernel |
-| system/system_ext/product | system.img/product.img/system_ext.img | inactivo | fastbootd, particiones lógicas |
-| vendor/odm/dlkm | imágenes preservadas | inactivo | bytes stock |
-| vbmeta / vbmeta_system | vbmeta.img / vbmeta_system.img | inactivo | claves dev (rollback 1) |
+Mantiene intacto el stock B (activo) como fallback.
 
-## Secuencia propuesta (A/B, sin tocar /data)
+1. **Backup fresco** del estado actual por EDL (dump de `super`, `boot_b`,
+   `init_boot_b`, `vbmeta_b`, `vbmeta_system_b`, `recovery_b`, etc.).
+2. Copiar al teléfono las imágenes del slot A (del build final):
+   `boot.img init_boot.img vendor_boot.img dtbo.img recovery.img` +
+   `system.img system_ext.img product.img vendor.img odm.img
+   vendor_dlkm.img system_dlkm.img`.
+3. **En TWRP** (slot seleccionado = A):
+   - Install Image → `boot.img` → destino **Boot-A**; ídem Init-Boot-A,
+     Vendor-Boot-A, DTBO-A, Recovery-A.
+   - Lógicas EROFS: `system.img` → System (slot A), etc. (flujo parcheado con
+     preflight; snapshots deben estar vacíos — hoy lo están, update_engine
+     IDLE).
+   - `vendor/odm/vendor_dlkm/system_dlkm` son las preservadas stock (mismos
+     bytes que el slot A ya tiene): opcional reescribirlas.
+4. **EDL 9008**: escribir `vbmeta_a` y `vbmeta_system_a` nuestros (solo esas
+   dos; el resto no se toca).
+5. **Seleccionar slot A** (menú de TWRP con IBootControl, o desde el stock
+   rooteado `bootctl set-active-slot a`) y reboot.
+6. **Rollback**: `bootctl set-active-slot b` (B stock intacto), o retry
+   automático del bootloader; rescate final EDL.
 
-1. **Preflight**: leer slots (`fastboot getvar current-slot`, `fastboot getvar
-   slot-count`), confirmar inactivo (p.ej. `a` si activo es `b`), anotar
-   `ro.boot.slot_suffix` en adb. Verificar batería >50%.
-2. **Flashear al slot inactivo** (en fastboot/bootloader):
-   `fastboot --slot <inactivo> flash boot/boot...` para boot, init_boot,
-   vendor_boot, dtbo, recovery, vbmeta, vbmeta_system (avbtool verificado).
-   Para super: preferir **fastbootd** (`fastboot reboot fastboot`) y
-   `fastboot --slot <inactivo> flash system/system_ext/product ...`; el resto
-   (vendor/odm/dlkm) ya son las imágenes stock preservadas (mismos bytes que el
-   slot actual; se pueden dejar como están).
-3. **Cambio de slot controlado**: `fastboot --set-active=<inactivo>` →
-   reboot. Primer arranque lento (dex2oat).
-4. **Si no arranca (bootloop)**:
-   - 3-4 intentos/5 min → volver: `fastboot --set-active=<stock>` (recupera el
-     sistema stock al instante; sin pérdida de datos).
-   - Capturar evidencias del fallo (pantalla, `adb logcat` si llega,
-     `last_kmg`? ver más abajo) antes de reintentar.
-5. **Solo si el slot stock también se corrompiera** (no esperado en este
-   plan): restauración EDL completa (material de mayo).
+Riesgos: el flasheo de lógicas TWRP aún no está validado (probar primero con
+UNA lógica, p.ej. system_ext, y verificar el log); el orden 4↔5 debe dejar
+vbmeta escritas antes del primer arranque de A.
 
-## Ensayo EDL (para convertir el "NO probado" en "verificado")
+## Ruta A: sideload con Lineage recovery (nativa)
 
-Opciones, de menor a mayor riesgo:
-1. **Verificación estática** (sin escribir): recomputar SHA-256 del material
-   (loader, rawprogram/patch, imágenes del dump) y contrastar con
-   `stock/edl-audit-2026-09-23/evidence-index.json`. Confirmar que el PC
-   detecta el teléfono en 9008 con el driver instalado (se puede ver el device
-   sin escribir nada).
-2. **Ensayo en lectura**: usar QFIL/fh_loader en modo "solo leer" (si el
-   material lo permite) para verificar handshake y detección.
-3. **Restauración de una partición inocua** (p.ej. re-flashear la MISMA
-   dtbo_b stock por EDL) y verificar que arranca igual: esto SÍ escribe, y
-   debe decidirlo el usuario.
+1. EDL: escribir nuestro `recovery.img` en `recovery_b` (1 partición).
+2. Desde stock rooteado: `adb reboot recovery` → nuestro recovery (slot B
+   activo).
+3. `adb sideload lineage-23.2-...-nx733j.zip` → update_engine escribe TODO el
+   slot A (físicas+lógicas, VABC correcto) y marca A activo.
+4. Rollback idéntico (B intacto). Requisitos: recovery arranca y acepta la
+   firma test-keys; sin validar aún.
 
-Hasta completar al menos (1)+(2), el flasheo queda en espera.
+## Ruta C: EDL total
 
-## Contingencias documentadas
+Escribir todas las físicas A por EDL + construir un `super.img` completo
+(nuestras lógicas A + stock B) con geometría del audit
+(`stock/edl-audit-2026-09-23/super-metadata-audit.json`). Más trabajo y más
+escritura; reservada como fallback de B y C.
 
-- Bootloader no acepta vbmeta dev (verificación estricta): reflashear
-  `vbmeta` con `--disable-verity --disable-verification` (rebuild del vbmeta
-  con flags) y reintentar. Última ratio: restaurar stock completo por EDL.
-- fastbootd no soporta `--slot` para lógicas en este device: escribir primero
-  el otro slot con set_active temporal, o usar update_engine desde el sistema
-  stock con la OTA firmada (rechazada por claves stock, no viable), o flashear
-  el super correspondiente (con metadatos del slot objetivo) por fastboot.
-- El kernel/init stock del slot activo NO se modifica en ningún paso.
+## Prerequisitos go/no-go (v2)
 
-## Pendientes de este documento
-
-- Confirmar carpeta y hashes del material EDL (usuario).
-- Confirmar estado de desbloqueo (fastboot) y si hay `get_unlock_ability`.
-- Decidir el "go" para el paso de ensayo (2)/(3).
-- Agregar los comandos exactos por partición una vez decidido el artefacto
-  final (tras el rebuild OTA con VINTF + ramdisk).
+1. Backup fresco del estado actual + backup de mayo intacto.
+2. Material EDL (loader/rawprogram/patch) disponible y probado (ya lo está).
+3. Decidir ruta (B por defecto) y hacer el **ensayo EDL** de restauración o
+   aceptar conscientemente el riesgo.
+4. Confirmar estado "snapshots vacíos" en el momento del flasheo.
