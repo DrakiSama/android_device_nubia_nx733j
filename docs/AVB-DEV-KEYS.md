@@ -1,7 +1,9 @@
 # Claves AVB de desarrollo: política y registro
 
-Fecha: 2026-09-26. Estado: claves generadas localmente (conjunto v2, 7 claves).
-No hay imágenes firmadas todavía. Registro público de metadatos:
+Fecha de generación: 2026-09-26. Estado: conjunto v2 de 7 claves generado
+localmente. Después se usaron para firmar imágenes y una OTA de desarrollo en
+builds registrados el 2026-09-27 a 2026-09-30; la aceptación en el dispositivo
+no se probó. Registro público de metadatos:
 [`stock/dev-avb-keys-record.json`](../stock/dev-avb-keys-record.json).
 
 ## Decisión
@@ -43,7 +45,7 @@ nunca se copiaron al repositorio.
   recovery 1, vbmeta_system 2) ni se habilita descenso de versión.
 - **Aceptación del bootloader: UNKNOWN.** No existe evidencia de que acepte
   estas claves; generarlas no valida ningún arranque firmado.
-- **Sin OTA**: la firma de un paquete instalable queda fuera de alcance.
+- **OTA de desarrollo**: el conjunto se usó para firmar la OTA registrada en BUILD-ADAPTER. La instalación y la aceptación de la cadena por el bootloader siguen sin probarse.
 - **Custodia**: las claves viven en un directorio local fuera del repositorio;
   si se pierden antes de definir el producto, las pruebas incrementales con
   rollback se invalidan y regenerar produce una identidad de cadena nueva.

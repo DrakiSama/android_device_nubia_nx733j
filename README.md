@@ -1,133 +1,73 @@
 # Nubia NX733J — base de dispositivo Android
 
-Base NX733J independiente de TWRP, orientada a AOSP y derivados.
-La capa genérica `nx733j.mk` está separada del wrapper LineageOS `lineage-23.2`;
-la única entrada de producto registrada sigue siendo la de Lineage. Estado vigente:
-[BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
+Árbol independiente de TWRP para Nubia Z70 Ultra NX733J / PQ84A01, con producto
+LineageOS 23.2. La capa `nx733j.mk` se separa del wrapper `lineage_nx733j.mk`.
+La adaptación a otras ROM, incluida crDroid, no está hecha.
 
-**Estado actual (verificado 2026-09-30):** Ya se compila. Se completaron
-`bootimage vendorbootimage dtboimage` (2026-09-27), `target_files`
-(2026-09-29) y OTA `bacon` (2026-09-30, sha256
-`fdf7202e5d1d48ae039c7d0515c446a57caab82fd0a114f481273f81baee01d5`,
-2.458.851.521 B). **No hay ROM validada en el teléfono** (nada se flasheó).
-El adaptador [BoardConfigBringup.mk](BoardConfigBringup.mk) ya está presente y
-exige entradas privadas verificadas (proveedor kernel, claves AVB de desarrollo
-y, opcionalmente, el fragmento de imágenes preservadas); sin ellas el build se
-detiene con un error explícito. Detalle: [BUILD-ADAPTER](docs/BUILD-ADAPTER.md).
+## Estado
 
-## Lo preparado
+Revisión documental: 2026-10-23. Los artefactos y validaciones de build citados
+abajo están registrados hasta el 2026-09-30; no pude reabrir WSL ni verificar
+esos binarios en esta revisión. Antes de esta actualización documental, el repo local estaba sincronizado con
+`origin/lineage-23.2`; el detalle del commit se registra en Git.
 
-Identidad, arquitectura, tamaños y grupo dinámico del teléfono real; producto
-LineageOS; entrada para extract-utils Python; inventario de archivos vendor/odm,
-HALs VINTF y listas stock de módulos. No hay partición odm_dlkm en este modelo.
-Las listas stock se conservan como evidencia; no se cargan enteras en TWRP.
+Se registran como completados offline:
 
-El inventario de blobs es una lista candidata, NO proprietary-files.txt de
-producción: hay que separar los componentes que compila LineageOS, eliminar
-duplicados, revisar dependencias ELF y añadir lo necesario de system_ext/product.
-No se han copiado políticas SELinux compiladas como sustituto de su fuente.
+- `bootimage vendorbootimage dtboimage` (2026-09-27), con comparaciones de
+  kernel, DTB y payload DTBO contra stock.
+- `target_files` y su auditoría de payload (2026-09-29).
+- OTA `bacon` final (2026-09-30),
+  `lineage-23.2-20260930-UNOFFICIAL-nx733j.zip`, 2.458.851.521 bytes,
+  SHA-256 `fdf7202e5d1d48ae039c7d0515c446a57caab82fd0a114f481273f81baee01d5`.
+- Matriz VINTF de 126 HAL y validación `checkvintf --check-compat`:
+  `COMPATIBLE (rc=0)` contra vendor/odm stock.
+- Vendor ramdisk con fstab de primera etapa sin `formattable`, blocklist,
+  bootconfig y 306 módulos contrastados con referencias.
 
-**Completado (2026-09-26 a 2026-09-30):**
-- Primera compilación acotada (`bootimage vendorbootimage dtboimage`) exitosa
-  y auditada contra stock (kernel `11bf8868…`, DTB `43ac35e5…`, DTBO
-  `bff89700…` idénticos).
-- `target_files` completo (5.276 pasos, 2026-09-29) con auditoría de payload.
-- OTA `bacon` completada (2026-09-30): `lineage-23.2-20260930-UNOFFICIAL-nx733j.zip`
-  (2.458.851.521 B, sha256 `fdf7202e…`).
-- VINTF/FCM: 126 hals generados y validados (`checkvintf --check-compat`:
-  COMPATIBLE, rc=0).
-- Vendor ramdisk: fstab de primera etapa (sin formattable), blocklist stock
-  verbatim, bootconfig byte a byte idéntico (306/306 módulos con hash de
-  referencia).
-- CI ligera `repo-checks` verde en GitHub.
-- Entorno de build: WSL LineageOS, cron autosanador, claves AVB dev
-  (7 RSA-4096 locales), perfil preservado.
+Estos resultados son de build o validación offline. **No hay ROM arrancada o
+validada en el teléfono; la ROM no se ha flasheado.** La OTA está firmada con
+claves de desarrollo; la aceptación del bootloader y la política de release no
+están validadas.
 
-**Pendiente:**
-- SEPolicy fuente.
-- Decisiones AVB/OTA de release (pvmfw, claves de release, rollback,
-  aceptación del bootloader).
-- Validación en dispositivo (ninguna ROM se ha flasheado).
-- Requisitos de TWRP (vbmeta flasheable, lógicas validadas, cambio de slot)
-  pendientes de validación en dispositivo.
+La síntesis de pendientes y sus evidencias está en
+[BRINGUP_STATUS](docs/BRINGUP_STATUS.md); el historial y los detalles del build,
+en [BUILD-ADAPTER](docs/BUILD-ADAPTER.md). El build exige las entradas privadas
+descritas en `BoardConfigBringup.mk`; no guardes sus claves ni binarios en Git.
 
-## Próximo trabajo: cerrar la base de arranque
+## Pendientes antes de una prueba de instalación
 
-El flasheo de la ROM va por EDL 9008 + TWRP (fastboot OEM capado en este
-modelo). Pendientes antes de un primer arranque:
+- Completar la SEPolicy fuente y resolver el alcance AVB/OTA de release,
+  incluido `pvmfw`, claves y rollback.
+- Validar los requisitos de TWRP para vbmeta, particiones lógicas y selección
+  de slot. El plan está en [FIRST-FLASH-PLAN](docs/FIRST-FLASH-PLAN.md).
+- Completar el ensayo de restauración EDL y confirmar los prerequisitos de la
+  ruta elegida antes de cualquier escritura.
+- Arrancar y validar la ROM en el dispositivo con logs fechados.
 
-1. **Requisitos de TWRP** (ver `TWRP-REQUISITOS-PARA-ROM.md`): vbmeta
-   flasheable, validación de lógicas al slot seleccionado, cambio de slot en
-   UI, ruta moderna. Sesión TWRP trabaja en ello.
-2. **Ensayo EDL**: verificar restauración del backup (dump de mayo) antes de
-   cualquier escritura.
-3. **SEPolicy fuente** y **AVB/OTA de release** (pvmfw, claves de release,
-   rollback, aceptación del bootloader).
-4. **Decisión de hardware de compilación** (SSD externo / servidor NVMe /
-   Linux nativo) para acelerar el build.
-5. **Validación en dispositivo**: ninguna ROM se ha flasheado ni arrancado.
+El fastboot OEM está capado según la experiencia del usuario; el plan actual
+considera EDL 9008 + TWRP. No se debe inferir seguridad de instalación a partir
+de un build exitoso.
 
-No usar SELINUX_IGNORE_NEVERALLOWS ni fechas de parche ficticias de recovery.
-La lista completa de evidencia y pendientes está en [BRINGUP_STATUS](docs/BRINGUP_STATUS.md)
-y [FIRST-FLASH-PLAN](docs/FIRST-FLASH-PLAN.md).
+## Documentación de referencia
 
-## Auditoría de arranque (2026-09-15)
+- [Auditoría de arranque stock](docs/BOOT-AUDIT.md),
+  [composición de imágenes](docs/BOOT-BUILD-COMPOSITION.md) y
+  [layout del vendor ramdisk](docs/VENDOR-RAMDISK-LAYOUT.md).
+- [Selección de dependencias](docs/BOOT-DEPENDENCY-SELECTION.md),
+  [auditoría ELF](docs/ELF-AUDIT.md),
+  [contrato de kernel](docs/KERNEL-PROVIDER.md) y
+  [perfil preservado](docs/BUILD-PROFILE.md).
+- [Alcance AVB de pvmfw](docs/PVMFW-AVB-SCOPE.md),
+  [claves AVB de desarrollo](docs/AVB-DEV-KEYS.md) y
+  [plan de primer flasheo](docs/FIRST-FLASH-PLAN.md).
 
-Ver [informe y decisiones pendientes](docs/BOOT-AUDIT.md) y
-[hechos verificables](stock/boot-audit.json). Incluye listas de carga de arranque y
-recovery, fstab de primera etapa y bootconfig extraídos como referencia; no se
-instalan automáticamente en una ROM. Las imágenes quedan fuera de este repositorio.
+Los documentos fechados antes del 2026-09-30 describen auditorías o decisiones
+de su fecha; consulta el estado vigente enlazado arriba antes de usar sus
+pendientes históricos como instrucciones actuales.
 
-Para comprobar que una captura corresponde a esta auditoría:
-```sh
-python3 tools/verify_boot_capture.py /ruta/a/la/captura
-```
-Esto comprueba tamaño, SHA-256 y encabezados; no valida firmas ni declara la ROM
-compilable. La rama de desarrollo es `lineage-23.2`.
+## Repositorios
 
-## Repositorio independiente y auditoría actual
-
-Repositorio ROM: [DrakiSama/android_device_nubia_nx733j](https://github.com/DrakiSama/android_device_nubia_nx733j).
-Su producto es LineageOS `lineage-23.2`; la adaptación a crDroid queda pendiente.
-Los árboles de [TWRP](https://github.com/DrakiSama/twrp_device_nubia_nx733j) y
-[OrangeFox](https://github.com/DrakiSama/orangeFox_device_nubia_nx733j) son proyectos separados.
-
-La [auditoría ELF del 23 de septiembre](docs/ELF-AUDIT.md) cubre vendor, odm,
-system_ext y product: 2393 ELF64 contrastados con readelf e inventario adicional
-de 2621 archivos. Se registran dependencias pendientes, no soporte validado.
-Solo se versionan fuentes, herramientas y metadatos; los dumps y binarios quedan
-fuera del repositorio. Todavía no hay una ROM compilada ni instrucciones de flasheo.
-
-La [auditoría de kernel y servicios OEM](docs/KERNEL-AND-OEM-AUDIT.md) registra la consistencia de CRC de los módulos y las decisiones pendientes de init.
-
-La [auditoría del respaldo 9008](docs/EDL-BACKUP-AUDIT.md) amplía GPT/super/AVB
-y resuelve por build ID la identidad observada de zram/zsmalloc.
-
-El [contrato del proveedor de kernel](docs/KERNEL-PROVIDER.md) separa artefactos,
-módulos por partición e integración ROM. Su manifiesto stock registra hashes;
-aún no activa un adaptador de build.
-
-El [paquete privado stock](docs/KERNEL-PROVIDER-PACKAGE.md) está preparado con
-verificación de hashes. GitHub contiene la herramienta y el informe, sin binarios.
-
-## Avances de la base (2026-09-24)
-
-- [DTBO](docs/DTBO-AVB-ENVELOPE.md): se corrigió la auditoría inicial; existe
-  footer AVB dentro de un contenedor de 18 MiB en la partición de 24 MiB.
-  Entrada privada preparada conservando el contenedor y la referencia original.
-- [Empaquetado](docs/BOOT-BUILD-COMPOSITION.md): argumentos header v4 explícitos
-  para boot/vendor_boot e init_boot, direcciones stock con base cero, y EROFS
-  declarado para system/system_ext/product.
-- [Vendor ramdisk](docs/VENDOR-RAMDISK-LAYOUT.md): contenido, propietarios, modos
-  y semántica de fstab auditados. No se copió el fstab automáticamente al producto.
-- [pvmfw](docs/PVMFW-AVB-SCOPE.md): tamaño, header v3, hashes y descriptores A/B
-  contrastados con respaldo y teléfono. Integración AVB/OTA aún pendiente.
-
-No se ejecutaron builds ni pruebas de la ROM durante esta tanda. Los cambios de
-BoardConfig conservan el bloqueo deliberado; no existe todavía una imagen ROM
-validada para instalar.
-
-El [perfil inicial de compilación](docs/BUILD-PROFILE.md) conserva imágenes stock B
-de vendor/odm/DLKM con identidades comprobadas. Sigue sin activar OTA ni build;
-las [referencias externas de init](docs/PRESERVED-VENDOR-DEPENDENCIES.md) se revisan
-antes de seleccionar dependencias para las particiones reconstruidas.
+- ROM: [DrakiSama/android_device_nubia_nx733j](https://github.com/DrakiSama/android_device_nubia_nx733j)
+- TWRP y OrangeFox son proyectos separados; sus árboles no se mezclan con este.
+- El repositorio contiene fuentes, herramientas y metadatos, no dumps stock ni
+  claves privadas.

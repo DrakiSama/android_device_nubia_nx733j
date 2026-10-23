@@ -1,6 +1,10 @@
 # Entradas privadas de imágenes preservadas
 
-Estado: PREPARED_NOT_ACTIVATED. [Resultado sin rutas privadas](../stock/preserved-input-preparation.json).
+Preparación: 2026-09-26. Las entradas privadas se usaron posteriormente en los
+builds registrados en [BUILD-ADAPTER](BUILD-ADAPTER.md); el fragmento sigue fuera
+de Git. Esta auditoría documenta su preparación, no confirma disponibilidad
+actual de los archivos ni valida el arranque.
+[Resultado sin rutas privadas](../stock/preserved-input-preparation.json).
 
 ## Preparación realizada
 
@@ -37,13 +41,14 @@ CONFIRMED en el checkout build/make registrado en build-interface-reference.json
 core/Makefile copia los prebuilts en las ramas :4089–4091 (vendor), :4335–4337
 (odm), :4404–4406 (vendor_dlkm), :4544–4546 (system_dlkm). Las ramas target_files
 incluyen dependencias (:6525, :6560, :6569, :6587) y copias a IMAGES (:6944,
-:6972, :6976, :6984). Esto demuestra interfaces de fuente, no su ejecución.
+:6972, :6976, :6984). Esto demuestra interfaces de fuente. La ejecución
+posterior está documentada en BUILD-ADAPTER; los artefactos no se reabrieron en
+la revisión 2026-10-23.
 
-## Activación pendiente
+## Alcance y límites actuales
 
-No incluir el fragmento todavía: la herencia actual de nx733j-vendor.mk y
-BoardConfigVendor.mk pertenece al perfil de blobs generados. Hay que separar
-las dependencias para system/system_ext/product, evitar reconstruir las cuatro
-particiones preservadas y definir el tratamiento de VINTF/SELinux y AVB nuevo.
-BoardConfigBringup.mk sigue ausente deliberadamente; no se ha habilitado build,
-OTA ni flasheo. La selección de proveedor kernel sigue siendo independiente.
+La sección anterior «Activación pendiente» era el estado de diseño del
+2026-09-26 y quedó superada: `BoardConfigBringup.mk` existe y el build consumió
+prebuilts privados según el adaptador. La necesidad de validar dependencias,
+VINTF/SELinux y AVB en el producto y en el dispositivo permanece. Esta
+preparación por sí sola no valida firmas, compatibilidad ni instalación.

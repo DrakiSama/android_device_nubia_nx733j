@@ -1,6 +1,8 @@
 # Paquete privado del proveedor stock
 
-Estado: preparado el 2026-09-24, pendiente de integración al build.
+Preparado el 2026-09-24. El proveedor stock se integró después en los builds
+documentados en [BUILD-ADAPTER](BUILD-ADAPTER.md). Los binarios privados no se
+publican en GitHub; esta nota no permite verificar que sigan disponibles hoy.
 La [evidencia de preparación](../stock/kernel-provider-preparation.json) identifica
 el manifiesto privado por SHA-256. Los binarios no se publican en GitHub.
 

@@ -1,9 +1,11 @@
 # Adaptador de build: activación explícita
 
-Fecha: 2026-09-26 (adaptador presente). Última verificación: 2026-09-30
-(commit `6cc5c74c5a408869899d465f0ece08ebcdbee3f1`, HEAD = origin/lineage-23.2).
-**Estado: builds ejecutados y auditados.** `BoardConfigBringup.mk` existe y
-detiene el make con error explícito si faltan las entradas privadas. Ya se
+Adaptador implementado el 2026-09-26. **Builds registrados hasta el
+2026-09-30; última revisión documental 2026-10-23.** El commit `6cc5c74`
+corresponde al plan de flasheo de esa fecha, no al HEAD actual. Antes de esta
+actualización, HEAD local coincidía con origin. WSL no respondió en esta revisión,
+por lo que no se reabrieron artefactos. `BoardConfigBringup.mk` existe y detiene
+el make con error explícito si faltan las entradas privadas. Ya se
 compiló `bootimage vendorbootimage dtboimage` (2026-09-27), `target_files`
 (2026-09-29) y OTA `bacon` (2026-09-30, dos builds: 14:08 y 19:09). **No
 existe ROM validada en el teléfono** (nada se flasheó).
@@ -15,7 +17,7 @@ existe ROM validada en el teléfono** (nada se flasheó).
 | Kernel | `TARGET_PREBUILT_KERNEL`, `BOARD_KERNEL_IMAGE_NAME`, no-strip de módulos | [KERNEL-PROVIDER](KERNEL-PROVIDER.md) |
 | DTB | `BOARD_INCLUDE_DTB_IN_BOOTIMG`, `BOARD_PREBUILT_DTBIMAGE_DIR` | [BUILD-PROVIDER-MAPPING](BUILD-PROVIDER-MAPPING.md) |
 | DTBO | `BOARD_PREBUILT_DTBOIMAGE` (contenedor de 18 MiB) | [DTBO-AVB-ENVELOPE](DTBO-AVB-ENVELOPE.md) |
-| Bootconfig | `BOARD_BOOTCONFIG_FILE` (232 bytes stock) | [BOOT-AUDIT](BOOT-AUDIT.md) |
+| Bootconfig | `BOARD_BOOTCONFIG` (7 líneas stock; el archivo original de 232 bytes se conserva como referencia) | [BOOT-AUDIT](BOOT-AUDIT.md) |
 | Vendor ramdisk | módulos stock + listas de carga normal (106) / recovery (303) | [RAMDISK-LOAD-AUDIT](RAMDISK-LOAD-AUDIT.md) |
 | AVB | cadena completa con 7 claves de desarrollo y locations 1-6 | [AVB-DEV-KEYS](AVB-DEV-KEYS.md) |
 | Perfil preservado | `-include $(NX733J_PRESERVED_MK)`; descriptores de las 4 imágenes en vbmeta | [PRESERVED-PROFILE-INTEGRATION](PRESERVED-PROFILE-INTEGRATION.md) |
@@ -48,16 +50,13 @@ existe ROM validada en el teléfono** (nada se flasheó).
 Completados (ver secciones siguientes): fstab de primera etapa, metadatos
 depmod (blocklist), bootconfig, VINTF/FCM (126 hals), target_files, OTA.
 
-## Validación prevista de la primera compilación
+## Validaciones offline registradas
 
-- Comparar cabeceras `mkbootimg` de boot/init_boot/vendor_boot con
-  [BOOT-BUILD-COMPOSITION](BOOT-BUILD-COMPOSITION.md).
-- `avbtool info_image` sobre vbmeta, vbmeta_system, boot, init_boot,
-  vendor_boot, recovery y dtbo: cadena, locations y descriptores.
-- `dtb.img` idéntico al DTB stock preparado; `modules.load`/`modules.load.recovery`
-  contra las listas de referencia; imágenes preservadas idénticas al manifiesto.
-- Errores de cableado de variables se corrigen en esa corrida; el adaptador no
-  se declara validado hasta entonces.
+Los logs y auditorías descritos en las secciones siguientes registran la
+comparación de cabeceras, la cadena AVB, el DTB y las listas/módulos contra sus
+referencias. Las imágenes preservadas se contrastaron con su manifiesto en el
+paquete target_files. Estos resultados corresponden a artefactos de build; no
+validan arranque ni instalación en el dispositivo.
 
 ## Estado del entorno local (2026-09-26)
 
@@ -150,8 +149,10 @@ Auditoría contra el stock (2026-09-27):
   índices de git reconstruidos, 3 proyectos re-clonados y archivos truncados
   restaurados.
 
-Pendientes antes de un arranque: fstab/depmod del ramdisk, bootconfig,
-VINTF y SEPolicy (la auditoría del target_files quedó completa el 2026-09-29).
+Estado al terminar el build del 2026-09-27 (histórico): fstab/depmod del
+ramdisk, bootconfig, VINTF y SEPolicy seguían pendientes. Las tres primeras
+tareas y VINTF se completaron offline después, según las secciones siguientes;
+SEPolicy fuente sigue pendiente.
 
 ## target_files: estado y reanudación (2026-09-28) — HISTÓRICO
 
@@ -208,7 +209,7 @@ Auditoría payload del zip contra las imágenes standalone ya auditadas
    `BUILD_TF_EXIT=0`). Servicio systemd deshabilitado. `runuser`/`su` como
    lanzador de fondo **no** sirve: la sesión reapea los procesos.
 
-## OTA completada (2026-09-30)
+## Primera OTA (2026-09-30 14:08; supersedida)
 
 `m -j8 bacon` completó el **2026-09-30 14:08:01** (`BUILD_OTA_EXIT=0`).
 Artefacto:
@@ -224,8 +225,9 @@ Ajustes necesarios (commits `4089915` y `8e092a1`):
 - **`PRODUCT_BUILD_GENERIC_OTA_PACKAGE := true`**: con vendor prebuilt
   (`BUILDING_VENDOR_IMAGE` vacío) el build desactiva la OTA
   (`build_ota_package := false`, `core/Makefile:7210`) si `recovery_fstab`
-  está vacío; el flag fuerza la generación. **Provisional** hasta que se
-  resuelva el recovery fstab + re-auditoría de imágenes.
+  está vacío; el flag fuerza la generación. Fue un workaround para generar el
+  paquete; la OTA final posterior se reconstruyó y auditó, pero esto no valida
+  una instalación desde recovery ni el uso del recovery fstab.
 - **`PRODUCT_PACKAGES += android.hidl.allocator@1.0-service`**: el módulo solo
   se instala para API de venta ≤34 (`PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34`),
   pero `vintffm` (que corre en la ruta de vendor prebuilt) exige la

@@ -1,7 +1,10 @@
 # Integración del perfil preservado: diseño verificado
 
-Fecha: 2026-09-26. Estado: DESIGN_VERIFIED_NOT_ACTIVATED. No se incluyó el
-fragmento privado, no se creó `BoardConfigBringup.mk` y no se compiló.
+Fecha del análisis de diseño: 2026-09-26. El estado descrito aquí es histórico:
+después se creó `BoardConfigBringup.mk` y los builds registrados usaron el perfil
+privado según [BUILD-ADAPTER](BUILD-ADAPTER.md). WSL no respondió en la revisión
+2026-10-23, así que no revalidé artefactos ni entradas privadas. No hay prueba
+de arranque en dispositivo.
 Complementa [BUILD-PROFILE](BUILD-PROFILE.md), [PRESERVED-IMAGE-INPUTS](PRESERVED-IMAGE-INPUTS.md),
 [PROFILE-BLOB-SCOPE](PROFILE-BLOB-SCOPE.md) y [BUILD-PROVIDER-MAPPING](BUILD-PROVIDER-MAPPING.md).
 
@@ -24,7 +27,7 @@ Consecuencia: las cuatro particiones preservadas conservan **byte por byte** las
 imágenes privadas; nada del build las regenera ni les añade footer. La decisión
 del perfil no altera `AB_OTA_PARTITIONS` por sí sola.
 
-## Dónde se incluiría (DISEÑO; sin activar)
+## Diseño de integración original (2026-09-26)
 
 - El fragmento privado `BoardConfigPreservedImages.mk` (cuatro
   `BOARD_PREBUILT_*IMAGE`) no entra al repositorio: contiene rutas locales y las
@@ -83,7 +86,7 @@ compilar. No se cambió geometría, grupo ni extents.
 - Claves: `null` en el contrato; sin decisión no hay build firmable. No usar
   claves OEM ni test keys como sustituto. No desactivar AVB.
 
-## OTA
+## OTA: propuesta de diseño del 2026-09-26
 
 - `ota_enabled=false`; `AB_OTA_UPDATER=true` y `AB_OTA_PARTITIONS` (13 entradas,
   `BoardConfig.mk:31`) siguen provisionales. Virtual A/B con compresión XOR
@@ -112,7 +115,7 @@ este repositorio (symlink o copia), no heredar el vendor antiguo, y decidir si
 se conserva solo como evidencia local o se regenera acotado. No se movió ni
 borró nada de ese checkout en esta sesión.
 
-## Orden de activación propuesto
+## Orden de activación propuesto en 2026-09-26 (superado por builds posteriores)
 
 1. Aprobar política de claves/rollback y fstab/bootconfig/ramdisk.
 2. Crear `BoardConfigBringup.mk` revisado: proveedor kernel, DTB/DTBO, ramdisk,
@@ -127,11 +130,12 @@ borró nada de ese checkout en esta sesión.
 
 ## Límites
 
-Verificación de interfaces por lectura del checkout local en los commits
-registrados; no se ejecutó make, no se copió ningún prebuilt y no se creó el
-adaptador. La cota de tamaño usa contenido stock del slot B, no una medición de
-imágenes ROM. Los hashes citados provienen del contrato y del manifiesto
-privado; las imágenes no se publican.
+Este documento registró una verificación de interfaces antes del build. Sus
+afirmaciones «no se ejecutó make», «no se copió ningún prebuilt» y «no se creó
+el adaptador» describen exclusivamente el estado del 2026-09-26 y quedaron
+superadas por los builds documentados en BUILD-ADAPTER. La cota de tamaño usa
+contenido stock del slot B, no una medición de imágenes ROM. Los hashes citados
+provienen del contrato y del manifiesto privado; las imágenes no se publican.
 
 ## Reproducción
 

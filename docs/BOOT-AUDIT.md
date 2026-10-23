@@ -1,7 +1,9 @@
 # Auditoría de arranque NX733J — 2026-09-15
 
-Estado: auditoría de imágenes completa para esta captura; **árbol ROM aún no compilable**.
-No se cambió el teléfono ni TWRP. No se creó BoardConfigBringup.mk ni se inició Actions.
+Estado de la captura del 2026-09-15: auditoría de imágenes completa; en esa fecha
+el árbol ROM aún no era compilable y no existía `BoardConfigBringup.mk`. El build
+posterior se documenta en [BUILD-ADAPTER](BUILD-ADAPTER.md). Esta auditoría
+histórica no cambió el teléfono ni TWRP y no demuestra que la ROM arranque.
 
 ## Procedencia y alcance
 

@@ -1,105 +1,55 @@
 # NX733J: estado del bring-up
 
-Actualizado: 2026-09-26 (Chile). Objetivo: base reutilizable AOSP, kernel stock
-inicial sustituible; adaptación específica a una ROM después del cierre de la base.
+**Revisado: 2026-10-23.** Git estaba en `4eb973d` y sincronizado con
+`origin/lineage-23.2`. Los últimos artefactos de ROM documentados corresponden
+al 2026-09-30. WSL no respondió durante esta revisión, así que esos artefactos
+no se volvieron a inspeccionar.
 
-CONFIRMED se limita a la evidencia indicada. PARTIAL implica trabajo pendiente;
-INFERRED es una deducción, UNKNOWN falta de evidencia y BLOCKED una dependencia
-que impide habilitar el siguiente paso.
+Los estados de esta tabla distinguen configuración, validación offline y prueba
+en dispositivo. `CONFIRMADO` siempre queda limitado a la evidencia citada;
+`PARCIAL` señala trabajo pendiente; `DESCONOCIDO` significa que no hay evidencia.
 
-| Component | Status | Evidence | Source | Notes |
-| --- | --- | --- | --- | --- |
-| GPT y tamaños | CONFIRMED | Seis LUN, CRC y 115 entradas XML | Respaldo 9008 | Sin offsets prestados |
-| Super / particiones B | CONFIRMED | Seis metadatos y siete hashtrees | Respaldo y capturas | FEC no comprobado; conservar COW |
-| Filesystems lógicos | CONFIRMED | Siete EROFS; metadata F2FS | Super, fstab, montajes vivos | Tipos system/product/system_ext completados; tamaños ROM aún desconocidos |
-| Cadena AVB stock | PARTIAL | Firmas internas, claves padre/hijo, payloads | Imágenes A/B | Falta aceptación OEM y rollback |
-| DTB / DTBO | CONFIRMED | DTB íntegro; contenedor DTBO interno A/B de 18 MiB | Respaldo y proveedor | Entradas privadas preparadas; partición DTBO sigue siendo 24 MiB |
-| pvmfw | PARTIAL | Header v3, 1 MiB; hashes A/B distintos y válidos | Respaldo, GPT, teléfono | Resolver descriptor y firmware por slot en política OTA |
-| init_boot limpio | CONFIRMED | Init original guardado por Magisk igual al stock | Respaldo B y captura | Init ROM se reconstruirá; no reutilizar el parcheado |
-| Recovery separado | CONFIRMED | Header v4, kernel vacío, ramdisk propio | Respaldo | No prueba disponibilidad de restauración |
-| Argumentos de boot | PARTIAL | v4 explícito en ambas listas; direcciones stock | Cabeceras y mkbootimg local | Corregidos en BoardConfig; no compilado |
-| Kernel / módulos | PARTIAL | 681 archivos; 1685 CRC entre módulos coinciden | Stock y exports vivos | 3404 CRC del kernel base, namespaces y firmas pendientes |
-| zram / zsmalloc | CONFIRMED | Build IDs vivos corresponden a vendor_boot 6.6.30 | Kernel stock 6.6.92 | Conservar variantes por partición; no certifica otra ABI |
-| Carga temprana | PARTIAL | 106 build IDs; cierre duro/soft sin ciclos | Ramdisk y sysfs | Secuencia efectiva y aliases al hardware pendientes |
-| Contenido vendor ramdisk | CONFIRMED | 306 módulos, 7 archivos auxiliares, 3 directorios; modos/uid/gid | CPIO stock | No contiene init OEM; etiquetas SELinux aún no derivadas |
-| Fstab ROM | PARTIAL | 25 entradas, 14 tempranas; semántica emmc/formattable revisada | Stock y código init/fs_mgr | Sigue como referencia; no instalado en producto |
-| Proveedor kernel | PARTIAL | 715 payloads privados comprobados; contrato definido | Capturas stock | Falta adaptador consumido por el build |
-| Snapshots observados | CONFIRMED | Mapas linear/verity, 14 extents coincidentes, update_engine IDLE | Captura del teléfono | Observación temporal, no garantía para una OTA futura |
-| Perfil de construcción | PARTIAL | Productores y prebuilts definidos en contrato stock B | Decisión de ingeniería | No activado; [diseño de integración verificado](PRESERVED-PROFILE-INTEGRATION.md) (interfaces y checkout); adaptador, modo del generador y AVB/claves pendientes |
-| AVB / OTA ROM | PARTIAL | [Claves de desarrollo](AVB-DEV-KEYS.md) generadas y registradas; cadena e interfaces stock documentadas | Decisión + script | Sin OTA ni instalación; aceptación del bootloader UNKNOWN; rollback de desarrollo propuesto; rotación para release |
-| Referencias de init conservado | PARTIAL | 154 rc, 28 declaraciones externas, estados/rutas consultados | Vendor stock y ADB | 87 acciones OEM clasificadas; RNDIS explicado; visibilidad shell/root corregida; superposición USB pendiente |
-| Producto genérico | PARTIAL | Capa genérica e identidad separadas; entrada Lineage conservada | Repo | nx733j.mk separado del wrapper Lineage; ningún nuevo producto compilado |
-| Build mínimo | PARTIAL | [Adaptador presente](BUILD-ADAPTER.md) con entradas privadas obligatorias; **primer build acotado exitoso** (boot/vendor_boot/dtbo, 2026-09-27) | Repo + entradas privadas | Fstab/depmod del ramdisk, bootconfig, VINTF/SEPolicy y target_files pendientes |
-| Recuperación tras fallo | UNKNOWN | Existe respaldo 9008 | Usuario | Restauración no validada; fastboot no asumido funcional |
+| Área | Estado | Evidencia y límite |
+| --- | --- | --- |
+| Identidad / BoardConfig | CONFIRMADO | `lineage_nx733j.mk`, `BoardConfig.mk`; detalles de build en [BUILD-ADAPTER](BUILD-ADAPTER.md). |
+| Kernel/DTB/DTBO iniciales | VALIDADO OFFLINE | El build del 2026-09-27 registró comparación de kernel, DTB y payload DTBO contra stock; no prueba arranque. |
+| target_files | VALIDADO OFFLINE | Build y auditoría de payload registrados el 2026-09-29 en [BUILD-ADAPTER](BUILD-ADAPTER.md). |
+| OTA | VALIDADO OFFLINE | OTA final registrada el 2026-09-30, SHA-256 `fdf7202e5d1d48ae039c7d0515c446a57caab82fd0a114f481273f81baee01d5`; no instalada. |
+| VINTF / FCM | VALIDADO OFFLINE | Matriz de 126 HAL; `checkvintf --check-compat` registró `COMPATIBLE (rc=0)` contra vendor/odm stock. |
+| Vendor ramdisk | VALIDADO OFFLINE | Fstab, blocklist, bootconfig y hashes de 306 módulos registrados en [auditoría del ramdisk](../stock/vendor-ramdisk-layout-audit.json). No prueba montaje ni carga en el teléfono. |
+| SEPolicy fuente | PENDIENTE | Falta portar y validar la política fuente para el producto ROM. |
+| ABI del kernel | PARCIAL | Hay análisis de módulos; CRC del kernel base, namespaces y condiciones de firma siguen sin cerrar si se cambia el proveedor. Véase [MODULE-EXPORT-CRC](MODULE-EXPORT-CRC.md). |
+| AVB / pvmfw / release | PARCIAL | Se usaron claves de desarrollo y rollback 1 en imágenes registradas. Aceptación del bootloader, tratamiento de pvmfw y claves/rollback de release pendientes. |
+| TWRP como ruta de instalación | PENDIENTE | El [plan de flasheo](FIRST-FLASH-PLAN.md) mantiene sin validar el manejo de vbmeta, particiones lógicas y cambio de slot requerido. |
+| EDL y rescate | PARCIAL | Escritura de `init_boot_b` por EDL reportada por el usuario; restauración del backup/ensayo EDL no consta como ejecutado. |
+| ROM en dispositivo | PENDIENTE | No hay evidencia de que esta ROM se haya flasheado o arrancado. |
+| CI `repo-checks` | HISTÓRICO | La continuidad registra una ejecución verde en 2026-09-26/28; el estado para HEAD `4eb973d` no fue comprobado en esta revisión. |
 
-## Siguiente objetivo concreto
+## Hechos de plataforma útiles
 
-El [perfil inicial](BUILD-PROFILE.md) define qué se reconstruye y qué se conserva.
-Imágenes completas vendor/odm/DLKM contrastadas con super y descriptores AVB.
-Las acciones de init.vendor.rc quedaron clasificadas: no se añadirá un import
-global ni concat_props_zte al init ROM. La propiedad de nombre USB ya existe
-en vendor/build.prop. La revisión USB encontró acciones OEM/ROM superpuestas y
-la rama OEM que explica RNDIS. La captura root corrige los vacíos de shell. Siguiente:
-integrar explícitamente el perfil de imágenes preservadas con producto/proveedor antes de habilitar
-prebuilts, ramdisk y AVB. Los dos rc USB del sistema coinciden con ROM; vendor
-ya define el montaje FunctionFS; adbd ROM y su acceso SELinux básico están trazados. La superposición no prueba un defecto del port. Véase [frontera USB](USB-INIT-BOUNDARY.md).
-La identidad diferente de pvmfw A/B impide tratar ambos slots como firmware
-intercambiable. Las claves y firmware OEM no se heredan como política de firma ROM.
+- Nubia NX733J / PQ84A01, Qualcomm `sun` (SM8750); slot B fue observado en las
+  capturas documentadas. Comprueba el slot actual antes de cualquier operación.
+- Tamaños y particiones están en `stock/boot-audit.json` y documentos de
+  auditoría. Hay siete particiones lógicas EROFS; no existe `odm_dlkm`.
+- `pvmfw` A y B tienen identidades distintas; no son intercambiables. Véase
+  [PVMFW-AVB-SCOPE](PVMFW-AVB-SCOPE.md).
+- El árbol no debe confundirse con TWRP u OrangeFox. El estado del build no
+  demuestra que la recuperación esté lista para instalarlo.
 
-Antes de habilitar imágenes también faltan las dependencias mínimas vendor,
-VINTF y SELinux. La verificación de ABI completa del kernel sigue abierta; no
-se repiten intentos fallidos contra artefactos GKI públicos sin una fuente nueva.
-No se ha compilado ni arrancado una ROM propia, ni ejecutado flasheos o formatos.
+## Siguiente secuencia
+
+1. Cerrar la documentación de SEPolicy, `pvmfw` y la política AVB/OTA de release.
+2. Completar las validaciones de TWRP y el ensayo de restauración EDL del plan.
+3. Cuando el usuario decida iniciar la prueba, revisar de nuevo los artefactos,
+   prerequisitos y slot; después validar el arranque con evidencia fechada.
+
+No declarar la ROM lista para flashear hasta completar los prerequisitos de la
+ruta elegida. Los builds, VINTF y auditorías offline no equivalen a pruebas en
+el dispositivo.
 
 ## Evidencia y procedimientos
 
-- [Respaldo y particiones](EDL-BACKUP-AUDIT.md), [snapshots](SNAPSHOT-STATE.md).
-- [Corrección DTBO](DTBO-AVB-ENVELOPE.md), [pvmfw y AVB](PVMFW-AVB-SCOPE.md).
-- [Composición del build](BOOT-BUILD-COMPOSITION.md), [interfaces del proveedor](BUILD-PROVIDER-MAPPING.md).
-- [Contrato kernel](KERNEL-PROVIDER.md), [paquete privado](KERNEL-PROVIDER-PACKAGE.md).
-- [Contenido ramdisk / fstab](VENDOR-RAMDISK-LAYOUT.md), [carga normal](RAMDISK-LOAD-AUDIT.md).
-- [CRC entre módulos](MODULE-EXPORT-CRC.md), [auditoría boot histórica corregida](BOOT-AUDIT.md).
-
-[Dependencias del vendor conservado](PRESERVED-VENDOR-DEPENDENCIES.md) y
-[capas de producto](PRODUCT-LAYERS.md).
-
-[Decisiones de port de init OEM](OEM-INIT-PORT-DECISIONS.md).
-
-[Contrato ADB del producto](ADB-PRODUCT-CONTRACT.md): provisión, backend y
-permisos de ffs.ready trazados; orden efectivo y política combinada pendientes.
-
-[Entradas de imágenes preservadas](PRESERVED-IMAGE-INPUTS.md): cuatro imágenes
-revalidadas y fragmento privado preparado; sin inclusión automática en BoardConfig.
-[Integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md): diseño
-verificado contra el checkout (interfaces, target_files/OTA) y hallazgo de la
-extracción antigua no auditada en `~/lineage`.
-[Selección mínima de dependencias](BOOT-DEPENDENCY-SELECTION.md): 28 referencias
-externas de init clasificadas; cero blobs OEM requeridos para el primer arranque
-con ADB.
-
-[Separación de inventarios](PROFILE-BLOB-SCOPE.md): 3718 entradas vendor/odm ya
-cubiertas por prebuilts; 2621 system_ext/product pendientes de selección.
-
-`/system/bin/usbconfig` quedó resuelto por análisis estático: es un helper de
-modo fábrica (lee android_usb/android0/manu_tag; publica
-`sys.usb.config=diag,adb,facmode` y `sys.usb.factory`) y en el kernel actual el
-nodo no existe, por lo que es inoperante en consumidor. Decisión propuesta:
-excluirlo del system reconstruido sin sustituto. Véase
-[análisis de usbconfig](USBCONFIG-ANALYSIS.md). El
-[diseño de integración del perfil preservado](PRESERVED-PROFILE-INTEGRATION.md)
-quedó verificado contra el checkout (interfaces `BOARD_PREBUILT_*`, target_files
-y OTA) y detectó una extracción antigua sin auditar en `~/lineage` que no debe
-usarse como fuente. La [selección mínima de dependencias](BOOT-DEPENDENCY-SELECTION.md)
-concluyó que el primer arranque con ADB no requiere ningún blob OEM externo en
-las particiones reconstruidas: el generador acotado puede arrancar vacío y
-crecer por subsistema. Las claves AVB de desarrollo quedaron generadas y
-documentadas ([AVB-DEV-KEYS](AVB-DEV-KEYS.md)) y el adaptador de build está
-implementado ([BUILD-ADAPTER](BUILD-ADAPTER.md)): sin entradas privadas el make
-se detiene. Siguiente objetivo: preparar el entorno de compilación (instalar el
-árbol en `~/lineage`, generar el vendor repo con el manifiesto sin entradas) y
-acordar la primera compilación; quedan fstab/depmod del ramdisk, VINTF y
-SEPolicy fuente. El checkout 23.2 está sincronizado, el entorno validado y la **primera
-compilación acotada completó con éxito** (boot/vendor_boot/dtbo firmadas con
-claves de desarrollo; DTB y payload DTBO idénticos al stock; ver
-[BUILD-ADAPTER](BUILD-ADAPTER.md)). Siguiente: cerrar fstab/depmod del ramdisk
-y bootconfig, luego VINTF/SEPolicy y un target_files completo; nada se flasheó.
+- [Adaptador y builds](BUILD-ADAPTER.md), [plan de flasheo](FIRST-FLASH-PLAN.md).
+- [Auditoría de arranque](BOOT-AUDIT.md), [composición de imágenes](BOOT-BUILD-COMPOSITION.md), [vendor ramdisk](VENDOR-RAMDISK-LAYOUT.md).
+- [Kernel/CRC](KERNEL-AND-OEM-AUDIT.md), [VINTF y dependencias](BOOT-DEPENDENCY-SELECTION.md), [pvmfw](PVMFW-AVB-SCOPE.md).
+- [Respaldo EDL](EDL-BACKUP-AUDIT.md), [perfil preservado](BUILD-PROFILE.md), [claves de desarrollo](AVB-DEV-KEYS.md).

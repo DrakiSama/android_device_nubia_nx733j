@@ -1,6 +1,7 @@
 # Contrato ADB para el producto mínimo
 
-Estado: PARTIAL; revisión de fuentes, sin build, arranque ROM ni cambio en stock.
+Estado: PARTIAL; contrato basado en revisión de fuentes. Los builds posteriores
+no validan este flujo ADB en runtime; no hubo arranque de ROM ni cambio en stock.
 [Fuentes identificadas](../stock/adb-product-contract.json).
 
 ## Provisión del producto

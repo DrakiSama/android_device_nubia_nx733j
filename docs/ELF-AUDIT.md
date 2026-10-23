@@ -1,7 +1,9 @@
 # Auditoría ELF y particiones adicionales — 2026-09-23
 
-Estado: capturas extraídas y dependencias por nombre inventariadas. El árbol sigue
-sin ser compilable; este informe no valida ABI, VINTF ni soporte de hardware.
+Estado a la fecha de auditoría (2026-09-23): capturas extraídas y dependencias
+por nombre inventariadas; entonces el árbol aún no era compilable. Los builds
+posteriores constan en [BUILD-ADAPTER](BUILD-ADAPTER.md). Este informe no valida
+ABI, VINTF ni soporte de hardware.
 
 ## Captura y procedencia
 

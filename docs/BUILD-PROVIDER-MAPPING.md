@@ -1,4 +1,10 @@
-# Integración del proveedor: diferencias antes de activar el build
+# Integración del proveedor: análisis previo a la activación (2026-09-24)
+
+Este documento registra el bloqueo encontrado antes de crear el adaptador. Luego
+se implementó `BoardConfigBringup.mk` y se ejecutaron builds documentados en
+[BUILD-ADAPTER](BUILD-ADAPTER.md); el diagnóstico de interfaz aquí descrito es
+histórico y no prueba un build actual.
+
 
 Fecha: 2026-09-24. **Actualización:** el footer DTBO interno ya fue identificado;
 las observaciones iniciales sobre su ausencia quedan corregidas por

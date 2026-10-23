@@ -1,6 +1,9 @@
 # Contrato del proveedor de kernel NX733J
 
-Estado: diseño de integración; no activa un build. Referencia inicial stock/prebuilt.
+Estado: contrato de diseño para el proveedor stock/prebuilt. Su integración en
+`BoardConfigBringup.mk` y los builds correspondientes se registran en
+[BUILD-ADAPTER](BUILD-ADAPTER.md). Este documento no valida un kernel alternativo
+ni el arranque en dispositivo.
 Las decisiones de arquitectura siguientes son propuestas del proyecto, no hechos
 extraídos del firmware. Los hechos stock llevan CONFIRMED y procedencia explícita.
 
@@ -17,7 +20,9 @@ aunque corresponde al hardware NX733J. Cambiar el proveedor no obliga a copiar
 el device tree ni a mezclar sus makefiles con los de un repositorio de kernel.
 Una futura implementación debe depender de archivos de salida explícitos: recompilar
 solo las imágenes afectadas, según el grafo de dependencias del build elegido.
-Esto es un requisito de diseño; aún no existe ese adaptador de build.
+Esto define el límite de diseño. El adaptador actual consume el proveedor stock;
+sustituirlo por otro kernel requiere el manifiesto y las comprobaciones ABI aquí
+descritas.
 
 ## Entradas concretas de la referencia stock
 
@@ -84,8 +89,8 @@ la secuencia completa de inserción ni garantiza compatibilidad con otro kernel.
 La referencia stock no certifica la ABI de un kernel recompilado. La información
 runtime corresponde a un teléfono con root. Aún faltan los valores de exportaciones
 CRC del kernel contrastados contra los imports, namespaces y política de firmas.
-La ausencia deliberada de BoardConfigBringup.mk se conserva; este contrato no añade
-variables de build ficticias, no instala módulos y no contiene comandos de flasheo.
+El adaptador `BoardConfigBringup.mk` ya existe; este contrato no instala módulos
+ni contiene comandos de flasheo. La referencia stock no certifica otro kernel.
 
 El [análisis de símbolos y CRC](MODULE-EXPORT-CRC.md) documenta el cierre estático
 del conjunto normal. No implica validación temporal de la carga en paralelo.
@@ -93,5 +98,5 @@ del conjunto normal. No implica validación temporal de la carga en paralelo.
 La [auditoría de carga normal](RAMDISK-LOAD-AUDIT.md) confirma el cierre con
 softdeps y los 106 build IDs observados; conserva pendiente la secuencia temporal.
 
-El [paquete stock privado](KERNEL-PROVIDER-PACKAGE.md) ya se preparó y verificó
-contra este contrato. Su integración con el build permanece pendiente.
+El [paquete stock privado](KERNEL-PROVIDER-PACKAGE.md) se preparó y verificó
+contra este contrato; el build posterior lo consume según [BUILD-ADAPTER](BUILD-ADAPTER.md).

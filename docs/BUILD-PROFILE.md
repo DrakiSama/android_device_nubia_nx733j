@@ -1,8 +1,9 @@
 # Primer perfil: stock B, sólo compilación
 
-Fecha: 2026-09-25. [Contrato de decisiones](../config/bringup-stock-b.json).
-Estado: DESIGN_NOT_ACTIVATED. Es una decisión de ingeniería para reducir variables,
-no una propiedad stock confirmada ni una autorización de instalación.
+Diseño inicial fechado 2026-09-25: [contrato de decisiones](../config/bringup-stock-b.json).
+El perfil privado se integró después en los builds registrados en [BUILD-ADAPTER](BUILD-ADAPTER.md).
+Este documento conserva el razonamiento de diseño; no confirma disponibilidad actual
+de entradas privadas, aceptación AVB ni autorización de instalación.
 
 | Particiones | Productor inicial | Tratamiento AVB |
 | --- | --- | --- |
@@ -51,9 +52,10 @@ reconstruya esas particiones; no fuerzan por sí solos esta decisión.
 4. Elegir firma y cadena nuevas con control de firmware conservado por slot.
 5. Conectar el perfil al build; resolver VINTF/SELinux antes de quitar el bloqueo.
 
-No se generaron imágenes ROM ni se ejecutaron pruebas de compilación. Este archivo
-fija el alcance inicial y permite sustituir el proveedor kernel o adoptar otro
-perfil más adelante sin convertir las decisiones stock en reglas universales.
+Al momento de redactar este diseño aún no se habían generado imágenes ROM. Los
+builds posteriores están registrados en BUILD-ADAPTER; el perfil no demuestra
+arranque ni soporte de hardware. Este alcance permite sustituir el proveedor kernel
+o adoptar otro perfil sin convertir las decisiones stock en reglas universales.
 
 ## Identidad de imágenes completas cerrada
 
@@ -85,5 +87,7 @@ versiones/mappings SELinux y VINTF, y el tratamiento del precompiled_sepolicy.
 No se borran archivos internos de los prebuilts para aparentar compatibilidad.
 El inventario antiguo no se promueve automáticamente al producto conservado.
 
-Preparación posterior: [adaptador privado de entradas](PRESERVED-IMAGE-INPUTS.md),
-sin activar el perfil ni seleccionar una política de firma.
+La preparación de entradas privadas y su uso en el build se documentan en
+[adaptador de entradas](PRESERVED-IMAGE-INPUTS.md) y [BUILD-ADAPTER](BUILD-ADAPTER.md).
+La selección de perfil stock B no implica autorización de instalación ni una
+política de firma de release.

@@ -6,7 +6,7 @@ Auditoría de lectura, sin cambiar composición USB, reiniciar servicios ni flas
 [Evidencia acotada](../stock/usb-init-boundary.json): propiedades, enlaces configfs,
 SHA-256 de fuentes y extractos con líneas. Las dos fuentes vendor coinciden byte
 por byte con los archivos vivos. La fuente ROM es el checkout local de system/core,
-no un binario arrancado. No se ha compilado ni probado una ROM.
+no un binario arrancado. Esta auditoría no evalúa los builds posteriores ni prueba la ROM en dispositivo.
 
 ## Hallazgos
 
