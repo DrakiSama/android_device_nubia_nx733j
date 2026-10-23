@@ -2,8 +2,14 @@
 
 Base NX733J independiente de TWRP, orientada a AOSP y derivados.
 La capa genérica `nx733j.mk` está separada del wrapper LineageOS `lineage-23.2`;
-la única entrada de producto registrada sigue siendo la de Lineage. Estado vigente: [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
-**No hay todavía una ROM compilada ni un producto flasheable.**
+la única entrada de producto registrada sigue siendo la de Lineage. Estado vigente:
+[BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
+
+**Estado actual (verificado 2026-09-30):** Ya se compila. Se completaron
+`bootimage vendorbootimage dtboimage` (2026-09-27), `target_files`
+(2026-09-29) y OTA `bacon` (2026-09-30, sha256
+`fdf7202e5d1d48ae039c7d0515c446a57caab82fd0a114f481273f81baee01d5`,
+2.458.851.521 B). **No hay ROM validada en el teléfono** (nada se flasheó).
 El adaptador [BoardConfigBringup.mk](BoardConfigBringup.mk) ya está presente y
 exige entradas privadas verificadas (proveedor kernel, claves AVB de desarrollo
 y, opcionalmente, el fragmento de imágenes preservadas); sin ellas el build se
@@ -21,31 +27,49 @@ producción: hay que separar los componentes que compila LineageOS, eliminar
 duplicados, revisar dependencias ELF y añadir lo necesario de system_ext/product.
 No se han copiado políticas SELinux compiladas como sustituto de su fuente.
 
+**Completado (2026-09-26 a 2026-09-30):**
+- Primera compilación acotada (`bootimage vendorbootimage dtboimage`) exitosa
+  y auditada contra stock (kernel `11bf8868…`, DTB `43ac35e5…`, DTBO
+  `bff89700…` idénticos).
+- `target_files` completo (5.276 pasos, 2026-09-29) con auditoría de payload.
+- OTA `bacon` completada (2026-09-30): `lineage-23.2-20260930-UNOFFICIAL-nx733j.zip`
+  (2.458.851.521 B, sha256 `fdf7202e…`).
+- VINTF/FCM: 126 hals generados y validados (`checkvintf --check-compat`:
+  COMPATIBLE, rc=0).
+- Vendor ramdisk: fstab de primera etapa (sin formattable), blocklist stock
+  verbatim, bootconfig byte a byte idéntico (306/306 módulos con hash de
+  referencia).
+- CI ligera `repo-checks` verde en GitHub.
+- Entorno de build: WSL LineageOS, cron autosanador, claves AVB dev
+  (7 RSA-4096 locales), perfil preservado.
+
+**Pendiente:**
+- SEPolicy fuente.
+- Decisiones AVB/OTA de release (pvmfw, claves de release, rollback,
+  aceptación del bootloader).
+- Validación en dispositivo (ninguna ROM se ha flasheado).
+- Requisitos de TWRP (vbmeta flasheable, lógicas validadas, cambio de slot)
+  pendientes de validación en dispositivo.
+
 ## Próximo trabajo: cerrar la base de arranque
 
-1. Definir el perfil de particiones reconstruidas/conservadas y su política AVB.
-   [pvmfw A/B](docs/PVMFW-AVB-SCOPE.md) tiene contenidos distintos también en el
-   teléfono: conservar firmware exige precisar el slot y el descriptor esperado.
-2. Conectar el proveedor kernel y las entradas privadas DTB/DTBO; integrar fstab,
-   cmdline y bootconfig con procedencia. Revisar la política ante errores de
-   metadata/data antes de instalar el fstab stock en la ROM.
-3. Cerrar las dependencias mínimas vendor, VINTF y SELinux para habilitar el build.
-   El inventario de blobs sigue siendo candidato; véase [BLOBS-AUDIT](docs/BLOBS-AUDIT.md).
-4. Completar la comprobación ABI: 1685 CRC entre módulos coinciden, pero faltan
-   3404 CRC del kernel base y otras condiciones. [Detalle](docs/MODULE-EXPORT-CRC.md).
-5. Tras resolver lo anterior, compilar y planificar un primer arranque con una
-   vía de recuperación comprobada. Hardware y adaptación específica a LineageOS
-   quedan para sus etapas posteriores.
+El flasheo de la ROM va por EDL 9008 + TWRP (fastboot OEM capado en este
+modelo). Pendientes antes de un primer arranque:
+
+1. **Requisitos de TWRP** (ver `TWRP-REQUISITOS-PARA-ROM.md`): vbmeta
+   flasheable, validación de lógicas al slot seleccionado, cambio de slot en
+   UI, ruta moderna. Sesión TWRP trabaja en ello.
+2. **Ensayo EDL**: verificar restauración del backup (dump de mayo) antes de
+   cualquier escritura.
+3. **SEPolicy fuente** y **AVB/OTA de release** (pvmfw, claves de release,
+   rollback, aceptación del bootloader).
+4. **Decisión de hardware de compilación** (SSD externo / servidor NVMe /
+   Linux nativo) para acelerar el build.
+5. **Validación en dispositivo**: ninguna ROM se ha flasheado ni arrancado.
 
 No usar SELINUX_IGNORE_NEVERALLOWS ni fechas de parche ficticias de recovery.
-La lista completa de evidencia y pendientes está en [BRINGUP_STATUS](docs/BRINGUP_STATUS.md).
-
-El árbol OnePlus sm8750-common sirve para estudiar la integración de la plataforma,
-no se hereda: DTB, firmware y configuraciones OEM no son intercambiables.
-
-Referencias:
-- https://github.com/LineageOS/android_device_oneplus_sm8750-common/tree/lineage-23.2
-- https://lineageos.github.io/lineage_wiki/proprietary_blobs.html
+La lista completa de evidencia y pendientes está en [BRINGUP_STATUS](docs/BRINGUP_STATUS.md)
+y [FIRST-FLASH-PLAN](docs/FIRST-FLASH-PLAN.md).
 
 ## Auditoría de arranque (2026-09-15)
 

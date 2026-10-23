@@ -1,9 +1,12 @@
 # Adaptador de build: activación explícita
 
-Fecha: 2026-09-26. Estado: adaptador presente, **build no ejecutado**. El guard
-de compilación cambia de «archivo ausente» a «entradas privadas obligatorias y
-verificables»: `BoardConfigBringup.mk` ya existe y detiene el make con un error
-explícito si faltan las entradas. No hay ROM compilada ni flasheable.
+Fecha: 2026-09-26 (adaptador presente). Última verificación: 2026-09-30
+(commit `6cc5c74c5a408869899d465f0ece08ebcdbee3f1`, HEAD = origin/lineage-23.2).
+**Estado: builds ejecutados y auditados.** `BoardConfigBringup.mk` existe y
+detiene el make con error explícito si faltan las entradas privadas. Ya se
+compiló `bootimage vendorbootimage dtboimage` (2026-09-27), `target_files`
+(2026-09-29) y OTA `bacon` (2026-09-30, dos builds: 14:08 y 19:09). **No
+existe ROM validada en el teléfono** (nada se flasheó).
 
 ## Qué conecta el adaptador
 
@@ -32,12 +35,18 @@ explícito si faltan las entradas. No hay ROM compilada ni flasheable.
 
 ## Pendientes antes del primer arranque
 
-1. **Fstab de primera etapa y metadatos depmod** del vendor ramdisk
-   (`modules.dep/alias/softdep/blocklist`). Este `build/make` no expone
-   copy-out de archivos extra al vendor ramdisk; el mecanismo se resolverá sin
-   copiar el fstab stock en bloque ([VENDOR-RAMDISK-LAYOUT](VENDOR-RAMDISK-LAYOUT.md)).
-2. **VINTF/FCM y SEPolicy fuente** (bloque de compatibilidad).
-3. **CRC del kernel base** (3404 pendientes) si se cambia el proveedor.
+1. **SEPolicy fuente** (bloque de compatibilidad) — aún pendiente.
+2. **CRC del kernel base** (3404 pendientes) si se cambia el proveedor.
+3. **Decisiones AVB/OTA de release**: pvmfw, claves de release, rollback,
+   aceptación del bootloader — pendientes.
+4. **Fastboot OEM capado** en este modelo: el flasheo va por EDL 9008 + TWRP;
+   prerequisitos de TWRP (vbmeta flasheable, lógicas validadas, cambio de
+   slot) pendientes de validación en dispositivo.
+5. **Decisión de hardware de compilación**: SSD externo / servidor NVMe /
+   Linux nativo (HDD 5400 rpm hace lentísimo cada reanudado).
+
+Completados (ver secciones siguientes): fstab de primera etapa, metadatos
+depmod (blocklist), bootconfig, VINTF/FCM (126 hals), target_files, OTA.
 
 ## Validación prevista de la primera compilación
 
@@ -144,12 +153,11 @@ Auditoría contra el stock (2026-09-27):
 Pendientes antes de un arranque: fstab/depmod del ramdisk, bootconfig,
 VINTF y SEPolicy (la auditoría del target_files quedó completa el 2026-09-29).
 
-## target_files: estado y reanudación (2026-09-28)
+## target_files: estado y reanudación (2026-09-28) — HISTÓRICO
 
-`m -j8 target-files-package` llegó al **~72% (≈103,9K/144,5K pasos)**; quedan
-~40,5K. Cache intacta en `~/lineage-23.2/out` (no borrar `.ninja_log`).
-Artefactos de packaging ya presentes (`all_modules.txt`, `build_fingerprint…`,
-`system/`, `recovery/…`); aún sin zip `target_files`.
+> **Superado**: el target_files y su auditoría se completaron el 2026-09-29
+> (ver sección «target_files completado»). Esta sección describe el estado
+> intermedio y se conserva como historial.
 
 El obstáculo actual es el **entorno**, no el árbol: la VM de WSL cae
 intermitentemente (`E_UNEXPECTED`), las sesiones matan procesos lanzados desde
@@ -216,8 +224,8 @@ Ajustes necesarios (commits `4089915` y `8e092a1`):
 - **`PRODUCT_BUILD_GENERIC_OTA_PACKAGE := true`**: con vendor prebuilt
   (`BUILDING_VENDOR_IMAGE` vacío) el build desactiva la OTA
   (`build_ota_package := false`, `core/Makefile:7210`) si `recovery_fstab`
-  está vacío; el flag fuerza la generación. Provisional: el fix real es el
-  recovery fstab + re-auditoría de imágenes.
+  está vacío; el flag fuerza la generación. **Provisional** hasta que se
+  resuelva el recovery fstab + re-auditoría de imágenes.
 - **`PRODUCT_PACKAGES += android.hidl.allocator@1.0-service`**: el módulo solo
   se instala para API de venta ≤34 (`PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34`),
   pero `vintffm` (que corre en la ruta de vendor prebuilt) exige la
@@ -262,8 +270,9 @@ Validacion offline (sin telefono):
 - `checkvintf --check-compat` contra vendor+odm stock, apexes,
   `first_api_level=35` y `sku=sun`: **COMPATIBLE (rc=0)**.
 
-Nota: la OTA del 2026-09-30 14:06 no incluye aun esta matriz; un rebuild la
-incorporara.
+Nota: la OTA del 2026-09-30 14:06 no incluía aun esta matriz; el rebuild
+de las 19:09 sí la incorpora (junto con el ramdisk completo). Ver sección
+«OTA final con VINTF + ramdisk».
 
 ## Vendor ramdisk completo: fstab, blocklist y bootconfig (2026-09-30)
 
